@@ -11,7 +11,7 @@ some common misconceptions or points of disagreement.
 
 Of course, there's every possibility I've made superficial or
 completely thorough mistakes here. Corrections and comments are
-welcome: <a href="mailto:henry.robinson+cap@gmail.com">let me have
+welcome: <a href="mailto:vaquar.khan@gmail.com">let me have
 them</a>.
 
 There are some questions I still intend to answer. For example
