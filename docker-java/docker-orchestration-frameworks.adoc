@@ -1,0 +1,30 @@
+= Docker Engine w/ Swarm Mode vs Kubernetes vs DC/OS
+
+This document compares the three container orchestration frameworks: http://github.com/docker/docker[Docker Engine w/ Swarm Mode], https://github.com/kubernetes/kubernetes[Kubernetes] and https://github.com/dcos/dcos[DC/OS].
+
+
+[width="100%", options="header"]
+|==================
+| Feature | Docker Engine w/ Swarm mode | Kubernetes | DC/OS
+| Development | https://www.docker.com/products/overview[Docker for Mac/Windows] | https://github.com/kubernetes/minikube[minikube] | https://dcos.io/docs/1.8/administration/installing/local[DC/OS Vagrant]
+| Enterprise Offering | Docker Datacenter | Multiple Vendors | Mesosphere Enterprise DC/OS
+| Multiple clouds | https://docs.docker.com/docker-cloud/overview/[Docker Cloud], https://docs.docker.com/machine/drivers/[Docker Machine Drivers], https://www.docker.com/products/overview[Docker for AWS/Azure] | http://kubernetes.io/docs/getting-started-guides/#turn-key-cloud-solutions[Turn Key Cloud] | https://dcos.io/install/[Mulitple clouds]
+| On-premise | Yes | Yes | Yes
+| Cluster across multiple clouds | Yes | Yes (http://kubernetes.io/docs/admin/multiple-zones/[partly]) | Yes (agents)
+| Service Discovery | Yes | `Service` | Yes (https://dcos.io/docs/1.8/usage/service-discovery/[multiple]: DNS-based and proxy-based/L4 load balancer)
+| Dynamic Scaling | http://blog.couchbase.com/2016/july/docker-services-stack-distributed-application-bundle[Services, Distributed Application Bundle, Stack] | `Replica Set`, `Replication Controller`, `Deployment`, `Horizontal Pod Autoscaling` | Marathon app spec (instance count) and https://dcos.io/docs/1.8/usage/tutorials/autoscaling/[multiple options]
+| Exposing a service | Routing mesh | `type=LoadBalancer` in `Deployment` | Multiple (direct placement on public agent or, preferred, via https://dcos.io/docs/1.8/usage/service-discovery/marathon-lb/marathon-lb-basic-tutorial/[Marathon-LB]
+| Run-once job | `docker run` | `Job` | https://docs.mesosphere.com/1.8/usage/jobs/[Jobs]
+| Namespace | `docker-compose -p <namespace>` | `Namespace` | via labels in System Marathon
+| Global service| `--mode=global` | `DaemonSet` | Unique Attribute
+| Maven | https://github.com/fabric8io/docker-maven-plugin[fabric8-maven-plugin] | https://github.com/fabric8io/docker-maven-plugin[fabric8-maven-plugin] |
+| Volumes | https://docs.docker.com/engine/tutorials/dockervolumes/[Docker Volumes] | http://kubernetes.io/docs/user-guide/persistent-volumes/[Persistent Volumes] | https://dcos.io/docs/1.8/usage/storage/persistent-volume/[local persistent volumes] as well as https://dcos.io/docs/1.8/usage/storage/external-storage/[external persistent volumes]
+| Multiple Master | Yes | link:http://kubernetes.io/docs/admin/high-availability/#replicated-api-servers[Yes]  | Yes
+| Multi-host networking | Yes | Yes | Yes
+| Rolling Update | https://github.com/arun-gupta/docker-scripts/blob/master/rolling-updates.adoc | https://github.com/arun-gupta/kubernetes-java-sample/tree/master/rolling-update | https://github.com/mhausenblas/zdd-lab[ZDD Lab]
+| Container distribution strategies | Automatic? | Automatic, but custom schedulers supported. | Automatic
+| Affinity | Labels | Node (1.2) and Pod (1.4) affinity http://kubernetes.io/docs/user-guide/node-selection/  | https://mesosphere.github.io/marathon/docs/constraints.html[Marathon constraints] and pods (in 1.9)
+| Constraints | `-c`, `-m` | `Labels` | https://mesosphere.github.io/marathon/docs/constraints.html[Marathon constraints]
+| Commercially supported | https://www.docker.com/products/docker-datacenter[Docker Data Center] and others | Google, Apprenda, Canonical, CoreOS, link:http://cloud-rti.com[Cloud RTI] others? | Mesosphere
+| Creating Couchbase Cluster | http://blog.couchbase.com/2016/may/couchbase-cluster-docker-swarm-compose-machine[blog] | http://blog.kubernetes.io/2016/08/create-couchbase-cluster-using-kubernetes.html[blog] | http://blog.couchbase.com/2016/november/couchbase-cluster-mesos-dcos[blog]
+|==================

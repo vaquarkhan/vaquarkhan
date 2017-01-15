@@ -1,0 +1,13 @@
+= Docker and Kubernetes for Java Developers
+
+https://github.com/docker/labs/tree/master/developer-tools/java[Docker for Java developers]
+
+https://github.com/arun-gupta/kubernetes-java-sample/[Kubernetes for Java developers]
+
+== Software Requirements
+
+. Docker for Java: https://github.com/docker/labs/blob/master/java/chapters/ch01-setup.adoc
+. Kubernetes for Java
+.. Install: https://github.com/arun-gupta/kubernetes-java-sample/blob/master/workshop.adoc#initial-setup
+.. An Amazon Web Services account
+.. Clone: https://github.com/arun-gupta/kubernetes-java-sample
