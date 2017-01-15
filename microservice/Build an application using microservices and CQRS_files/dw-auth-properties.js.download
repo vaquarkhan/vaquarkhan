@@ -1,0 +1,105 @@
+// This file contains app-specific configuration options for use with dw-auth.js
+
+$ = jQuery;
+
+var geo = $('meta[name="geo.country"]').attr('content');
+// Convert geo to locale and select associated sign-in and register text
+if (geo == 'ZZ') {
+    locale = "en_US";
+    dwSignin = "Sign in";
+    dwRegister = "Register";
+    dwProfileSignOut = "Sign out";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/";
+    dwProfileSettings = "Settings";
+    dwProfileLang = "en";
+    dwProfileCommunities = "Communities";
+    dwProfileMain = "My developerWorks";
+    dwProfileMainURL = "https://developer.ibm.com/mydeveloperworks";    
+} else if (geo == 'BR') {
+    locale = "pt_BR";
+    dwSignin = "Faça o login";
+    dwRegister = "Registre-se";
+    dwProfileSignOut = "Sair";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/br/";
+    dwProfileSettings = "Configurações";
+    dwProfileLang = "pt_br";
+    dwProfileCommunities = "Comunidades";
+    dwProfileMain = "Meu perfil";
+    dwProfileMainURL = "/developerworks/community/profiles/html/myProfileView.do?lang=" + dwProfileLang;
+} else if (geo == 'CN') {
+    locale = "zh_CN";
+    dwSignin = "登录";
+    dwRegister = "注册";
+    dwProfileSignOut = "退出";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/cn/";
+    dwProfileSettings = "设置";
+    dwProfileLang = "zh";
+    dwProfileCommunities = "社区";
+    dwProfileMain = "我的概要信息";
+    dwProfileMainURL = "/developerworks/community/profiles/html/myProfileView.do?lang=" + dwProfileLang;
+} else if (geo == 'JP') {
+    locale = "ja_JP";
+    dwSignin = "サインイン";
+    dwRegister = "登録";
+    dwProfileSignOut = "サイン・アウト";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/jp/";
+    dwProfileSettings = "設定";
+    dwProfileLang = "ja";
+    dwProfileCommunities = "コミュニティー";
+    dwProfileMain = "マイ・プロフィール";
+    dwProfileMainURL = "/developerworks/community/profiles/html/myProfileView.do?lang=" + dwProfileLang;
+} else if (geo == 'RU') {
+    locale = "ru_RU";
+    dwSignin = "Войти";
+    dwRegister = "Зарегистрироваться";
+    dwProfileSignOut = "Выйти";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/ru/";
+    dwProfileSettings = "Настройки";
+    dwProfileLang = "ru";
+    dwProfileCommunities = "Сообщества";
+    dwProfileMain = "Мой профайл";
+    dwProfileMainURL = "/developerworks/community/profiles/html/myProfileView.do?lang=" + dwProfileLang;
+} else if (geo == 'AR,CO,PE,MX,BO,CL,EC,PY,UY,VE') {
+    locale = "es_AR";
+    dwSignin = "Inscríbase";
+    dwRegister = "Regístrese";
+    dwProfileSignOut = "Cerrar Sesión";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/ssa/";
+    dwProfileSettings = "Configuración";
+    dwProfileLang = "es";
+    dwProfileCommunities = "Comunidades";
+    dwProfileMain = "Mi perfil";
+    dwProfileMainURL = "/developerworks/community/profiles/html/myProfileView.do?lang=" + dwProfileLang;
+} else if (geo == 'VN') {
+    locale = "en_US";
+    dwSignin = "Sign in";
+    dwRegister = "Register";
+    dwProfileSignOut = "Sign out";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/";
+    dwProfileSettings = "Settings";
+    dwProfileLang = "en";
+    dwProfileCommunities = "Communities";
+    dwProfileMain = "My profile";
+    dwProfileMainURL = "/developerworks/community/profiles/html/myProfileView.do?lang=" + dwProfileLang;
+} else {
+    locale = "en_US";
+    dwSignin = "Sign in";
+    dwRegister = "Register";
+    dwProfileSignOut = "Sign out";
+    dwProfileSignOutURL = "http://www.ibm.com/developerworks/";
+    dwProfileSettings = "Settings";
+    dwProfileLang = "en";
+    dwProfileCommunities = "Communities";
+    dwProfileMain = "My developerWorks";
+    dwProfileMainURL = "https://developer.ibm.com/mydeveloperworks";
+} 
+
+var dw_auth_prop = {
+
+	signoutUrl: dwProfileSignOutURL,
+	appCode: 'dwmav'
+
+}
+
+console.log("geo is: " + geo);
+console.log("locale is: " + locale);

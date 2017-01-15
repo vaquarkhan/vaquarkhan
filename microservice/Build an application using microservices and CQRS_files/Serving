@@ -1,0 +1,1 @@
+bsResponse={uipv:"_1_16_0_0",sessionId:"4642024852101319933",scriptsPath:"https://secure-ds.serving-sys.com/BurstingCachedScripts/",sync:!1,preServingTasks:[]};if(!1){var oneTagObj=new EBGVT.OneTag();oneTagObj._handleResponse(bsResponse);}

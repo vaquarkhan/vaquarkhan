@@ -1,0 +1,132 @@
+
+	$ = jQuery; // needed for nav pages
+
+	IBMCore.common.util.config.set({
+    	masthead: { type: "alternate" },
+		greeting: { enabled: false },
+		footer: { type: "alternate" }, 
+		survey: { global_percent: 0 }
+    });
+
+	var userLinks = [];
+	var domain = window.location.protocol + "//" + window.location.hostname;	
+
+	var dest = encodeURIComponent(window.location.href);
+	console.log("dest is: " + dest);
+	var signoutUrl = new String('');
+    var apps = ["dwmav", "dwrfe", "dwcomm", "dwsecapp", "dwapi"]
+	var app = new String('');
+	var validApp = false;
+   	if (typeof(dw_auth_prop) == 'undefined') {
+   		console.log("dw_auth_prop is undefined")
+   	} else {
+   		app = dw_auth_prop.appCode;
+   		if (app != '') {
+   			for (i = 0; i < apps.length; i++) {
+   				if (app === apps[i]) { 
+   					validApp = true;
+   					break; 
+   				} // match
+	   		}
+   		}
+	   	signoutUrl = dw_auth_prop.signoutUrl;
+	}
+	// If not known app, default to dwmav
+	if (!validApp) {
+   		app = "dwmav";
+	}
+	// If dest not set, default to home page
+	if (signoutUrl == '') {
+   		signoutUrl = domain + '/developerworks/'
+   	}	
+		
+    // If viewport below 480, do not show screenname
+    var showScreenName = true; // default
+    if ($(window).width() < 480) {
+		showScreenName = false; // do not show
+	}
+	
+	// Determine if the user is authenticated
+	$.ajax({
+		url: domain + '/developerworks/dwwi/jsp/Auth.jsp?format=json',
+		dataType: 'json',
+		success: function (data) {
+		    console.log("ajax success");
+		    
+			if(data.status == "true") {
+
+				// Profile menu options
+				userLinks = [{
+					title: dwProfileMain,
+					url: dwProfileMainURL
+				},
+				{
+					title: dwProfileCommunities,
+					url: "/developerworks/community/groups/service/html/mycommunities?lang=" + dwProfileLang
+				},
+				{
+					title: dwProfileSettings,
+					url: "/developerworks/community/news/?lang=" + dwProfileLang
+				},
+				{
+					title: dwProfileSignOut,
+					url: "/developerworks/dwwi/jsp/ssologout.jsp?d=" + signoutUrl + "&a=" + app
+				}];
+				
+				if (showScreenName) {
+					IBMCore.common.module.masthead.showProfileLinkSignedin({
+						linkContents: data.screenname,
+						linkAlt: "Signed in as "  // This is the text a screen reader will read aloud.
+					});
+					
+					IBMCore.common.module.masthead.showProfileLinkContents();
+					
+				}
+
+				//if (showScreenName) {
+				//	IBMCore.common.module.masthead.showProfileLinkContents();
+				//}
+
+				changeMenu();
+				
+				// pass ibmuniqueid to piwik
+				if (typeof _paq !== "undefined") { _paq.push(['setUserId', data.ibmuniqueid]); } 
+				
+			}
+			if(data.status == "false") {
+				userLinks = [{
+					title: dwSignin,
+					url: "/developerworks/dwwi/jsp/ssologin.jsp?d=" + dest + "&lang=" + locale + "&a=" + app
+				},
+				{
+					title: dwRegister,
+					url: "/developerworks/dwwi/jsp/ssoregister.jsp?d=" + dest + "&lang=" + locale + "&a=" + app
+				}];
+				
+				changeMenu();
+
+			}
+
+		},
+		error: function (data) {
+			console.log("ajax error");
+		}
+	}); //ajax
+
+	// Wait until the masthead main onscreen items have been generated
+	IBMCore.common.module.masthead.subscribe("ready", "customjs", function() {
+	    // Uncomment if you want to show the link contents (text) you changed to above, instead of the default v18 "you're signed in" link/image.
+	    //IBMCore.common.module.masthead.showProfileLinkContents();
+  	});
+
+	// Wait until the profile menu has been generated.
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", changeMenu);
+
+	// Modify the profile menu.
+	function changeMenu() {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: userLinks
+		});
+	}
+

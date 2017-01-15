@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://vars.hotjar.com/rcj-9a8c65a25e627120fda741095c91ae72.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script>
+        var hj = {};
+        hj.json = (function () {
+            var self = {};
+
+
+            /**
+             * Parse a JSON string into a javascript object.
+             * @function parse
+             * @memberof! hj.json
+             * @example hj.json.parse({ ... });
+             * @param {string} value JSON String.
+             * @return {object} Resulting object.
+             */
+            self.parse = function (value) {
+                // Workaround for JSON polyfills which call their function .decode instead of .parse.
+                return (JSON.parse || JSON.decode)(value);
+            };
+
+            /**
+             * Tries to parse a JSON string into a javascript object and returns the outcome (true/false). If successful
+             * it also runs an optional callback method.
+             * @function parse
+             * @memberof! hj.json
+             * @example hj.json.tryParse({ ... }, function (data) {});
+             * @param {string} value JSON String.
+             * @param {function} callback Callback function to run if value parsed correctly.
+             * @return {bool} True if value parsed correctly, otherwise false.
+             */
+            self.tryParse = function (value, callback) {
+                var validJson = true;
+                try {
+                    var data = self.parse(value);
+                    if (callback) {
+                        callback(data);
+                    }
+                } catch (e) {
+                    validJson = false
+                }
+                return validJson;
+            };
+
+            /**
+             * Stringify a javascript object into a string.
+             * @function stringify
+             * @memberof! hj.json
+             * @example hj.json.stringify({ data: 1 });
+             * @param {object} value Object to convert.
+             * @param {function} replacer A function that alters the behavior of the stringification process, or an
+             *                            array of String and Number objects that serve as a whitelist for selecting
+             *                            the properties of the value object to be included in the JSON string. If this
+             *                            value is null or not provided, all properties of the object are included in
+             *                            the resulting JSON string.
+             * @param {int|string} space A String or Number object that's used to insert white space into the
+             *                                 output JSON string for readability purposes. If this is a Number, it
+             *                                 indicates the number of space characters to use as white space; this
+             *                                 number is capped at 10 if it's larger than that. Values less than 1
+             *                                 indicate that no space should be used. If this is a String, the string
+             *                                 (or the first 10 characters of the string, if it's longer than that) is
+             *                                 used as white space. If this parameter is not provided (or is null), no
+             *                                 white space is used.
+             * @return {string} Stringified object.
+             */
+            self.stringify = function (value, replacer, space) {
+                var arrayToJSON,
+                    nativeStringifyFn,
+                    stringifyFn,
+                    sValue;
+
+                // To properly mimic JSON.stringify return undefined when value is undefined (previously threw error).
+                if (value === undefined) {
+                    return undefined;
+                }
+
+                // Remove any customized (possibly incorrect) stringification logic for Arrays.
+                arrayToJSON = Array.prototype.toJSON;
+                delete Array.prototype.toJSON;
+
+                // Find the best available notification function (some libs replace .stringify with .encode).
+                nativeStringifyFn = JSON.stringify || JSON.encode;
+
+                // Fix for stringification of Unicode characters 2028 and 2029.
+                // http://www.thespanner.co.uk/2011/07/25/the-json-specification-is-now-wrong/
+                if (nativeStringifyFn('\u2028') === '"\u2028"') {
+                    stringifyFn = function (value, replacer, space) {
+                        var re = /\u2028|\u2029/g;
+                        return nativeStringifyFn(value, replacer, space).replace(re, function (m) {
+                            return '\\u202' + (m === '\u2028' ? '8' : '9');
+                        });
+                    };
+                } else {
+                    stringifyFn = nativeStringifyFn;
+                }
+
+                // Stringify the value.
+                sValue = stringifyFn(value, replacer, space);
+
+                // Restore any customized stringification logic for Arrays.
+                if (arrayToJSON) {
+                    Array.prototype.toJSON = arrayToJSON;
+                }
+
+                return sValue;
+            };
+
+            return self;
+        })();
+
+        // Whitelist all cookies we're allowed to get / set to avoid third parties reading sensitive data.
+        var READABLE_COOKIES = [
+                '_hjOptOut'
+            ],
+            WRITEABLE_COOKIES = [
+                '_hjOptOut'
+            ];
+
+        /**
+         * Get the value of a cookie.
+         *
+         * @param key The key (name) of the cookie.
+         * @returns {*} The value of the cookie or undefined if no cookie could be found.
+         */
+        function getCookie (key) {
+            var result;
+
+            if (READABLE_COOKIES.indexOf(key) === -1) {
+                throw new Error('Not allowed to read the value of the cookie: ' + key);
+            }
+
+            result = new RegExp("(?:^|; )" + key + "=([^;]*)").exec(document.cookie);
+            return result ? result[1] : undefined;
+        }
+
+        /**
+         * Set the value of a cookie.
+         *
+         * @param key The key (name) of the cookie.
+         * @param value The value of the cookie.
+         * @param expiresDays Number of days until cookie should expire.
+         */
+        function setCookie (key, value, expiresDays) {
+            var expiresTime = new Date();
+
+            if (WRITEABLE_COOKIES.indexOf(key) === -1) {
+                throw new Error('Not allowed to write the value of the cookie: ' + key);
+            }
+
+            expiresTime.setDate(expiresTime.getDate() + expiresDays);
+            document.cookie = key + "=" + value + "; path=/; expires=" + expiresTime.toUTCString();
+        }
+
+        /**
+         * Process a message received from the parent window and act on it.
+         *
+         * @param event
+         */
+        function onMessage(event) {
+            // Check that the sender is the same as the referrer (the parent of the iframe).
+            if (document.referrer.indexOf(event.origin) !== 0) {
+                return;
+            }
+
+            hj.json.tryParse(event.data, function (data) {
+                if (data.action) {
+                    switch (data.action) {
+                        case 'set':
+                            setCookie(data.key, data.value, data.expiresDays);
+                            break;
+                        case 'get':
+                            var returnData = hj.json.stringify({
+                                messageId: data.messageId,
+                                value: getCookie(data.key) || false
+                            });
+                            window.parent.postMessage(returnData, '*');
+                            break;
+                    }
+                }
+            });
+
+        }
+
+        // Listen to events from the parent window.
+        if (window.addEventListener) {
+            window.addEventListener('message', onMessage, false);
+        } else {
+            window.attachEvent('onmessage', onMessage);
+        }
+    </script>
+    </head>
+<body>
+
+
+
+</body></html>
