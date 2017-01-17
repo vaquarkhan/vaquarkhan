@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) Scott Cranton and Jakub Korab
+  ~ https://github.com/CamelCookbook
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       ">
+
+  <import resource="embedded-db-context.xml"/>
+
+  <bean id="sql" class="org.apache.camel.component.sql.SqlComponent">
+    <property name="dataSource" ref="auditDataSource"/>
+  </bean>
+
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="auditDataSource"/>
+  </bean>
+
+  <bean id="PROPAGATION_REQUIRES_NEW" class="org.apache.camel.spring.spi.SpringTransactionPolicy">
+    <property name="transactionManager" ref="transactionManager"/>
+    <property name="propagationBehaviorName" value="PROPAGATION_REQUIRES_NEW"/>
+  </bean>
+
+  <bean id="PROPAGATION_REQUIRES_NEW-2" class="org.apache.camel.spring.spi.SpringTransactionPolicy">
+    <property name="transactionManager" ref="transactionManager"/>
+    <property name="propagationBehaviorName" value="PROPAGATION_REQUIRES_NEW"/>
+  </bean>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <route id="route1">
+      <from uri="direct:route1"/>
+      <setHeader headerName="message">
+        <simple>${body}</simple>
+      </setHeader>
+      <policy ref="PROPAGATION_REQUIRES_NEW" id="tx1">
+        <to uri="sql:insert into messages (message) values (:#message)"/>
+        <to uri="direct:route2"/>
+        <to uri="mock:out1"/>
+      </policy>
+    </route>
+
+    <route id="route2">
+      <from uri="direct:route2"/>
+      <policy ref="PROPAGATION_REQUIRES_NEW-2" id="tx2">
+        <to uri="sql:insert into audit_log (message) values (:#message)"/>
+        <choice>
+          <when>
+            <simple>${body} contains 'explode'</simple>
+            <log message="Marking this operation for rollback"/>
+            <rollback markRollbackOnlyLast="true"/>
+            <!-- no exception thrown -->
+          </when>
+          <otherwise>
+            <log message="Message processed successfully"/>
+          </otherwise>
+        </choice>
+        <to uri="mock:out2"/>
+      </policy>
+    </route>
+  </camelContext>
+
+</beans>

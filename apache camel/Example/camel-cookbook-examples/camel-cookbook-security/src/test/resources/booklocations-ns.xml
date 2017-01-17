@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booksignings xmlns="http://camelcookbook.org/schema/booksignings">
+
+  <store>
+    <address>
+      <street>123 Main St</street>
+      <city>Boston</city>
+    </address>
+    <authors>
+      <author>Scott Cranton</author>
+    </authors>
+  </store>
+
+  <store>
+    <address>
+      <street>321 Main St</street>
+      <city>London</city>
+    </address>
+    <authors>
+      <author>Jakub Korab</author>
+    </authors>
+  </store>
+
+</booksignings>

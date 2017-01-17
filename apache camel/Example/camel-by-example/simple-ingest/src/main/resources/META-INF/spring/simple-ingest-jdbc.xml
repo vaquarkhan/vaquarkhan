@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2012 FuseSource
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean id="jdbc.dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="${com.fusesource.example.camel.jdbc.driver.class}" />
+    <property name="url" value="${com.fusesource.example.camel.jdbc.url}" />
+    <property name="username" value="${com.fusesource.example.camel.jdbc.username}" />
+    <property name="password" value="${com.fusesource.example.camel.jdbc.password}" />
+    <property name="minIdle" value="${com.fusesource.example.camel.jdbc.pool.min}"/>
+    <property name="maxIdle" value="${com.fusesource.example.camel.jdbc.pool.max}" />
+    <property name="maxActive" value="${com.fusesource.example.camel.jdbc.pool.max}" />
+    <property name="minEvictableIdleTimeMillis" value="30000"/>
+    <property name="timeBetweenEvictionRunsMillis" value="15000"/>
+    <property name="numTestsPerEvictionRun" value="10"/>
+    <property name="validationQuery" value="${com.fusesource.example.camel.jdbc.validation.query}" />
+    <property name="testOnBorrow" value="${com.fusesource.example.camel.jdbc.validation.active}" />
+    <property name="poolPreparedStatements" value="true" />
+  </bean>
+  
+  <bean id="jdbc.transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="jdbc.dataSource"/>
+  </bean>
+  
+  <bean id="JDBC_PROPAGATION_REQUIRED" class="org.apache.camel.spring.spi.SpringTransactionPolicy">
+    <property name="transactionManager" ref="jdbc.transactionManager"/>
+    <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
+  </bean>
+  
+  <bean id="JDBC_PROPAGATION_REQUIRES_NEW" class="org.apache.camel.spring.spi.SpringTransactionPolicy">
+    <property name="transactionManager" ref="jdbc.transactionManager"/>
+    <property name="propagationBehaviorName" value="PROPAGATION_REQUIRES_NEW"/>
+  </bean>
+</beans>

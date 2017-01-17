@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 
+  Copyright 2012 FuseSource
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+<aggregateRecord xmlns="http://www.example.org/model"><date>2013-02-21T11:53:57.300-05:00</date><record><id>0</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 0</description></record><record><id>1</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 1</description></record><record><id>2</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 2</description></record><record><id>3</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 3</description></record><record><id>4</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 4</description></record><record><id>5</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 5</description></record><record><id>6</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 6</description></record><record><id>7</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 7</description></record><record><id>8</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 8</description></record><record><id>9</id><date>2013-02-21T11:53:57.302-05:00</date><description>Record number: 9</description></record></aggregateRecord>

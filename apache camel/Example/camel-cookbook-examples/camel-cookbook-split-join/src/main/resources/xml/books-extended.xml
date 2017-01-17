@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+  <book category="Tech" title="Apache Camel Developer's Cookbook">
+    <authors>
+      <author>Scott Cranton</author>
+      <author>Jakub Korab</author>
+    </authors>
+    <description>How to glue systems together.</description>
+  </book>
+  <book category="Cooking" title="Camel Cookbook">
+    <authors>
+      <author>Heston Ramsey</author>
+      <author>Gordon Blumenthal</author>
+    </authors>
+    <description>Preparing the desert's most delicious beast of burden.</description>
+  </book>
+  <book category="Cooking" title="Double decadence with extra cream">
+    <authors>
+      <author>Nigella Smith</author>
+    </authors>
+    <description>An antidote to healthy eating.</description>
+  </book>
+  <book category="Cooking" title="Cooking with Butter">
+    <authors>
+      <author>Delia Lawson</author>
+    </authors>
+    <description>2nd edition. Now with more butter.</description>
+  </book>
+</books>

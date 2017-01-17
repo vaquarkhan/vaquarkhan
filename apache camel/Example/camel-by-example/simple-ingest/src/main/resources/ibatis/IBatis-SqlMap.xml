@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+  Copyright 2012 FuseSource
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="com.fusesource.example.camel.process">
+  
+  <typeAlias alias="Record" type="com.fusesource.example.camel.model.Record"/>
+  
+  <resultMap id="RecordResult" class="Record">
+    <result property="id" column="record_id"/>
+    <result property="date" column="date"/>
+  </resultMap>
+  
+  <select id="getRecord" resultMap="RecordResult" parameterClass="java.lang.String">
+    SELECT record_id, date
+    FROM   record
+    WHERE  record_id = #id#                                         
+  </select>
+  
+  <insert id="insertRecord" parameterClass="Record">
+    INSERT INTO record (record_id, date)
+    VALUES (#id#, #date#)
+  </insert>    
+</sqlMap>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2012 FuseSource
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+           
+  <!-- ActiveMQ -->
+  
+  <bean id="jmsTxConfig" class="org.apache.camel.component.jms.JmsConfiguration">
+    <property name="connectionFactory" ref="jms.connectionFactory"/>
+    <property name="transacted" value="true"/>
+    <property name="cacheLevelName" value="CACHE_CONSUMER"/>
+    <property name="acknowledgementModeName" value="SESSION_TRANSACTED"/>
+  </bean>
+  
+  <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+    <property name="configuration" ref="jmsTxConfig" />
+  </bean>
+  
+  <!-- Camel Context -->
+  
+  <camel:camelContext id="process-context">
+    <camel:routeBuilder ref="processorRouteBuilder" />
+  </camel:camelContext>
+  
+  <bean id="processorRouteBuilder" class="com.fusesource.example.camel.process.camel.ProcessorRouteBuilder">
+    <property name="recordsQueueName" value="${com.fusesource.example.camel.process.records.queue.name}"/>
+    <property name="alternatePersistEndpointUri" value="${com.fusesource.example.camel.process.test.alternatePersistUri}"/>
+    <property name="idempotentRepository" ref="idempotentRepository"/>
+    <property name="maxConcurrentConsumers" value="${com.fusesource.example.camel.process.maxConcurrentConsumers}"/>
+    <property name="errorQueueName" value="${com.fusesource.example.camel.process.error.queue.name}"/>
+  </bean>
+  
+  <!-- Setup to use the database for storage and to use the route ID of the handler route as the processor name. -->
+  <bean id="idempotentRepository" class="org.apache.camel.processor.idempotent.jdbc.JdbcMessageIdRepository">
+    <constructor-arg ref="jdbc.dataSource"/>
+    <constructor-arg>
+      <util:constant static-field="com.fusesource.example.camel.process.camel.ProcessorRouteBuilder.HANDLE_RECORD_ROUTE_ID"/>
+    </constructor-arg>
+  </bean>
+  
+  <!-- Beans -->
+  
+  <bean id="recordProcessor" class="com.fusesource.example.camel.logic.DefaultRecordProcessor"/>
+</beans>

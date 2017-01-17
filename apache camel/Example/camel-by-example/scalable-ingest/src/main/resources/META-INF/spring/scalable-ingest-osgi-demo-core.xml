@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2012 FuseSource
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+<!-- 
+  This context file provides bean definitions used for demoing this artifact as an application deployed in OSGi.
+  The core of the application configuration/setup is done in the other context files.  This file mainly exists
+  to provide resources used only in a demo such as defaults for configuration properties that would typically
+  be configured externally in a real deployment. 
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+           http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+  
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="nullValue" value="-=NULL=-"></property>
+    <property name="propertiesArray">
+      <list>
+        <ref bean="defaultProperties"/>
+        <!-- Set some defaults for running this example in OSGi. -->
+        <props>
+          <prop key="com.fusesource.example.camel.ingest.source.dir">${user.home}/camel-by-example/source</prop>
+          
+          <prop key="com.fusesource.example.camel.jms.brokerUrl">discovery:(fabric:mq-east)</prop>
+          <prop key="com.fusesource.example.camel.jms.user">admin</prop>
+          <prop key="com.fusesource.example.camel.jms.password">admin</prop>
+        </props>
+        <!-- Allow configuration via the configuration admin service.  Anything configured in the container
+             will take precedent over the properties defined above -->
+        <osgix:cm-properties persistent-id="com.fusesource.example.camel.scalable.ingest"/>
+      </list>
+    </property>
+  </bean>
+  
+</beans>

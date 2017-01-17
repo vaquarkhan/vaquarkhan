@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) Scott Cranton and Jakub Korab
+  ~ https://github.com/CamelCookbook
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       ">
+
+  <bean id="flakyProcessor" class="org.camelcookbook.error.shared.FlakyProcessor"/>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <route>
+      <from uri="direct:start"/>
+      <to uri="mock:before"/>
+      <doTry>
+        <bean ref="flakyProcessor"/>
+        <transform>
+          <constant>Made it!</constant>
+        </transform>
+        <doCatch>
+          <exception>org.camelcookbook.error.shared.FlakyException</exception>
+          <to uri="mock:error"/>
+          <transform>
+            <constant>Something Bad Happened!</constant>
+          </transform>
+        </doCatch>
+        <doFinally>
+          <to uri="mock:finally"/>
+        </doFinally>
+      </doTry>
+      <to uri="mock:after"/>
+    </route>
+
+    <route>
+      <from uri="direct:unhandled"/>
+      <to uri="mock:before"/>
+      <doTry>
+        <bean ref="flakyProcessor"/>
+        <transform>
+          <constant>Made it!</constant>
+        </transform>
+        <doCatch>
+          <exception>org.camelcookbook.error.shared.FlakyException</exception>
+          <handled>
+            <constant>false</constant>
+          </handled>
+          <to uri="mock:error"/>
+          <transform>
+            <constant>Something Bad Happened!</constant>
+          </transform>
+        </doCatch>
+        <doFinally>
+          <to uri="mock:finally"/>
+        </doFinally>
+      </doTry>
+      <to uri="mock:after"/>
+    </route>
+
+    <route>
+      <from uri="direct:conditional"/>
+      <to uri="mock:before"/>
+      <doTry>
+        <bean ref="flakyProcessor"/>
+        <transform>
+          <constant>Made it!</constant>
+        </transform>
+        <doCatch>
+          <exception>org.camelcookbook.error.shared.FlakyException</exception>
+          <onWhen>
+            <simple>${header.jedi} == null</simple>
+          </onWhen>
+          <to uri="mock:error"/>
+          <transform>
+            <constant>Something Bad Happened!</constant>
+          </transform>
+        </doCatch>
+        <doFinally>
+          <to uri="mock:finally"/>
+        </doFinally>
+      </doTry>
+      <to uri="mock:after"/>
+    </route>
+  </camelContext>
+
+</beans>

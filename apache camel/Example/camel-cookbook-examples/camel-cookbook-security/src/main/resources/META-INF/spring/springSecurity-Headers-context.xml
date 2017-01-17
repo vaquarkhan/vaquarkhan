@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) Scott Cranton and Jakub Korab
+  ~ https://github.com/CamelCookbook
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:camel-sec="http://camel.apache.org/schema/spring-security"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+           http://camel.apache.org/schema/spring-security http://camel.apache.org/schema/spring-security/camel-spring-security.xsd
+       ">
+
+  <sec:user-service id="userService">
+    <sec:user name="jakub" password="supersecretpassword1" authorities="ROLE_USER, ROLE_ADMIN"/>
+    <sec:user name="scott" password="supersecretpassword2" authorities="ROLE_USER"/>
+  </sec:user-service>
+
+  <sec:authentication-manager alias="authenticationManager">
+    <sec:authentication-provider user-service-ref="userService"/>
+  </sec:authentication-manager>
+
+  <bean id="accessDecisionManager"
+        class="org.springframework.security.access.vote.AffirmativeBased">
+    <constructor-arg>
+      <list>
+        <bean class="org.springframework.security.access.vote.RoleVoter"/>
+      </list>
+    </constructor-arg>
+  </bean>
+
+  <camel-sec:authorizationPolicy id="adminAuthPolicy"
+                                 access="ROLE_ADMIN"
+                                 authenticationManager="authenticationManager"
+                                 accessDecisionManager="accessDecisionManager"
+                                 useThreadSecurityContext="true"/>
+
+  <bean id="securitySubjectLoader"
+        class="org.camelcookbook.security.springsecurity.SecuritySubjectLoader"/>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <route>
+      <from uri="direct:in"/>
+      <process ref="securitySubjectLoader"/>
+      <!-- crossing a thread boundary here, not possible with a SecurityContextHolder -->
+      <inOut uri="seda:secured"/>
+    </route>
+    <route>
+      <from uri="seda:secured"/>
+      <policy ref="adminAuthPolicy">
+        <to uri="mock:secure"/>
+      </policy>
+    </route>
+  </camelContext>
+
+</beans>

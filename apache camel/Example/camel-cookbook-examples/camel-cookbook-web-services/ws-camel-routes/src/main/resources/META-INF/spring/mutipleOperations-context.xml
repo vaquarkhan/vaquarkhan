@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright (C) Scott Cranton and Jakub Korab
+  ~ https://github.com/CamelCookbook
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       ">
+
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+
+  <cxf:cxfEndpoint id="paymentServiceEndpoint"
+                   address="http://localhost:${port1}/paymentServicev2"
+                   serviceClass="org.camelcookbook.ws.payment_service_v2.Payment"/>
+
+  <bean id="paymentServiceImpl" class="org.camelcookbook.ws.multipleoperations.PaymentServiceV2Impl"/>
+  <bean id="checkStatusServiceImpl" class="org.camelcookbook.ws.multipleoperations.CheckStatusServiceV2Impl"/>
+  <bean id="faultHandler" class="org.camelcookbook.ws.multipleoperations.FaultHandler"/>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <route id="wsRoute">
+      <from uri="cxf:bean:paymentServiceEndpoint"/>
+      <transform>
+        <simple>${in.body[0]}</simple>
+      </transform>
+      <log message="request = ${body}"/>
+      <choice>
+        <when>
+          <simple>${in.header.operationName} == 'transferFunds'</simple>
+          <bean ref="paymentServiceImpl"/>
+        </when>
+        <when>
+          <simple>${in.header.operationName} == 'checkStatus'</simple>
+          <bean ref="checkStatusServiceImpl"/>
+        </when>
+        <otherwise>
+          <setFaultBody>
+            <method ref="faultHandler" method="createInvalidOperation"/>
+          </setFaultBody>
+        </otherwise>
+      </choice>
+      <log message="response = ${body}"/>
+    </route>
+  </camelContext>
+
+</beans>

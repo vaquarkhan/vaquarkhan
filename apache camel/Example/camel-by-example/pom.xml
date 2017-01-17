@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2012 FuseSource
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.fusesource.example.camel</groupId>
+  <artifactId>camel-by-example</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  
+  <packaging>pom</packaging>
+  
+  <name>FuseSource :: Example :: Camel :: By Example</name>
+  
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+  
+  <properties>
+    <activemq.version>5.7.0.fuse-71-047</activemq.version>
+    <camel.version>2.10.0.fuse-71-047</camel.version>
+    <fabric.version>7.1.0.fuse-047</fabric.version>
+    <h2.version>1.3.162</h2.version>
+    <junit.version>4.7</junit.version>
+    <slf4j.version>1.5.11</slf4j.version>
+    <spring.version>3.0.7.RELEASE</spring.version>
+    
+    <!-- The Cargo container type -->
+    <cargo.container.id>tomcat6x</cargo.container.id>
+    <!-- The URL of the Zip file based installer for the container that Cargo is to deploy -->
+    <cargo.container.url>https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.32/bin/apache-tomcat-6.0.32.zip</cargo.container.url>
+    <!-- The location where downloaded container Zip file installers are cached -->
+    <cargo.container.download.dir>${user.home}/.m2/cargo/containers</cargo.container.download.dir>
+    <!-- The port used by the forked container -->
+    <cargo.container.port>8080</cargo.container.port>
+    <!-- When using Tomcat, the AJP connector listen port -->
+    <cargo.container.tomcat.ajp.port>8009</cargo.container.tomcat.ajp.port>
+    <!-- The RMI port used on the container.  For Tomcat, this is the value of the /Server/@port attribute. -->
+    <cargo.container.rmi.port>8205</cargo.container.rmi.port>
+    <!-- Optional JVM arguments for the forked container that are prepended to the option
+         that configures the Zommons config location and appended to any debugging 
+         configuration set by cargo.container.jvmargs.debug (See cargo-debug profile.)-->
+    <cargo.container.jvmargs></cargo.container.jvmargs>
+    <!-- The port to use when the debugger is enabled. -->
+    <cargo.container.debug.port>8000</cargo.container.debug.port>
+    <!-- The suspend setting to use when the debugger is enabled. -->
+    <cargo.container.debug.suspend>n</cargo.container.debug.suspend>
+    <!-- The debug arguments used to enable debugging on the forked JVM. -->
+    <cargo.container.debug.jvmargs>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=${cargo.container.debug.suspend},address=${cargo.container.debug.port} -Xnoagent -Djava.compiler=NONE</cargo.container.debug.jvmargs>
+    <cargo.container.jvmargs.debug></cargo.container.jvmargs.debug>
+    
+    <cargo.deployable.default.groupId>${project.groupId}</cargo.deployable.default.groupId>
+    <cargo.deployable.default.artifactId>${project.artifactId}</cargo.deployable.default.artifactId>
+    <cargo.deployable.default.context>${project.artifactId}</cargo.deployable.default.context>
+  </properties>
+
+  <modules>
+    <module>features</module>
+    <module>logic</module>
+    <module>model</module>
+    <module>scalable-ingest</module>
+    <module>scalable-ingest-app</module>
+    <module>scalable-process</module>
+    <module>scalable-process-app</module>
+    <module>simple-ingest</module>
+    <module>simple-ingest-app</module>
+  </modules>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>commons-dbcp</groupId>
+        <artifactId>commons-dbcp</artifactId>
+        <version>1.4</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.16</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.18</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-camel</artifactId>
+        <version>${activemq.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-core</artifactId>
+        <version>${camel.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-ibatis</artifactId>
+        <version>${camel.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-jaxb</artifactId>
+        <version>${camel.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-sql</artifactId>
+        <version>${camel.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-jms</artifactId>
+        <version>${camel.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-spring</artifactId>
+        <version>${camel.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.fusesource.mq</groupId>
+        <artifactId>mq-fabric</artifactId>
+        <version>${fabric.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+    
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      
+      <!--
+          Adding this plugin as an extension enables packaging=bundle (i.e. osgi bundle).
+          This plugin will automatically add most of the OSGi meta-information to the
+          generated OSGi bundle (jar file with extra entries in META-INF/MANIFEST.MF)
+      -->
+      <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>2.3.7</version>
+          <extensions>true</extensions>
+      </plugin>
+      
+      <!-- 
+          Adding this plugin allows you to deploy WAR based artifacts from the command line without having to
+          download and install a servlet container.  Child modules define specifics for the configurable
+          properties and developers can simply run mvn package cargo:run on the command line to deploy the
+          WAR to a container.
+      -->
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+        <version>1.3.3</version>
+        <configuration>
+          <container>
+            <containerId>${cargo.container.id}</containerId>
+            <zipUrlInstaller>
+              <url>${cargo.container.url}</url>
+              <downloadDir>${cargo.container.download.dir}</downloadDir>
+            </zipUrlInstaller>
+            <log>${project.build.directory}/cargo/logs/cargo.log</log>
+            <output>${project.build.directory}/cargo/logs/container.log</output>
+          </container>
+        </configuration>
+        <executions>
+          <execution>
+            <id>default-cli</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <configuration>
+                <properties>
+                  <cargo.jvmargs>
+                    ${cargo.container.jvmargs.debug}
+                    ${cargo.container.jvmargs}
+                  </cargo.jvmargs>
+                  <cargo.servlet.port>${cargo.container.port}</cargo.servlet.port>
+                  <cargo.tomcat.ajp.port>${cargo.container.tomcat.ajp.port}</cargo.tomcat.ajp.port>
+                  <cargo.rmi.port>${cargo.container.rmi.port}</cargo.rmi.port>
+                </properties>
+              </configuration>
+              <deployables>
+                <deployable>
+                  <groupId>${cargo.deployable.default.groupId}</groupId>
+                  <artifactId>${cargo.deployable.default.artifactId}</artifactId>
+                  <type>war</type>
+                  <properties>
+                    <context>${cargo.deployable.default.context}</context>
+                  </properties>
+                </deployable>
+              </deployables>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <repositories>
+    <repository>
+      <id>release.fusesource.org</id>
+      <name>FuseSource Release Repository</name>
+      <url>http://repo.fusesource.com/nexus/content/repositories/releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
+</project>
+        

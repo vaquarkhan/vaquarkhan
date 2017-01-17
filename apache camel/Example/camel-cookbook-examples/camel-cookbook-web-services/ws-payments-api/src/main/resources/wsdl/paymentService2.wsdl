@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) Scott Cranton and Jakub Korab
+  ~ https://github.com/CamelCookbook
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<wsdl:definitions name="wsdl-first"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:tns="http://ws.camelcookbook.org/payment-service-v2"
+                  xmlns:typens="http://ws.camelcookbook.org/payment-service-v2/types"
+                  targetNamespace="http://ws.camelcookbook.org/payment-service-v2">
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ws.camelcookbook.org/payment-service-v2/types"
+                elementFormDefault="qualified">
+      <xsd:element name="transferRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="bank" type="xsd:string"/>
+            <xsd:element name="from" type="xsd:string"/>
+            <xsd:element name="to" type="xsd:string"/>
+            <xsd:element name="amount" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="transferResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="reply" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkStatusRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="bank" type="xsd:string"/>
+            <xsd:element name="from" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="fault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="reason" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="TransferRequest">
+    <wsdl:part name="payload" element="typens:transferRequest"/>
+  </wsdl:message>
+
+  <wsdl:message name="TransferResponse">
+    <wsdl:part name="response" element="typens:transferResponse"/>
+  </wsdl:message>
+
+  <wsdl:message name="CheckStatusRequest">
+    <wsdl:part name="payload" element="typens:checkStatusRequest"/>
+  </wsdl:message>
+
+  <wsdl:message name="CheckStatusResponse">
+    <wsdl:part name="response" element="typens:checkStatusResponse"/>
+  </wsdl:message>
+
+  <wsdl:message name="FaultMessage">
+    <wsdl:part name="fault" element="typens:fault"/>
+  </wsdl:message>
+
+  <wsdl:portType name="Payment">
+    <wsdl:operation name="transferFunds">
+      <wsdl:input message="tns:TransferRequest"/>
+      <wsdl:output message="tns:TransferResponse"/>
+      <wsdl:fault name="fault" message="tns:FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="checkStatus">
+      <wsdl:input message="tns:CheckStatusRequest"/>
+      <wsdl:output message="tns:CheckStatusResponse"/>
+      <wsdl:fault name="fault" message="tns:FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="PaymentSOAPBinding" type="tns:Payment">
+    <soap:binding style="document"
+                  transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="transferFunds">
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkStatus">
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="PaymentService">
+    <wsdl:port binding="tns:PaymentSOAPBinding" name="PaymentPort">
+      <soap:address location="http://localhost:9090/paymentServicev2"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

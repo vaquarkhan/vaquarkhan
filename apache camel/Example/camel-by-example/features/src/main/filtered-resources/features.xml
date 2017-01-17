@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+          name="com.fusesource.example.camel">
+
+    <feature name="camel-by-example-simple-ingest">
+      <feature>camel-core</feature>
+      <feature>camel-ibatis</feature>
+      <feature>camel-jaxb</feature>
+      <feature>camel-spring</feature>
+      <feature>camel-sql</feature>
+      <feature>spring-orm</feature>
+      <feature>activemq-camel</feature>
+      <bundle>wrap:mvn:com.h2database/h2/${h2.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-logic/${pom.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-model/${pom.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-simple-ingest/${pom.version}</bundle>
+    </feature>
+    
+    <feature name="camel-by-example-scalable-ingest">
+      <feature>camel-core</feature>
+      <feature>camel-jaxb</feature>
+      <feature>camel-jms</feature>
+      <feature>camel-spring</feature>
+      <feature>spring-orm</feature>
+      <feature>activemq-camel</feature>
+      <feature>mq-fabric</feature>
+      <bundle>mvn:${pom.groupId}/camel-by-example-logic/${pom.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-model/${pom.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-scalable-ingest/${pom.version}</bundle>
+    </feature>
+    
+    <feature name="camel-by-example-scalable-process">
+      <feature>camel-core</feature>
+      <feature>camel-ibatis</feature>
+      <feature>camel-jaxb</feature>
+      <feature>camel-spring</feature>
+      <feature>camel-sql</feature>
+      <feature>camel-jms</feature>
+      <feature>spring-orm</feature>
+      <feature>activemq-camel</feature>
+      <feature>mq-fabric</feature>
+      <bundle>wrap:mvn:com.h2database/h2/${h2.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-logic/${pom.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-model/${pom.version}</bundle>
+      <bundle>mvn:${pom.groupId}/camel-by-example-scalable-process/${pom.version}</bundle>
+    </feature>
+</features>

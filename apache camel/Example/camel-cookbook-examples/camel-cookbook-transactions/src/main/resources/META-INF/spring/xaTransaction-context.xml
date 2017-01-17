@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) Scott Cranton and Jakub Korab
+  ~ https://github.com/CamelCookbook
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       ">
+
+  <!-- JMS config; with XAConnectionFactory -->
+  <import resource="xa-embedded-jms-context.xml"/>
+
+  <!-- Atomikos JTA configuration, nothing specific to Spring here -->
+  <bean id="atomikos.connectionFactory" class="com.atomikos.jms.AtomikosConnectionFactoryBean"
+        init-method="init" destroy-method="close">
+    <property name="uniqueResourceName" value="xa.activemq"/>
+    <property name="xaConnectionFactory" ref="xa.amqConnectionFactory"/>
+    <!-- XAConnectionFactory -->
+    <property name="maxPoolSize" value="10"/>
+    <property name="ignoreSessionTransactedFlag" value="false"/>
+  </bean>
+
+
+  <!-- database config; the auditDataSource bean is both a DataSource and an XADataSource-->
+  <import resource="xa-embedded-db-context.xml"/>
+
+  <bean id="atomikos.dataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean">
+    <property name="uniqueResourceName" value="xa.h2"/>
+    <property name="xaDataSource" ref="auditDataSource"/>
+    <!-- XADataSource -->
+  </bean>
+
+
+  <!-- javax.transaction.TransactionManager -->
+  <bean id="atomikos.transactionManager"
+        class="com.atomikos.icatch.jta.UserTransactionManager"
+        init-method="init"
+        destroy-method="close"
+        depends-on="atomikos.connectionFactory,atomikos.dataSource">
+    <property name="forceShutdown" value="false"/>
+  </bean>
+
+  <!-- javax.transaction.UserTransaction -->
+  <bean id="atomikos.userTransaction"
+        class="com.atomikos.icatch.jta.UserTransactionImp">
+    <property name="transactionTimeout" value="300"/>
+  </bean>
+
+  <!-- This is the Spring wrapper over the JTA configuration -->
+  <!-- org.springframework.transaction.PlatformTransactionManager -->
+  <bean id="jta.transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+    <property name="transactionManager" ref="atomikos.transactionManager"/>
+    <property name="userTransaction" ref="atomikos.userTransaction"/>
+  </bean>
+
+
+  <!-- Camel components -->
+  <bean id="jms" class="org.apache.activemq.camel.component.ActiveMQComponent">
+    <property name="connectionFactory" ref="atomikos.connectionFactory"/>
+    <property name="transactionManager" ref="jta.transactionManager"/>
+  </bean>
+
+  <!-- this component is used only from the test harness -->
+  <bean id="nonTxJms" class="org.apache.activemq.camel.component.ActiveMQComponent">
+    <property name="connectionFactory" ref="connectionFactory"/>
+  </bean>
+
+  <bean id="sql" class="org.apache.camel.component.sql.SqlComponent">
+    <property name="dataSource" ref="atomikos.dataSource"/>
+  </bean>
+
+  <!-- Policy -->
+  <bean id="PROPAGATION_REQUIRED" class="org.apache.camel.spring.spi.SpringTransactionPolicy">
+    <property name="transactionManager" ref="jta.transactionManager"/>
+    <!-- Atomikos TX Manager -->
+    <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
+  </bean>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <route>
+      <from uri="jms:inbound?transacted=true"/>
+      <transacted ref="PROPAGATION_REQUIRED"/>
+      <log message="Processing message: ${body}"/>
+      <setHeader headerName="message">
+        <simple>${body}</simple>
+      </setHeader>
+      <to uri="sql:insert into audit_log (message) values (:#message)"/>
+      <to uri="jms:outbound"/>
+      <!-- this send is transacted, so the message should not be sent -->
+      <to uri="mock:out"/>
+    </route>
+  </camelContext>
+
+</beans>
