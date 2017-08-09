@@ -1,10 +1,12 @@
-See also: [Platform Building Cheat Sheet](https://github.com/RestCheatSheet/platform-cheat-sheet#platform-building-cheat-sheet)
 
-# API Design Cheat Sheet
+
+# API Design 
 1. Build the API with consumers in mind--as a product in its own right.
     * Not for a specific UI.
     * Embrace flexibility / tunability of each endpoint (see #5, 6 & 7).
     * Eat your own dogfood, even if you have to mockup an example UI.
+
+-----------------------------------------
 
 1. Use the Collection Metaphor.
     * Two URLs (endpoints) per resource:
