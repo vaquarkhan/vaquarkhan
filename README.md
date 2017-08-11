@@ -378,3 +378,54 @@ http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=vot
     * Last-Modified - The timestamp that the resource itself was modified last (in RFC1123 format). (ex: Last-Modified: Sun, 06 Nov 1994 08:49:37 GMT)
 
 1. Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
+
+
+
+
+----------------------------------------------
+
+
+mation that can be named can be a resource: a document or image, a temporal service (e.g. “today’s weather in Los Angeles”),
+ a collection of other resources, a non-virtual object (e.g. a person), and so on. 
+ In other words, any concept that might be the target of an author’s hypertext reference must fit within the definition of a resource.
+ A resource is a conceptual mapping to a set of entities, not the entity that corresponds to the mapping at any particular point in time.
+    Roy Fielding’s dissertation
+
+http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1
+
+resource can be a singleton or a collection
+resource may contain sub-collection resources
+-------------------------------------------------------------------------------------------------------------------------------
+http://www.restapitutorial.com/lessons/restfulresourcenaming.html
+
+  Resources are within your system, name them as nouns as opposed to verbs or actions.
+  RESTful URI should refer to a resource that is a thing instead of referring to an action.
+  RESTful APIs are written for consumers. The name and structure of URIs should convey meaning to those consumers.
+  
+  URL is not self- descriptive as the URI hierarchy is the same for all requests.
+  
+  There are good arguments on both sides, but the commonly-accepted practice is to always use plurals in node names to keep your API URIs consistent across all HTTP methods. 
+  The reasoning is based on the concept that customers are a collection within the service suite and the ID (e.g. 33245) refers to one of those customers in the collection.
+
+You ask if there is a case where pluralization doesn't make sense. Well, yes, in fact there is. When there isn't a collection concept in play. In other words, it's acceptable to use a singularized resource name when there can only be one of the resource—it's a singleton resource. For example, if there was a single, overarching configuration resource, you might use a singularized noun to represent that:
+
+
+A resource may “contain” sub-collection resources also. For example, sub-collection resource “accounts” of a particular “customer” 
+can be identified using the URN “/customers/{customerId}/accounts” (in a banking domain). Similarly, a singleton resource “account” inside the sub-collection resource
+ “accounts” can be identified as follows: “customers/{customerId}/accounts/{accountId}”.
+
+https://blog.philipphauer.de/restful-api-design-best-practices/
+
+GET|PUT|DELETE http://www.example.com/configuration
+
+
+Twitter: https://dev.twitter.com/docs/api
+Facebook: http://developers.facebook.com/docs/reference/api/
+LinkedIn: https://developer.linkedin.com/apis
+
+https://developers.google.com/+/web/api/rest/latest/activities/list
+
+http://restfulapi.net/resource-naming/
+
+https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling
+-------------------------------------------------------------------
