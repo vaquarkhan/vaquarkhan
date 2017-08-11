@@ -1,5 +1,5 @@
 
-# White House Web API Standards
+# API Standards
 
 * [Guidelines](#guidelines)
 * [Pragmatic REST](#pragmatic-rest)
