@@ -1,0 +1,5 @@
+//Ping lembda function,node js 8.0
+
+exports.handler =(event,context,callback)=>{
+     callback(null,'Hello from Lambda')
+}
