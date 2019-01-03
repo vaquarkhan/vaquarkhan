@@ -714,3 +714,56 @@ can be identified using the URN “/customers/{customerId}/accounts” (in a ban
 
 
 -------------------------------------------------------------------
+### Code 
+
+- https://github.com/vaquarkhan/microservice-poc
+- https://github.com/vaquarkhan/awesome-microservices
+- https://github.com/vaquarkhan/microservice-docker-project
+- https://github.com/vaquarkhan/flowing-retail-microservice-kafka
+- https://github.com/vaquarkhan/spring-boot-microservices-series
+- https://github.com/vaquarkhan/A-curated-list-of-Microservice
+- https://github.com/vaquarkhan/sample-spring-microservices
+- https://github.com/vaquarkhan/microservice-kafka
+- https://github.com/vaquarkhan/oreilly-building-microservices-training
+- https://github.com/vaquarkhan/micromono
+- https://github.com/vaquarkhan/spring-cloud-microservice-example
+- https://github.com/vaquarkhan/jwt-microservices-JavaRoadStorm2016
+- https://github.com/vaquarkhan/micro
+- https://github.com/vaquarkhan/microservices-centralized-configuration
+- https://github.com/vaquarkhan/micro-company
+- https://github.com/vaquarkhan/PiggyMetrics-microservice-poc
+- https://github.com/vaquarkhan/spring-cloud-microservice
+- https://github.com/vaquarkhan/CQRS-microservice-sampler
+- https://github.com/vaquarkhan/Microservices-Deployment-Cookbook
+- https://github.com/vaquarkhan/storyteller-microservices
+- https://github.com/vaquarkhan/microservice-security
+- https://github.com/vaquarkhan/microservices-demo
+- https://github.com/vaquarkhan/spring-cloud-microservices-ELKStack
+- https://github.com/vaquarkhan/event-stream-processing-microservices
+- https://github.com/vaquarkhan/FraudDetection-Microservices-gemfire
+- https://github.com/vaquarkhan/microservice-sampler
+- https://github.com/vaquarkhan/microserviceApplication
+- https://github.com/vaquarkhan/Microservices-With-Spring-Student-Files
+- https://github.com/vaquarkhan/spring-boot-netflix-microservice-demo
+- https://github.com/vaquarkhan/spring-netflix-oss-microservices
+- https://github.com/vaquarkhan/rest-microservices
+- https://github.com/vaquarkhan/cloud-native-microservice-strangler-example
+- https://github.com/vaquarkhan/microservices-SpringCloud-netflix
+- https://github.com/vaquarkhan/knowledge-driven-microservice
+- https://github.com/vaquarkhan/event-driven-microservices-platform
+- https://github.com/vaquarkhan/devnexus-microservice-sample
+- https://github.com/vaquarkhan/microservices
+- https://github.com/vaquarkhan/Spring-Microservices
+- https://github.com/vaquarkhan/bootiful-microservices
+- https://github.com/vaquarkhan/vk-microservices-with-spring-cloud
+- https://github.com/vaquarkhan/cf-SpringBootTrader-microservice
+- https://github.com/vaquarkhan/Refactor-monolith-to-microservices
+- https://github.com/vaquarkhan/microservices-dashboard
+- https://github.com/vaquarkhan/microservice-camel-in-action
+- https://github.com/vaquarkhan/cloud-native-app-microservice-labs
+- https://github.com/vaquarkhan/spring-boot-8-microservices
+- https://github.com/vaquarkhan/building-microservices
+- https://github.com/vaquarkhan/spring-doge-microservice
+- https://github.com/vaquarkhan/microservice-service-registration-and-discovery
+
+
