@@ -836,7 +836,10 @@ JSONP is easiest explained with an example. Here's one from [StackOverflow](http
     <embed src="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf">Download PDF</a>.</p>
     </embed>
-    
+ 
+ ---------------------------------------------------------------------------------
+ 
+ 
 <object data="https://www.redbooks.ibm.com/redbooks/pdfs/sg248275.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://www.redbooks.ibm.com/redbooks/pdfs/sg248275.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.redbooks.ibm.com/redbooks/pdfs/sg248275.pdf">Download PDF</a>.</p>
