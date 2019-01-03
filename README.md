@@ -8,6 +8,7 @@
 
 * [Defination](#definition)
 * [Why-Microservice](#Why-Microservice)
+* [pros-and-cons](#pros-and-cons)
 * [Guidelines](#guidelines)
 * [Pragmatic REST](#pragmatic-rest)
 * [RESTful URLs](#restful-urls)
@@ -52,6 +53,39 @@ The Microservices approach is about breaking your system ("pile of code") into m
 * The communication should be stateless for scalability(copies of Microservice) and reliability(one copy fail other copy can serve), the most common methods for communication between Microservices are HTTP and messaging.
 Each Microservice should have it's own datastore.
 * Small team capable to work on design, web development, coding, database admin and operations.
+
+
+## pros-and-cons
+
+Sam Newman in Building Microservices, enumerates the key benefits of Microservices as following:
+
+#### Technology Heterogeneity
+With a system composed of multiple, collaborating services, we can decide to use different technologies inside each one. This allows us to pick the right tool for each job, rather than having to select a more standardized, one-size-fits-all approach that often ends up being the lowest common denominator.
+
+#### Resilience
+A key concept in resilience engineering is the bulkhead. If one component of a system fails, but that failure doesn’t cascade, you can isolate the problem and the rest of the system can carry on working. Service boundaries become your obvious bulkheads. In a monolithic service, if the service fails, everything stops working. With a monolithic system, we can run on multiple machines to reduce our chance of failure, but with microservices, we can build systems that handle the total failure of services and degrade functionality accordingly.
+
+#### Scaling
+With a large, monolithic service, we have to scale everything together. One small part of our overall system is constrained in performance, but if that behavior is locked up in a giant monolithic application, we have to handle scaling everything as a piece. With smaller services, we can just scale those services that need scaling, allowing us to run other parts of the system on smaller, less powerful hardware.
+
+#### Ease of Deployment
+A one-line change to a million-line-long monolithic application requires the whole application to be deployed in order to release the change. That could be a large-impact, high-risk deployment. In practice, large-impact, high-risk deployments end up happening infrequently due to understandable fear.
+
+With microservices, we can make a change to a single service and deploy it independently of the rest of the system. This allows us to get our code deployed faster. If a problem does occur, it can be isolated quickly to an individual service, making fast rollback easy to achieve.
+
+#### Organizational Alignment
+Microservices allow us to better align our architecture to our organization, helping us minimize the number of people working on any one codebase to hit the sweet spot of team size and productivity. We can also shift ownership of services between teams to try to keep people working on one service colocated.
+
+#### Composability
+One of the key promises of distributed systems and service-oriented architectures is that we open up opportunities for reuse of functionality. With microservices, we allow for our functionality to be consumed in different ways for different purposes. This can be especially important when we think about how our consumers use our software.
+
+#### Optimizing for Replaceability
+If you work at a medium-size or bigger organization, chances are you are aware of some big, nasty legacy system sitting in the corner. The one no one wants to touch. The one that is vital to how your company runs, but that happens to be written in some odd Fortran variant and runs only on hardware that reached end of life 25 years ago. Why hasn’t it been replaced? You know why: it’s too big and risky a job.
+
+With our individual services being small in size, the cost to replace them with a better implementation, or even delete them altogether, is much easier to manage.
+
+### Cons
+The most important disadvantage of Microservices is that they have all the associated complexities of distributed systems, and while we have learned a lot about how to manage distributed systems well it is still hard. If you’re coming from a monolithic system point of view, you’ll have to get much better at handling deployment, testing, and monitoring to unlock the benefits. You’ll also need to think differently about how you scale your systems and ensure that they are resilient. Don’t also be surprised if things like distributed transactions or CAP theorem start giving you headaches, either
 
 ## Guidelines
 
@@ -706,6 +740,7 @@ JSONP is easiest explained with an example. Here's one from [StackOverflow](http
 - https://www.microservices.com/talks/scaling-uber-from-1-to-100s-of-services/
 - https://blog.philipphauer.de/restful-api-design-best-practices/
 - GET|PUT|DELETE http://www.example.com/configuration
+- https://stackoverflow.com/questions/34903605/microservices-what-are-pros-and-cons/34904942
 
 -------------------------------------------------------------------
 ### Code 
