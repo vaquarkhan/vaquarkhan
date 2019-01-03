@@ -812,7 +812,6 @@ Note: If the mock parameter is included in a request to the production environme
         <p>This browser does not support PDFs. Please download the Microservice IBM Redbooks PDF to view it: <a href="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf">Download PDF</a>.</p>
     </embed>
  
--------------------------------------
  
  
 <object data="https://www.redbooks.ibm.com/redbooks/pdfs/sg248275.pdf" type="application/pdf" width="700px" height="700px">
@@ -820,7 +819,8 @@ Note: If the mock parameter is included in a request to the production environme
         <p>This browser does not support PDFs. Please download the Redbooks PDF to view it: <a href="https://www.redbooks.ibm.com/redbooks/pdfs/sg248275.pdf">Download PDF</a>.</p>
     </embed>
     
--------------------------------------
+    
+
     
     
     
