@@ -23,15 +23,14 @@
 
 ## Defination 
 
+Microservice architecture, or simply microservices, is a distinctive method of developing software systems that tries to focus on building single-function modules with well-defined interfaces and operations. The trend has grown popular in recent years as Enterprises look to become more Agile and move towards a DevOps and continuous testing. Microservices can help create scalable, testable software that can be delivered weekly, not yearly.
 
-The microservice architectural style is an approach to developing a single application:
 * As a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API
-* These services are built around business capabilities
-* These services are independently deployable by fully automated deployment machinery
-* There is a bare minimum of centralized management of these services
-* These services may be written in different programming languages
-* These services use different data storage technologies
- By Martin Fowler's 
+* Services are built around business capabilities
+* Services are independently deployable by fully automated deployment machinery
+* Bare minimum of centralized management of these services
+* Services may be written in different programming languages(polyglot development).
+* Services should use separate data storage (polyglot persistence ).
 - https://martinfowler.com/articles/microservices.html
 
 
