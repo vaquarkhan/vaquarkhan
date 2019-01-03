@@ -709,6 +709,13 @@ Note: If the mock parameter is included in a request to the production environme
 ### Rest
 - https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1
 
+## The Sins of Microservices 
+
+- https://www.infoq.com/articles/seven-uservices-antipatterns
+- https://opencredo.com/blogs/microservices-anti-patterns-its-all-about-the-people/
+- https://opencredo.com/blogs/7-deadly-sins-of-microservices/
+- https://dzone.com/articles/microservices-please-dont
+- https://blog.appdynamics.com/engineering/how-to-avoid-antipatterns-with-microservices/
 
 -----------------------------------------------------------------
 ### Link
@@ -810,8 +817,9 @@ Note: If the mock parameter is included in a request to the production environme
 
 ![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjz5RYcuKTPMnf09nLpjxciGuQeAP58RH8IkIIsSomeqqrPHs2)
 
----------------------------------------------------------------------------------
 
+
+---------------------------------------------------------------------------------
 <object data="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf">
         <p>This browser does not support PDFs. Please download the Microservice IBM Redbooks PDF to view it: <a href="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf">Download PDF</a>.</p>
