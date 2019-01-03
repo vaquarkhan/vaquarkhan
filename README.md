@@ -36,6 +36,9 @@ Microservice architecture, or simply microservices, is a distinctive method of d
 
 - https://martinfowler.com/articles/microservices.html
 
+![Alt Text](http://blog.arungupta.me/wp-content/uploads/2015/04/microservices-function.png)
+
+
 The Microservices approach is about breaking your system ("pile of code") into many small services, each typically has its own:
 
 * Clear business-related responsibility
