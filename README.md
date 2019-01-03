@@ -771,4 +771,4 @@ JSONP is easiest explained with an example. Here's one from [StackOverflow](http
 
 ---------------------------------------------------------------------------------
 
-![Alt Text](https://www.microservices.com/wp-content/uploads/2016/07/scaling-uber-from-1-to-100s-of-s-1.jpg)
+![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjz5RYcuKTPMnf09nLpjxciGuQeAP58RH8IkIIsSomeqqrPHs2)
