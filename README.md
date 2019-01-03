@@ -808,6 +808,9 @@ Note: If the mock parameter is included in a request to the production environme
 
 ---------------------------------------------------------------------------------
 
+![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjz5RYcuKTPMnf09nLpjxciGuQeAP58RH8IkIIsSomeqqrPHs2)
+
+---------------------------------------------------------------------------------
 
 <object data="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf">
@@ -823,5 +826,5 @@ Note: If the mock parameter is included in a request to the production environme
     
     
     
-![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjz5RYcuKTPMnf09nLpjxciGuQeAP58RH8IkIIsSomeqqrPHs2)
+
 
