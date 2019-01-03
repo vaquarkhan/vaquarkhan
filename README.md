@@ -1,10 +1,12 @@
 
-# Micro-Service 
+# Micro-Service - #### Microservices are small, autonomous services that work together. 
+
 --------------------------------------------------------------------------
 ![Alt Text](https://cdn-images-1.medium.com/max/1600/1*os1hoijFv6Iupb11uKAKIA.gif)
 
 # API Standards
 
+* [Defination](#definition)
 * [Guidelines](#guidelines)
 * [Pragmatic REST](#pragmatic-rest)
 * [RESTful URLs](#restful-urls)
@@ -16,6 +18,22 @@
 * [Request & Response Examples](#request--response-examples)
 * [Mock Responses](#mock-responses)
 * [JSONP](#jsonp)
+
+
+## Defination 
+
+
+The microservice architectural style is an approach to developing a single application:
+•As a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API
+•These services are built around business capabilities
+•These services are independently deployable by fully automated deployment machinery
+•There is a bare minimum of centralized management of these services
+•These services may be written in different programming languages
+•These services use different data storage technologies
+ By Martin Fowler's 
+- https://martinfowler.com/articles/microservices.html
+
+
 
 ## Guidelines
 
@@ -418,20 +436,24 @@ A resource may “contain” sub-collection resources also. For example, sub-col
 can be identified using the URN “/customers/{customerId}/accounts” (in a banking domain). Similarly, a singleton resource “account” inside the sub-collection resource
  “accounts” can be identified as follows: “customers/{customerId}/accounts/{accountId}”.
 
-https://blog.philipphauer.de/restful-api-design-best-practices/
 
-GET|PUT|DELETE http://www.example.com/configuration
+-----------------------------------------------------------------
 
+-https://blog.philipphauer.de/restful-api-design-best-practices/
+- GET|PUT|DELETE http://www.example.com/configuration
+- Twitter: https://dev.twitter.com/docs/api
+- Facebook: http://developers.facebook.com/docs/reference/api/
+- LinkedIn: https://developer.linkedin.com/apis
+- https://developers.google.com/+/web/api/rest/latest/activities/list
+- http://restfulapi.net/resource-naming/
+- https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling
+- https://www.vinaysahni.com/best-practices-for-building-a-microservice-architecture#deployment-package
+- https://wso2.com/whitepapers/microservices-in-practice-key-architectural-concepts-of-an-msa/ 
+- https://medium.com/@WSO2/guidelines-for-designing-microservices-71ee1997776c
+- https://www.martinfowler.com/microservices/
+- https://opensource.com/article/18/4/guide-design-microservices
+- https://microservices.io/patterns/microservices.html
 
-Twitter: https://dev.twitter.com/docs/api
-Facebook: http://developers.facebook.com/docs/reference/api/
-LinkedIn: https://developer.linkedin.com/apis
-
-https://developers.google.com/+/web/api/rest/latest/activities/list
-
-http://restfulapi.net/resource-naming/
-
-https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling
 
 
 -------------------------------------------------------------------
