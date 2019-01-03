@@ -55,7 +55,7 @@ Each Microservice should have it's own datastore.
 * Small team capable to work on design, web development, coding, database admin and operations.
 
 
-## pros-and-cons
+## Pros-and-cons
 
 Sam Newman in Building Microservices, enumerates the key benefits of Microservices as following:
 
@@ -85,7 +85,9 @@ If you work at a medium-size or bigger organization, chances are you are aware o
 With our individual services being small in size, the cost to replace them with a better implementation, or even delete them altogether, is much easier to manage.
 
 ### Cons
-The most important disadvantage of Microservices is that they have all the associated complexities of distributed systems, and while we have learned a lot about how to manage distributed systems well it is still hard. If you’re coming from a monolithic system point of view, you’ll have to get much better at handling deployment, testing, and monitoring to unlock the benefits. You’ll also need to think differently about how you scale your systems and ensure that they are resilient. Don’t also be surprised if things like distributed transactions or CAP theorem start giving you headaches, either
+* It is very difficult to maintain multiple Microservices.
+* It is very difficult to maintain versioning among Microservices.
+* It is extremely difficult to find good architects for creating Microservice architecture in right way.
 
 ## Guidelines
 
@@ -426,6 +428,9 @@ Note: If the mock parameter is included in a request to the production environme
 1. Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
 
 ------------------------------------------------------------
+### Microservice Design Patterns
+
+- https://stackoverflow.com/questions/34903605/microservices-what-are-pros-and-cons/34904942
 
 ### Security
 
