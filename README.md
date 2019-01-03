@@ -8,6 +8,7 @@
 # API Standards
 
 * [Defination](#definition)
+* [Why-Microservice](#Why-Microservice)
 * [Guidelines](#guidelines)
 * [Pragmatic REST](#pragmatic-rest)
 * [RESTful URLs](#restful-urls)
@@ -34,7 +35,24 @@ Microservice architecture, or simply microservices, is a distinctive method of d
 
 - https://martinfowler.com/articles/microservices.html
 
+The Microservices approach is about breaking your system ("pile of code") into many small services, each typically has its own:
 
+* Clear business-related responsibility
+* Running process
+* Database
+* Code version control (e.g. git) repository
+* API (the protocol how other services / clients will contact the Microservice)
+* UI
+
+
+## Why-Microservice 
+![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLZc-LdXFX_xqNCIup-yjaBBg7StcER0cLWR8Ofh5CjkSj6tOv)
+
+* Microservice make our system loosely coupled, i.e. if we need to update, repair, or replace a Microservice, we don't need to rebuild our entire application, just swap out the part that needs it.
+* To built each Microservice can use different languages and tools. Microservices communicate with well defined interface
+* The communication should be stateless for scalability(copies of Microservice) and reliability(one copy fail other copy can serve), the most common methods for communication between Microservices are HTTP and messaging.
+Each Microservice should have it's own datastore.
+* Small team capable to work on design, web development, coding, database admin and operations.
 
 ## Guidelines
 
@@ -666,7 +684,12 @@ can be identified using the URN “/customers/{customerId}/accounts” (in a ban
 - [The 12-Factors App](http://12factor.net) - A methodology for building software-as-a-service applications.
 
 
-## JSONP
+### Microservices Quotes
+
+- https://www.goodreads.com/work/quotes/41956437-building-microservices-designing-fine-grained-systems
+- https://www.goodreads.com/work/quotes/45004498-microservices-patterns-and-applications-designing-fine-grained-service
+
+### JSONP
 
 JSONP is easiest explained with an example. Here's one from [StackOverflow](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=votes#tab-top):
 
@@ -698,8 +721,7 @@ JSONP is easiest explained with an example. Here's one from [StackOverflow](http
 
 -----------------------------------------------------------------
 ### Link
--https://blog.philipphauer.de/restful-api-design-best-practices/
-- GET|PUT|DELETE http://www.example.com/configuration
+
 - Twitter: https://dev.twitter.com/docs/api
 - Facebook: http://developers.facebook.com/docs/reference/api/
 - LinkedIn: https://developer.linkedin.com/apis
@@ -713,7 +735,8 @@ JSONP is easiest explained with an example. Here's one from [StackOverflow](http
 - https://opensource.com/article/18/4/guide-design-microservices
 - https://microservices.io/patterns/microservices.html
 - https://www.microservices.com/talks/scaling-uber-from-1-to-100s-of-services/
-
+- https://blog.philipphauer.de/restful-api-design-best-practices/
+- GET|PUT|DELETE http://www.example.com/configuration
 
 -------------------------------------------------------------------
 ### Code 
