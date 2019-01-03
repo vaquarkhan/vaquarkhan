@@ -749,20 +749,22 @@ JSONP is easiest explained with an example. Here's one from [StackOverflow](http
 
 -------------------------------------------------------------------
 ### Video 
-- https://www.youtube.com/watch?v=KV3j3MZTXgk
-- https://www.redhat.com/en/topics/microservices
-- https://developers.redhat.com/topics/microservices/
-- https://pivotal.io/microservices
-- https://www.youtube.com/watch?v=WFtmCaqIjkA
-- https://www.youtube.com/watch?v=j6ow-UemzBc
-- https://www.infoq.com/presentations/microservices-arch-infrastructure-cd
-- https://www.youtube.com/watch?v=CZ3wIuvmHeM
-- https://www.apiacademy.co/resources/videos/designing-a-microservices-architecture
-- https://www.youtube.com/watch?v=n_V8hBRoshY
-- https://www.youtube.com/watch?v=EpyPFnjue38
-- https://www.youtube.com/watch?v=iJVW7v8O9BU
-- https://www.youtube.com/watch?v=PFQnNFe27kU
-- https://www.youtube.com/watch?v=wlt7nCRWx_w
+- [-:-](https://www.youtube.com/watch?v=KV3j3MZTXgk)
+- [-:-](https://www.redhat.com/en/topics/microservices)
+- [-:-](https://developers.redhat.com/topics/microservices/)
+- [-:-](https://pivotal.io/microservices)
+- [-:-](https://www.youtube.com/watch?v=WFtmCaqIjkA)
+- [-:-](https://www.youtube.com/watch?v=j6ow-UemzBc)
+- [-:-](https://www.infoq.com/presentations/microservices-arch-infrastructure-cd)
+- [-:-](https://www.youtube.com/watch?v=CZ3wIuvmHeM)
+- [-:-](https://www.apiacademy.co/resources/videos/designing-a-microservices-architecture)
+- [-:-](https://www.youtube.com/watch?v=n_V8hBRoshY)
+- [-:-](https://www.youtube.com/watch?v=EpyPFnjue38)
+- [-:-](https://www.youtube.com/watch?v=iJVW7v8O9BU)
+- [-:-](https://www.youtube.com/watch?v=PFQnNFe27kU)
+-[-:-] (https://www.youtube.com/watch?v=wlt7nCRWx_w)
+
+
 
 -------------------------------------------------------------------
 ### Code 
