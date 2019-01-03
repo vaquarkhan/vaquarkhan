@@ -6,7 +6,7 @@
 
 # API Standards
 
-* [Defination](#definition)
+* [Definition](#definition)
 * [Why-Microservice](#Why-Microservice)
 * [pros-and-cons](#pros-and-cons)
 * [Guidelines](#guidelines)
@@ -22,7 +22,7 @@
 * [JSONP](#jsonp)
 
 
-## Defination 
+## Definition 
 
 Microservice architecture, or simply microservices, is a distinctive method of developing software systems that tries to focus on building single-function modules with well-defined interfaces and operations. The trend has grown popular in recent years as Enterprises look to become more Agile and move towards a DevOps and continuous testing. Microservices can help create scalable, testable software that can be delivered weekly, not yearly.
 
@@ -74,7 +74,7 @@ A one-line change to a million-line-long monolithic application requires the who
 With microservices, we can make a change to a single service and deploy it independently of the rest of the system. This allows us to get our code deployed faster. If a problem does occur, it can be isolated quickly to an individual service, making fast rollback easy to achieve.
 
 #### Organizational Alignment
-Microservices allow us to better align our architecture to our organization, helping us minimize the number of people working on any one codebase to hit the sweet spot of team size and productivity. We can also shift ownership of services between teams to try to keep people working on one service colocated.
+Microservices allow us to better align our architecture to our organization, helping us minimize the number of people working on any one codebase to hit the sweet spot of team size and productivity. We can also shift ownership of services between teams to try to keep people working on one service collocated.
 
 #### Composability
 One of the key promises of distributed systems and service-oriented architectures is that we open up opportunities for reuse of functionality. With microservices, we allow for our functionality to be consumed in different ways for different purposes. This can be especially important when we think about how our consumers use our software.
