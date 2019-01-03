@@ -89,6 +89,10 @@ With our individual services being small in size, the cost to replace them with 
 * It is very difficult to maintain versioning among Microservices.
 * It is extremely difficult to find good architects for creating Microservice architecture in right way.
 
+
+![Alt Text](https://media.licdn.com/dms/image/C4E22AQET5GfBwLR_VQ/feedshare-shrink_8192/0?e=1546635600&v=beta&t=21Qb9rL1siPnW26Y7latfWaYZZg7_gerC4cDVUXEtTQ)
+
+
 ## Guidelines
 
 This document provides guidelines and examples for White House Web APIs, encouraging consistency, maintainability, and best practices across applications. White House APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
