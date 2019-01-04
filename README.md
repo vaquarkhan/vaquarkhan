@@ -20,7 +20,6 @@
 * [Record limits](#record-limits)
 * [Request & Response Examples](#request--response-examples)
 * [Mock Responses](#mock-responses)
-* [JSONP](#jsonp)
 
 
 ## Definition 
@@ -737,7 +736,9 @@ Note: If the mock parameter is included in a request to the production environme
 - GET|PUT|DELETE http://www.example.com/configuration
 - https://stackoverflow.com/questions/34903605/microservices-what-are-pros-and-cons/34904942
 - https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=votes#tab-top
+
 -------------------------------------------------------------------
+
 ### Video 
 - https://www.youtube.com/watch?v=KV3j3MZTXgk
 - https://www.redhat.com/en/topics/microservices
