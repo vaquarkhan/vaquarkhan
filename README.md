@@ -5,6 +5,8 @@
 
 ![Alt Text](https://cdn-images-1.medium.com/max/1600/1*os1hoijFv6Iupb11uKAKIA.gif)
 
+
+
 # API Standards
 
 * [Definition](#definition)
@@ -353,13 +355,17 @@ Note: If the mock parameter is included in a request to the production environme
 
 -------------------------------------------------------------------------------------------------------------
 
+
+![Alt Text](https://labs.sogeti.com/wp-content/uploads/2016/11/microservices.gif)
+
+
+
 # API Design 
 1. Build the API with consumers in mind--as a product in its own right.
     * Not for a specific UI.
     * Embrace flexibility / tunability of each endpoint (see #5, 6 & 7).
     * Eat your own dogfood, even if you have to mockup an example UI.
 
------------------------------------------
 
 1. Use the Collection Metaphor.
     * Two URLs (endpoints) per resource:
@@ -769,6 +775,8 @@ Note: If the mock parameter is included in a request to the production environme
 - https://www.youtube.com/watch?v=yVZS1HZrlEw
 - https://www.youtube.com/watch?v=k42jqkjtYKY
 - https://www.infoq.com/presentations/aggregates-modular-microservices
+
+![Alt Text](https://i.pinimg.com/originals/70/c1/41/70c141ffbfa1a913c5a30204d1ac9f15.gif)
 
 ### Microservices Anti Patterns
 - https://www.microservices.com/talks/dont-build-a-distributed-monolith/
