@@ -636,6 +636,8 @@ Note: If the mock parameter is included in a request to the production environme
 
 ## Theory
 
+![Alt Text](http://www.animatedimages.org/data/media/53/animated-book-image-0032.gif)
+
 ### Articles & Papers
 
 - [AKF Scale Cube](http://akfpartners.com/techblog/2008/05/08/splitting-applications-or-services-for-scale/) - Model depicting the dimensions to scale a service.
@@ -702,11 +704,6 @@ Note: If the mock parameter is included in a request to the production environme
 - [Microservice Antipatterns and Pitfalls](https://www.oreilly.com/ideas/microservices-antipatterns-and-pitfalls) - Microservice mostly known antipatterns and pitfalls.
 - [The 12-Factors App](http://12factor.net) - A methodology for building software-as-a-service applications.
 
-
-----------------------------------
-
-
-------------------------------
 
 ### Microservices Quotes
 
