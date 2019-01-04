@@ -759,6 +759,23 @@ Note: If the mock parameter is included in a request to the production environme
 - https://www.youtube.com/watch?v=MrV0DqTqpFU
 - https://www.youtube.com/watch?v=Jw6TYEb1Opw
 
+### Microservices Patterns
+- https://dzone.com/articles/top-5-microservices-architecture-and-design-best-p
+- https://www.infoq.com/presentations/microservices-patterns-practices-panel
+- https://www.youtube.com/watch?v=_YzzxrSIQGw
+- https://www.youtube.com/watch?v=DZeXqbFvYNA
+- https://www.youtube.com/watch?v=4IFVBfLBl1Y
+- https://www.youtube.com/watch?v=4IFVBfLBl1Y
+- https://www.youtube.com/watch?v=84W9iY3CwdQ
+- https://www.youtube.com/watch?v=yVZS1HZrlEw
+
+### Microservices Anti Patterns
+- https://www.apiacademy.co/resources/videos/api360-microservices-summit-microservices-anti-patterns
+- https://vimeo.com/198927025
+- https://www.youtube.com/watch?v=uTGIrzzmcv8
+- https://www.youtube.com/watch?v=VaYmRe104HU
+- https://www.oreilly.com/library/view/microservices-antipatterns-and/9781491963937/video255789.html
+-
 -------------------------------------------------------------------
 ### Code 
 
