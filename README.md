@@ -776,8 +776,6 @@ Note: If the mock parameter is included in a request to the production environme
 - https://www.youtube.com/watch?v=k42jqkjtYKY
 - https://www.infoq.com/presentations/aggregates-modular-microservices
 
-![Alt Text](https://vignette.wikia.nocookie.net/fantendo/images/4/48/BUT_IT%27S_WRONG.gif/revision/latest?cb=20141204195436)
-
 
 ### Microservices Anti Patterns
 - https://www.microservices.com/talks/dont-build-a-distributed-monolith/
@@ -787,9 +785,11 @@ Note: If the mock parameter is included in a request to the production environme
 - https://www.youtube.com/watch?v=uTGIrzzmcv8
 - https://www.youtube.com/watch?v=VaYmRe104HU
 - https://www.youtube.com/watch?v=X0tjziAQfNQ
--
 - https://www.oreilly.com/library/view/microservices-antipatterns-and/9781491963937/video255789.html
 - https://vimeo.com/118020043
+
+![Alt Text](https://vignette.wikia.nocookie.net/fantendo/images/4/48/BUT_IT%27S_WRONG.gif/revision/latest?cb=20141204195436)
+
 
 -------------------------------------------------------------------
 ### Code 
