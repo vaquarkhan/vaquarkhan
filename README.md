@@ -741,12 +741,9 @@ Note: If the mock parameter is included in a request to the production environme
 
 ### Video 
 - https://www.youtube.com/watch?v=KV3j3MZTXgk
-- https://www.redhat.com/en/topics/microservices
-- https://developers.redhat.com/topics/microservices/
 - https://pivotal.io/microservices
 - https://www.youtube.com/watch?v=WFtmCaqIjkA
 - https://www.youtube.com/watch?v=j6ow-UemzBc
-- https://www.infoq.com/presentations/microservices-arch-infrastructure-cd
 - https://www.youtube.com/watch?v=CZ3wIuvmHeM
 - https://www.apiacademy.co/resources/videos/designing-a-microservices-architecture
 - https://www.youtube.com/watch?v=n_V8hBRoshY
@@ -754,7 +751,13 @@ Note: If the mock parameter is included in a request to the production environme
 - https://www.youtube.com/watch?v=iJVW7v8O9BU
 - https://www.youtube.com/watch?v=PFQnNFe27kU
 - https://www.youtube.com/watch?v=wlt7nCRWx_w
-
+- https://www.youtube.com/watch?v=gfh-VCTwMw8
+- https://www.youtube.com/watch?v=X0tjziAQfNQ
+- https://www.youtube.com/watch?v=I56HzTKvZKc
+- https://www.youtube.com/watch?v=Fz1PoXqxAZc
+- https://www.youtube.com/watch?v=GzrZworHpIk
+- https://www.youtube.com/watch?v=MrV0DqTqpFU
+- https://www.youtube.com/watch?v=Jw6TYEb1Opw
 
 -------------------------------------------------------------------
 ### Code 
