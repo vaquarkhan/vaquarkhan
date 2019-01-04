@@ -747,17 +747,15 @@ Note: If the mock parameter is included in a request to the production environme
 - https://martinfowler.com/tags/domain%20driven%20design.html
 - http://dddcommunity.org/
 - https://www.infoq.com/presentations/ddd-microservices-2016
-- https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358
-- http://blog.sapiensworks.com/post/2012/04/17/DDD-The-Bounded-Context-Explained.aspx-
+- http://blog.sapiensworks.com/post/2012/04/17/DDD-The-Bounded-Context-Explained.aspx
 - https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 - https://martinfowler.com/bliki/MicroservicePrerequisites.html
 - https://martinfowler.com/bliki/DevOpsCulture.html"
 - https://semver.org/ 
 - https://cloud.google.com/apis/design/versioning
-- https://pivotal.io/cloud-native>
+- https://pivotal.io/cloud-native
 - https://stackoverflow.com/questions/34903605/microservices-what-are-pros-and-cons/34904942
 - https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=votes#tab-top
-- GET|PUT|DELETE http://www.example.com/configuration
 
 
 -------------------------------------------------------------------
