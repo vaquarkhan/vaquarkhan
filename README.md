@@ -1,5 +1,5 @@
 
-# Microservices 
+# Microservices Recipes
 
 #### Microservices are small, autonomous services that work together. 
 
