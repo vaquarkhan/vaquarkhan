@@ -30,7 +30,7 @@ Microservice architecture, or simply microservices, is a distinctive method of d
 
 * As a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API
 * Services are built around business capabilities
-* Services are independently deployable by fully automated deployment machinery
+* services are independently deployable and scalable
 * Bare minimum of centralized management of these services
 * Services may be written in different programming languages(polyglot development).
 * Services should use separate data storage (polyglot persistence ).
