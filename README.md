@@ -102,7 +102,7 @@ With our individual services being small in size, the cost to replace them with 
 
 
 
-![Alt Text](https://media.licdn.com/dms/image/C4E22AQET5GfBwLR_VQ/feedshare-shrink_8192/0?e=1546635600&v=beta&t=21Qb9rL1siPnW26Y7latfWaYZZg7_gerC4cDVUXEtTQ)
+![Alt Text](https://media.licdn.com/dms/image/C4E22AQET5GfBwLR_VQ/feedshare-shrink_8192/0?e=1547067600&v=beta&t=gPeIppK9kNSLlM-fhooUBCOmXOaX359OFyhfO3cwXno)
 
 
 ## When to use this architecture
