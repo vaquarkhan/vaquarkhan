@@ -101,6 +101,20 @@ With our individual services being small in size, the cost to replace them with 
 ![Alt Text](https://media.licdn.com/dms/image/C4E22AQET5GfBwLR_VQ/feedshare-shrink_8192/0?e=1546635600&v=beta&t=21Qb9rL1siPnW26Y7latfWaYZZg7_gerC4cDVUXEtTQ)
 
 
+## When to use this architecture
+
+Consider this architecture style for:
+
+* Large applications that require a high release velocity.
+
+* Complex applications that need to be highly scalable.
+
+* Applications with rich domains or many subdomains.
+
+* An organization that consists of small development teams.
+
+
+
 ## Guidelines
 
 This document provides guidelines and examples for White House Web APIs, encouraging consistency, maintainability, and best practices across applications. White House APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
@@ -756,7 +770,7 @@ Note: If the mock parameter is included in a request to the production environme
 - https://pivotal.io/cloud-native
 - https://stackoverflow.com/questions/34903605/microservices-what-are-pros-and-cons/34904942
 - https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about?answertab=votes#tab-top
-
+- https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices
 
 -------------------------------------------------------------------
 
