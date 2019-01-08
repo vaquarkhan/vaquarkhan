@@ -28,6 +28,9 @@
 
 Microservice architecture, or simply microservices, is a distinctive method of developing software systems that tries to focus on building single-function modules with well-defined interfaces and operations. The trend has grown popular in recent years as Enterprises look to become more Agile and move towards a DevOps and continuous testing. Microservices can help create scalable, testable software that can be delivered weekly, not yearly.
 
+![Alt Text](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/images/microservices-logical.svg)
+
+
 * As a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API
 * Services are built around business capabilities
 * services are independently deployable and scalable
