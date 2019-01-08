@@ -115,7 +115,7 @@ Consider this architecture style for:
 
 
 
-## Guidelines
+## Design Guidelines
 
 This document provides guidelines and examples for White House Web APIs, encouraging consistency, maintainability, and best practices across applications. White House APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
 
@@ -124,6 +124,52 @@ This document borrows heavily from:
 * [API Facade Pattern](http://apigee.com/about/resources/ebooks/api-fa%C3%A7ade-pattern), by Brian Mulloy, Apigee
 * [Web API Design](http://pages.apigee.com/web-api-design-ebook.html), by Brian Mulloy, Apigee
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+
+
+### strategies and patterns for realizing the seven design guidelines applied to microservices (sei.cmu.edu)
+
+#### standardized service contract. Strategies include:
+* REST API design best practices,
+* API gateway,
+* contract-first design
+
+#### service loose coupling. Strategies include:
+* Service Facade pattern
+* Legacy Wrapper pattern
+* point-to-point, publish-subscribe and other messaging patterns
+* event-driven architecture
+
+#### service reusability. Strategies include:
+* modeling for reuse,
+* Strangler Application pattern
+
+#### service autonomy. Strategies include:
+* Saga pattern
+* modeling services with DDD
+* Database per Microservice pattern
+* Service Data Replication pattern
+* CQRS and event sourcing
+
+#### service statelessness. Strategies include:
+* Asynchronous processing
+* State Messaging pattern
+* Service Callback pattern
+
+#### service discoverability. Strategies include:
+* service registry
+* service governance
+
+#### service deployability. Strategies include:
+* continuous delivery
+* blue-green deployment
+* laC
+* DevOps
+* externalized configuration
+* containerization
+* serverless architecture
+* monitoring and logging for microservices
+
+
 
 ## Pragmatic REST
 
