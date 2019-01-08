@@ -121,52 +121,45 @@ Consider this architecture style for:
 
 ## Design Guidelines
 
-This document provides guidelines and examples for White House Web APIs, encouraging consistency, maintainability, and best practices across applications. White House APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
-
-This document borrows heavily from:
-* [Designing HTTP Interfaces and RESTful Web Services](https://www.youtube.com/watch?v=zEyg0TnieLg)
-* [API Facade Pattern](http://apigee.com/about/resources/ebooks/api-fa%C3%A7ade-pattern), by Brian Mulloy, Apigee
-* [Web API Design](http://pages.apigee.com/web-api-design-ebook.html), by Brian Mulloy, Apigee
-* [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
-
 ### Architecture Principles
 * Single Responsibility Principle 
 * Domain Driven Design
+* Start withrelatively broad service boundaries to begin with, refactoring to smaller ones (based on business requirements) 
 
-### strategies and patterns for realizing the seven design guidelines applied to microservices (sei.cmu.edu)
+### Strategies and patterns for realizing the seven design guidelines applied to microservices (sei.cmu.edu)
 
-#### standardized service contract. Strategies include:
+#### Standardized service contract. Strategies include:
 * REST API design best practices,
 * API gateway,
 * contract-first design
 
-#### service loose coupling. Strategies include:
+#### Service loose coupling. Strategies include:
 * Service Facade pattern
 * Legacy Wrapper pattern
 * point-to-point, publish-subscribe and other messaging patterns
 * event-driven architecture
 
-#### service reusability. Strategies include:
+#### Service reusability. Strategies include:
 * modeling for reuse,
 * Strangler Application pattern
 
-#### service autonomy. Strategies include:
+#### Service autonomy. Strategies include:
 * Saga pattern
 * modeling services with DDD
 * Database per Microservice pattern
 * Service Data Replication pattern
 * CQRS and event sourcing
 
-#### service statelessness. Strategies include:
+#### Service statelessness. Strategies include:
 * Asynchronous processing
 * State Messaging pattern
 * Service Callback pattern
 
-#### service discoverability. Strategies include:
+#### Service discoverability. Strategies include:
 * service registry
 * service governance
 
-#### service deployability. Strategies include:
+#### Service deployability. Strategies include:
 * continuous delivery
 * blue-green deployment
 * laC
@@ -177,6 +170,191 @@ This document borrows heavily from:
 * monitoring and logging for microservices
 
 
+Guidelines and examples for White House Web APIs, encouraging consistency, maintainability, and best practices across applications. White House APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
+
+This document borrows heavily from:
+* [Designing HTTP Interfaces and RESTful Web Services](https://www.youtube.com/watch?v=zEyg0TnieLg)
+* [API Facade Pattern](http://apigee.com/about/resources/ebooks/api-fa%C3%A7ade-pattern), by Brian Mulloy, Apigee
+* [Web API Design](http://pages.apigee.com/web-api-design-ebook.html), by Brian Mulloy, Apigee
+* [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+![Alt Text](https://labs.sogeti.com/wp-content/uploads/2016/11/microservices.gif)
+
+
+
+# API Design 
+1. Build the API with consumers in mind--as a product in its own right.
+    * Not for a specific UI.
+    * Embrace flexibility / tunability of each endpoint (see #5, 6 & 7).
+    * Eat your own dogfood, even if you have to mockup an example UI.
+
+
+1. Use the Collection Metaphor.
+    * Two URLs (endpoints) per resource:
+        * The resource collection (e.g. /orders)
+        * Individual resource within the collection (e.g. /orders/{orderId}).
+    * Use plural forms (‘orders’ instead of ‘order’).
+    * Alternate resource names with IDs as URL nodes (e.g. /orders/{orderId}/items/{itemId})
+    * Keep URLs as short as possible. Preferably, no more-than three nodes per URL.
+
+1. Use nouns as resource names (e.g. don’t use verbs in URLs).
+
+1. Make resource representations meaningful.
+    * “No Naked IDs!” No plain IDs embedded in responses. Use links and reference objects.
+    * Design resource representations. Don’t simply represent database tables.
+    * Merge representations. Don’t expose relationship tables as two IDs.
+
+1. Support filtering, sorting, and pagination on collections.
+
+1. Support link expansion of relationships. Allow clients to expand the data contained in the response by including additional representations instead of, or in addition to, links.
+
+1. Support field projections on resources. Allow clients to reduce the number of fields that come back in the response.
+
+1. Use the HTTP method names to mean something:
+    * POST - create and other non-idempotent operations.
+    * PUT - update.
+    * GET - read a resource or collection.
+    * DELETE - remove a resource or collection.
+
+1. Use HTTP status codes to be meaningful.
+    * 200 - Success.
+    * 201 - Created. Returned on successful creation of a new resource. Include a 'Location' header with a link to the newly-created resource.
+    * 400 - Bad request. Data issues such as invalid JSON, etc.
+    * 404 - Not found. Resource not found on GET.
+    * 409 - Conflict. Duplicate data or invalid data state would occur.
+
+1. Use ISO 8601 timepoint formats for dates in representations.
+
+1. Consider connectedness by utilizing a linking strategy. Some popular examples are:
+    * [HAL](http://stateless.co/hal_specification.html)
+    * [Siren](https://github.com/kevinswiber/siren)
+    * [JSON-LD](http://json-ld.org/)
+    * [Collection+JSON](http://amundsen.com/media-types/collection/)
+
+1. Use [OAuth2](http://oauth.net/2/) to secure your API.
+    * Use a Bearer token for authentication.
+    * Require HTTPS / TLS / SSL to access your APIs. OAuth2 Bearer tokens demand it. Unencrypted communication over HTTP allows for simple eavesdroppping and impersonation.
+
+1. Use Content-Type negotiation to describe incoming request payloads.
+
+    For example, let's say you're doing ratings, including a thumbs-up/thumbs-down and five-star rating. You have one route to create a rating: **POST /ratings**
+
+    How do you distinguish the incoming data to the service so it can determine which rating type it is: thumbs-up or five star?
+
+    The temptation is to create one route for each rating type: **POST /ratings/five_star** and **POST /ratings/thumbs_up**
+
+    However, by using Content-Type negotiation we can use our same **POST /ratings** route for both types. By setting the *Content-Type* header on the request to something like **Content-Type: application/vnd.company.rating.thumbsup** or **Content-Type: application/vnd.company.rating.fivestar** the server can determine how to process the incoming rating data.
+
+1. Evolution over versioning. However, if versioning, use the Accept header instead of versioning in the URL.
+    * Versioning via the URL signifies a 'platform' version and the entire platform must be versioned at the same time to enable the linking strategy.
+    * Versioning via the Accept header is versioning the resource.
+    * Additions to a JSON response do not require versioning. However, additions to a JSON request body that are 'required' are troublesome--and may require versioning.
+    * Hypermedia linking and versioning is troublesome no matter what--minimize it.
+    * Note that a version in the URL, while discouraged, can be used as a 'platform' version. It should appear as the first node in the path and not version individual endpoints differently (e.g. api.example.com/v1/...).
+
+1. Consider Cache-ability. At a minimum, use the following response headers:
+    * ETag - An arbitrary string for the version of a representation. Make sure to include the media type in the hash value, because that makes a different representation. (ex: ETag: "686897696a7c876b7e")
+    * Date - Date and time the response was returned (in RFC1123 format). (ex: Date: Sun, 06 Nov 1994 08:49:37 GMT)
+    * Cache-Control - The maximum number of seconds (max age) a response can be cached. However, if caching is not supported for the response, then no-cache is the value. (ex: Cache-Control: 360 or Cache-Control: no-cache)
+    * Expires - If max age is given, contains the timestamp (in RFC1123 format) for when the response expires, which is the value of Date (e.g. now) plus max age. If caching is not supported for the response, this header is not present. (ex: Expires: Sun, 06 Nov 1994 08:49:37 GMT)
+    * Pragma - When Cache-Control is 'no-cache' this header is also set to 'no-cache'. Otherwise, it is not present. (ex: Pragma: no-cache)
+    * Last-Modified - The timestamp that the resource itself was modified last (in RFC1123 format). (ex: Last-Modified: Sun, 06 Nov 1994 08:49:37 GMT)
+
+1. Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
+
+------------------------------------------------------------
+### Microservice Design Patterns
+- http://blog.arungupta.me/microservice-design-patterns/
+- https://dzone.com/articles/design-patterns-for-microservices
+- https://microservices.io/patterns/microservices.html
+- https://azure.microsoft.com/en-us/blog/design-patterns-for-microservices/
+
+### Security
+
+- [Crtauth](https://github.com/spotify/crtauth) - A public key backed client/server authentication system.
+- [Dex](https://github.com/coreos/dex) - Opinionated auth/directory service with pluggable connectors. OpenID Connect provider and third-party OAuth 2.0 delegation.
+- [JWT](http://jwt.io/) - JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+- [Keycloak](https://github.com/keycloak/keycloak) - Full-featured and extensible auth service. OpenID Connect provider and third-party OAuth 2.0 delegation.
+- [Light OAuth2](https://github.com/networknt/light-oauth2) - A fast, lightweight and cloud native OAuth 2.0 authorization microservices based on light-java.
+- [Login With](https://github.com/lipp/login-with) - Stateless login-with microservice for Google, FB, Github, and more.
+- [OAuth](http://oauth.net/2/) - Provides specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. Many implementations.
+- [OpenID Connect](http://openid.net/developers/libraries/) - Libraries, products, and tools implementing current OpenID specifications and related specs.
+- [OSIAM](https://github.com/osiam/osiam) - Open source identity and access management implementing OAuth 2.0 and SCIMv2.
+- [SCIM](http://www.simplecloud.info/) - System for Cross-domain Identity Management.
+- [Vault](https://www.vaultproject.io/) - Secures, stores, and tightly controls access to tokens, passwords, certificates, API keys, and other secrets in modern computing.
+
+### Serialization
+
+- [Avro](https://avro.apache.org/) - Apache data serialization system providing rich data structures in a compact, fast, binary data format.
+- [BooPickle](https://github.com/ochrons/boopickle) - Binary serialization library for efficient network communication. For Scala and Scala.js
+- [Cap’n Proto](https://capnproto.org/) - Insanely fast data interchange format and capability-based RPC system.
+- [CBOR](http://cbor.io/) - Implementations of the CBOR standard (RFC 7049) in many languages.
+- [Cereal](http://uscilab.github.io/cereal/) - C++11 library for serialization.
+- [Cheshire](https://github.com/dakrone/cheshire) - Clojure JSON and JSON SMILE encoding/decoding.
+- [Etch](http://etch.apache.org/) - Cross-platform, language and transport-independent framework for building and consuming network services.
+- [Fastjson](https://github.com/alibaba/fastjson) - Fast JSON Processor.
+- [Ffjson](https://github.com/pquerna/ffjson) - Faster JSON serialization for Go.
+- [FST](https://github.com/RuedigerMoeller/fast-serialization) - Fast java serialization drop in-replacemen.
+- [Jackson](https://github.com/FasterXML/jackson) -  A multi-purpose Java library for processing JSON data format.
+- [Jackson Afterburner](https://github.com/FasterXML/jackson-module-afterburner) - Jackson module that uses bytecode generation to further speed up data binding (+30-40% throughput for serialization, deserialization).
+- [Kryo](https://github.com/EsotericSoftware/kryo) - Java serialization and cloning: fast, efficient, automatic.
+- [MessagePack](http://msgpack.org/) - Efficient binary serialization format.
+- [Protostuff](https://github.com/protostuff/protostuff) - A serialization library with built-in support for forward-backward compatibility (schema evolution) and validation.
+- [SBinary](https://github.com/harrah/sbinary) - Library for describing binary formats for Scala types.
+- [Thrift](http://thrift.apache.org/) - The Apache Thrift software framework, for scalable cross-language services development.
+
+### Storage
+
+- [Apache Hive](https://hive.apache.org/) - Data warehouse infrastructure built on top of Hadoop.
+- [Apache Cassandra](http://cassandra.apache.org) - Column-oriented and providing high availability with no single point of failure.
+- [Apache HBase](http://hbase.apache.org) - Hadoop database for big data.
+- [Aerospike ![c]](http://www.aerospike.com/) - High performance NoSQL database delivering speed at scale.
+- [ArangoDB](https://www.arangodb.com/) - A distributed free and open source database with a flexible data model for documents, graphs, and key-values.
+- [AtlasDB](https://github.com/palantir/atlasdb) - Transactional layer on top of a key value store.
+- [ClickHouse](https://clickhouse.yandex/) - Column-oriented database management system that allows generating analytical data reports in real time.
+- [CockroachDB ![c]](https://www.cockroachlabs.com/product/cockroachdb-core/) - A cloud-native SQL database modelled after Google Spanner.
+- [Couchbase](http://www.couchbase.com/) - A distributed database engineered for performance, scalability, and simplified administration.
+- [Crate ![c]](https://crate.io/) - Scalable SQL database with the NoSQL goodies.
+- [Datomic](http://www.datomic.com/) - Fully transactional, cloud-ready, distributed database.
+- [Druid](http://druid.io/) - Fast column-oriented distributed data store.
+- [Elasticsearch](https://www.elastic.co/products/elasticsearch) - Open source distributed, scalable, and highly available search server.
+- [Elliptics](http://reverbrain.com/elliptics/) - Fault tolerant distributed key/value storage.
+- [Geode](http://geode.incubator.apache.org/) - Open source, distributed, in-memory database for scale-out applications.
+- [Infinispan](http://infinispan.org/) - Highly concurrent key/value datastore used for caching.
+- [InfluxDB](https://github.com/influxdata/influxdb) - Scalable datastore for metrics, events, and real-time analytics.
+- [Manta](https://www.joyent.com/manta) - Highly scalable, distributed object storage service with integrated compute.
+- [MemSQL ![c]](http://www.memsql.com/) - High-performance, in-memory database that combines the horizontal scalability of distributed systems with the familiarity of SQL.
+- [OpenTSDB](http://opentsdb.net) - Scalable and distributed time series database written on top of Apache HBase.
+- [Parquet](https://parquet.apache.org/) - Columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
+- [Reborn](https://github.com/reborndb/reborn) - Distributed database fully compatible with redis protocol.
+- [RethinkDB](http://rethinkdb.com/) - Open source, scalable database that makes building realtime apps easier.
+- [Secure Scuttlebutt](https://github.com/ssbc/docs) - P2P database of message-feeds.
+- [Tachyon](http://tachyon-project.org/) - Memory-centric distributed storage system, enabling reliable data sharing at memory-speed across cluster frameworks.
+- [Voldemort](https://github.com/voldemort/voldemort) - Open source clone of Amazon DynamoDB
+- [VoltDB ![c]](https://www.voltdb.com/) - In-Memory ACID compliant distributed database.
+
+### Testing
+
+- [Goreplay](https://github.com/buger/goreplay) - A tool for capturing and replaying live HTTP traffic into a test environment.
+- [Mitmproxy](https://mitmproxy.org/) - An interactive console program that allows traffic flows to be intercepted, inspected, modified and replayed.
+- [Mountebank](http://www.mbtest.org/) - Cross-platform, multi-protocol test doubles over the wire.
+- [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/) - TDD to the level of software architecture.
+- [VCR](https://github.com/vcr/vcr) - Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. See the list of ports for implementations in other languages.
+- [Wilma](https://github.com/epam/Wilma) - Combined HTTP/HTTPS service stub and transparent proxy solution.
+- [WireMock](http://wiremock.org/) - Flexible library for stubbing and mocking web services. Unlike general purpose mocking tools it works by creating an actual HTTP server that your code under test can connect to as it would a real web service.
+
+## Continuous Integration and Continuous Delivery
+
+- [Awesome CI/CD DevOps](https://github.com/ciandcd/awesome-ciandcd) - A curated list of awesome tools for continuous integration, continuous delivery and DevOps.
+
+## Documentation & Modeling
+
+### REST APIs
 
 ## Pragmatic REST
 
@@ -421,183 +599,9 @@ Note: If the mock parameter is included in a request to the production environme
 
 
 
+--------------------------------------------------------------------------------------------------------
 
 
--------------------------------------------------------------------------------------------------------------
-
-
-![Alt Text](https://labs.sogeti.com/wp-content/uploads/2016/11/microservices.gif)
-
-
-
-# API Design 
-1. Build the API with consumers in mind--as a product in its own right.
-    * Not for a specific UI.
-    * Embrace flexibility / tunability of each endpoint (see #5, 6 & 7).
-    * Eat your own dogfood, even if you have to mockup an example UI.
-
-
-1. Use the Collection Metaphor.
-    * Two URLs (endpoints) per resource:
-        * The resource collection (e.g. /orders)
-        * Individual resource within the collection (e.g. /orders/{orderId}).
-    * Use plural forms (‘orders’ instead of ‘order’).
-    * Alternate resource names with IDs as URL nodes (e.g. /orders/{orderId}/items/{itemId})
-    * Keep URLs as short as possible. Preferably, no more-than three nodes per URL.
-
-1. Use nouns as resource names (e.g. don’t use verbs in URLs).
-
-1. Make resource representations meaningful.
-    * “No Naked IDs!” No plain IDs embedded in responses. Use links and reference objects.
-    * Design resource representations. Don’t simply represent database tables.
-    * Merge representations. Don’t expose relationship tables as two IDs.
-
-1. Support filtering, sorting, and pagination on collections.
-
-1. Support link expansion of relationships. Allow clients to expand the data contained in the response by including additional representations instead of, or in addition to, links.
-
-1. Support field projections on resources. Allow clients to reduce the number of fields that come back in the response.
-
-1. Use the HTTP method names to mean something:
-    * POST - create and other non-idempotent operations.
-    * PUT - update.
-    * GET - read a resource or collection.
-    * DELETE - remove a resource or collection.
-
-1. Use HTTP status codes to be meaningful.
-    * 200 - Success.
-    * 201 - Created. Returned on successful creation of a new resource. Include a 'Location' header with a link to the newly-created resource.
-    * 400 - Bad request. Data issues such as invalid JSON, etc.
-    * 404 - Not found. Resource not found on GET.
-    * 409 - Conflict. Duplicate data or invalid data state would occur.
-
-1. Use ISO 8601 timepoint formats for dates in representations.
-
-1. Consider connectedness by utilizing a linking strategy. Some popular examples are:
-    * [HAL](http://stateless.co/hal_specification.html)
-    * [Siren](https://github.com/kevinswiber/siren)
-    * [JSON-LD](http://json-ld.org/)
-    * [Collection+JSON](http://amundsen.com/media-types/collection/)
-
-1. Use [OAuth2](http://oauth.net/2/) to secure your API.
-    * Use a Bearer token for authentication.
-    * Require HTTPS / TLS / SSL to access your APIs. OAuth2 Bearer tokens demand it. Unencrypted communication over HTTP allows for simple eavesdroppping and impersonation.
-
-1. Use Content-Type negotiation to describe incoming request payloads.
-
-    For example, let's say you're doing ratings, including a thumbs-up/thumbs-down and five-star rating. You have one route to create a rating: **POST /ratings**
-
-    How do you distinguish the incoming data to the service so it can determine which rating type it is: thumbs-up or five star?
-
-    The temptation is to create one route for each rating type: **POST /ratings/five_star** and **POST /ratings/thumbs_up**
-
-    However, by using Content-Type negotiation we can use our same **POST /ratings** route for both types. By setting the *Content-Type* header on the request to something like **Content-Type: application/vnd.company.rating.thumbsup** or **Content-Type: application/vnd.company.rating.fivestar** the server can determine how to process the incoming rating data.
-
-1. Evolution over versioning. However, if versioning, use the Accept header instead of versioning in the URL.
-    * Versioning via the URL signifies a 'platform' version and the entire platform must be versioned at the same time to enable the linking strategy.
-    * Versioning via the Accept header is versioning the resource.
-    * Additions to a JSON response do not require versioning. However, additions to a JSON request body that are 'required' are troublesome--and may require versioning.
-    * Hypermedia linking and versioning is troublesome no matter what--minimize it.
-    * Note that a version in the URL, while discouraged, can be used as a 'platform' version. It should appear as the first node in the path and not version individual endpoints differently (e.g. api.example.com/v1/...).
-
-1. Consider Cache-ability. At a minimum, use the following response headers:
-    * ETag - An arbitrary string for the version of a representation. Make sure to include the media type in the hash value, because that makes a different representation. (ex: ETag: "686897696a7c876b7e")
-    * Date - Date and time the response was returned (in RFC1123 format). (ex: Date: Sun, 06 Nov 1994 08:49:37 GMT)
-    * Cache-Control - The maximum number of seconds (max age) a response can be cached. However, if caching is not supported for the response, then no-cache is the value. (ex: Cache-Control: 360 or Cache-Control: no-cache)
-    * Expires - If max age is given, contains the timestamp (in RFC1123 format) for when the response expires, which is the value of Date (e.g. now) plus max age. If caching is not supported for the response, this header is not present. (ex: Expires: Sun, 06 Nov 1994 08:49:37 GMT)
-    * Pragma - When Cache-Control is 'no-cache' this header is also set to 'no-cache'. Otherwise, it is not present. (ex: Pragma: no-cache)
-    * Last-Modified - The timestamp that the resource itself was modified last (in RFC1123 format). (ex: Last-Modified: Sun, 06 Nov 1994 08:49:37 GMT)
-
-1. Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
-
-------------------------------------------------------------
-### Microservice Design Patterns
-- http://blog.arungupta.me/microservice-design-patterns/
-- https://dzone.com/articles/design-patterns-for-microservices
-- https://microservices.io/patterns/microservices.html
-- https://azure.microsoft.com/en-us/blog/design-patterns-for-microservices/
-
-### Security
-
-- [Crtauth](https://github.com/spotify/crtauth) - A public key backed client/server authentication system.
-- [Dex](https://github.com/coreos/dex) - Opinionated auth/directory service with pluggable connectors. OpenID Connect provider and third-party OAuth 2.0 delegation.
-- [JWT](http://jwt.io/) - JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
-- [Keycloak](https://github.com/keycloak/keycloak) - Full-featured and extensible auth service. OpenID Connect provider and third-party OAuth 2.0 delegation.
-- [Light OAuth2](https://github.com/networknt/light-oauth2) - A fast, lightweight and cloud native OAuth 2.0 authorization microservices based on light-java.
-- [Login With](https://github.com/lipp/login-with) - Stateless login-with microservice for Google, FB, Github, and more.
-- [OAuth](http://oauth.net/2/) - Provides specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. Many implementations.
-- [OpenID Connect](http://openid.net/developers/libraries/) - Libraries, products, and tools implementing current OpenID specifications and related specs.
-- [OSIAM](https://github.com/osiam/osiam) - Open source identity and access management implementing OAuth 2.0 and SCIMv2.
-- [SCIM](http://www.simplecloud.info/) - System for Cross-domain Identity Management.
-- [Vault](https://www.vaultproject.io/) - Secures, stores, and tightly controls access to tokens, passwords, certificates, API keys, and other secrets in modern computing.
-
-### Serialization
-
-- [Avro](https://avro.apache.org/) - Apache data serialization system providing rich data structures in a compact, fast, binary data format.
-- [BooPickle](https://github.com/ochrons/boopickle) - Binary serialization library for efficient network communication. For Scala and Scala.js
-- [Cap’n Proto](https://capnproto.org/) - Insanely fast data interchange format and capability-based RPC system.
-- [CBOR](http://cbor.io/) - Implementations of the CBOR standard (RFC 7049) in many languages.
-- [Cereal](http://uscilab.github.io/cereal/) - C++11 library for serialization.
-- [Cheshire](https://github.com/dakrone/cheshire) - Clojure JSON and JSON SMILE encoding/decoding.
-- [Etch](http://etch.apache.org/) - Cross-platform, language and transport-independent framework for building and consuming network services.
-- [Fastjson](https://github.com/alibaba/fastjson) - Fast JSON Processor.
-- [Ffjson](https://github.com/pquerna/ffjson) - Faster JSON serialization for Go.
-- [FST](https://github.com/RuedigerMoeller/fast-serialization) - Fast java serialization drop in-replacemen.
-- [Jackson](https://github.com/FasterXML/jackson) -  A multi-purpose Java library for processing JSON data format.
-- [Jackson Afterburner](https://github.com/FasterXML/jackson-module-afterburner) - Jackson module that uses bytecode generation to further speed up data binding (+30-40% throughput for serialization, deserialization).
-- [Kryo](https://github.com/EsotericSoftware/kryo) - Java serialization and cloning: fast, efficient, automatic.
-- [MessagePack](http://msgpack.org/) - Efficient binary serialization format.
-- [Protostuff](https://github.com/protostuff/protostuff) - A serialization library with built-in support for forward-backward compatibility (schema evolution) and validation.
-- [SBinary](https://github.com/harrah/sbinary) - Library for describing binary formats for Scala types.
-- [Thrift](http://thrift.apache.org/) - The Apache Thrift software framework, for scalable cross-language services development.
-
-### Storage
-
-- [Apache Hive](https://hive.apache.org/) - Data warehouse infrastructure built on top of Hadoop.
-- [Apache Cassandra](http://cassandra.apache.org) - Column-oriented and providing high availability with no single point of failure.
-- [Apache HBase](http://hbase.apache.org) - Hadoop database for big data.
-- [Aerospike ![c]](http://www.aerospike.com/) - High performance NoSQL database delivering speed at scale.
-- [ArangoDB](https://www.arangodb.com/) - A distributed free and open source database with a flexible data model for documents, graphs, and key-values.
-- [AtlasDB](https://github.com/palantir/atlasdb) - Transactional layer on top of a key value store.
-- [ClickHouse](https://clickhouse.yandex/) - Column-oriented database management system that allows generating analytical data reports in real time.
-- [CockroachDB ![c]](https://www.cockroachlabs.com/product/cockroachdb-core/) - A cloud-native SQL database modelled after Google Spanner.
-- [Couchbase](http://www.couchbase.com/) - A distributed database engineered for performance, scalability, and simplified administration.
-- [Crate ![c]](https://crate.io/) - Scalable SQL database with the NoSQL goodies.
-- [Datomic](http://www.datomic.com/) - Fully transactional, cloud-ready, distributed database.
-- [Druid](http://druid.io/) - Fast column-oriented distributed data store.
-- [Elasticsearch](https://www.elastic.co/products/elasticsearch) - Open source distributed, scalable, and highly available search server.
-- [Elliptics](http://reverbrain.com/elliptics/) - Fault tolerant distributed key/value storage.
-- [Geode](http://geode.incubator.apache.org/) - Open source, distributed, in-memory database for scale-out applications.
-- [Infinispan](http://infinispan.org/) - Highly concurrent key/value datastore used for caching.
-- [InfluxDB](https://github.com/influxdata/influxdb) - Scalable datastore for metrics, events, and real-time analytics.
-- [Manta](https://www.joyent.com/manta) - Highly scalable, distributed object storage service with integrated compute.
-- [MemSQL ![c]](http://www.memsql.com/) - High-performance, in-memory database that combines the horizontal scalability of distributed systems with the familiarity of SQL.
-- [OpenTSDB](http://opentsdb.net) - Scalable and distributed time series database written on top of Apache HBase.
-- [Parquet](https://parquet.apache.org/) - Columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
-- [Reborn](https://github.com/reborndb/reborn) - Distributed database fully compatible with redis protocol.
-- [RethinkDB](http://rethinkdb.com/) - Open source, scalable database that makes building realtime apps easier.
-- [Secure Scuttlebutt](https://github.com/ssbc/docs) - P2P database of message-feeds.
-- [Tachyon](http://tachyon-project.org/) - Memory-centric distributed storage system, enabling reliable data sharing at memory-speed across cluster frameworks.
-- [Voldemort](https://github.com/voldemort/voldemort) - Open source clone of Amazon DynamoDB
-- [VoltDB ![c]](https://www.voltdb.com/) - In-Memory ACID compliant distributed database.
-
-### Testing
-
-- [Goreplay](https://github.com/buger/goreplay) - A tool for capturing and replaying live HTTP traffic into a test environment.
-- [Mitmproxy](https://mitmproxy.org/) - An interactive console program that allows traffic flows to be intercepted, inspected, modified and replayed.
-- [Mountebank](http://www.mbtest.org/) - Cross-platform, multi-protocol test doubles over the wire.
-- [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/) - TDD to the level of software architecture.
-- [VCR](https://github.com/vcr/vcr) - Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. See the list of ports for implementations in other languages.
-- [Wilma](https://github.com/epam/Wilma) - Combined HTTP/HTTPS service stub and transparent proxy solution.
-- [WireMock](http://wiremock.org/) - Flexible library for stubbing and mocking web services. Unlike general purpose mocking tools it works by creating an actual HTTP server that your code under test can connect to as it would a real web service.
-
-## Continuous Integration and Continuous Delivery
-
-- [Awesome CI/CD DevOps](https://github.com/ciandcd/awesome-ciandcd) - A curated list of awesome tools for continuous integration, continuous delivery and DevOps.
-
-## Documentation & Modeling
-
-### REST APIs
 
 - [Aglio](https://github.com/danielgtaylor/aglio) - API Blueprint renderer with theme support that outputs static HTML.
 - [API Blueprint](https://apiblueprint.org/) - Tools for your whole API lifecycle. Use it to discuss your API with others. Generate documentation automatically. Or a test suite. Or even some code.
