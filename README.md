@@ -37,8 +37,8 @@ Microservice architecture, or simply microservices, is a distinctive method of d
 * Bare minimum of centralized management of these services
 * Services may be written in different programming languages(polyglot development).
 * Services should use separate data storage (polyglot persistence ).
+* https://martinfowler.com/articles/microservices.html
 
-- https://martinfowler.com/articles/microservices.html
 
 ![Alt Text](http://blog.arungupta.me/wp-content/uploads/2015/04/microservices-function.png)
 
@@ -96,6 +96,10 @@ With our individual services being small in size, the cost to replace them with 
 * It is very difficult to maintain multiple Microservices.
 * It is very difficult to maintain versioning among Microservices.
 * It is extremely difficult to find good architects for creating Microservice architecture in right way.
+* Increased Complexity
+* Competency needed to manage and deploy the microservices,devops 
+* http://highscalability.com/blog/2014/4/8/microservices-not-a-free-lunch.html
+
 
 
 ![Alt Text](https://media.licdn.com/dms/image/C4E22AQET5GfBwLR_VQ/feedshare-shrink_8192/0?e=1546635600&v=beta&t=21Qb9rL1siPnW26Y7latfWaYZZg7_gerC4cDVUXEtTQ)
@@ -125,6 +129,9 @@ This document borrows heavily from:
 * [Web API Design](http://pages.apigee.com/web-api-design-ebook.html), by Brian Mulloy, Apigee
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 
+### Architecture Principles
+* Single Responsibility Principle 
+* Domain Driven Design
 
 ### strategies and patterns for realizing the seven design guidelines applied to microservices (sei.cmu.edu)
 
