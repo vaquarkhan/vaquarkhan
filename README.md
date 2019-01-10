@@ -652,6 +652,9 @@ Note: If the mock parameter is included in a request to the production environme
 
 ### Continuous Integration and Continuous Delivery
 
+![Alt Text](https://i.pinimg.com/originals/94/59/59/945959ad493a20fa7e348379763dbcda.jpg)
+
+
 - [Awesome CI/CD DevOps](https://github.com/ciandcd/awesome-ciandcd) - A curated list of awesome tools for continuous integration, continuous delivery and DevOps.
 
 
