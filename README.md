@@ -105,18 +105,6 @@ With our individual services being small in size, the cost to replace them with 
 ![Alt Text](https://media.licdn.com/dms/image/C4E22AQET5GfBwLR_VQ/feedshare-shrink_8192/0?e=1547067600&v=beta&t=gPeIppK9kNSLlM-fhooUBCOmXOaX359OFyhfO3cwXno)
 
 
-## When to use this architecture
-
-Consider this architecture style for:
-
-* Large applications that require a high release velocity.
-
-* Complex applications that need to be highly scalable.
-
-* Applications with rich domains or many subdomains.
-
-* An organization that consists of small development teams.
-
 
 
 ## Design Guidelines
@@ -213,98 +201,18 @@ This document borrows heavily from:
 * [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/) 
 
 
+### When to use this architecture
 
-------------------------------------------------------------
+Consider this architecture style for:
 
+* Large applications that require a high release velocity.
 
-### Security
+* Complex applications that need to be highly scalable.
 
-- [Crtauth](https://github.com/spotify/crtauth) - A public key backed client/server authentication system.
-- [Dex](https://github.com/coreos/dex) - Opinionated auth/directory service with pluggable connectors. OpenID Connect provider and third-party OAuth 2.0 delegation.
-- [JWT](http://jwt.io/) - JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
-- [Keycloak](https://github.com/keycloak/keycloak) - Full-featured and extensible auth service. OpenID Connect provider and third-party OAuth 2.0 delegation.
-- [Light OAuth2](https://github.com/networknt/light-oauth2) - A fast, lightweight and cloud native OAuth 2.0 authorization microservices based on light-java.
-- [Login With](https://github.com/lipp/login-with) - Stateless login-with microservice for Google, FB, Github, and more.
-- [OAuth](http://oauth.net/2/) - Provides specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. Many implementations.
-- [OpenID Connect](http://openid.net/developers/libraries/) - Libraries, products, and tools implementing current OpenID specifications and related specs.
-- [OSIAM](https://github.com/osiam/osiam) - Open source identity and access management implementing OAuth 2.0 and SCIMv2.
-- [SCIM](http://www.simplecloud.info/) - System for Cross-domain Identity Management.
-- [Vault](https://www.vaultproject.io/) - Secures, stores, and tightly controls access to tokens, passwords, certificates, API keys, and other secrets in modern computing.
-- [RFC5246](https://tools.ietf.org/html/rfc5246) - The Transport Layer Security (TLS) Protocol Version 1.2.
-- [RFC6066](https://tools.ietf.org/html/rfc6066) - TLS Extensions.
-- [RFC6347](https://tools.ietf.org/html/rfc6347) - Datagram Transport Layer Security Version 1.2.
-- [RFC6749](https://tools.ietf.org/html/rfc6749) - The OAuth 2.0 authorization framework.
-- [RFC7515](https://tools.ietf.org/html/rfc7515) - JSON Web Signature (JWS) represents content secured with digital signatures or Message Authentication Codes (MACs) using JSON-based data structures.
-- [RFC7519](https://tools.ietf.org/html/rfc7519) - JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
-- [RFC7642](https://tools.ietf.org/html/rfc7642) - SCIM: Definitions, overview, concepts, and requirements.
-- [RFC7643](https://tools.ietf.org/html/rfc7643) - SCIM: Core Schema, provides a platform-neutral schema and extension model for representing users and groups.
-- [RFC7644](https://tools.ietf.org/html/rfc7644) - SCIM: Protocol, an application-level, REST protocol for provisioning and managing identity data on the web.
-- [OIDCONN](http://openid.net/connect/) - OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It allows clients to verify the identity of the end-user based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the end-user in an interoperable and REST-like manner.
+* Applications with rich domains or many subdomains.
 
+* An organization that consists of small development teams.
 
-### Serialization
-
-- [Avro](https://avro.apache.org/) - Apache data serialization system providing rich data structures in a compact, fast, binary data format.
-- [BooPickle](https://github.com/ochrons/boopickle) - Binary serialization library for efficient network communication. For Scala and Scala.js
-- [Cap’n Proto](https://capnproto.org/) - Insanely fast data interchange format and capability-based RPC system.
-- [CBOR](http://cbor.io/) - Implementations of the CBOR standard (RFC 7049) in many languages.
-- [Cereal](http://uscilab.github.io/cereal/) - C++11 library for serialization.
-- [Cheshire](https://github.com/dakrone/cheshire) - Clojure JSON and JSON SMILE encoding/decoding.
-- [Etch](http://etch.apache.org/) - Cross-platform, language and transport-independent framework for building and consuming network services.
-- [Fastjson](https://github.com/alibaba/fastjson) - Fast JSON Processor.
-- [Ffjson](https://github.com/pquerna/ffjson) - Faster JSON serialization for Go.
-- [FST](https://github.com/RuedigerMoeller/fast-serialization) - Fast java serialization drop in-replacemen.
-- [Jackson](https://github.com/FasterXML/jackson) -  A multi-purpose Java library for processing JSON data format.
-- [Jackson Afterburner](https://github.com/FasterXML/jackson-module-afterburner) - Jackson module that uses bytecode generation to further speed up data binding (+30-40% throughput for serialization, deserialization).
-- [Kryo](https://github.com/EsotericSoftware/kryo) - Java serialization and cloning: fast, efficient, automatic.
-- [MessagePack](http://msgpack.org/) - Efficient binary serialization format.
-- [Protostuff](https://github.com/protostuff/protostuff) - A serialization library with built-in support for forward-backward compatibility (schema evolution) and validation.
-- [SBinary](https://github.com/harrah/sbinary) - Library for describing binary formats for Scala types.
-- [Thrift](http://thrift.apache.org/) - The Apache Thrift software framework, for scalable cross-language services development.
-
-
-### Storage
-
-- [Apache Hive](https://hive.apache.org/) - Data warehouse infrastructure built on top of Hadoop.
-- [Apache Cassandra](http://cassandra.apache.org) - Column-oriented and providing high availability with no single point of failure.
-- [Apache HBase](http://hbase.apache.org) - Hadoop database for big data.
-- [Aerospike ![c]](http://www.aerospike.com/) - High performance NoSQL database delivering speed at scale.
-- [ArangoDB](https://www.arangodb.com/) - A distributed free and open source database with a flexible data model for documents, graphs, and key-values.
-- [AtlasDB](https://github.com/palantir/atlasdb) - Transactional layer on top of a key value store.
-- [ClickHouse](https://clickhouse.yandex/) - Column-oriented database management system that allows generating analytical data reports in real time.
-- [CockroachDB ![c]](https://www.cockroachlabs.com/product/cockroachdb-core/) - A cloud-native SQL database modelled after Google Spanner.
-- [Couchbase](http://www.couchbase.com/) - A distributed database engineered for performance, scalability, and simplified administration.
-- [Crate ![c]](https://crate.io/) - Scalable SQL database with the NoSQL goodies.
-- [Datomic](http://www.datomic.com/) - Fully transactional, cloud-ready, distributed database.
-- [Druid](http://druid.io/) - Fast column-oriented distributed data store.
-- [Elasticsearch](https://www.elastic.co/products/elasticsearch) - Open source distributed, scalable, and highly available search server.
-- [Elliptics](http://reverbrain.com/elliptics/) - Fault tolerant distributed key/value storage.
-- [Geode](http://geode.incubator.apache.org/) - Open source, distributed, in-memory database for scale-out applications.
-- [Infinispan](http://infinispan.org/) - Highly concurrent key/value datastore used for caching.
-- [InfluxDB](https://github.com/influxdata/influxdb) - Scalable datastore for metrics, events, and real-time analytics.
-- [Manta](https://www.joyent.com/manta) - Highly scalable, distributed object storage service with integrated compute.
-- [MemSQL ![c]](http://www.memsql.com/) - High-performance, in-memory database that combines the horizontal scalability of distributed systems with the familiarity of SQL.
-- [OpenTSDB](http://opentsdb.net) - Scalable and distributed time series database written on top of Apache HBase.
-- [Parquet](https://parquet.apache.org/) - Columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
-- [Reborn](https://github.com/reborndb/reborn) - Distributed database fully compatible with redis protocol.
-- [RethinkDB](http://rethinkdb.com/) - Open source, scalable database that makes building realtime apps easier.
-- [Secure Scuttlebutt](https://github.com/ssbc/docs) - P2P database of message-feeds.
-- [Tachyon](http://tachyon-project.org/) - Memory-centric distributed storage system, enabling reliable data sharing at memory-speed across cluster frameworks.
-- [Voldemort](https://github.com/voldemort/voldemort) - Open source clone of Amazon DynamoDB
-- [VoltDB ![c]](https://www.voltdb.com/) - In-Memory ACID compliant distributed database.
-
-### Testing
-
-- [Goreplay](https://github.com/buger/goreplay) - A tool for capturing and replaying live HTTP traffic into a test environment.
-- [Mitmproxy](https://mitmproxy.org/) - An interactive console program that allows traffic flows to be intercepted, inspected, modified and replayed.
-- [Mountebank](http://www.mbtest.org/) - Cross-platform, multi-protocol test doubles over the wire.
-- [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/) - TDD to the level of software architecture.
-- [VCR](https://github.com/vcr/vcr) - Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. See the list of ports for implementations in other languages.
-- [Wilma](https://github.com/epam/Wilma) - Combined HTTP/HTTPS service stub and transparent proxy solution.
-- [WireMock](http://wiremock.org/) - Flexible library for stubbing and mocking web services. Unlike general purpose mocking tools it works by creating an actual HTTP server that your code under test can connect to as it would a real web service.
-
-
---------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -654,7 +562,95 @@ Note: If the mock parameter is included in a request to the production environme
 - [Swagger](http://swagger.io/) - A simple yet powerful representation of your RESTful API.
 
 
-## Continuous Integration and Continuous Delivery
+
+### Security
+
+- [Crtauth](https://github.com/spotify/crtauth) - A public key backed client/server authentication system.
+- [Dex](https://github.com/coreos/dex) - Opinionated auth/directory service with pluggable connectors. OpenID Connect provider and third-party OAuth 2.0 delegation.
+- [JWT](http://jwt.io/) - JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+- [Keycloak](https://github.com/keycloak/keycloak) - Full-featured and extensible auth service. OpenID Connect provider and third-party OAuth 2.0 delegation.
+- [Light OAuth2](https://github.com/networknt/light-oauth2) - A fast, lightweight and cloud native OAuth 2.0 authorization microservices based on light-java.
+- [Login With](https://github.com/lipp/login-with) - Stateless login-with microservice for Google, FB, Github, and more.
+- [OAuth](http://oauth.net/2/) - Provides specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. Many implementations.
+- [OpenID Connect](http://openid.net/developers/libraries/) - Libraries, products, and tools implementing current OpenID specifications and related specs.
+- [OSIAM](https://github.com/osiam/osiam) - Open source identity and access management implementing OAuth 2.0 and SCIMv2.
+- [SCIM](http://www.simplecloud.info/) - System for Cross-domain Identity Management.
+- [Vault](https://www.vaultproject.io/) - Secures, stores, and tightly controls access to tokens, passwords, certificates, API keys, and other secrets in modern computing.
+- [RFC5246](https://tools.ietf.org/html/rfc5246) - The Transport Layer Security (TLS) Protocol Version 1.2.
+- [RFC6066](https://tools.ietf.org/html/rfc6066) - TLS Extensions.
+- [RFC6347](https://tools.ietf.org/html/rfc6347) - Datagram Transport Layer Security Version 1.2.
+- [RFC6749](https://tools.ietf.org/html/rfc6749) - The OAuth 2.0 authorization framework.
+- [RFC7515](https://tools.ietf.org/html/rfc7515) - JSON Web Signature (JWS) represents content secured with digital signatures or Message Authentication Codes (MACs) using JSON-based data structures.
+- [RFC7519](https://tools.ietf.org/html/rfc7519) - JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
+- [RFC7642](https://tools.ietf.org/html/rfc7642) - SCIM: Definitions, overview, concepts, and requirements.
+- [RFC7643](https://tools.ietf.org/html/rfc7643) - SCIM: Core Schema, provides a platform-neutral schema and extension model for representing users and groups.
+- [RFC7644](https://tools.ietf.org/html/rfc7644) - SCIM: Protocol, an application-level, REST protocol for provisioning and managing identity data on the web.
+- [OIDCONN](http://openid.net/connect/) - OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It allows clients to verify the identity of the end-user based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the end-user in an interoperable and REST-like manner.
+
+
+### Serialization
+
+- [Avro](https://avro.apache.org/) - Apache data serialization system providing rich data structures in a compact, fast, binary data format.
+- [BooPickle](https://github.com/ochrons/boopickle) - Binary serialization library for efficient network communication. For Scala and Scala.js
+- [Cap’n Proto](https://capnproto.org/) - Insanely fast data interchange format and capability-based RPC system.
+- [CBOR](http://cbor.io/) - Implementations of the CBOR standard (RFC 7049) in many languages.
+- [Cereal](http://uscilab.github.io/cereal/) - C++11 library for serialization.
+- [Cheshire](https://github.com/dakrone/cheshire) - Clojure JSON and JSON SMILE encoding/decoding.
+- [Etch](http://etch.apache.org/) - Cross-platform, language and transport-independent framework for building and consuming network services.
+- [Fastjson](https://github.com/alibaba/fastjson) - Fast JSON Processor.
+- [Ffjson](https://github.com/pquerna/ffjson) - Faster JSON serialization for Go.
+- [FST](https://github.com/RuedigerMoeller/fast-serialization) - Fast java serialization drop in-replacemen.
+- [Jackson](https://github.com/FasterXML/jackson) -  A multi-purpose Java library for processing JSON data format.
+- [Jackson Afterburner](https://github.com/FasterXML/jackson-module-afterburner) - Jackson module that uses bytecode generation to further speed up data binding (+30-40% throughput for serialization, deserialization).
+- [Kryo](https://github.com/EsotericSoftware/kryo) - Java serialization and cloning: fast, efficient, automatic.
+- [MessagePack](http://msgpack.org/) - Efficient binary serialization format.
+- [Protostuff](https://github.com/protostuff/protostuff) - A serialization library with built-in support for forward-backward compatibility (schema evolution) and validation.
+- [SBinary](https://github.com/harrah/sbinary) - Library for describing binary formats for Scala types.
+- [Thrift](http://thrift.apache.org/) - The Apache Thrift software framework, for scalable cross-language services development.
+
+
+### Storage
+
+- [Apache Hive](https://hive.apache.org/) - Data warehouse infrastructure built on top of Hadoop.
+- [Apache Cassandra](http://cassandra.apache.org) - Column-oriented and providing high availability with no single point of failure.
+- [Apache HBase](http://hbase.apache.org) - Hadoop database for big data.
+- [Aerospike ![c]](http://www.aerospike.com/) - High performance NoSQL database delivering speed at scale.
+- [ArangoDB](https://www.arangodb.com/) - A distributed free and open source database with a flexible data model for documents, graphs, and key-values.
+- [AtlasDB](https://github.com/palantir/atlasdb) - Transactional layer on top of a key value store.
+- [ClickHouse](https://clickhouse.yandex/) - Column-oriented database management system that allows generating analytical data reports in real time.
+- [CockroachDB ![c]](https://www.cockroachlabs.com/product/cockroachdb-core/) - A cloud-native SQL database modelled after Google Spanner.
+- [Couchbase](http://www.couchbase.com/) - A distributed database engineered for performance, scalability, and simplified administration.
+- [Crate ![c]](https://crate.io/) - Scalable SQL database with the NoSQL goodies.
+- [Datomic](http://www.datomic.com/) - Fully transactional, cloud-ready, distributed database.
+- [Druid](http://druid.io/) - Fast column-oriented distributed data store.
+- [Elasticsearch](https://www.elastic.co/products/elasticsearch) - Open source distributed, scalable, and highly available search server.
+- [Elliptics](http://reverbrain.com/elliptics/) - Fault tolerant distributed key/value storage.
+- [Geode](http://geode.incubator.apache.org/) - Open source, distributed, in-memory database for scale-out applications.
+- [Infinispan](http://infinispan.org/) - Highly concurrent key/value datastore used for caching.
+- [InfluxDB](https://github.com/influxdata/influxdb) - Scalable datastore for metrics, events, and real-time analytics.
+- [Manta](https://www.joyent.com/manta) - Highly scalable, distributed object storage service with integrated compute.
+- [MemSQL ![c]](http://www.memsql.com/) - High-performance, in-memory database that combines the horizontal scalability of distributed systems with the familiarity of SQL.
+- [OpenTSDB](http://opentsdb.net) - Scalable and distributed time series database written on top of Apache HBase.
+- [Parquet](https://parquet.apache.org/) - Columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
+- [Reborn](https://github.com/reborndb/reborn) - Distributed database fully compatible with redis protocol.
+- [RethinkDB](http://rethinkdb.com/) - Open source, scalable database that makes building realtime apps easier.
+- [Secure Scuttlebutt](https://github.com/ssbc/docs) - P2P database of message-feeds.
+- [Tachyon](http://tachyon-project.org/) - Memory-centric distributed storage system, enabling reliable data sharing at memory-speed across cluster frameworks.
+- [Voldemort](https://github.com/voldemort/voldemort) - Open source clone of Amazon DynamoDB
+- [VoltDB ![c]](https://www.voltdb.com/) - In-Memory ACID compliant distributed database.
+
+### Testing
+
+- [Goreplay](https://github.com/buger/goreplay) - A tool for capturing and replaying live HTTP traffic into a test environment.
+- [Mitmproxy](https://mitmproxy.org/) - An interactive console program that allows traffic flows to be intercepted, inspected, modified and replayed.
+- [Mountebank](http://www.mbtest.org/) - Cross-platform, multi-protocol test doubles over the wire.
+- [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/) - TDD to the level of software architecture.
+- [VCR](https://github.com/vcr/vcr) - Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. See the list of ports for implementations in other languages.
+- [Wilma](https://github.com/epam/Wilma) - Combined HTTP/HTTPS service stub and transparent proxy solution.
+- [WireMock](http://wiremock.org/) - Flexible library for stubbing and mocking web services. Unlike general purpose mocking tools it works by creating an actual HTTP server that your code under test can connect to as it would a real web service.
+
+
+### Continuous Integration and Continuous Delivery
 
 - [Awesome CI/CD DevOps](https://github.com/ciandcd/awesome-ciandcd) - A curated list of awesome tools for continuous integration, continuous delivery and DevOps.
 
