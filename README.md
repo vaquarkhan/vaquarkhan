@@ -202,7 +202,7 @@ This document borrows heavily from:
 * [API Facade Pattern](http://apigee.com/about/resources/ebooks/api-fa%C3%A7ade-pattern), by Brian Mulloy, Apigee
 * [Web API Design](http://pages.apigee.com/web-api-design-ebook.html), by Brian Mulloy, Apigee
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
-
+* [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/) 
 
 
 -------------------------------------------------------------------------------------------------------------
