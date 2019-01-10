@@ -37,7 +37,7 @@ Microservice architecture, or simply microservices, is a distinctive method of d
 * Bare minimum of centralized management of these services
 * Services may be written in different programming languages(polyglot development).
 * Services should use separate data storage (polyglot persistence ).
-* https://martinfowler.com/articles/microservices.html
+- from  https://martinfowler.com/articles/microservices.html
 
 
 ![Alt Text](http://blog.arungupta.me/wp-content/uploads/2015/04/microservices-function.png)
@@ -194,6 +194,14 @@ Consider this architecture style for:
 * serverless architecture
 * monitoring and logging for microservices
 
+### Microservice Design Patterns
+* [Design patterns for microservices](https://azure.microsoft.com/en-us/blog/design-patterns-for-microservices/)
+* [Microservice Design Patterns](http://blog.arungupta.me/microservice-design-patterns/)
+* [Design Patterns for Microservices](https://dzone.com/articles/design-patterns-for-microservices)
+* [Pattern: Microservice Architecture](https://microservices.io/patterns/microservices.html)
+
+
+
 
 Guidelines and examples for White House Web APIs, encouraging consistency, maintainability, and best practices across applications. White House APIs aim to balance a truly RESTful API interface with a positive developer experience (DX).
 
@@ -208,12 +216,6 @@ This document borrows heavily from:
 
 ------------------------------------------------------------
 
-### Microservice Design Patterns
-
-- http://blog.arungupta.me/microservice-design-patterns/
-- https://dzone.com/articles/design-patterns-for-microservices
-- https://microservices.io/patterns/microservices.html
-- https://azure.microsoft.com/en-us/blog/design-patterns-for-microservices/
 
 ### Security
 
@@ -931,7 +933,7 @@ Note: If the mock parameter is included in a request to the production environme
 ![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjz5RYcuKTPMnf09nLpjxciGuQeAP58RH8IkIIsSomeqqrPHs2)
 
 
-Inspired by the [awesome](https://github.com/sindresorhus/awesome).
+Inspired by the [coming soon...]().
 
 ---------------------------------------------------------------------------------
 <object data="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf" type="application/pdf" width="700px" height="700px">
