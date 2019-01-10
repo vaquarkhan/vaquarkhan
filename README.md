@@ -980,7 +980,10 @@ Note: If the mock parameter is included in a request to the production environme
 - https://github.com/ewolff/microservice
 - https://github.com/semplify/Reactive-Microservice-Training
 - https://gitlab.com/training-microservices-2018-06
-
+- https://github.com/FudanSELab/train-ticket
+- https://github.com/cer/event-sourcing-examples
+- https://github.com/finn-no/Docker-and-Microservices
+- https://github.com/nielskrijger/auth-server
 
 ---------------------------------------------------------------------------------
 
