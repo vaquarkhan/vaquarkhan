@@ -126,6 +126,31 @@ Consider this architecture style for:
 * Domain Driven Design
 * Start withrelatively broad service boundaries to begin with, refactoring to smaller ones (based on business requirements) 
 
+### Core patterns
+
+* [Monolithic architecture from Chris Richardson](http://microservices.io/patterns/monolithic.html)
+* [Microservices architecture from Chris Richardson](http://microservices.io/patterns/microservices.html)
+* [API Gateway from Chris Richardson](http://microservices.io/patterns/apigateway.html)
+* [Bounded Context from Martin Fowler](http://martinfowler.com/bliki/BoundedContext.html)
+* [Circuit Breaker from Martin Fowler](http://martinfowler.com/bliki/CircuitBreaker.html)
+* [Circuit Breaker ~ netflix](http://doc.akka.io/docs/akka/snapshot/common/circuitbreaker.html)
+
+### Deployment patterns
+
+* [Multiple service instances per host](http://microservices.io/patterns/deployment/multiple-services-per-host.html)
+* [Service instance per host](http://microservices.io/patterns/deployment/single-service-per-host.html)
+* [Service instance per VM](http://microservices.io/patterns/deployment/service-per-vm.html)
+* [Service instance per Container](http://microservices.io/patterns/deployment/service-per-container.html)
+
+### Service discovery
+
+* [Client-side discovery from Chris Richardson](http://microservices.io/patterns/client-side-discovery.html)
+* [Server-side discovery from Chris Richardson ](http://microservices.io/patterns/apigateway.html)
+* [Service registry from Chris Richardson](http://microservices.io/patterns/apigateway.html)
+* [Self registration from Chris Richardson](http://microservices.io/patterns/apigateway.html)
+* [3rd party registration from Chris Richardson](http://microservices.io/patterns/apigateway.html)
+* [Service discovery with consul & etcd](https://aws.amazon.com/blogs/compute/service-discovery-via-consul-with-amazon-ecs/)
+
 ### Strategies and patterns for realizing the seven design guidelines applied to microservices (sei.cmu.edu)
 
 #### Standardized service contract. Strategies include:
@@ -769,7 +794,17 @@ Note: If the mock parameter is included in a request to the production environme
   + Book 5: Monitoring & Management with Docker & Containers.
 - [The Tao of Microservices](https://www.manning.com/books/the-tao-of-microservices) - Teaches the path to understanding how to apply microservices architecture with your own real-world projects.
 - [IBM Redbook](https://www.redbooks.ibm.com/redbooks/pdfs/sg248275.pdf) - IBM Red book
-
+* [Antifragile: Things That Gain from Disorder](http://www.amazon.com/gp/product/0812979680)
+* [The Black Swan](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X)
+* [Implementing Domain-Driven Design](http://www.amazon.co.uk/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577)
+* [Building Micro Services - Sam Newman](http://www.amazon.co.uk/Building-Microservices-Sam-Newman/dp/1491950358)
+* [Building Micro Services - Sam Newman Downloadable preview edition](http://nginx.com/wp-content/uploads/2015/01/Building_Microservices_Nginx.pdf)
+* [Antifragile Software - Russ Miles](https://leanpub.com/antifragilesoftware)
+* [software-architecture-patterns from O`REILLY in English](http://www.oreilly.com/programming/free/files/software-architecture-patterns.pdf)
+* [software-architecture-patterns from O`REILLY in Chinese](https://raw.githubusercontent.com/bboyfeiyu/android-tech-frontier/master/software-architecture-patterns/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F.pdf)
+* [Production Ready Microservices - Susan J. Fowler](http://shop.oreilly.com/product/0636920053675.do)
+* [Microservices in Production - Susan J. Fowler (free ebook)](http://www.oreilly.com/programming/free/microservices-in-production.csp)
+* [Microservices with Docker, Flask, and React - Michael Herman](https://testdriven.io/)
 
 ### Sites
 
@@ -952,6 +987,7 @@ Note: If the mock parameter is included in a request to the production environme
 ![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjz5RYcuKTPMnf09nLpjxciGuQeAP58RH8IkIIsSomeqqrPHs2)
 
 
+Inspired by the [awesome](https://github.com/sindresorhus/awesome).
 
 ---------------------------------------------------------------------------------
 <object data="https://www.redbooks.ibm.com/redbooks/pdfs/sg248357.pdf" type="application/pdf" width="700px" height="700px">
