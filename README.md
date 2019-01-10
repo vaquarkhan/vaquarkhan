@@ -943,6 +943,8 @@ Note: If the mock parameter is included in a request to the production environme
 - https://github.com/vaquarkhan/spring-doge-microservice
 - https://github.com/vaquarkhan/microservice-service-registration-and-discovery
 - https://github.com/ewolff/microservice
+- https://github.com/semplify/Reactive-Microservice-Training
+- https://gitlab.com/training-microservices-2018-06
 
 
 ---------------------------------------------------------------------------------
