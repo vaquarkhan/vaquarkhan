@@ -757,9 +757,9 @@ Note: If the mock parameter is included in a request to the production environme
 
 
 ### Microservices Quotes
+* [Building-microservices]( https://www.goodreads.com/work/quotes/41956437-building-microservices-designing-fine-grained-systems)
+* [Microservices-patterns-and-applications]( https://www.goodreads.com/work/quotes/45004498-microservices-patterns-and-applications-designing-fine-grained-service)
 
-- https://www.goodreads.com/work/quotes/41956437-building-microservices-designing-fine-grained-systems
-- https://www.goodreads.com/work/quotes/45004498-microservices-patterns-and-applications-designing-fine-grained-service
 
 ### Resource Naming
 - https://www.restapitutorial.com/lessons/restfulresourcenaming.html
