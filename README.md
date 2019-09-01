@@ -1,5 +1,5 @@
 
-# Microservices Recipes- Depricated find new version on
+# Microservices Recipes - Deprecated find new version on
 ---------------------------------------------------------------------------------------
 https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook
 ----------------------------------------------------------------------------------------
