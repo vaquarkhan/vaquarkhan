@@ -1,10 +1,9 @@
 ![Alt Text](https://build-it-yourself.com/s-programs/images/geek-gif.gif )
 
-![Alt Text](https://bestanimations.com/Holidays/Fireworks/fireworks/ba-awesome-colorful-fireworks-animated-gif-image-s.gif)
-
-
 ------------------------------
-## Talk is cheap. Show me the code!
+## “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”
+― Martin Fowler
+
 ------------------------------
 
 
