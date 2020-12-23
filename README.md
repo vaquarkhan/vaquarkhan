@@ -14,9 +14,5 @@ for many highly competitive clients. <br/> <br/>
 
 ✅ https://www.jcp.org/en/jsr/detail?id=368
 
-  <img align="center" src="https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=gruvbox" />
-
-
-
 
 ![Alt Text](https://cms-assets.tutsplus.com/uploads/users/108/posts/21424/image/run-animation-4-8-final2.gif ) ![Alt Text](https://build-it-yourself.com/s-programs/images/geek-gif.gif )
