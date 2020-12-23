@@ -11,8 +11,11 @@ for many highly competitive clients. <br/> <br/>
 
 
 ✅My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
+
 ✅ http://stackoverflow.com/users/4812170/vaquar-khan
+
 ✅ http://apache-spark-developers-list.1001551.n3.nabble.com/template/NamlServlet.jtp?macro=user_nodes&user=619
+
 ✅ https://www.jcp.org/en/jsr/detail?id=368
 
   <img align="center" src="https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=gruvbox" />
