@@ -10,7 +10,7 @@ skilled Developer with extensive experience in large-scale distributed, cloud an
 for many highly competitive clients. <br/> <br/>
 
 
-[![Linkedin]()](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
+[![Linkedin](https://woodinvillechamber.org/wp-content/uploads/2017/11/Linked-In-Logo-614x461.jpg)](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
 
 - 👨‍💻 My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
 
