@@ -10,11 +10,10 @@ skilled Developer with extensive experience in large-scale distributed, cloud an
 for many highly competitive clients. <br/> <br/>
 
 
-[![dev.to badge](https://cdn3.vectorstock.com/i/1000x1000/87/42/linkedin-logo-icon-social-media-symbol-business-vector-21628742.jpg)](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
+[![Linkedin]()](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
 
 - 👨‍💻 My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
 
-(https://github.com/vaquarkhan?tab=repositories)
 
   <img align="center" src="https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=gruvbox" />
 
