@@ -10,10 +10,10 @@ skilled Developer with extensive experience in large-scale distributed, cloud an
 for many highly competitive clients. <br/> <br/>
 
 
-[![Linkedin](https://woodinvillechamber.org/wp-content/uploads/2017/11/Linked-In-Logo-614x461.jpg)](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
-
-- 👨‍💻 My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
-
+✅My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
+✅ http://stackoverflow.com/users/4812170/vaquar-khan
+✅ http://apache-spark-developers-list.1001551.n3.nabble.com/template/NamlServlet.jtp?macro=user_nodes&user=619
+✅ https://www.jcp.org/en/jsr/detail?id=368
 
   <img align="center" src="https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=gruvbox" />
 
