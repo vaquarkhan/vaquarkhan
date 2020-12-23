@@ -14,10 +14,10 @@ for many highly competitive clients. <br/> <br/>
 
 - 👨‍💻 My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
 
+(https://github.com/vaquarkhan?tab=repositories)
 
-<a href="https://github.com/neerazz">
   <img align="center" src="https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=gruvbox" />
-</a>
+
 
 
 
