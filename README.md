@@ -15,4 +15,4 @@ for many highly competitive clients. <br/> <br/>
 ✅ https://www.jcp.org/en/jsr/detail?id=368
 
 
-![Alt Text](https://hikaruzone.files.wordpress.com/2015/10/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png ) ![Alt Text](https://build-it-yourself.com/s-programs/images/geek-gif.gif )
+![Alt Text](https://build-it-yourself.com/s-programs/images/geek-gif.gif )
