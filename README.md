@@ -16,3 +16,6 @@ for many highly competitive clients. <br/> <br/>
 
 
 ![Alt Text](https://build-it-yourself.com/s-programs/images/geek-gif.gif )
+
+
+[![Publish to Docker and Sentry Registry](https://github.com/vaquarkhan/metoffice-MOGREPS-UK/actions/workflows/main.yml/badge.svg)](https://github.com/vaquarkhan/metoffice-MOGREPS-UK/actions/workflows/main.yml)
