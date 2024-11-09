@@ -32,6 +32,9 @@ for many highly competitive clients. <br/> <br/>
 
 ✅ https://www.jcp.org/en/jsr/detail?id=368
 
+✅ MY Book - Data Engineering AWS Cookbook recipe based
+![Alt Text](https://github.com/vaquarkhan/vaquarkhan/blob/master/mybook.jpg)
+
 
 ![Alt Text](https://build-it-yourself.com/s-programs/images/geek-gif.gif )
 
