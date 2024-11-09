@@ -27,7 +27,7 @@ for many highly competitive clients. <br/> <br/>
 
 <img src="https://github.com/vaquarkhan/vaquarkhan/blob/master/mybook.jpg" alt="Alt Text" width="300" height="auto">
 
-✅ MY Free Books  Microservices recipes a free gitbook [here](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)
+✅ MY Free Book  Microservices recipes a free gitbook [here](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)
 
 ✅ Linkedin [here](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
 
