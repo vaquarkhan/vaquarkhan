@@ -29,6 +29,7 @@ for many highly competitive clients. <br/> <br/>
 
 ✅ MY Free Books  Microservices recipes a free gitbook [here](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)
 
+✅ Linkedin [here](https://www.linkedin.com/in/%E2%97%84-vaquar-khan-%E2%96%BA-%E2%98%85%E2%9C%94-b695577/)
 
 ✅My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
 
