@@ -23,9 +23,11 @@ I am an experienced Technology Architect, Individual contributor, Cloud Architec
 skilled Developer with extensive experience in large-scale distributed, cloud and Bigdata architecture and development
 for many highly competitive clients. <br/> <br/>
 
-✅ MY Book - Data Engineering AWS Cookbook recipe based
+✅ MY Books - Data Engineering AWS Cookbook recipe based [here](https://www.amazon.com/Data-Engineering-AWS-Cookbook-recipe-based/dp/1805127284)
 
 <img src="https://github.com/vaquarkhan/vaquarkhan/blob/master/mybook.jpg" alt="Alt Text" width="300" height="auto">
+
+✅ MY Free Books  Microservices recipes a free gitbook [here](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)
 
 
 ✅My Github Repo  [here](https://github.com/vaquarkhan?tab=repositories)
