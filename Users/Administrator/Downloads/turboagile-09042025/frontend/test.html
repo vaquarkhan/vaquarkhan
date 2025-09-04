@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Monaco</title>
+</head>
+<body>
+    <div id="container" style="width: 800px; height: 600px; border: 1px solid #ccc;"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs' } });
+        require(['vs/editor/editor.main'], function () {
+            const editor = monaco.editor.create(document.getElementById('container'), {
+                value: 'console.log("Hello VS Code!");',
+                language: 'javascript',
+                theme: 'vs-dark',
+                fontSize: 14,
+                minimap: { enabled: true },
+                wordWrap: 'on',
+                lineNumbers: 'on'
+            });
+        });
+    </script>
+</body>
+</html>

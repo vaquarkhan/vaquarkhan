@@ -1,0 +1,241 @@
+/* Project Stories Styles */
+.story-card.architecture {
+    border-left: 4px solid #8b5cf6;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+}
+
+.story-card.framework {
+    border-left: 4px solid #06b6d4;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.05));
+}
+
+.story-card.blocked {
+    opacity: 0.7;
+    background: rgba(156, 163, 175, 0.1);
+    border-left-color: #9ca3af;
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.story-type-icon {
+    font-size: 1.2rem;
+}
+
+.story-id {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.story-points {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.story-title {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.story-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.blocked-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.blocked-icon {
+    font-size: 1rem;
+}
+
+.blocked-text {
+    font-size: 0.8rem;
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.dependency-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.dependency-icon {
+    font-size: 0.9rem;
+}
+
+.dependency-text {
+    font-size: 0.8rem;
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+.story-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.story-priority {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.priority-highest {
+    background: #dc2626;
+    color: white;
+}
+
+.priority-high {
+    background: #ea580c;
+    color: white;
+}
+
+.priority-medium {
+    background: #ca8a04;
+    color: white;
+}
+
+.priority-low {
+    background: #65a30d;
+    color: white;
+}
+
+.story-status {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+}
+
+/* Architecture Story Specific Styles */
+.story-card.architecture .story-title::before {
+    content: "🏗️ ";
+}
+
+.story-card.framework .story-title::before {
+    content: "💻 ";
+}
+
+/* Enhanced Story Card Hover Effects */
+.story-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.story-card.blocked:hover {
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.story-card.architecture:hover {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.story-card.framework:hover {
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+}
+
+/* Project Metrics Enhancement */
+.metric-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Board Column Headers */
+.board-column h3 {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.board-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+}
+
+/* Story Card Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.story-card {
+    animation: slideInUp 0.3s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .story-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .story-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .blocked-indicator,
+    .dependency-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}

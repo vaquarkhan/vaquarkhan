@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Wizard - TurboAgile</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .step-active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+        }
+        
+        .step-completed {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .validation-pass { @apply bg-emerald-50 border-emerald-200 text-emerald-800; }
+        .validation-warning { @apply bg-amber-50 border-amber-200 text-amber-800; }
+        .validation-error { @apply bg-red-50 border-red-200 text-red-800; }
+        
+        .pattern-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .pattern-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+        
+        .pattern-card.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const CleanArchitectureWizard = () => {
+            const [currentStep, setCurrentStep] = useState(1);
+            const [sectionStates, setSectionStates] = useState({});
+            
+            // Data states
+            const [cloudChoice, setCloudChoice] = useState('');
+            const [architecturePatterns, setArchitecturePatterns] = useState([]);
+            const [selectedPattern, setSelectedPattern] = useState('');
+            const [validationResults, setValidationResults] = useState([]);
+            const [isValidating, setIsValidating] = useState(false);
+            const [customPrompt, setCustomPrompt] = useState('');
+
+            const steps = [
+                { id: 1, title: 'Cloud', icon: 'fa-cloud' },
+                { id: 2, title: 'Patterns', icon: 'fa-puzzle-piece' },
+                { id: 3, title: 'Validate', icon: 'fa-shield-alt' },
+                { id: 4, title: 'Generate', icon: 'fa-code' },
+                { id: 5, title: 'Deploy', icon: 'fa-rocket' }
+            ];
+
+            const cloudOptions = [
+                { value: 'aws', label: 'AWS', icon: 'fa-aws', color: 'bg-orange-500' },
+                { value: 'azure', label: 'Azure', icon: 'fa-microsoft', color: 'bg-blue-500' },
+                { value: 'gcp', label: 'GCP', icon: 'fa-google', color: 'bg-red-500' },
+                { value: 'on-premise', label: 'On-Premise', icon: 'fa-server', color: 'bg-gray-500' }
+            ];
+
+            // Mock validation rules
+            const validationRules = [
+                { id: 'security', name: 'Security Compliance', category: 'security', severity: 'error' },
+                { id: 'performance', name: 'Performance Optimization', category: 'performance', severity: 'warning' },
+                { id: 'scalability', name: 'Scalability Design', category: 'scalability', severity: 'error' },
+                { id: 'reliability', name: 'Reliability Patterns', category: 'reliability', severity: 'warning' }
+            ];
+
+            // Generate patterns based on cloud choice
+            const generatePatterns = async () => {
+                const mockPatterns = [
+                    {
+                        id: 'microservices',
+                        name: 'Microservices Architecture',
+                        description: 'Scalable, distributed services with API gateway',
+                        cost: 450,
+                        score: 92,
+                        pros: ['High scalability', 'Technology diversity', 'Fault isolation'],
+                        cons: ['Complex deployment', 'Network overhead', 'Data consistency']
+                    },
+                    {
+                        id: 'serverless',
+                        name: 'Serverless Architecture',
+                        description: 'Event-driven, auto-scaling serverless functions',
+                        cost: 180,
+                        score: 88,
+                        pros: ['No server management', 'Auto-scaling', 'Pay-per-use'],
+                        cons: ['Cold starts', 'Vendor lock-in', 'Limited runtime']
+                    },
+                    {
+                        id: 'monolith',
+                        name: 'Modular Monolith',
+                        description: 'Well-structured monolithic application',
+                        cost: 280,
+                        score: 85,
+                        pros: ['Simple deployment', 'Easy debugging', 'Strong consistency'],
+                        cons: ['Limited scalability', 'Technology coupling', 'Large codebase']
+                    }
+                ];
+                
+                setArchitecturePatterns(mockPatterns);
+            };
+
+            // Run architecture validation
+            const runValidation = async () => {
+                setIsValidating(true);
+                
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    const results = validationRules.map(rule => {
+                        const random = Math.random();
+                        return {
+                            ...rule,
+                            status: random > 0.7 ? 'pass' : random > 0.4 ? 'warning' : 'error',
+                            message: `${rule.name} ${random > 0.7 ? 'passed' : random > 0.4 ? 'has warnings' : 'failed'}`,
+                            suggestion: random <= 0.7 ? `Consider improving ${rule.name.toLowerCase()}` : null
+                        };
+                    });
+                    
+                    setValidationResults(results);
+                } finally {
+                    setIsValidating(false);
+                }
+            };
+
+            // Control panel for each section
+            const ControlPanel = ({ section, onAccept, onReject, onRegenerate }) => {
+                const [localPrompt, setLocalPrompt] = useState('');
+                const status = sectionStates[section]?.state || 'pending';
+
+                return (
+                    <div className="glass-card rounded-xl p-4 mt-6 border">
+                        <div className="flex items-center justify-between mb-4">
+                            <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                status === 'accepted' ? 'bg-green-100 text-green-800' :
+                                status === 'rejected' ? 'bg-red-100 text-red-800' :
+                                'bg-gray-100 text-gray-800'
+                            }`}>
+                                <i className={`fas ${
+                                    status === 'accepted' ? 'fa-check' :
+                                    status === 'rejected' ? 'fa-times' : 'fa-clock'
+                                } mr-1`}></i>
+                                {status.charAt(0).toUpperCase() + status.slice(1)}
+                            </div>
+                            
+                            <div className="flex space-x-2">
+                                <button 
+                                    onClick={onAccept}
+                                    className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg text-sm transition-colors"
+                                    disabled={status === 'accepted'}
+                                >
+                                    <i className="fas fa-check mr-1"></i>Accept
+                                </button>
+                                <button 
+                                    onClick={onReject}
+                                    className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg text-sm transition-colors"
+                                >
+                                    <i className="fas fa-times mr-1"></i>Reject
+                                </button>
+                                <button 
+                                    onClick={onRegenerate}
+                                    className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded-lg text-sm transition-colors"
+                                >
+                                    <i className="fas fa-redo mr-1"></i>Regenerate
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="flex space-x-2">
+                            <input
+                                type="text"
+                                value={localPrompt}
+                                onChange={(e) => setLocalPrompt(e.target.value)}
+                                placeholder="Custom requirements..."
+                                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            />
+                            <button
+                                onClick={() => {
+                                    onRegenerate(localPrompt);
+                                    setLocalPrompt('');
+                                }}
+                                disabled={!localPrompt.trim()}
+                                className="btn-primary text-white px-4 py-2 rounded-lg text-sm disabled:opacity-50"
+                            >
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+                );
+            };
+
+            // Step 1: Cloud Selection
+            const renderStep1 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-2">Choose Your Cloud Platform</h2>
+                        <p className="text-gray-600">Select where your application will be deployed</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {cloudOptions.map(option => (
+                            <div
+                                key={option.value}
+                                onClick={() => setCloudChoice(option.value)}
+                                className={`pattern-card glass-card rounded-xl p-6 cursor-pointer text-center ${
+                                    cloudChoice === option.value ? 'selected' : ''
+                                }`}
+                            >
+                                <div className={`w-12 h-12 ${option.color} rounded-full flex items-center justify-center mx-auto mb-3`}>
+                                    <i className={`fab ${option.icon} text-white text-xl`}></i>
+                                </div>
+                                <h3 className="font-semibold text-gray-800">{option.label}</h3>
+                            </div>
+                        ))}
+                    </div>
+
+                    <ControlPanel
+                        section="cloud"
+                        onAccept={() => {
+                            setSectionStates(prev => ({ ...prev, cloud: { state: 'accepted' } }));
+                            setCurrentStep(2);
+                            generatePatterns();
+                        }}
+                        onReject={() => setSectionStates(prev => ({ ...prev, cloud: { state: 'rejected' } }))}
+                        onRegenerate={() => setCloudChoice('')}
+                    />
+                </div>
+            );
+
+            // Step 2: Architecture Patterns
+            const renderStep2 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-2">Architecture Patterns</h2>
+                        <p className="text-gray-600">AI-generated patterns for {cloudChoice}</p>
+                    </div>
+
+                    <div className="grid gap-6">
+                        {architecturePatterns.map(pattern => (
+                            <div
+                                key={pattern.id}
+                                onClick={() => setSelectedPattern(pattern.id)}
+                                className={`pattern-card glass-card rounded-xl p-6 cursor-pointer ${
+                                    selectedPattern === pattern.id ? 'selected' : ''
+                                }`}
+                            >
+                                <div className="flex items-start justify-between mb-4">
+                                    <div className="flex items-center space-x-3">
+                                        <input
+                                            type="radio"
+                                            name="pattern"
+                                            checked={selectedPattern === pattern.id}
+                                            onChange={() => setSelectedPattern(pattern.id)}
+                                            className="text-blue-600"
+                                        />
+                                        <h3 className="text-xl font-bold text-gray-800">{pattern.name}</h3>
+                                    </div>
+                                    <div className="flex space-x-2">
+                                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm font-medium">
+                                            Score: {pattern.score}%
+                                        </span>
+                                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium">
+                                            ${pattern.cost}/mo
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <p className="text-gray-600 mb-4">{pattern.description}</p>
+                                
+                                <div className="grid grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <h4 className="font-semibold text-green-700 mb-2">Pros</h4>
+                                        <ul className="space-y-1">
+                                            {pattern.pros.map((pro, idx) => (
+                                                <li key={idx} className="flex items-center text-green-600">
+                                                    <i className="fas fa-check mr-2"></i>{pro}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-red-700 mb-2">Cons</h4>
+                                        <ul className="space-y-1">
+                                            {pattern.cons.map((con, idx) => (
+                                                <li key={idx} className="flex items-center text-red-600">
+                                                    <i className="fas fa-times mr-2"></i>{con}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <ControlPanel
+                        section="patterns"
+                        onAccept={() => {
+                            setSectionStates(prev => ({ ...prev, patterns: { state: 'accepted' } }));
+                            setCurrentStep(3);
+                        }}
+                        onReject={() => setSectionStates(prev => ({ ...prev, patterns: { state: 'rejected' } }))}
+                        onRegenerate={(prompt) => {
+                            setCustomPrompt(prompt || '');
+                            generatePatterns();
+                        }}
+                    />
+                </div>
+            );
+
+            // Step 3: Architecture Validation
+            const renderStep3 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-2">Architecture Validation</h2>
+                        <p className="text-gray-600">Validate your architecture against best practices</p>
+                    </div>
+
+                    <div className="glass-card rounded-xl p-6">
+                        <div className="flex items-center justify-between mb-6">
+                            <h3 className="text-xl font-semibold text-gray-800">
+                                <i className="fas fa-shield-alt mr-2 text-blue-600"></i>
+                                Validation Results
+                            </h3>
+                            <button
+                                onClick={runValidation}
+                                disabled={isValidating}
+                                className="btn-primary text-white px-4 py-2 rounded-lg disabled:opacity-50"
+                            >
+                                {isValidating ? (
+                                    <>
+                                        <i className="fas fa-spinner fa-spin mr-2"></i>
+                                        Validating...
+                                    </>
+                                ) : (
+                                    <>
+                                        <i className="fas fa-play mr-2"></i>
+                                        Run Validation
+                                    </>
+                                )}
+                            </button>
+                        </div>
+
+                        {validationResults.length > 0 && (
+                            <>
+                                <div className="grid grid-cols-3 gap-4 mb-6">
+                                    <div className="text-center p-4 bg-green-50 rounded-lg">
+                                        <div className="text-2xl font-bold text-green-600">
+                                            {validationResults.filter(r => r.status === 'pass').length}
+                                        </div>
+                                        <div className="text-sm text-green-700">Passed</div>
+                                    </div>
+                                    <div className="text-center p-4 bg-yellow-50 rounded-lg">
+                                        <div className="text-2xl font-bold text-yellow-600">
+                                            {validationResults.filter(r => r.status === 'warning').length}
+                                        </div>
+                                        <div className="text-sm text-yellow-700">Warnings</div>
+                                    </div>
+                                    <div className="text-center p-4 bg-red-50 rounded-lg">
+                                        <div className="text-2xl font-bold text-red-600">
+                                            {validationResults.filter(r => r.status === 'error').length}
+                                        </div>
+                                        <div className="text-sm text-red-700">Errors</div>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-3">
+                                    {validationResults.map((result, index) => (
+                                        <div
+                                            key={index}
+                                            className={`p-4 rounded-lg border ${
+                                                result.status === 'pass' ? 'validation-pass' :
+                                                result.status === 'warning' ? 'validation-warning' :
+                                                'validation-error'
+                                            }`}
+                                        >
+                                            <div className="flex items-start justify-between">
+                                                <div className="flex items-start space-x-3">
+                                                    <i className={`fas ${
+                                                        result.status === 'pass' ? 'fa-check-circle' :
+                                                        result.status === 'warning' ? 'fa-exclamation-triangle' :
+                                                        'fa-times-circle'
+                                                    } mt-1`}></i>
+                                                    <div>
+                                                        <h4 className="font-semibold">{result.name}</h4>
+                                                        <p className="text-sm mt-1">{result.message}</p>
+                                                        {result.suggestion && (
+                                                            <div className="mt-2 p-2 bg-white bg-opacity-50 rounded text-sm">
+                                                                <i className="fas fa-lightbulb mr-1"></i>
+                                                                {result.suggestion}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                <span className="text-xs px-2 py-1 bg-white bg-opacity-50 rounded">
+                                                    {result.category}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
+
+                    <ControlPanel
+                        section="validation"
+                        onAccept={() => {
+                            setSectionStates(prev => ({ ...prev, validation: { state: 'accepted' } }));
+                            setCurrentStep(4);
+                        }}
+                        onReject={() => setSectionStates(prev => ({ ...prev, validation: { state: 'rejected' } }))}
+                        onRegenerate={() => runValidation()}
+                    />
+                </div>
+            );
+
+            // Step indicator
+            const renderStepIndicator = () => (
+                <div className="flex justify-center items-center space-x-4 mb-12">
+                    {steps.map((step, index) => (
+                        <div key={step.id} className="flex items-center">
+                            <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold ${
+                                currentStep > step.id ? 'step-completed' :
+                                currentStep === step.id ? 'step-active' :
+                                'bg-gray-300'
+                            }`}>
+                                <i className={`fas ${step.icon}`}></i>
+                            </div>
+                            <div className="ml-2 hidden md:block">
+                                <div className="font-medium text-gray-800">{step.title}</div>
+                            </div>
+                            {index < steps.length - 1 && (
+                                <div className={`w-8 h-0.5 mx-4 ${
+                                    currentStep > step.id ? 'bg-green-400' : 'bg-gray-300'
+                                }`}></div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            );
+
+            const renderCurrentStep = () => {
+                switch (currentStep) {
+                    case 1: return renderStep1();
+                    case 2: return renderStep2();
+                    case 3: return renderStep3();
+                    default: return renderStep1();
+                }
+            };
+
+            return (
+                <div className="min-h-screen gradient-bg">
+                    <div className="container mx-auto px-4 py-8">
+                        <div className="text-center mb-12">
+                            <h1 className="text-5xl font-bold text-white mb-4">
+                                Architecture Wizard
+                            </h1>
+                            <p className="text-xl text-white opacity-90">
+                                Create, validate, and deploy enterprise-grade architectures
+                            </p>
+                        </div>
+
+                        {renderStepIndicator()}
+                        
+                        <div className="max-w-4xl mx-auto">
+                            <div className="glass-card rounded-2xl p-8 shadow-2xl">
+                                {renderCurrentStep()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<CleanArchitectureWizard />, document.getElementById('root'));
+    </script>
+</body>
+</html>

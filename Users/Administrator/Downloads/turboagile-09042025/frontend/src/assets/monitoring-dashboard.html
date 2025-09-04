@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Dashboard - Turbo Agile</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="analytics-styles.css">
+    <link rel="stylesheet" href="cost-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <div class="dashboard-container">
+        <header>
+            <div class="header-left">
+                <button id="back-to-main" class="back-button">&larr; Back to Dashboard</button>
+                <h1>Advanced Observability & Monitoring</h1>
+            </div>
+            <div class="header-controls">
+                <button class="refresh-button">Refresh Data</button>
+                <div class="theme-switcher">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle" aria-label="Toggle theme">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <main class="monitoring-main">
+            <div class="observability-tabs">
+                <button class="obs-tab active" data-obs-tab="metrics">Metrics</button>
+                <button class="obs-tab" data-obs-tab="logs">Logs</button>
+                <button class="obs-tab" data-obs-tab="traces">Traces</button>
+                <button class="obs-tab" data-obs-tab="alerts">Alerts</button>
+            </div>
+            
+            <div class="observability-content">
+                <div id="metrics-panel" class="obs-panel active">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <h4>System Health</h4>
+                            <div class="metric-value">98.7%</div>
+                            <div class="metric-chart">Uptime trending up</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Response Time</h4>
+                            <div class="metric-value">142ms</div>
+                            <div class="metric-chart">-23% improvement</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Error Rate</h4>
+                            <div class="metric-value">0.03%</div>
+                            <div class="metric-chart">Within SLA</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Active Users</h4>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-chart">Peak: 1,891</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>CPU Usage</h4>
+                            <div class="metric-value">67%</div>
+                            <div class="metric-chart">Normal range</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Memory Usage</h4>
+                            <div class="metric-value">78%</div>
+                            <div class="metric-chart">Stable</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Disk I/O</h4>
+                            <div class="metric-value">234 MB/s</div>
+                            <div class="metric-chart">Low activity</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Network Traffic</h4>
+                            <div class="metric-value">1.2 GB/s</div>
+                            <div class="metric-chart">Peak hours</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="logs-panel" class="obs-panel">
+                    <div class="log-search-bar">
+                        <input type="text" placeholder="Search logs... e.g., level:error service:payment" class="log-search-input">
+                        <button class="log-search-btn">Search</button>
+                        <select class="log-filter">
+                            <option value="all">All Levels</option>
+                            <option value="error">Error</option>
+                            <option value="warn">Warning</option>
+                            <option value="info">Info</option>
+                            <option value="debug">Debug</option>
+                        </select>
+                    </div>
+                    <div class="log-stream">
+                        <div class="log-entry info">
+                            <span class="log-time">14:23:45</span>
+                            <span class="log-level info">INFO</span>
+                            <span class="log-service">payment-service</span>
+                            <span class="log-message">Payment processed successfully for user_123</span>
+                        </div>
+                        <div class="log-entry warn">
+                            <span class="log-time">14:23:42</span>
+                            <span class="log-level warn">WARN</span>
+                            <span class="log-service">api-gateway</span>
+                            <span class="log-message">High memory usage detected: 87%</span>
+                        </div>
+                        <div class="log-entry error">
+                            <span class="log-time">14:23:38</span>
+                            <span class="log-level error">ERROR</span>
+                            <span class="log-service">database</span>
+                            <span class="log-message">Database connection timeout after 30s</span>
+                        </div>
+                        <div class="log-entry info">
+                            <span class="log-time">14:23:35</span>
+                            <span class="log-level info">INFO</span>
+                            <span class="log-service">auth-service</span>
+                            <span class="log-message">User authentication successful</span>
+                        </div>
+                        <div class="log-entry debug">
+                            <span class="log-time">14:23:32</span>
+                            <span class="log-level debug">DEBUG</span>
+                            <span class="log-service">cache-service</span>
+                            <span class="log-message">Cache hit ratio: 94.2%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="traces-panel" class="obs-panel">
+                    <div class="trace-timeline">
+                        <h4>Distributed Trace Analysis</h4>
+                        <div class="trace-item">
+                            <div class="trace-service">API Gateway</div>
+                            <div class="trace-bar" style="width: 20%; background: #3498db;">45ms</div>
+                        </div>
+                        <div class="trace-item">
+                            <div class="trace-service">Auth Service</div>
+                            <div class="trace-bar" style="width: 15%; background: #2ecc71;">32ms</div>
+                        </div>
+                        <div class="trace-item">
+                            <div class="trace-service">Payment Service</div>
+                            <div class="trace-bar" style="width: 35%; background: #e74c3c;">78ms</div>
+                        </div>
+                        <div class="trace-item">
+                            <div class="trace-service">Database</div>
+                            <div class="trace-bar" style="width: 30%; background: #f39c12;">65ms</div>
+                        </div>
+                        <div class="trace-item">
+                            <div class="trace-service">Cache Service</div>
+                            <div class="trace-bar" style="width: 10%; background: #9b59b6;">12ms</div>
+                        </div>
+                        <div class="trace-item">
+                            <div class="trace-service">Notification Service</div>
+                            <div class="trace-bar" style="width: 25%; background: #1abc9c;">28ms</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="alerts-panel" class="obs-panel">
+                    <div class="alert-list">
+                        <div class="alert-item critical">
+                            <span class="alert-severity">Critical</span>
+                            <span class="alert-title">Database CPU > 90%</span>
+                            <span class="alert-time">2 min ago</span>
+                            <button class="alert-action">Acknowledge</button>
+                        </div>
+                        <div class="alert-item warning">
+                            <span class="alert-severity">Warning</span>
+                            <span class="alert-title">Memory usage trending up</span>
+                            <span class="alert-time">15 min ago</span>
+                            <button class="alert-action">View Details</button>
+                        </div>
+                        <div class="alert-item info">
+                            <span class="alert-severity">Info</span>
+                            <span class="alert-title">Deployment completed</span>
+                            <span class="alert-time">1 hour ago</span>
+                            <button class="alert-action">Dismiss</button>
+                        </div>
+                        <div class="alert-item warning">
+                            <span class="alert-severity">Warning</span>
+                            <span class="alert-title">API rate limit approaching</span>
+                            <span class="alert-time">3 hours ago</span>
+                            <button class="alert-action">Configure</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.obs-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-obs-tab');
+                
+                // Remove active class from all tabs and panels
+                document.querySelectorAll('.obs-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.obs-panel').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding panel
+                this.classList.add('active');
+                document.getElementById(targetTab + '-panel').classList.add('active');
+            });
+        });
+
+        // Back button functionality
+        document.getElementById('back-to-main').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+
+        // Theme toggle
+        document.getElementById('theme-toggle').addEventListener('change', function() {
+            document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+        });
+
+        // Refresh functionality
+        document.querySelector('.refresh-button').addEventListener('click', function() {
+            this.textContent = 'Refreshing...';
+            setTimeout(() => {
+                this.textContent = 'Refresh Data';
+                // Simulate data refresh
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

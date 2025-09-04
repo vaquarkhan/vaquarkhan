@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Agile - Working</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #1a1a1a; color: #e0e0e0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .login-box { background: #2c2c2c; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; }
+        .dashboard { display: none; }
+        .section { background: #3a3a3a; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; }
+        button { background: #6a5acd; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #7d6de0; }
+        input, textarea { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 1px solid #444; border-radius: 6px; background: #2c2c2c; color: #e0e0e0; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; }
+        .modal-content { background: #2c2c2c; padding: 2rem; border-radius: 8px; max-width: 600px; margin: 5% auto; }
+        .close { float: right; font-size: 1.5rem; cursor: pointer; }
+        .story-card { background: #3a3a3a; padding: 1rem; margin: 0.5rem 0; border-radius: 6px; border-left: 4px solid #6a5acd; }
+        .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .column { background: #2c2c2c; padding: 1rem; border-radius: 8px; min-height: 300px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login -->
+        <div id="login" class="login-box">
+            <h1>🚀 Turbo Agile</h1>
+            <p>AI-powered development platform</p>
+            <input type="email" id="email" value="demo@turboagile.ai" placeholder="Email">
+            <input type="password" id="password" value="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard">
+            <h1>🚀 Turbo Agile Dashboard</h1>
+            
+            <div class="section">
+                <h2>Generate User Stories</h2>
+                <textarea id="brd" placeholder="Enter your Business Requirements Document..."></textarea>
+                <button onclick="generateStories()">🚀 Generate Stories</button>
+            </div>
+
+            <div class="section">
+                <h2>Project Board</h2>
+                <button onclick="createStory()">+ Create Story</button>
+                <div class="board">
+                    <div class="column">
+                        <h3>Backlog</h3>
+                        <div id="backlog"></div>
+                    </div>
+                    <div class="column">
+                        <h3>In Progress</h3>
+                        <div id="progress"></div>
+                    </div>
+                    <div class="column">
+                        <h3>Done</h3>
+                        <div id="done"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Story Modal -->
+        <div id="storyModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Create Story</h2>
+                <input type="text" id="storyTitle" placeholder="Story Title">
+                <textarea id="storyDesc" placeholder="Story Description"></textarea>
+                <textarea id="storyCriteria" placeholder="Acceptance Criteria"></textarea>
+                <button onclick="saveStory()">Save Story</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stories = JSON.parse(localStorage.getItem('stories') || '[]');
+
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email === 'demo@turboagile.ai' && password === 'password') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                renderStories();
+            } else {
+                alert('Invalid credentials');
+            }
+        }
+
+        function generateStories() {
+            const brd = document.getElementById('brd').value;
+            if (!brd.trim()) {
+                alert('Please enter BRD content');
+                return;
+            }
+
+            // Generate sample stories
+            const sampleStories = [
+                {
+                    id: Date.now() + 1,
+                    title: 'User Authentication',
+                    description: 'As a user, I want to login securely',
+                    criteria: ['Email validation', 'Password encryption', 'Session management'],
+                    status: 'backlog'
+                },
+                {
+                    id: Date.now() + 2,
+                    title: 'Dashboard View',
+                    description: 'As a user, I want to see my dashboard',
+                    criteria: ['Show user info', 'Display metrics', 'Navigation menu'],
+                    status: 'backlog'
+                }
+            ];
+
+            stories.push(...sampleStories);
+            localStorage.setItem('stories', JSON.stringify(stories));
+            renderStories();
+            alert('Stories generated successfully!');
+        }
+
+        function createStory() {
+            document.getElementById('storyModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('storyModal').style.display = 'none';
+        }
+
+        function saveStory() {
+            const title = document.getElementById('storyTitle').value;
+            const desc = document.getElementById('storyDesc').value;
+            const criteria = document.getElementById('storyCriteria').value;
+
+            if (!title || !desc) {
+                alert('Please fill required fields');
+                return;
+            }
+
+            const story = {
+                id: Date.now(),
+                title: title,
+                description: desc,
+                criteria: criteria.split('\n').filter(c => c.trim()),
+                status: 'backlog'
+            };
+
+            stories.push(story);
+            localStorage.setItem('stories', JSON.stringify(stories));
+            renderStories();
+            closeModal();
+            
+            // Clear form
+            document.getElementById('storyTitle').value = '';
+            document.getElementById('storyDesc').value = '';
+            document.getElementById('storyCriteria').value = '';
+        }
+
+        function renderStories() {
+            const backlog = document.getElementById('backlog');
+            const progress = document.getElementById('progress');
+            const done = document.getElementById('done');
+
+            backlog.innerHTML = '';
+            progress.innerHTML = '';
+            done.innerHTML = '';
+
+            stories.forEach(story => {
+                const card = document.createElement('div');
+                card.className = 'story-card';
+                card.innerHTML = `
+                    <h4>${story.title}</h4>
+                    <p>${story.description}</p>
+                    <button onclick="moveStory(${story.id})">Move →</button>
+                `;
+
+                if (story.status === 'backlog') backlog.appendChild(card);
+                else if (story.status === 'progress') progress.appendChild(card);
+                else if (story.status === 'done') done.appendChild(card);
+            });
+        }
+
+        function moveStory(id) {
+            const story = stories.find(s => s.id === id);
+            if (story.status === 'backlog') story.status = 'progress';
+            else if (story.status === 'progress') story.status = 'done';
+            
+            localStorage.setItem('stories', JSON.stringify(stories));
+            renderStories();
+        }
+
+        // Load stories on page load
+        renderStories();
+    </script>
+</body>
+</html>

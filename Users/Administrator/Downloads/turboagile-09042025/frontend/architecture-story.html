@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Story - TurboAgile</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .architecture-story-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .step.active .step-number {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .step.completed .step-number {
+            background: #10b981;
+            color: white;
+        }
+        
+        .step.inactive .step-number {
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+        
+        .step-title {
+            font-size: 0.875rem;
+            text-align: center;
+            color: #6b7280;
+        }
+        
+        .step.active .step-title {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        .step.completed .step-title {
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .pattern-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .pattern-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pattern-card.selected {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+        
+        .diagram-container {
+            background: #f9fafb;
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .code-editor {
+            background: #1f2937;
+            color: #f9fafb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .btn-primary:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+        }
+        
+        .btn-warning {
+            background: #f59e0b;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-warning:hover {
+            background: #d97706;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const ArchitectureStoryApp = () => {
+            const [currentStep, setCurrentStep] = useState(1);
+            const [projectId] = useState('sample-project-123');
+            
+            // Step 1 data
+            const [cloudChoice, setCloudChoice] = useState('');
+            const [customPrompt, setCustomPrompt] = useState('');
+            const [useCustomPrompt, setUseCustomPrompt] = useState(false);
+            
+            // Step 2 data
+            const [architecturePatterns, setArchitecturePatterns] = useState([]);
+            const [selectedPattern, setSelectedPattern] = useState('');
+            const [isGenerating, setIsGenerating] = useState(false);
+            
+            // Step 3 data
+            const [diagrams, setDiagrams] = useState({
+                architectureDiagram: '',
+                sequenceDiagram: '',
+                erDiagram: ''
+            });
+            
+            // Step 4 data
+            const [selectedLanguage, setSelectedLanguage] = useState('');
+            const [selectedFramework, setSelectedFramework] = useState('');
+            
+            // Step 5 data
+            const [generatedCode, setGeneratedCode] = useState({
+                language: '',
+                framework: '',
+                files: {}
+            });
+
+            const cloudOptions = [
+                { value: 'aws', label: 'Amazon Web Services (AWS)' },
+                { value: 'azure', label: 'Microsoft Azure' },
+                { value: 'gcp', label: 'Google Cloud Platform' },
+                { value: 'on-premise', label: 'On-Premise' },
+                { value: 'cloud-agnostic', label: 'Cloud Agnostic' }
+            ];
+
+            const languageFrameworks = {
+                'java': ['Spring Boot', 'Spring MVC', 'Quarkus', 'Micronaut'],
+                'javascript': ['Node.js + Express', 'Next.js', 'Nest.js', 'React'],
+                'python': ['Django', 'Flask', 'FastAPI', 'Pyramid'],
+                'csharp': ['.NET Core', 'ASP.NET', '.NET Framework', 'Blazor'],
+                'go': ['Gin', 'Echo', 'Fiber', 'Chi'],
+                'rust': ['Actix', 'Rocket', 'Warp', 'Axum']
+            };
+
+            const steps = [
+                { number: 1, title: 'Cloud Selection', completed: currentStep > 1, active: currentStep === 1 },
+                { number: 2, title: 'Architecture Patterns', completed: currentStep > 2, active: currentStep === 2 },
+                { number: 3, title: 'Diagram Editor', completed: currentStep > 3, active: currentStep === 3 },
+                { number: 4, title: 'Technology Stack', completed: currentStep > 4, active: currentStep === 4 },
+                { number: 5, title: 'Code Generation', completed: currentStep > 5, active: currentStep === 5 },
+                { number: 6, title: 'Deployment', completed: currentStep > 6, active: currentStep === 6 }
+            ];
+
+            const handleStep1Next = () => {
+                if (cloudChoice) {
+                    setCurrentStep(2);
+                    generateArchitecturePatterns();
+                }
+            };
+
+            const generateArchitecturePatterns = async () => {
+                setIsGenerating(true);
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    const mockPatterns = [
+                        {
+                            id: 'microservices',
+                            name: 'Microservices Architecture',
+                            description: 'Scalable microservices architecture with API Gateway and service mesh',
+                            referenceLink: 'https://microservices.io/',
+                            estimatedCost: 450,
+                            pros: ['High scalability', 'Service isolation', 'Technology diversity'],
+                            cons: ['Complex deployment', 'Network latency', 'Data consistency challenges']
+                        },
+                        {
+                            id: 'serverless',
+                            name: 'Serverless Architecture',
+                            description: 'Event-driven serverless architecture with Functions and managed databases',
+                            referenceLink: 'https://serverless.com/',
+                            estimatedCost: 120,
+                            pros: ['No server management', 'Auto-scaling', 'Pay per use'],
+                            cons: ['Cold starts', 'Vendor lock-in', 'Limited execution time']
+                        },
+                        {
+                            id: 'monolith',
+                            name: 'Monolithic Architecture',
+                            description: 'Traditional monolithic application with load balancer and database',
+                            referenceLink: 'https://en.wikipedia.org/wiki/Monolithic_application',
+                            estimatedCost: 280,
+                            pros: ['Simple deployment', 'Easy debugging', 'Strong consistency'],
+                            cons: ['Limited scalability', 'Technology lock-in', 'Single point of failure']
+                        }
+                    ];
+                    
+                    setArchitecturePatterns(mockPatterns);
+                } catch (error) {
+                    console.error('Failed to generate patterns:', error);
+                } finally {
+                    setIsGenerating(false);
+                }
+            };
+
+            const handlePatternSelect = (patternId) => {
+                setSelectedPattern(patternId);
+            };
+
+            const handleAcceptPattern = () => {
+                if (selectedPattern) {
+                    setCurrentStep(3);
+                    generateDiagrams();
+                }
+            };
+
+            const generateDiagrams = async () => {
+                // Simulate diagram generation
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                setDiagrams({
+                    architectureDiagram: 'Architecture diagram generated',
+                    sequenceDiagram: 'Sequence diagram generated',
+                    erDiagram: 'ER diagram generated'
+                });
+            };
+
+            const handleLanguageFrameworkNext = () => {
+                if (selectedLanguage && selectedFramework) {
+                    setCurrentStep(5);
+                    generateCode();
+                }
+            };
+
+            const generateCode = async () => {
+                // Simulate code generation
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                const mockCode = {
+                    language: selectedLanguage,
+                    framework: selectedFramework,
+                    files: {
+                        'Application.java': `@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}`,
+                        'Controller.java': `@RestController
+@RequestMapping("/api")
+public class ApiController {
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
+    }
+}`
+                    }
+                };
+                
+                setGeneratedCode(mockCode);
+            };
+
+            const renderStepIndicator = () => (
+                <div className="step-indicator">
+                    {steps.map(step => (
+                        <div key={step.number} className={`step ${step.completed ? 'completed' : step.active ? 'active' : 'inactive'}`}>
+                            <div className="step-number">{step.number}</div>
+                            <div className="step-title">{step.title}</div>
+                        </div>
+                    ))}
+                </div>
+            );
+
+            const renderStep1 = () => (
+                <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800">Step 1: Cloud Selection</h2>
+                    <p className="text-gray-600">Choose your deployment preference and add custom requirements if needed.</p>
+                    
+                    <div>
+                        <label className="block text-sm font-medium mb-2">Choose Cloud or Deployment Option:</label>
+                        <select 
+                            value={cloudChoice} 
+                            onChange={(e) => setCloudChoice(e.target.value)}
+                            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        >
+                            <option value="">Select deployment option...</option>
+                            {cloudOptions.map(option => (
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                checked={useCustomPrompt}
+                                onChange={(e) => setUseCustomPrompt(e.target.checked)}
+                                className="rounded"
+                            />
+                            <span>Add custom requirements (optional)</span>
+                        </label>
+                        
+                        {useCustomPrompt && (
+                            <textarea
+                                value={customPrompt}
+                                onChange={(e) => setCustomPrompt(e.target.value)}
+                                placeholder="Enter your custom requirements..."
+                                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                rows={4}
+                            />
+                        )}
+                    </div>
+
+                    <button 
+                        onClick={handleStep1Next}
+                        disabled={!cloudChoice}
+                        className="btn-primary"
+                    >
+                        Next: Generate Patterns
+                    </button>
+                </div>
+            );
+
+            const renderStep2 = () => (
+                <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800">Step 2: Architecture Patterns</h2>
+                    <p className="text-gray-600">Select an architecture pattern for your application.</p>
+                    
+                    {isGenerating ? (
+                        <div className="text-center py-8">
+                            <div className="loading-spinner"></div>
+                            <p className="mt-4 text-gray-600">Generating architecture patterns using Gemini AI...</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-4">
+                            {architecturePatterns.map(pattern => (
+                                <div 
+                                    key={pattern.id} 
+                                    className={`pattern-card ${selectedPattern === pattern.id ? 'selected' : ''}`}
+                                    onClick={() => handlePatternSelect(pattern.id)}
+                                >
+                                    <div className="flex items-start space-x-3">
+                                        <input
+                                            type="radio"
+                                            name="pattern"
+                                            value={pattern.id}
+                                            checked={selectedPattern === pattern.id}
+                                            onChange={() => handlePatternSelect(pattern.id)}
+                                            className="mt-1"
+                                        />
+                                        <div className="flex-1">
+                                            <h3 className="text-xl font-semibold text-gray-800">{pattern.name}</h3>
+                                            <p className="text-gray-600 mb-3">{pattern.description}</p>
+                                            <div className="flex items-center space-x-4 text-sm mb-3">
+                                                <a 
+                                                    href={pattern.referenceLink} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="text-blue-600 hover:underline"
+                                                >
+                                                    📖 Reference Link
+                                                </a>
+                                                <span className="text-green-600 font-medium">
+                                                    💰 Est. Cost: ${pattern.estimatedCost}/month
+                                                </span>
+                                            </div>
+                                            <div className="grid grid-cols-2 gap-4 text-sm">
+                                                <div>
+                                                    <strong className="text-green-700">Pros:</strong>
+                                                    <ul className="list-disc list-inside text-gray-600 mt-1">
+                                                        {pattern.pros.map((pro, idx) => <li key={idx}>{pro}</li>)}
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <strong className="text-red-700">Cons:</strong>
+                                                    <ul className="list-disc list-inside text-gray-600 mt-1">
+                                                        {pattern.cons.map((con, idx) => <li key={idx}>{con}</li>)}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    <div className="flex space-x-4">
+                        <button 
+                            onClick={handleAcceptPattern}
+                            disabled={!selectedPattern}
+                            className="btn-success"
+                        >
+                            Accept & Continue
+                        </button>
+                        <button 
+                            onClick={() => {
+                                const newPrompt = prompt('Enter custom requirements for regeneration:');
+                                if (newPrompt) {
+                                    setCustomPrompt(newPrompt);
+                                    setUseCustomPrompt(true);
+                                    generateArchitecturePatterns();
+                                }
+                            }}
+                            className="btn-warning"
+                        >
+                            Regenerate
+                        </button>
+                    </div>
+                </div>
+            );
+
+            const renderStep3 = () => (
+                <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800">Step 3: Diagram Editor</h2>
+                    <p className="text-gray-600">Review and edit your architecture diagrams.</p>
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div>
+                            <h3 className="text-lg font-semibold mb-2">Architecture Diagram</h3>
+                            <div className="diagram-container">
+                                {diagrams.architectureDiagram ? (
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-2">🏗️</div>
+                                        <p className="text-gray-600">Architecture Diagram</p>
+                                        <p className="text-sm text-gray-500">Click to edit</p>
+                                    </div>
+                                ) : (
+                                    <span className="text-gray-500">Architecture diagram will appear here</span>
+                                )}
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 className="text-lg font-semibold mb-2">Sequence Diagram</h3>
+                            <div className="diagram-container">
+                                {diagrams.sequenceDiagram ? (
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-2">🔄</div>
+                                        <p className="text-gray-600">Sequence Diagram</p>
+                                        <p className="text-sm text-gray-500">Click to edit</p>
+                                    </div>
+                                ) : (
+                                    <span className="text-gray-500">Sequence diagram will appear here</span>
+                                )}
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 className="text-lg font-semibold mb-2">ER Diagram</h3>
+                            <div className="diagram-container">
+                                {diagrams.erDiagram ? (
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-2">🗃️</div>
+                                        <p className="text-gray-600">ER Diagram</p>
+                                        <p className="text-sm text-gray-500">Click to edit</p>
+                                    </div>
+                                ) : (
+                                    <span className="text-gray-500">ER diagram will appear here</span>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                        <p className="text-blue-800">💡 You can edit these diagrams using the integrated diagram editor. Click on any diagram to modify it.</p>
+                    </div>
+
+                    <button 
+                        onClick={() => setCurrentStep(4)}
+                        className="btn-primary"
+                    >
+                        Next: Choose Technology
+                    </button>
+                </div>
+            );
+
+            const renderStep4 = () => (
+                <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800">Step 4: Technology Stack</h2>
+                    <p className="text-gray-600">Choose your programming language and framework.</p>
+                    
+                    <div className="grid grid-cols-2 gap-6">
+                        <div>
+                            <label className="block text-sm font-medium mb-2">Programming Language:</label>
+                            <select 
+                                value={selectedLanguage} 
+                                onChange={(e) => {
+                                    setSelectedLanguage(e.target.value);
+                                    setSelectedFramework('');
+                                }}
+                                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            >
+                                <option value="">Select language...</option>
+                                <option value="java">Java</option>
+                                <option value="javascript">JavaScript/TypeScript</option>
+                                <option value="python">Python</option>
+                                <option value="csharp">C#</option>
+                                <option value="go">Go</option>
+                                <option value="rust">Rust</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium mb-2">Framework:</label>
+                            <select 
+                                value={selectedFramework} 
+                                onChange={(e) => setSelectedFramework(e.target.value)}
+                                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                disabled={!selectedLanguage}
+                            >
+                                <option value="">Select framework...</option>
+                                {selectedLanguage && languageFrameworks[selectedLanguage]?.map(framework => (
+                                    <option key={framework} value={framework}>{framework}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
+                    <button 
+                        onClick={handleLanguageFrameworkNext}
+                        disabled={!selectedLanguage || !selectedFramework}
+                        className="btn-primary"
+                    >
+                        Generate Code
+                    </button>
+                </div>
+            );
+
+            const renderStep5 = () => (
+                <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800">Step 5: Code Generation</h2>
+                    <p className="text-gray-600">Generated code based on your architecture and technology choices.</p>
+                    
+                    <div className="code-editor">
+                        <div className="flex space-x-4 mb-4">
+                            {Object.keys(generatedCode.files).map(filename => (
+                                <button 
+                                    key={filename}
+                                    className="px-3 py-1 bg-gray-700 rounded text-sm hover:bg-gray-600 transition-colors"
+                                >
+                                    {filename}
+                                </button>
+                            ))}
+                        </div>
+                        <pre className="text-sm">
+                            {Object.entries(generatedCode.files).map(([filename, content]) => (
+                                <div key={filename} className="mb-4">
+                                    <div className="text-green-400 mb-2">// {filename}</div>
+                                    <code className="whitespace-pre-wrap">{content}</code>
+                                </div>
+                            ))}
+                        </pre>
+                    </div>
+
+                    <div className="flex space-x-4">
+                        <button 
+                            onClick={() => setCurrentStep(6)}
+                            className="btn-primary"
+                        >
+                            Next: Deployment
+                        </button>
+                        <button className="btn-secondary">
+                            Download Code
+                        </button>
+                    </div>
+                </div>
+            );
+
+            const renderStep6 = () => (
+                <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800">Step 6: Final Steps</h2>
+                    <p className="text-gray-600">Complete your architecture story with testing, Git workflow, and deployment.</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="border rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                            <div className="text-6xl mb-4">🧪</div>
+                            <h3 className="text-xl font-semibold mb-2">Test Generation</h3>
+                            <p className="text-sm text-gray-600 mb-4">Generate unit and integration tests</p>
+                            <button className="btn-success">
+                                Generate Tests
+                            </button>
+                        </div>
+                        
+                        <div className="border rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                            <div className="text-6xl mb-4">🔄</div>
+                            <h3 className="text-xl font-semibold mb-2">Git Workflow</h3>
+                            <p className="text-sm text-gray-600 mb-4">Setup CI/CD pipeline</p>
+                            <button className="btn-primary">
+                                Setup Git
+                            </button>
+                        </div>
+                        
+                        <div className="border rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                            <div className="text-6xl mb-4">☁️</div>
+                            <h3 className="text-xl font-semibold mb-2">Cloud Deployment</h3>
+                            <p className="text-sm text-gray-600 mb-4">Deploy to selected cloud</p>
+                            <button className="btn-warning">
+                                Deploy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="text-center">
+                        <button 
+                            onClick={() => {
+                                alert('Architecture Story completed successfully!');
+                                setCurrentStep(1);
+                                // Reset all state
+                                setCloudChoice('');
+                                setSelectedPattern('');
+                                setSelectedLanguage('');
+                                setSelectedFramework('');
+                                setArchitecturePatterns([]);
+                                setGeneratedCode({ language: '', framework: '', files: {} });
+                            }}
+                            className="btn-success text-lg px-8 py-3"
+                        >
+                            Complete Architecture Story
+                        </button>
+                    </div>
+                </div>
+            );
+
+            const renderCurrentStep = () => {
+                switch (currentStep) {
+                    case 1: return renderStep1();
+                    case 2: return renderStep2();
+                    case 3: return renderStep3();
+                    case 4: return renderStep4();
+                    case 5: return renderStep5();
+                    case 6: return renderStep6();
+                    default: return renderStep1();
+                }
+            };
+
+            return (
+                <div className="architecture-story-container">
+                    <div className="main-content">
+                        <div className="text-center mb-8">
+                            <h1 className="text-4xl font-bold text-gray-800 mb-2">🏗️ Architecture Story Workflow</h1>
+                            <p className="text-gray-600">Create comprehensive architecture solutions with AI-powered assistance</p>
+                        </div>
+
+                        {renderStepIndicator()}
+                        {renderCurrentStep()}
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<ArchitectureStoryApp />, document.getElementById('root'));
+    </script>
+</body>
+</html>

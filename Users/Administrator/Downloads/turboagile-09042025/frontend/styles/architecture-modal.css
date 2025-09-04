@@ -1,0 +1,484 @@
+/* Architecture Modal Styles */
+.architecture-modal .modal-content {
+    max-width: 1200px;
+    width: 95vw;
+    max-height: 90vh;
+    padding: 0;
+    overflow: hidden;
+}
+
+.architecture-content {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.modal-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-gradient-color));
+    color: white;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.architecture-tabs {
+    display: flex;
+    background: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.arch-tab {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-muted-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.arch-tab:hover {
+    background: var(--hover-bg);
+    color: var(--text-color);
+}
+
+.arch-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background: var(--background-color);
+}
+
+.architecture-panels {
+    flex: 1;
+    overflow: hidden;
+}
+
+.arch-panel {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.arch-panel.active {
+    display: block;
+}
+
+/* Generator Panel */
+.requirements-section {
+    margin-bottom: 2rem;
+}
+
+.requirements-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+#arch-requirements {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    resize: vertical;
+}
+
+.suggestions-section {
+    margin-bottom: 2rem;
+}
+
+.custom-prompt-section {
+    margin-bottom: 2rem;
+}
+
+.custom-prompt-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+#custom-arch-prompt {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    resize: vertical;
+    font-size: 0.9rem;
+}
+
+.suggestion-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.suggestion-chip {
+    padding: 0.5rem 1rem;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion-chip:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.suggestion-chip.selected {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.generation-controls {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.generate-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-gradient-color));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.generate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(106, 90, 205, 0.3);
+}
+
+.generate-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Architecture Output */
+.architecture-output {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.output-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.output-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn.secondary {
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.action-btn.primary {
+    background: var(--success-color);
+    color: white;
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.arch-content {
+    padding: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+.arch-content h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.arch-content h2 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.arch-content h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.arch-content p {
+    margin-bottom: 1rem;
+    color: var(--text-muted-color);
+}
+
+.arch-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted-color);
+}
+
+.arch-content strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.arch-content pre {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.arch-content code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+
+/* Diagram Panel */
+.diagram-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.diagram-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.toolbar-btn {
+    padding: 0.5rem 1rem;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.diagram-editor-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.diagram-workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex: 1;
+    min-height: 0;
+}
+
+.diagram-editor,
+.diagram-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.diagram-editor h4,
+.diagram-preview h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#mermaid-code {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    resize: none;
+    min-height: 300px;
+}
+
+.mermaid-container {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow: auto;
+    min-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .diagram-workspace {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+/* Export Panel */
+.export-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.export-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.export-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.export-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+.export-card p {
+    color: var(--text-muted-color);
+    margin-bottom: 1.5rem;
+}
+
+.export-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.export-btn:hover {
+    background: var(--primary-hover-color);
+    transform: translateY(-1px);
+}
+
+/* Error Message */
+.error-message {
+    background: var(--error-bg-color);
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--error-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .architecture-modal .modal-content {
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+    }
+    
+    .architecture-content {
+        height: 100vh;
+    }
+    
+    .arch-panel {
+        padding: 1rem;
+    }
+    
+    .export-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .suggestion-chips {
+        justify-content: center;
+    }
+}

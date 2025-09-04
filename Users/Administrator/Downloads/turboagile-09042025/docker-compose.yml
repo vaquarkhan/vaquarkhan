@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: turboagile-postgres
+    environment:
+      POSTGRES_DB: turboagile
+      POSTGRES_USER: turboagile
+      POSTGRES_PASSWORD: turboagile123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - turboagile-network
+
+  spring-backend:
+    build: ./backend
+    container_name: turboagile-spring
+    ports:
+      - "9091:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/turboagile
+      SPRING_DATASOURCE_USERNAME: turboagile
+      SPRING_DATASOURCE_PASSWORD: turboagile123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+    depends_on:
+      - postgres
+    networks:
+      - turboagile-network
+    volumes:
+      - ./backend/logs:/app/logs
+
+  frontend:
+    build: ./frontend
+    container_name: turboagile-frontend
+    ports:
+      - "4007:80"
+    networks:
+      - turboagile-network
+    depends_on:
+      - spring-backend
+
+volumes:
+  postgres_data:
+
+networks:
+  turboagile-network:
+    driver: bridge
+
+

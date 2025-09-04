@@ -1,0 +1,208 @@
+/* Architecture Wizard V2 Styles */
+.architecture-wizard-v2 .wizard-container {
+    max-width: 90vw;
+    width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.wizard-step {
+    padding: 2rem;
+}
+
+.step-content {
+    margin-top: 1rem;
+}
+
+/* Step 1: Requirements & Type Selection */
+#user-requirements {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin-bottom: 2rem;
+    resize: vertical;
+}
+
+.arch-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.arch-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--card-background);
+}
+
+.arch-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.arch-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(106,90,205,0.1);
+    border-width: 3px;
+}
+
+.arch-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.arch-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Step 2: Generation */
+.generation-status {
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.arch-summary {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.arch-summary p {
+    margin: 0.5rem 0;
+}
+
+.edit-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+#edit-prompt {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin-bottom: 1rem;
+}
+
+/* Step 3: Diagram */
+.diagram-editor {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    background: white;
+    min-height: 400px;
+    margin-bottom: 2rem;
+}
+
+/* Step 4: Final Review */
+.final-review {
+    display: grid;
+    gap: 2rem;
+}
+
+.review-section {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.review-section h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Wizard Buttons */
+.wizard-btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.wizard-btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.wizard-btn:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.wizard-btn.secondary {
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.wizard-btn.secondary:hover {
+    background: var(--border-color);
+}
+
+.wizard-btn.accept {
+    background: #10b981;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+.wizard-btn.accept:hover {
+    background: #059669;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .architecture-wizard-v2 .wizard-container {
+        width: 95vw;
+        margin: 1rem;
+    }
+    
+    .arch-types {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .wizard-step {
+        padding: 1rem;
+    }
+}

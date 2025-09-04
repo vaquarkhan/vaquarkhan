@@ -1,0 +1,352 @@
+/* Main fixes for TurboAgile */
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #374151;
+    border-radius: 50%;
+    border-top-color: #6366f1;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.story-card {
+    background: var(--card-bg-color, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.story-card:hover {
+    border-color: var(--primary-color, #6366f1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.story-card.blocked {
+    border-color: #dc2626;
+    background: rgba(220, 38, 38, 0.05);
+}
+
+.story-card.framework-setup {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.story-points {
+    background: var(--primary-color, #6366f1);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    float: right;
+}
+
+.story-description {
+    margin: 0.5rem 0;
+    color: var(--text-secondary, #9ca3af);
+    font-size: 0.9rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary, #9ca3af);
+    font-style: italic;
+    padding: 2rem;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--card-bg-color, #1f2937);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    margin: 1rem;
+    width: 100%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color, #f9fafb);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--border-color, #374151);
+}
+
+.action-card {
+    background: var(--bg-color, #111827);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.action-button {
+    background: var(--primary-color, #6366f1);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+}
+
+.action-button:hover {
+    background: var(--primary-hover, #4f46e5);
+    transform: translateY(-1px);
+}
+
+.action-button:disabled {
+    background: var(--border-color, #374151);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.output-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg-color, #111827);
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #374151);
+}
+
+.output-container pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.story-actions h3 {
+    color: var(--text-color, #f9fafb);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.story-details h2 {
+    color: var(--text-color, #f9fafb);
+    margin-bottom: 1rem;
+}
+
+.story-details p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary, #9ca3af);
+}
+
+.story-details ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.story-details li {
+    margin-bottom: 0.25rem;
+    color: var(--text-secondary, #9ca3af);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-color: #111827;
+    --card-bg-color: #1f2937;
+    --border-color: #374151;
+    --text-color: #f9fafb;
+    --text-secondary: #9ca3af;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --card-bg-color: #f9fafb;
+    --border-color: #e5e7eb;
+    --text-color: #111827;
+    --text-secondary: #6b7280;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+}
+
+/* Diagram Styles */
+.diagram-container {
+    background: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.diagram-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.diagram-header h4 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.diagram-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mermaid-diagram {
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.mermaid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.diagram-code details {
+    margin-top: 1rem;
+}
+
+.diagram-code summary {
+    color: var(--text-color);
+    padding: 0.5rem;
+    background: var(--card-bg-color);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.diagram-code summary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Timeline Modal Styles */
+.timeline-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.timeline-header p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.timeline-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.timeline-container {
+    background: var(--bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+.timeline-summary {
+    background: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.timeline-summary h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+}
+
+.timeline-summary div {
+    color: var(--text-secondary);
+}
+
+.timeline-summary strong {
+    color: var(--text-color);
+}
+
+/* Responsive diagram adjustments */
+@media (max-width: 768px) {
+    .architect-actions,
+    .developer-actions,
+    .devops-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .architect-actions .action-button,
+    .developer-actions .action-button,
+    .devops-actions .action-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .timeline-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .timeline-controls select {
+        width: 100%;
+    }
+}

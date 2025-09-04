@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪄 Magic Architecture Wizard - TurboAgile</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .magic-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magic-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"/><circle cx="80" cy="40" r="1.5" fill="url(%23g)"/><circle cx="40" cy="80" r="1" fill="url(%23g)"/><circle cx="90" cy="90" r="2.5" fill="url(%23g)"/><circle cx="10" cy="60" r="1.2" fill="url(%23g)"/></svg>') repeat;
+            animation: sparkle 20s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        .wizard-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .magic-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .magic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
+        }
+        
+        .step-orb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .step-orb.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .step-orb.completed {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .step-orb.inactive {
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.6); }
+            50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+        }
+        
+        .magic-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magic-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .magic-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .magic-button.accept {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .magic-button.reject {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        .magic-button.regenerate {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .control-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 1rem;
+        }
+        
+        .pattern-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .pattern-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+        
+        .pattern-card.selected {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .pattern-card.rejected {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.05);
+            opacity: 0.6;
+        }
+        
+        .loading-magic {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(102, 126, 234, 0.2);
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .magic-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 12px 16px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .magic-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .floating-wand {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+            z-index: 1000;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(10deg); }
+        }
+        
+        .section-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            background: rgba(156, 163, 175, 0.2);
+            color: #6b7280;
+        }
+        
+        .status-accepted {
+            background: rgba(16, 185, 129, 0.2);
+            color: #059669;
+        }
+        
+        .status-rejected {
+            background: rgba(239, 68, 68, 0.2);
+            color: #dc2626;
+        }
+        
+        .magic-tooltip {
+            position: relative;
+            cursor: help;
+        }
+        
+        .magic-tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-wand">🪄</div>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const MagicArchitectureWizard = () => {
+            const [currentStep, setCurrentStep] = useState(1);
+            const [sectionStates, setSectionStates] = useState({});
+            
+            // Step data with control states
+            const [cloudChoice, setCloudChoice] = useState('');
+            const [customPrompt, setCustomPrompt] = useState('');
+            const [architecturePatterns, setArchitecturePatterns] = useState([]);
+            const [selectedPattern, setSelectedPattern] = useState('');
+            const [diagrams, setDiagrams] = useState({});
+            const [selectedLanguage, setSelectedLanguage] = useState('');
+            const [selectedFramework, setSelectedFramework] = useState('');
+            const [generatedCode, setGeneratedCode] = useState({});
+            
+            // Loading states
+            const [isGenerating, setIsGenerating] = useState({});
+
+            const steps = [
+                { id: 1, title: 'Cloud Magic', icon: '☁️', description: 'Choose your cloud realm' },
+                { id: 2, title: 'Pattern Spell', icon: '🔮', description: 'Conjure architecture patterns' },
+                { id: 3, title: 'Diagram Craft', icon: '📐', description: 'Weave visual blueprints' },
+                { id: 4, title: 'Tech Potion', icon: '⚗️', description: 'Mix technology ingredients' },
+                { id: 5, title: 'Code Alchemy', icon: '💎', description: 'Transform into code' },
+                { id: 6, title: 'Deploy Portal', icon: '🚀', description: 'Launch to the cloud' }
+            ];
+
+            const cloudOptions = [
+                { value: 'aws', label: '☁️ Amazon Web Services', color: '#FF9900' },
+                { value: 'azure', label: '🔷 Microsoft Azure', color: '#0078D4' },
+                { value: 'gcp', label: '🌈 Google Cloud Platform', color: '#4285F4' },
+                { value: 'on-premise', label: '🏢 On-Premise', color: '#6B7280' },
+                { value: 'cloud-agnostic', label: '🌐 Cloud Agnostic', color: '#8B5CF6' }
+            ];
+
+            const languageFrameworks = {
+                'java': { icon: '☕', frameworks: ['Spring Boot', 'Quarkus', 'Micronaut'] },
+                'javascript': { icon: '🟨', frameworks: ['Node.js + Express', 'Next.js', 'Nest.js'] },
+                'python': { icon: '🐍', frameworks: ['Django', 'Flask', 'FastAPI'] },
+                'csharp': { icon: '🔷', frameworks: ['.NET Core', 'ASP.NET', 'Blazor'] },
+                'go': { icon: '🐹', frameworks: ['Gin', 'Echo', 'Fiber'] },
+                'rust': { icon: '🦀', frameworks: ['Actix', 'Rocket', 'Warp'] }
+            };
+
+            // Section control functions
+            const updateSectionState = (section, state, data = null) => {
+                setSectionStates(prev => ({
+                    ...prev,
+                    [section]: { state, data, timestamp: Date.now() }
+                }));
+            };
+
+            const getSectionStatus = (section) => {
+                const state = sectionStates[section];
+                if (!state) return 'pending';
+                return state.state;
+            };
+
+            const generateWithPrompt = async (section, baseData, customPrompt = '') => {
+                setIsGenerating(prev => ({ ...prev, [section]: true }));
+                
+                try {
+                    // Simulate AI generation with custom prompt
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    let result;
+                    switch (section) {
+                        case 'patterns':
+                            result = generateMockPatterns(baseData.cloudChoice, customPrompt);
+                            setArchitecturePatterns(result);
+                            break;
+                        case 'diagrams':
+                            result = generateMockDiagrams(baseData.pattern, customPrompt);
+                            setDiagrams(result);
+                            break;
+                        case 'code':
+                            result = generateMockCode(baseData.language, baseData.framework, customPrompt);
+                            setGeneratedCode(result);
+                            break;
+                    }
+                    
+                    updateSectionState(section, 'generated', result);
+                } catch (error) {
+                    console.error(`Error generating ${section}:`, error);
+                } finally {
+                    setIsGenerating(prev => ({ ...prev, [section]: false }));
+                }
+            };
+
+            // Mock generation functions
+            const generateMockPatterns = (cloudChoice, customPrompt) => {
+                const basePatterns = [
+                    {
+                        id: 'microservices',
+                        name: '🏗️ Microservices Architecture',
+                        description: 'Scalable microservices with API Gateway and service mesh',
+                        cost: 450,
+                        pros: ['High scalability', 'Service isolation', 'Technology diversity'],
+                        cons: ['Complex deployment', 'Network latency', 'Data consistency'],
+                        customized: customPrompt ? `Customized for: ${customPrompt}` : null
+                    },
+                    {
+                        id: 'serverless',
+                        name: '⚡ Serverless Architecture',
+                        description: 'Event-driven serverless with Functions and managed databases',
+                        cost: 120,
+                        pros: ['No server management', 'Auto-scaling', 'Pay per use'],
+                        cons: ['Cold starts', 'Vendor lock-in', 'Limited execution time'],
+                        customized: customPrompt ? `Optimized for: ${customPrompt}` : null
+                    },
+                    {
+                        id: 'monolith',
+                        name: '🏛️ Monolithic Architecture',
+                        description: 'Traditional monolithic application with load balancer',
+                        cost: 280,
+                        pros: ['Simple deployment', 'Easy debugging', 'Strong consistency'],
+                        cons: ['Limited scalability', 'Technology lock-in', 'Single point of failure'],
+                        customized: customPrompt ? `Enhanced with: ${customPrompt}` : null
+                    }
+                ];
+                
+                return basePatterns.map(pattern => ({
+                    ...pattern,
+                    cloudOptimized: cloudChoice,
+                    status: 'generated'
+                }));
+            };
+
+            const generateMockDiagrams = (pattern, customPrompt) => ({
+                architecture: `Architecture diagram for ${pattern?.name || 'Selected Pattern'}${customPrompt ? ` (${customPrompt})` : ''}`,
+                sequence: `Sequence diagram with custom flows${customPrompt ? ` - ${customPrompt}` : ''}`,
+                er: `ER diagram with entities${customPrompt ? ` - ${customPrompt}` : ''}`
+            });
+
+            const generateMockCode = (language, framework, customPrompt) => ({
+                language,
+                framework,
+                customization: customPrompt,
+                files: {
+                    'main.js': `// Generated ${framework} application${customPrompt ? `\n// Custom: ${customPrompt}` : ''}\nconsole.log('Magic code generated!');`,
+                    'config.js': `// Configuration${customPrompt ? `\n// ${customPrompt}` : ''}\nmodule.exports = { magic: true };`
+                }
+            });
+
+            // Render functions
+            const renderStepIndicator = () => (
+                <div className="flex justify-between items-center mb-8 px-4">
+                    {steps.map((step, index) => (
+                        <div key={step.id} className="flex flex-col items-center relative">
+                            <div className={`step-orb ${
+                                currentStep > step.id ? 'completed' : 
+                                currentStep === step.id ? 'active' : 'inactive'
+                            }`}>
+                                <span>{step.icon}</span>
+                            </div>
+                            <div className="text-center mt-2">
+                                <div className="font-semibold text-sm">{step.title}</div>
+                                <div className="text-xs text-gray-600">{step.description}</div>
+                            </div>
+                            {index < steps.length - 1 && (
+                                <div className={`absolute top-7 left-full w-20 h-0.5 ${
+                                    currentStep > step.id ? 'bg-green-400' : 'bg-gray-300'
+                                }`} style={{ transform: 'translateX(-50%)' }}></div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            );
+
+            const renderControlPanel = (section, onAccept, onReject, onRegenerate, showCustomPrompt = true) => (
+                <div className="control-panel">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className={`section-status status-${getSectionStatus(section)}`}>
+                            <i className={`fas ${
+                                getSectionStatus(section) === 'accepted' ? 'fa-check' :
+                                getSectionStatus(section) === 'rejected' ? 'fa-times' :
+                                'fa-clock'
+                            }`}></i>
+                            {getSectionStatus(section).charAt(0).toUpperCase() + getSectionStatus(section).slice(1)}
+                        </div>
+                        <div className="flex gap-2">
+                            <button 
+                                className="magic-button accept"
+                                onClick={onAccept}
+                                disabled={getSectionStatus(section) === 'accepted'}
+                            >
+                                <i className="fas fa-check mr-2"></i>Accept
+                            </button>
+                            <button 
+                                className="magic-button reject"
+                                onClick={onReject}
+                                disabled={getSectionStatus(section) === 'rejected'}
+                            >
+                                <i className="fas fa-times mr-2"></i>Reject
+                            </button>
+                            <button 
+                                className="magic-button regenerate"
+                                onClick={onRegenerate}
+                            >
+                                <i className="fas fa-redo mr-2"></i>Regenerate
+                            </button>
+                        </div>
+                    </div>
+                    
+                    {showCustomPrompt && (
+                        <div>
+                            <label className="block text-sm font-medium mb-2 text-white">
+                                ✨ Custom Magic Prompt (Optional)
+                            </label>
+                            <textarea
+                                value={customPrompt}
+                                onChange={(e) => setCustomPrompt(e.target.value)}
+                                placeholder="Describe your specific requirements or modifications..."
+                                className="magic-input"
+                                rows={3}
+                            />
+                        </div>
+                    )}
+                </div>
+            );
+
+            const renderStep1 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-4xl font-bold text-white mb-2">☁️ Choose Your Cloud Realm</h2>
+                        <p className="text-white/80">Select where your magical application will live</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {cloudOptions.map(option => (
+                            <div
+                                key={option.value}
+                                className={`pattern-card cursor-pointer ${cloudChoice === option.value ? 'selected' : ''}`}
+                                onClick={() => setCloudChoice(option.value)}
+                            >
+                                <div className="text-center">
+                                    <div className="text-3xl mb-2">{option.label.split(' ')[0]}</div>
+                                    <div className="font-semibold">{option.label.substring(2)}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {renderControlPanel('cloud', 
+                        () => {
+                            updateSectionState('cloud', 'accepted', { cloudChoice });
+                            setCurrentStep(2);
+                        },
+                        () => updateSectionState('cloud', 'rejected'),
+                        () => {
+                            setCloudChoice('');
+                            updateSectionState('cloud', 'pending');
+                        }
+                    )}
+                </div>
+            );
+
+            const renderStep2 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-4xl font-bold text-white mb-2">🔮 Architecture Pattern Spell</h2>
+                        <p className="text-white/80">AI-conjured patterns for your {cloudChoice} realm</p>
+                    </div>
+
+                    {isGenerating.patterns ? (
+                        <div className="text-center py-12">
+                            <div className="loading-magic mx-auto mb-4"></div>
+                            <p className="text-white">🪄 Conjuring magical architecture patterns...</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-4">
+                            {architecturePatterns.map(pattern => (
+                                <div
+                                    key={pattern.id}
+                                    className={`pattern-card ${selectedPattern === pattern.id ? 'selected' : ''}`}
+                                    onClick={() => setSelectedPattern(pattern.id)}
+                                >
+                                    <div className="flex items-start space-x-4">
+                                        <input
+                                            type="radio"
+                                            name="pattern"
+                                            value={pattern.id}
+                                            checked={selectedPattern === pattern.id}
+                                            onChange={() => setSelectedPattern(pattern.id)}
+                                            className="mt-2"
+                                        />
+                                        <div className="flex-1">
+                                            <h3 className="text-xl font-bold mb-2">{pattern.name}</h3>
+                                            <p className="text-gray-600 mb-3">{pattern.description}</p>
+                                            {pattern.customized && (
+                                                <div className="bg-purple-100 p-2 rounded-lg mb-3">
+                                                    <span className="text-purple-800 text-sm">✨ {pattern.customized}</span>
+                                                </div>
+                                            )}
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-green-600 font-bold">💰 ${pattern.cost}/month</span>
+                                                <div className="flex gap-2">
+                                                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
+                                                        {pattern.pros.length} Pros
+                                                    </span>
+                                                    <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">
+                                                        {pattern.cons.length} Cons
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {renderControlPanel('patterns',
+                        () => {
+                            if (selectedPattern) {
+                                updateSectionState('patterns', 'accepted', { selectedPattern });
+                                setCurrentStep(3);
+                            }
+                        },
+                        () => updateSectionState('patterns', 'rejected'),
+                        () => generateWithPrompt('patterns', { cloudChoice }, customPrompt)
+                    )}
+                </div>
+            );
+
+            const renderStep3 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-4xl font-bold text-white mb-2">📐 Diagram Crafting</h2>
+                        <p className="text-white/80">Weave visual blueprints of your architecture</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        {['architecture', 'sequence', 'er'].map(type => (
+                            <div key={type} className="magic-card p-6">
+                                <h3 className="text-lg font-semibold mb-4 capitalize">{type} Diagram</h3>
+                                <div className="bg-gray-100 h-48 rounded-lg flex items-center justify-center">
+                                    {diagrams[type] ? (
+                                        <div className="text-center">
+                                            <div className="text-4xl mb-2">
+                                                {type === 'architecture' ? '🏗️' : type === 'sequence' ? '🔄' : '🗃️'}
+                                            </div>
+                                            <p className="text-sm text-gray-600">{diagrams[type]}</p>
+                                        </div>
+                                    ) : (
+                                        <span className="text-gray-500">Diagram will appear here</span>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {renderControlPanel('diagrams',
+                        () => {
+                            updateSectionState('diagrams', 'accepted', diagrams);
+                            setCurrentStep(4);
+                        },
+                        () => updateSectionState('diagrams', 'rejected'),
+                        () => generateWithPrompt('diagrams', { pattern: architecturePatterns.find(p => p.id === selectedPattern) }, customPrompt)
+                    )}
+                </div>
+            );
+
+            const renderStep4 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-4xl font-bold text-white mb-2">⚗️ Technology Potion</h2>
+                        <p className="text-white/80">Mix the perfect technology ingredients</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="magic-card p-6">
+                            <label className="block text-lg font-semibold mb-4">Programming Language</label>
+                            <div className="space-y-3">
+                                {Object.entries(languageFrameworks).map(([lang, data]) => (
+                                    <div
+                                        key={lang}
+                                        className={`pattern-card cursor-pointer ${selectedLanguage === lang ? 'selected' : ''}`}
+                                        onClick={() => {
+                                            setSelectedLanguage(lang);
+                                            setSelectedFramework('');
+                                        }}
+                                    >
+                                        <div className="flex items-center space-x-3">
+                                            <span className="text-2xl">{data.icon}</span>
+                                            <span className="font-medium capitalize">{lang}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="magic-card p-6">
+                            <label className="block text-lg font-semibold mb-4">Framework</label>
+                            <div className="space-y-3">
+                                {selectedLanguage && languageFrameworks[selectedLanguage].frameworks.map(framework => (
+                                    <div
+                                        key={framework}
+                                        className={`pattern-card cursor-pointer ${selectedFramework === framework ? 'selected' : ''}`}
+                                        onClick={() => setSelectedFramework(framework)}
+                                    >
+                                        <span className="font-medium">{framework}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {renderControlPanel('tech',
+                        () => {
+                            if (selectedLanguage && selectedFramework) {
+                                updateSectionState('tech', 'accepted', { selectedLanguage, selectedFramework });
+                                setCurrentStep(5);
+                            }
+                        },
+                        () => updateSectionState('tech', 'rejected'),
+                        () => {
+                            setSelectedLanguage('');
+                            setSelectedFramework('');
+                            updateSectionState('tech', 'pending');
+                        },
+                        false
+                    )}
+                </div>
+            );
+
+            const renderStep5 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-4xl font-bold text-white mb-2">💎 Code Alchemy</h2>
+                        <p className="text-white/80">Transform architecture into magical code</p>
+                    </div>
+
+                    {isGenerating.code ? (
+                        <div className="text-center py-12">
+                            <div className="loading-magic mx-auto mb-4"></div>
+                            <p className="text-white">🪄 Transmuting architecture into code...</p>
+                        </div>
+                    ) : (
+                        <div className="magic-card p-6">
+                            <div className="bg-gray-900 text-white rounded-lg p-4 max-h-96 overflow-y-auto">
+                                <div className="flex space-x-4 mb-4">
+                                    {Object.keys(generatedCode.files || {}).map(filename => (
+                                        <button key={filename} className="px-3 py-1 bg-gray-700 rounded text-sm">
+                                            {filename}
+                                        </button>
+                                    ))}
+                                </div>
+                                <pre className="text-sm">
+                                    {Object.entries(generatedCode.files || {}).map(([filename, content]) => (
+                                        <div key={filename} className="mb-4">
+                                            <div className="text-green-400 mb-2">// {filename}</div>
+                                            <code>{content}</code>
+                                        </div>
+                                    ))}
+                                </pre>
+                            </div>
+                        </div>
+                    )}
+
+                    {renderControlPanel('code',
+                        () => {
+                            updateSectionState('code', 'accepted', generatedCode);
+                            setCurrentStep(6);
+                        },
+                        () => updateSectionState('code', 'rejected'),
+                        () => generateWithPrompt('code', { language: selectedLanguage, framework: selectedFramework }, customPrompt)
+                    )}
+                </div>
+            );
+
+            const renderStep6 = () => (
+                <div className="space-y-6">
+                    <div className="text-center mb-8">
+                        <h2 className="text-4xl font-bold text-white mb-2">🚀 Deploy Portal</h2>
+                        <p className="text-white/80">Launch your creation to the digital realm</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {[
+                            { icon: '🧪', title: 'Test Magic', desc: 'Generate magical tests' },
+                            { icon: '🔄', title: 'Git Workflow', desc: 'Setup version control' },
+                            { icon: '☁️', title: 'Cloud Deploy', desc: 'Launch to the cloud' }
+                        ].map((item, index) => (
+                            <div key={index} className="magic-card p-6 text-center">
+                                <div className="text-6xl mb-4">{item.icon}</div>
+                                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                                <p className="text-gray-600 mb-4">{item.desc}</p>
+                                <button className="magic-button">
+                                    <i className="fas fa-magic mr-2"></i>Cast Spell
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="text-center">
+                        <button 
+                            className="magic-button text-xl px-12 py-4"
+                            onClick={() => {
+                                alert('🎉 Architecture Magic Complete! Your creation is ready!');
+                                // Reset wizard
+                                setCurrentStep(1);
+                                setSectionStates({});
+                            }}
+                        >
+                            <i className="fas fa-sparkles mr-2"></i>Complete Magic Ritual
+                        </button>
+                    </div>
+                </div>
+            );
+
+            // Auto-generate initial data
+            useEffect(() => {
+                if (currentStep === 2 && architecturePatterns.length === 0 && cloudChoice) {
+                    generateWithPrompt('patterns', { cloudChoice });
+                }
+                if (currentStep === 3 && Object.keys(diagrams).length === 0 && selectedPattern) {
+                    generateWithPrompt('diagrams', { pattern: architecturePatterns.find(p => p.id === selectedPattern) });
+                }
+                if (currentStep === 5 && Object.keys(generatedCode).length === 0 && selectedLanguage && selectedFramework) {
+                    generateWithPrompt('code', { language: selectedLanguage, framework: selectedFramework });
+                }
+            }, [currentStep, cloudChoice, selectedPattern, selectedLanguage, selectedFramework]);
+
+            const renderCurrentStep = () => {
+                switch (currentStep) {
+                    case 1: return renderStep1();
+                    case 2: return renderStep2();
+                    case 3: return renderStep3();
+                    case 4: return renderStep4();
+                    case 5: return renderStep5();
+                    case 6: return renderStep6();
+                    default: return renderStep1();
+                }
+            };
+
+            return (
+                <div className="magic-bg">
+                    <div className="wizard-container">
+                        <div className="text-center mb-12">
+                            <h1 className="text-6xl font-bold text-white mb-4">
+                                🪄 Magic Architecture Wizard
+                            </h1>
+                            <p className="text-xl text-white/80">
+                                Conjure complete architecture solutions with AI-powered magic
+                            </p>
+                        </div>
+
+                        {renderStepIndicator()}
+                        
+                        <div className="magic-card p-8">
+                            {renderCurrentStep()}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<MagicArchitectureWizard />, document.getElementById('root'));
+    </script>
+</body>
+</html>

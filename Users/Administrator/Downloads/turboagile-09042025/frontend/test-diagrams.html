@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboAgile - Diagram Generator Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background: #111827;
+            color: #f9fafb;
+            padding: 2rem;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .diagram-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #1f2937;
+            border-radius: 12px;
+            border: 1px solid #374151;
+        }
+        .diagram-section h2 {
+            margin: 0 0 1rem 0;
+            color: #6366f1;
+        }
+        .diagram-container {
+            background: #111827;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid #374151;
+            overflow-x: auto;
+        }
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        .controls {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 TurboAgile Diagram Generator Test</h1>
+        <p>Testing the integrated diagram generation functionality based on the GitHub repository structure.</p>
+
+        <div class="diagram-section">
+            <h2>🏗️ System Architecture Diagram</h2>
+            <div class="controls">
+                <button class="btn" onclick="showArchitecture()">Generate Architecture</button>
+                <button class="btn" onclick="exportDiagram('architecture')">Export</button>
+            </div>
+            <div class="diagram-container" id="architecture-container">
+                <div class="mermaid" id="architecture-diagram">
+                    Click "Generate Architecture" to see the diagram
+                </div>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>🔄 Sequence Diagram</h2>
+            <div class="controls">
+                <button class="btn" onclick="showSequence()">Generate Sequence</button>
+                <button class="btn" onclick="exportDiagram('sequence')">Export</button>
+            </div>
+            <div class="diagram-container" id="sequence-container">
+                <div class="mermaid" id="sequence-diagram">
+                    Click "Generate Sequence" to see the diagram
+                </div>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>🗄️ Database ER Diagram</h2>
+            <div class="controls">
+                <button class="btn" onclick="showER()">Generate ER Diagram</button>
+                <button class="btn" onclick="exportDiagram('er')">Export</button>
+            </div>
+            <div class="diagram-container" id="er-container">
+                <div class="mermaid" id="er-diagram">
+                    Click "Generate ER Diagram" to see the diagram
+                </div>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>📋 Class Diagram</h2>
+            <div class="controls">
+                <button class="btn" onclick="showClass()">Generate Class Diagram</button>
+                <button class="btn" onclick="exportDiagram('class')">Export</button>
+            </div>
+            <div class="diagram-container" id="class-container">
+                <div class="mermaid" id="class-diagram">
+                    Click "Generate Class Diagram" to see the diagram
+                </div>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>📅 Project Timeline</h2>
+            <div class="controls">
+                <button class="btn" onclick="showTimeline()">Generate Timeline</button>
+                <button class="btn" onclick="exportDiagram('timeline')">Export</button>
+            </div>
+            <div class="diagram-container" id="timeline-container">
+                <div class="mermaid" id="timeline-diagram">
+                    Click "Generate Timeline" to see the diagram
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#6366f1',
+                primaryTextColor: '#f9fafb',
+                primaryBorderColor: '#4f46e5',
+                lineColor: '#9ca3af',
+                secondaryColor: '#1f2937',
+                tertiaryColor: '#374151',
+                background: '#111827',
+                mainBkg: '#1f2937',
+                secondBkg: '#374151'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            },
+            sequence: {
+                useMaxWidth: true,
+                wrap: true
+            },
+            gantt: {
+                useMaxWidth: true,
+                leftPadding: 75
+            }
+        });
+
+        // Sample story for testing
+        const testStory = {
+            id: 'test-1',
+            title: 'User Authentication System',
+            description: 'As a user, I want to securely log into the system so that I can access my account.',
+            acceptanceCriteria: [
+                'User can register with email and password',
+                'User can login with valid credentials',
+                'User can reset forgotten password'
+            ],
+            status: 'in-progress',
+            points: 5
+        };
+
+        function showArchitecture() {
+            const diagram = `flowchart TD
+    A["👤 User Interface<br/>(React/TypeScript)"] --> B["🌐 API Gateway<br/>(Express.js)"]
+    B --> C["🔐 Authentication<br/>(JWT)"]
+    C --> D["⚙️ Business Logic<br/>(Services)"]
+    D --> E["🗄️ Database<br/>(PostgreSQL)"]
+    D --> F["⚡ Cache Layer<br/>(Redis)"]
+    B --> G["📊 Monitoring<br/>(Logs/Metrics)"]
+    
+    classDef frontend fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#ffffff
+    classDef backend fill:#10b981,stroke:#059669,stroke-width:2px,color:#ffffff
+    classDef data fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#ffffff
+    
+    class A frontend
+    class B,C,D,G backend
+    class E,F data`;
+            
+            renderDiagram('architecture-diagram', diagram);
+        }
+
+        function showSequence() {
+            const diagram = `sequenceDiagram
+    participant U as 👤 User
+    participant F as 🖥️ Frontend
+    participant A as 🌐 API
+    participant D as 🗄️ Database
+    
+    U->>+F: Submit Login Form
+    F->>F: Validate Input
+    F->>+A: POST /api/auth/login
+    A->>A: Authenticate User
+    A->>+D: Query User Data
+    D-->>-A: Return User Info
+    A-->>-F: JWT Token + User Data
+    F->>F: Store Token & Update UI
+    F-->>-U: Redirect to Dashboard`;
+            
+            renderDiagram('sequence-diagram', diagram);
+        }
+
+        function showER() {
+            const diagram = `erDiagram
+    USER {
+        uuid id PK
+        varchar email UK
+        varchar password_hash
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    PROFILE {
+        uuid id PK
+        uuid user_id FK
+        varchar first_name
+        varchar last_name
+        text bio
+        varchar avatar_url
+    }
+    
+    SESSION {
+        uuid id PK
+        uuid user_id FK
+        varchar token
+        timestamp expires_at
+        timestamp created_at
+    }
+    
+    ROLE {
+        uuid id PK
+        varchar name UK
+        text description
+    }
+    
+    USER_ROLE {
+        uuid user_id FK
+        uuid role_id FK
+        timestamp assigned_at
+    }
+    
+    USER ||--|| PROFILE : has
+    USER ||--o{ SESSION : creates
+    USER ||--o{ USER_ROLE : assigned
+    ROLE ||--o{ USER_ROLE : grants`;
+            
+            renderDiagram('er-diagram', diagram);
+        }
+
+        function showClass() {
+            const diagram = `classDiagram
+    class UserAuthComponent {
+        -state: AuthState
+        +props: AuthProps
+        +render(): JSX.Element
+        -handleLogin(credentials: LoginData): void
+        -handleRegister(userData: RegisterData): void
+        -validateInput(data: any): boolean
+    }
+    
+    class AuthService {
+        -apiClient: ApiClient
+        -tokenStorage: TokenStorage
+        +login(credentials: LoginData): Promise~AuthResult~
+        +register(userData: RegisterData): Promise~User~
+        +logout(): Promise~void~
+        +refreshToken(): Promise~string~
+        +getCurrentUser(): Promise~User~
+    }
+    
+    class User {
+        +id: string
+        +email: string
+        +profile: UserProfile
+        +roles: Role[]
+        +createdAt: Date
+        +updatedAt: Date
+        +hasRole(roleName: string): boolean
+        +toJSON(): object
+    }
+    
+    class TokenStorage {
+        +setToken(token: string): void
+        +getToken(): string | null
+        +removeToken(): void
+        +isTokenValid(): boolean
+    }
+    
+    UserAuthComponent --> AuthService : uses
+    AuthService --> User : manages
+    AuthService --> TokenStorage : uses`;
+            
+            renderDiagram('class-diagram', diagram);
+        }
+
+        function showTimeline() {
+            const diagram = `gantt
+    title User Authentication System Development
+    dateFormat YYYY-MM-DD
+    axisFormat %m/%d
+    
+    section Setup Phase
+    Project Setup           :done, setup, 2024-01-01, 2024-01-03
+    Environment Config      :done, env, after setup, 2d
+    
+    section Backend Development
+    Database Schema         :active, db, 2024-01-04, 3d
+    Authentication API      :auth, after db, 4d
+    User Management API     :user, after auth, 3d
+    
+    section Frontend Development
+    Login Component         :login, 2024-01-08, 3d
+    Registration Component  :register, after login, 2d
+    Dashboard Integration   :dashboard, after register, 2d
+    
+    section Testing & Deployment
+    Unit Testing           :testing, after dashboard, 2d
+    Integration Testing    :integration, after testing, 2d
+    Production Deployment  :milestone, deploy, after integration, 1d`;
+            
+            renderDiagram('timeline-diagram', diagram);
+        }
+
+        function renderDiagram(containerId, diagramCode) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = diagramCode;
+            container.removeAttribute('data-processed');
+            mermaid.init(undefined, container);
+        }
+
+        function exportDiagram(type) {
+            const container = document.getElementById(`${type}-diagram`);
+            if (container) {
+                const mermaidCode = container.textContent || container.innerHTML;
+                const blob = new Blob([mermaidCode], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${type}-diagram.mmd`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Auto-generate architecture on load
+        setTimeout(() => {
+            showArchitecture();
+        }, 1000);
+    </script>
+</body>
+</html>

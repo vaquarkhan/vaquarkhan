@@ -1,0 +1,941 @@
+/* Universal Input Section Styles */
+.input-section textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-background);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.input-section textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1);
+}
+
+.input-section .action-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-section .action-button:hover {
+    background: #ea580c;
+    transform: translateY(-1px);
+}
+
+.input-section .action-button:last-child {
+    margin-right: 0;
+}
+
+/* Research Processing Overlay */
+#research-processing-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.processing-content {
+    background: var(--card-background);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.processing-header h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.processing-header p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.progress-container {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #ea580c);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.processing-animation {
+    display: flex;
+    justify-content: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Research Report Formatting */
+.report-subsection {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.subsection-title {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.subsection-content {
+    margin-left: 1rem;
+}
+
+.report-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.report-list-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.item-content {
+    line-height: 1.6;
+}
+
+.item-field {
+    margin-bottom: 0.5rem;
+}
+
+.nested-list {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.nested-list li {
+    padding: 0.25rem 0;
+    color: var(--text-color);
+}
+
+.report-field {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 6px;
+}
+
+.field-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 150px;
+    margin-right: 1rem;
+}
+
+.field-value {
+    color: var(--text-color);
+    flex: 1;
+    line-height: 1.5;
+}
+
+.report-text {
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 1rem;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 6px;
+}
+
+/* Research Report Card Styles - Only for research sections */
+.research-report .competitor-card {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.research-report .red-card {
+    background: linear-gradient(135deg, #fee2e2, #fef2f2);
+    border-left-color: #dc2626;
+}
+
+.research-report .orange-card {
+    background: linear-gradient(135deg, #fed7aa, #fef3e2);
+    border-left-color: #ea580c;
+}
+
+.research-report .yellow-card {
+    background: linear-gradient(135deg, #fef3c7, #fffbeb);
+    border-left-color: #d97706;
+}
+
+.research-report .green-card {
+    background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+    border-left-color: #16a34a;
+}
+
+.research-report .blue-card {
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    border-left-color: #2563eb;
+}
+
+.research-report .comparison-card {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f3e8ff, #faf5ff);
+    border-radius: 12px;
+    border-left: 5px solid #8b5cf6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.research-report .opportunity-card {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+    border-radius: 12px;
+    border-left: 5px solid #10b981;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.research-report .section-card {
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.research-report .executive-card {
+    background: linear-gradient(135deg, #fef3c7, #fffbeb);
+    border-left-color: #f59e0b;
+}
+
+.research-report .market-card {
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    border-left-color: #3b82f6;
+}
+
+.research-report .technical-card {
+    background: linear-gradient(135deg, #e0e7ff, #eef2ff);
+    border-left-color: #6366f1;
+}
+
+.research-report .business-card {
+    background: linear-gradient(135deg, #fce7f3, #fdf2f8);
+    border-left-color: #ec4899;
+}
+
+.research-report .persona-card {
+    background: linear-gradient(135deg, #f0f9ff, #f0f9ff);
+    border-left-color: #0ea5e9;
+}
+
+.research-report .feature-card {
+    background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+    border-left-color: #22c55e;
+}
+
+.research-report .risk-card {
+    background: linear-gradient(135deg, #fef2f2, #fef7f7);
+    border-left-color: #ef4444;
+}
+
+.research-report .financial-card {
+    background: linear-gradient(135deg, #f0fdf4, #f7fee7);
+    border-left-color: #84cc16;
+}
+
+.research-report .timeline-card {
+    background: linear-gradient(135deg, #fdf4ff, #fefbff);
+    border-left-color: #a855f7;
+}
+
+.research-report .strategy-card {
+    background: linear-gradient(135deg, #fff7ed, #fffbf5);
+    border-left-color: #f97316;
+}
+
+.research-report .specification-card {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-left-color: #64748b;
+}
+
+.research-report .competitor-card h4, .research-report .comparison-card h4, .research-report .opportunity-card h4, .research-report .section-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* Table styling for comparison */
+.research-report .comparison-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.research-report .comparison-card th, .research-report .comparison-card td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.research-report .comparison-card th {
+    background-color: rgba(139, 92, 246, 0.1);
+    font-weight: 600;
+}
+
+/* Academic Paper Styling */
+.research-report h2 {
+    color: #1e40af;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.research-report h3 {
+    color: #dc2626;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.research-report h4 {
+    color: #059669;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.research-report .conclusion-card {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-left-color: #0284c7;
+    border-width: 8px;
+}
+
+/* Table styling for professional appearance */
+.research-report table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.research-report th {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    padding: 1rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.research-report td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+}
+
+.research-report tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.research-report tr:hover {
+    background-color: #f3f4f6;
+}
+
+/* Checkmark and X styling */
+.research-report td:contains('✅') {
+    color: #059669;
+    font-weight: 600;
+}
+
+.research-report td:contains('❌') {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* Research History Styles */
+.research-history {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.research-history h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.history-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.history-item:hover {
+    background: rgba(249, 115, 22, 0.1);
+    transform: translateX(2px);
+}
+
+.history-content {
+    flex: 1;
+}
+
+.history-title {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.history-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.delete-research-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.delete-research-btn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.delete-research-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Modal Footer Styles */
+.modal-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-actions .action-button {
+    min-width: 150px;
+}
+
+.modal-actions .action-button.secondary {
+    background: var(--border-color);
+    color: var(--text-color);
+}
+
+.modal-actions .action-button.secondary:hover {
+    background: var(--text-muted);
+}
+
+/* Observability Summary Styles */
+.observability-summary {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.summary-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.summary-metric {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.metric-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+}
+
+.metric-info {
+    flex: 1;
+}
+
+.metric-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Monitoring Dashboard Styles */
+.dashboard-container {
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-button {
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: var(--text-muted);
+    transform: translateX(-2px);
+}
+
+.refresh-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.refresh-button:hover {
+    background: #ea580c;
+}
+
+.monitoring-main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.log-filter {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--card-background);
+    color: var(--text-color);
+    margin-left: 1rem;
+}
+
+.log-service {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.alert-action {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alert-action:hover {
+    background: #ea580c;
+}
+
+/* Cost Optimization Styles */
+.cost-summary-highlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.cost-highlight-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.cost-highlight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.cost-highlight-card.savings {
+    border-color: #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), var(--card-background));
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.highlight-content {
+    flex: 1;
+}
+
+.highlight-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.cost-highlight-card.savings .highlight-amount {
+    color: #10b981;
+}
+
+.highlight-label {
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .cost-summary-highlight {
+        grid-template-columns: 1fr;
+    }
+    
+    .highlight-amount {
+        font-size: 1.5rem;
+    }
+}
+
+.cost-recommendations {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.recommendation-item {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.recommendation-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.recommendation-item.high {
+    border-left: 4px solid #dc2626;
+}
+
+.recommendation-item.medium {
+    border-left: 4px solid #f59e0b;
+}
+
+.recommendation-item.low {
+    border-left: 4px solid #10b981;
+}
+
+.rec-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.rec-priority {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.rec-priority.high {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.rec-priority.medium {
+    background: #fffbeb;
+    color: #f59e0b;
+    border: 1px solid #fed7aa;
+}
+
+.rec-priority.low {
+    background: #f0fdf4;
+    color: #10b981;
+    border: 1px solid #bbf7d0;
+}
+
+.rec-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    flex: 1;
+}
+
+.rec-savings {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.rec-description {
+    color: var(--text-muted-color);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.rec-action {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.rec-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.implement-btn, .details-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.implement-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.implement-btn:hover {
+    background: var(--primary-hover-color);
+    transform: translateY(-1px);
+}
+
+.details-btn {
+    background: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.details-btn:hover {
+    background: var(--background-color);
+}
+
+.cost-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.recommendation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: var(--surface-color);
+    border-radius: 6px;
+}
+
+.priority-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.priority-badge.high {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.priority-badge.medium {
+    background: #fffbeb;
+    color: #f59e0b;
+}
+
+.priority-badge.low {
+    background: #f0fdf4;
+    color: #10b981;
+}
+
+.savings-amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.risk-low {
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .rec-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .rec-buttons {
+        flex-direction: column;
+    }
+    
+    .cost-actions {
+        flex-direction: column;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

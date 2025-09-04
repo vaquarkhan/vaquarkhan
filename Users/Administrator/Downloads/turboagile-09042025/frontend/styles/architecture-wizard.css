@@ -1,0 +1,132 @@
+.architecture-wizard {
+    max-width: 95vw;
+    width: 95%;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+.wizard-step {
+    padding: 2rem;
+}
+
+.patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.pattern-card {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--card-background);
+}
+
+.pattern-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(106,90,205,0.2);
+}
+
+.pattern-card.selected {
+    border-color: var(--primary-color);
+    background: rgba(106,90,205,0.1);
+    border-width: 3px;
+}
+
+.pattern-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pattern-icon {
+    font-size: 2rem;
+}
+
+.pattern-theory p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.step-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.requirements-form textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    resize: vertical;
+}
+
+.cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: var(--background-color);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.cost-total {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.diagram-canvas {
+    min-height: 400px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    padding: 1rem;
+}
+
+.diagram-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: var(--background-color);
+    border-radius: 6px;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+    background: var(--card-background);
+    color: var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
