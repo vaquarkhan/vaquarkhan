@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "search": "بحث",
+    "filter": "تصفية",
+    "clear": "مسح",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "signInWithSSO": "تسجيل الدخول عبر SSO",
+    "welcomeBack": "مرحباً بعودتك",
+    "accessBenefits": "الوصول إلى مزايا وعروض بطاقتك"
+  },
+  "dashboard": {
+    "welcome": "مرحباً بعودتك، {{name}}",
+    "trackSpending": "تتبع إنفاقك واكتشف العروض المخصصة لك",
+    "yourProgress": "تقدمك",
+    "yourOffers": "عروضك",
+    "currentSpend": "الإنفاق الحالي",
+    "progressToReward": "التقدم نحو المكافأة التالية",
+    "spendMore": "أنفق {{amount}} أكثر لفتح مكافأتك التالية",
+    "congratulations": "🎉 تهانينا! لقد وصلت إلى حد الإنفاق المطلوب"
+  },
+  "offers": {
+    "title": "العروض",
+    "eligible": "مؤهل",
+    "locked": "مقفل",
+    "expires": "ينتهي في",
+    "redeemOffer": "استرداد العرض",
+    "completeSpending": "أكمل متطلبات الإنفاق",
+    "category": "الفئة",
+    "merchant": "التاجر",
+    "discount": "الخصم",
+    "description": "الوصف"
+  },
+  "admin": {
+    "console": "وحدة التحكم الإدارية",
+    "systemOnline": "النظام متصل",
+    "offerManagement": "إدارة العروض",
+    "bankPartners": "شركاء البنوك",
+    "ssoConfiguration": "إعداد SSO",
+    "rulesEngine": "محرك القواعد",
+    "analytics": "التحليلات",
+    "auditTrail": "سجل المراجعة",
+    "activeOffers": "العروض النشطة",
+    "pendingApproval": "في انتظار الموافقة",
+    "totalRedemptions": "إجمالي الاستردادات"
+  }
+}

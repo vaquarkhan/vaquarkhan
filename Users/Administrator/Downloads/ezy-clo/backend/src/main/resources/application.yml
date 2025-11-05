@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: card-benefits-platform
+  
+  profiles:
+    active: dev
+  
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+
+  security:
+    jwt:
+      secret: ${JWT_SECRET:your-256-bit-secret-key-here-change-in-production}
+      expiration: 86400000 # 24 hours
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.cardlinked.benefits: INFO
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Custom application properties
+app:
+  security:
+    cors:
+      allowed-origins: "http://localhost:3000,http://localhost:5173"
+      allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+      allowed-headers: "*"
+      allow-credentials: true
+  
+  encryption:
+    algorithm: AES/GCM/NoPadding
+    key-length: 256
+  
+  audit:
+    enabled: true
+    retention-days: 2555 # 7 years for banking compliance

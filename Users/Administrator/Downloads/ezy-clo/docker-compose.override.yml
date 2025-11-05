@@ -1,0 +1,89 @@
+# Development override for Docker Compose
+# This file is automatically loaded by docker-compose and provides development-specific configurations
+
+version: '3.8'
+
+services:
+  # Frontend Development Configuration
+  ezyclo-frontend:
+    build:
+      target: build  # Use build stage for development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_API_BASE_URL=http://localhost:8081/api
+      - VITE_APP_NAME=Card Benefits Platform
+    command: npm run dev
+    ports:
+      - "5173:5173"  # Vite dev server port
+
+  # Backend Development Configuration
+  ezyclo-backend:
+    volumes:
+      - ./backend:/app
+      - /app/target
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DEVTOOLS_RESTART_ENABLED=true
+      - LOGGING_LEVEL_COM_CARDLINKED_BENEFITS=DEBUG
+    ports:
+      - "8080:8080"
+      - "5005:5005"  # Debug port
+
+  # MySQL Development Configuration
+  ezyclo-mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=card_benefits_platform
+      - MYSQL_USER=benefits_user
+      - MYSQL_PASSWORD=benefits_password
+    volumes:
+      - mysql_dev_data:/var/lib/mysql
+      - ./database/init:/docker-entrypoint-initdb.d
+      - ./database/config/my.cnf:/etc/mysql/conf.d/my.cnf
+
+  # Redis Development Configuration
+  ezyclo-redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_dev_data:/data
+      - ./database/redis/redis.conf:/usr/local/etc/redis/redis.conf
+
+  # Development Tools
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - "8081:8080"
+    environment:
+      - ADMINER_DEFAULT_SERVER=mysql
+      - ADMINER_DESIGN=pepa-linha
+    depends_on:
+      - ezyclo-mysql
+    networks:
+      - app-network
+    profiles:
+      - tools
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    ports:
+      - "8082:8081"
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    depends_on:
+      - ezyclo-redis
+    networks:
+      - app-network
+    profiles:
+      - tools
+
+volumes:
+  mysql_dev_data:
+  redis_dev_data:

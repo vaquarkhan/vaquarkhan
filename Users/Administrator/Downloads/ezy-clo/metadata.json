@@ -1,0 +1,5 @@
+{
+  "name": "ZAPS Card Linked Benefits Platform",
+  "description": "A web platform for cardholders to explore and access card benefits and offers. This MVP version allows users to browse offers, filter them, view details, and get AI-powered suggestions.",
+  "requestFramePermissions": []
+}

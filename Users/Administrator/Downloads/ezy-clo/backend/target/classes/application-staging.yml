@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:mysql}:${DB_PORT:3306}/${DB_NAME:card_benefits_platform}?useSSL=true&requireSSL=true&serverTimezone=UTC
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    
+  redis:
+    host: ${REDIS_HOST:redis}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+
+logging:
+  level:
+    com.cardlinked.benefits: INFO
+    org.springframework.security: WARN
+
+server:
+  port: 8080
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics

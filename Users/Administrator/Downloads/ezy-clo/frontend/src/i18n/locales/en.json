@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signInWithSSO": "Sign in with SSO",
+    "welcomeBack": "Welcome back",
+    "accessBenefits": "Access your card benefits and offers"
+  },
+  "dashboard": {
+    "welcome": "Welcome back, {{name}}",
+    "trackSpending": "Track your spending and discover personalized offers",
+    "yourProgress": "Your Progress",
+    "yourOffers": "Your Offers",
+    "currentSpend": "Current Spend",
+    "progressToReward": "Progress to next reward",
+    "spendMore": "Spend {{amount}} more to unlock your next reward",
+    "congratulations": "🎉 Congratulations! You've reached your spending threshold"
+  },
+  "offers": {
+    "title": "Offers",
+    "eligible": "Eligible",
+    "locked": "Locked",
+    "expires": "Expires",
+    "redeemOffer": "Redeem Offer",
+    "completeSpending": "Complete spending requirement",
+    "category": "Category",
+    "merchant": "Merchant",
+    "discount": "Discount",
+    "description": "Description"
+  },
+  "admin": {
+    "console": "Admin Console",
+    "systemOnline": "System Online",
+    "offerManagement": "Offer Management",
+    "bankPartners": "Bank Partners",
+    "ssoConfiguration": "SSO Configuration",
+    "rulesEngine": "Rules Engine",
+    "analytics": "Analytics",
+    "auditTrail": "Audit Trail",
+    "activeOffers": "Active Offers",
+    "pendingApproval": "Pending Approval",
+    "totalRedemptions": "Total Redemptions"
+  }
+}

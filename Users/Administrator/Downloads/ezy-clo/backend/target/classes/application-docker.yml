@@ -1,0 +1,77 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:mysql}:${DB_PORT:3306}/${DB_NAME:card_benefits_platform}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${DB_USERNAME:benefits_user}
+    password: ${DB_PASSWORD:benefits_password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        
+  redis:
+    host: ${REDIS_HOST:redis}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    timeout: 2000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+
+  security:
+    jwt:
+      secret: ${JWT_SECRET:your-256-bit-secret-key-here-change-in-production}
+      expiration: ${JWT_EXPIRATION:86400000}
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.cardlinked.benefits: INFO
+    org.springframework.security: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+app:
+  security:
+    cors:
+      allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
+      allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+      allowed-headers: "*"
+      allow-credentials: true
+  
+  encryption:
+    algorithm: AES/GCM/NoPadding
+    key: ${ENCRYPTION_KEY:your-256-bit-encryption-key-change-in-production}
+  
+  external-apis:
+    mastercard:
+      base-url: ${MASTERCARD_API_ENDPOINT:https://api.mastercard.com/benefits}
+      client-id: ${MASTERCARD_CLIENT_ID:}
+      client-secret: ${MASTERCARD_CLIENT_SECRET:}
+    visa:
+      base-url: ${VISA_API_ENDPOINT:https://api.visa.com/benefits}
+      client-id: ${VISA_CLIENT_ID:}
+      client-secret: ${VISA_CLIENT_SECRET:}

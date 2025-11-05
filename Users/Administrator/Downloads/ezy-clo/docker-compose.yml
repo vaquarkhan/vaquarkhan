@@ -1,0 +1,158 @@
+version: '3.8'
+
+services:
+  # Frontend Service
+  ezyclo-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ezyclo/card-benefits-frontend:latest
+    ports:
+      - "3001:80"
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://localhost:8081/api
+    depends_on:
+      - ezyclo-backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Backend Service
+  ezyclo-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: ezyclo/card-benefits-backend:latest
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_HOST=ezyclo-mysql
+      - DB_PORT=3306
+      - DB_NAME=card_benefits_platform
+      - DB_USERNAME=benefits_user
+      - DB_PASSWORD=benefits_password
+      - REDIS_HOST=ezyclo-redis
+      - REDIS_PORT=6379
+      - JWT_SECRET=your-super-secure-jwt-secret-key-change-in-production-256-bits
+      - MASTERCARD_API_ENDPOINT=https://api.mastercard.com/benefits
+      - VISA_API_ENDPOINT=https://api.visa.com/benefits
+    depends_on:
+      ezyclo-mysql:
+        condition: service_healthy
+      ezyclo-redis:
+        condition: service_healthy
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # MySQL Database
+  ezyclo-mysql:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=card_benefits_platform
+      - MYSQL_USER=benefits_user
+      - MYSQL_PASSWORD=benefits_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/init:/docker-entrypoint-initdb.d
+      - ./database/config/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "benefits_user", "-pbenefits_password"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Redis Cache
+  ezyclo-redis:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+      - ./database/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  # Development Tools
+  adminer:
+    image: adminer:latest
+    ports:
+      - "8082:8080"
+    environment:
+      - ADMINER_DEFAULT_SERVER=ezyclo-mysql
+    depends_on:
+      - ezyclo-mysql
+    networks:
+      - app-network
+    restart: unless-stopped
+    profiles:
+      - tools
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    ports:
+      - "8083:8081"
+    environment:
+      - REDIS_HOSTS=local:ezyclo-redis:6379
+    depends_on:
+      - ezyclo-redis
+    networks:
+      - app-network
+    restart: unless-stopped
+    profiles:
+      - tools
+
+  # Nginx Load Balancer (Optional for production)
+  ezyclo-nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - ezyclo-frontend
+      - ezyclo-backend
+    networks:
+      - app-network
+    restart: unless-stopped
+    profiles:
+      - production
+
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
