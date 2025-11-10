@@ -17,6 +17,11 @@ End-to-end microservice-style demo that showcases a premium mobility concierge e
 - 6+ GB free disk space for images and build context
 - Optional: Node.js 18+ and Java 17+ if you plan to run components outside Docker
 
+### Environment Setup
+Set the following environment variables before running locally or in Docker:
+- `GEMINI_API_KEY` – optional, enables AI concierge calls.
+- `WEATHER_API_KEY` – OpenWeather API key used by `/api/integrations/weather`.
+
 ### Quick Start (Docker)
 1. Copy `.env.example` to `.env` (if present) and fill secrets like `GEMINI_API_KEY`.
 2. Build and start the stack:
@@ -79,6 +84,7 @@ End-to-end microservice-style demo that showcases a premium mobility concierge e
 - `GET/POST/PUT /api/biometrics/preferences` – store biometric opt-ins with metadata for personalised security flows.
 - `GET/POST/PUT /api/analytics/snapshots` – maintain travel program KPIs with optional time-window filtering.
 - `GET/POST/PUT /api/ai/interactions` – audit AI usage metrics, latency, and outcomes across channels.
+- `GET /api/integrations/weather/current` – fetch live weather by `lat`/`lon` or `q` (city query) via OpenWeather.
 - Legacy endpoints (`/api/chauffeurs`, `/api/admin/bookings`, AI routes, auth) remain intact.
 
 ### Operations Notes
@@ -101,4 +107,15 @@ End-to-end microservice-style demo that showcases a premium mobility concierge e
 - `frontend` healthcheck failing: ensure port 5173 is free, check logs with `docker compose logs frontend`.
 - MySQL not healthy: delete `db_data` volume (`docker compose down -v`) and restart.
 - Need to update schema: edit `database/ddl.sql`, run migrations, and keep entities in sync.
+
+### Privacy, Convenience & Trading Highlights
+- **Hide & Unhide Payments:** Industry-first control over payment history visibility.
+- **Personalised UPI ID:** Use `yourname@ptyes` instead of exposing mobile numbers.
+- **Receive-Money QR Widget:** Pin your QR code to the home screen for instant collections.
+- **Coin-Drop Sound:** Audible confirmation whenever money lands in your account.
+- **UPI Lite Auto Top-Up:** Automatically replenishes the lite balance when it dips below threshold.
+- **Downloadable Statements:** Export UPI transactions in PDF or Excel for reconciliation.
+- **Spend Analytics:** Categorised insights that illuminate trends across merchants and categories.
+- **Total UPI Bank Balance:** View aggregate balances of all linked accounts in one glance.
+- **Option Chain Power Tools:** ATM highlighting, illiquidity alerts, and rich option metrics (LTP, OI, IV, Greeks) covering NSE and BSE F&O (SENSEX, BANKEX).
 
