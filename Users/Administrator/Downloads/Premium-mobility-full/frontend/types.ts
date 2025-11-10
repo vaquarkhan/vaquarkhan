@@ -29,6 +29,32 @@ export interface WeatherData {
   windSpeed?: number;
 }
 
+export interface OptionContract {
+  ltp: number;
+  change: number;
+  iv: number;
+  volume: number;
+  oi: number;
+  changeInOI: number;
+  bidPrice: number;
+  bidQty: number;
+  askPrice: number;
+  askQty: number;
+}
+
+export interface OptionChainRowData {
+  strikePrice: number;
+  call: OptionContract;
+  put: OptionContract;
+}
+
+export interface OptionChainResponse {
+  instrumentName: string;
+  spotPrice: number;
+  expiryDates: string[];
+  chainData: OptionChainRowData[];
+}
+
 export interface Booking {
   id: number;
   service: string;
