@@ -66,8 +66,6 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 |----------|--------|-------------|
 | 📊 **Stack Overflow** | 7.5M+ Reach | Helping developers solve complex problems |
 | ⭐ **GitHub Stars** | 1400+ Total | Open-source knowledge sharing |
-| 🔱 **GitHub Forks** | 1800+ Total | Enabling developers worldwide |
-| 📚 **Repositories** | 100+ Public | Comprehensive learning resources |
 | 🎓 **Academic Citations** | 4+ Universities | Foundational research references |
 | 💬 **Apache Spark Community** | Active Contributor | Distributed computing expertise |
 
@@ -120,22 +118,6 @@ graph LR
     style F fill:#dfe6e9
     style G fill:#a29bfe
 ```
-
-### 🏆 Key Achievements
-
-| Year | Milestone | Impact |
-|------|-----------|--------|
-| 2024 | **AWS Professional Services** | Leading data architecture for global financial institutions |
-| 2022 | **Academic Citation - NTUA Greece** | Kubernetes architecture cited in master's thesis |
-| 2022 | **Q1 Journal Publication** | Blockchain research cited in Future Generation Computer Systems |
-| 2020 | **Academic Citation - University of Toronto** | Big data scaling strategies cited in healthcare research |
-| 2019 | **Academic Citation - University of Southern Denmark** | V2X architecture cited in smart city research |
-| 2018 | **JSR 368 Expert Group** | Contributed to Java Message Service 2.1 standards |
-| 2023 | **Published Author** | Data Engineering AWS Cookbook  |
-| Ongoing | **Stack Overflow Impact** | 7.5M+ developers reached with technical solutions |
-| Ongoing | **Open Source Leadership** | 1400+ stars, 1800+ forks across repositories |
-
-</div>
 
 ## 🏆 International Academic Recognition
 
@@ -215,63 +197,10 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 </div>
 
-## 📖 Notable Wiki Resources
-
-My technical wikis serve as educational resources for researchers and engineers worldwide:
-
-- 📘 [Scaling Strategies](https://github.com/vaquarkhan/vaquarkhan/wiki/Difference-between-scaling-horizontally-and-vertically) - Cited by University of Southern Denmark & University of Toronto
-- 📗 [Kubernetes Architecture Overview](https://github.com/vaquarkhan/Techies-Notes-wiki/blob/master/Overview-of-Kubernetes-architecture-and-main-concepts.md) - Referenced by National Technical University of Athens
-- 📙 [Awesome Blockchain Guide](https://github.com/vaquarkhan/awesome-blockchain-Guide) - Utilized in systematic reviews published in Q1 journals
-
 ## 🌟 Featured Open Source Projects
 
 <div align="center">
 
-### 🔥 Most Popular Repositories
-
-<table>
-<tr>
-<td align="center" width="33%">
-
-[![Apache Kafka POC](https://github-readme-stats.vercel.app/api/pin/?username=vaquarkhan&repo=Apache-Kafka-poc-and-notes&theme=radical&hide_border=true)](https://github.com/vaquarkhan/Apache-Kafka-poc-and-notes)
-
-**⭐ 243 Stars | 🔱 94 Forks**
-
-Apache Kafka POC and comprehensive notes
-
-</td>
-<td align="center" width="33%">
-
-[![Domain-Driven Design](https://github-readme-stats.vercel.app/api/pin/?username=vaquarkhan&repo=Domain-driven-design&theme=radical&hide_border=true)](https://github.com/vaquarkhan/Domain-driven-design)
-
-**⭐ 70 Stars | 🔱 1.3k Forks**
-
-Curated DDD, CQRS & Event Sourcing resources
-
-</td>
-<td align="center" width="33%">
-
-[![Technology Best Practices](https://github-readme-stats.vercel.app/api/pin/?username=vaquarkhan&repo=Technology-best-practices&theme=radical&hide_border=true)](https://github.com/vaquarkhan/Technology-best-practices)
-
-**⭐ 55 Stars | 🔱 232 Forks**
-
-Best practices & style guides
-
-</td>
-</tr>
-</table>
-
-### 📚 Curated Learning Resources
-
-| Repository | Description | Impact |
-|------------|-------------|--------|
-| [🎓 Learn Kubernetes](https://github.com/vaquarkhan/learn-Kubernetes) | Comprehensive Kubernetes learning guide | ⭐ 9 stars, 8 forks |
-| [⛓️ Awesome Blockchain Guide](https://github.com/vaquarkhan/awesome-blockchain-Guide) | Blockchain books, whitepapers & study materials | ⭐ 7 stars, 272 forks |
-| [📖 Microservices Recipes GitBook](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook) | Free comprehensive microservices guide | 600+ stars |
-| [🏗️ Domain-Driven Design Code Samples](https://github.com/vaquarkhan/Domain-driven-design--code-sample) | DDD workshop sample project | ⭐ 4 stars, 36 forks |
-| [⚡ Spark Java Examples](https://github.com/vaquarkhan/spark-Java-examples) | Apache Spark examples in Java | ⭐ 1 star, 104 forks |
-
-</div>
 
 ## 📚 My Books & Resources
 
@@ -316,39 +245,6 @@ A comprehensive free GitBook on microservices patterns
 </table>
 
 </div>
-
-## 📝 Academic Citations & Research Impact
-
-My open-source repositories have been cited as foundational references in peer-reviewed research:
-
-### 🎓 Master's & Doctoral Research
-
-**Denmark - University of Southern Denmark (2019)**
-- **Thesis**: "Integrating Vehicles With Smart Traffic Solutions"
-- **Domain**: Intelligent Transportation Systems (ITS) & V2X Communication
-- **Impact**: Architecture for GLOSA (Green-Light Optimal Speed Advisory) systems
-- **Citation**: Scaling strategies for handling 10Hz SPaT/MAP/CAM message streams
-
-**Canada - University of Toronto (2020)**
-- **Thesis**: "Big Data Insights into MRI Demand and Wait Time"
-- **Domain**: Healthcare Operations Research
-- **Impact**: Processing 600GB of MRI data to reduce cancer diagnosis delays
-- **Citation**: Horizontal vs vertical scaling for distributed healthcare analytics
-
-**Greece - National Technical University of Athens (2022)**
-- **Thesis**: "Extensions for Scheduling and Autoscaling on Kubernetes Clusters"
-- **Domain**: Cloud Computing & Container Orchestration
-- **Impact**: Novel autoscaling algorithms for Kubernetes with local storage
-- **Citation**: Kubernetes architecture and control plane internals
-
-### 📄 Peer-Reviewed Journal Publications
-
-**Global Collaboration - Future Generation Computer Systems (2022)**
-- **Paper**: "Scalable Blockchains - A Systematic Review"
-- **Journal**: Elsevier Q1 Journal (Impact Factor ~7.3)
-- **Institutions**: Birmingham City University (UK), Khalifa University (UAE), NED University (Pakistan)
-- **Impact**: Systematic review of blockchain scalability solutions
-- **Citation**: Curated blockchain resources serving as meta-index for research
 
 ## 🌟 Expertise Areas
 
@@ -506,7 +402,6 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer&text=Let's%20Build%20Something%20Amazing&fontSize=30&fontAlignY=70&animation=twinkling" />
 
-*"My repositories serve as foundational architectural references for advanced research in Smart Cities, Healthcare Analytics, Cloud Computing, and Blockchain Technology across institutions in Denmark, Canada, Greece, UK, UAE, and Pakistan."*
 
 ### 💼 Open to Collaboration | 🎯 Available for Mentorship | 📚 Sharing Knowledge
 
