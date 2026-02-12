@@ -131,7 +131,7 @@ graph LR
 | 2020 | **Academic Citation - University of Toronto** | Big data scaling strategies cited in healthcare research |
 | 2019 | **Academic Citation - University of Southern Denmark** | V2X architecture cited in smart city research |
 | 2018 | **JSR 368 Expert Group** | Contributed to Java Message Service 2.1 standards |
-| 2023 | **Published Author** | Data Engineering AWS Cookbook (600+ stars) |
+| 2023 | **Published Author** | Data Engineering AWS Cookbook  |
 | Ongoing | **Stack Overflow Impact** | 7.5M+ developers reached with technical solutions |
 | Ongoing | **Open Source Leadership** | 1400+ stars, 1800+ forks across repositories |
 
@@ -491,7 +491,7 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 |-------------|---------|
 | 📚 **JSR 368 Expert Group** | Shaped Java™ Message Service 2.1 industry standards |
 | 🌟 **Stack Overflow Top Contributor** | 7.5M+ developers reached with technical insights |
-| 📖 **Published Author** | AWS Cookbook with 600+ GitHub stars |
+| 📖 **Published Author** | AWS Cookbook & Microservices Recipes: The Architect's Field Guide  with 600+ GitHub stars |
 | 🎯 **Academic Impact** | Cited by University of Toronto, University of Southern Denmark, NTUA |
 | 💡 **Innovation** | Creator of The Khan Pattern™ and KM3™ frameworks |
 | 🌍 **Open Source** | Active contributor to Apache Spark and Terraform ecosystems |
