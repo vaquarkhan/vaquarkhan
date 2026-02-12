@@ -220,7 +220,6 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 Recipe-based guide for AWS data engineering
 
-⭐ **600+ GitHub Stars**
 
 [![Amazon](https://img.shields.io/badge/Buy_on_Amazon-FF9900?style=for-the-badge&logo=amazon&logoColor=white)](https://www.amazon.com/Data-Engineering-AWS-Cookbook-recipe-based/dp/1805127284)
 
@@ -236,6 +235,8 @@ Recipe-based guide for AWS data engineering
 A comprehensive free GitBook on microservices patterns
 
 ⭐ **Free & Open Source**
+⭐ **600+ GitHub Stars ,280+ fork**
+
 
 [![GitBook](https://img.shields.io/badge/Read_on_GitBook-3884FF?style=for-the-badge&logo=gitbook&logoColor=white)](https://vaquarkhan.github.io/microservices-recipes-a-free-gitbook/)
 [![GitHub](https://img.shields.io/badge/View_on_GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)
