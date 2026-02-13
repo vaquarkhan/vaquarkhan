@@ -75,7 +75,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 Creator of groundbreaking frameworks for distributed systems:
 
-- **The Khan Pattern™** for Adaptive Granularity
+- **The Khan Pattern** for Adaptive Granularity
 - **The Khan Granularity Protocol™**
 - **The Khan Microservices Maturity Model (KM3™)**
 
