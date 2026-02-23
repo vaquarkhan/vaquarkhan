@@ -11,11 +11,11 @@
 ### AWS | GCP | AZURE | PCF | Microservices | Big Data | Apache Spark | AI/ML | Polyglot Developer | Architect | Technology Evangelist
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;7.5M%2B+Stack+Overflow+Reach;1400%2B+GitHub+Stars;Cited+by+Top+Universities+Worldwide;Creator+of+The+Khan+Pattern%E2%84%A2" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;7.5M%2B+Stack+Overflow+Reach;1400%2B+GitHub+Stars;Cited+by+Top+Universities+Worldwide;Creator+of+The+Khan+Pattern%E2%84%A2&random=false" alt="Typing SVG" />
 </p>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-7.5M+_Reach-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](http://stackoverflow.com/users/4812170/vaquar-khan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan)
+[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-7.5M+_Reach-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
 [![GitHub](https://img.shields.io/badge/GitHub-1400+_Stars-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan)
 [![ADPList](https://img.shields.io/badge/Book_Mentorship-FF6154?style=for-the-badge&logo=google-meet&logoColor=white)](https://adplist.org/mentors/vaquar-khan)
 
@@ -37,12 +37,10 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 ```ascii
 ╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
 ║   🏗️  Cloud Architecture    📊  Big Data Engineering                ║
 ║   🤖  AWS AI/ML Solutions    🔧  Microservices Design               ║
 ║   💰  Financial Services     🎯  Domain-Driven Design               ║
 ║   📚  Technical Leadership   🌍  Open Source Contribution           ║
-║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -58,18 +56,19 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 - **AWS Professional Services**: Architecting enterprise-grade solutions for global financial institutions
 - **Community Leader**: 243 stars on Apache Kafka POC, 70 stars on DDD resources, 1.3k+ forks across projects
 
-### 🌐 Community Impact & Reach
+### 🔬 Open Source Proposals (KIP / SPIP)
 
-<div align="center">
+| Project | Proposal | Description |
+|---------|----------|-------------|
+| **Apache Kafka** | [KIP-1267: Tiered Storage Cost Attribution Metrics](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) | Client-level cost attribution for Kafka Tiered Storage — enables FinOps, chargeback, and rogue consumer detection in multi-tenant clusters |
+| **Apache Spark** | [SPIP: Asynchronous Metadata Resolution & Lazy Prefetching for Spark Connect](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) | Performance optimization for Spark Connect metadata resolution and prefetching |
 
-| Platform | Metric | Impact Area |
-|----------|--------|-------------|
-| 📊 **Stack Overflow** | 7.5M+ Reach | Helping developers solve complex problems |
-| ⭐ **GitHub Stars** | 1400+ Total | Open-source knowledge sharing |
-| 🎓 **Academic Citations** | 4+ Universities | Foundational research references |
-| 💬 **Apache Spark Community** | Active Contributor | Distributed computing expertise |
+### 🐛 Terraform AWS Glue Data Quality (Issues & Contributions)
 
-</div>
+| Project | Issue | Description |
+|---------|-------|-------------|
+| **Terraform AWS Provider** | [#38744: glue_data_quality_ruleset rules not supporting multi line string](https://github.com/hashicorp/terraform-provider-aws/issues/38744) | Bug report & resolution — AWS Glue Data Quality ruleset failed with heredoc multiline strings; documented workaround using `join()` for readable DQDL rules |
+| **Terraform AWS Provider** | [#39821: aws_glue_security_configuration should support encrypting Glue Data Quality](https://github.com/hashicorp/terraform-provider-aws/issues/39821) | Enhancement request — Add `data_quality_encryption` block to fix security findings when S3/KMS/CloudWatch are encrypted but Glue Data Quality remains unencrypted |
 
 ### 🏆 Proprietary Methodologies
 
@@ -81,19 +80,23 @@ Creator of groundbreaking frameworks for distributed systems:
 
 *Original syntheses and scoring methodologies designed to operationalize distributed systems theory*
 
----
+### 🔧 Featured Projects
 
-<div align="center">
+#### aiv-integrity-gate ⭐ Featured
 
-### ⚡ Quick Facts
+**Problems solved:** Reviewer overload, low-quality PRs (boilerplate/scaffolding), design drift, wrong API usage, unknown imports (supply-chain risk), fragile edge-case code, refactors incorrectly flagged.
 
-| 💼 Experience | 📊 Impact | 🎯 Specialization |
-|---------------|-----------|-------------------|
-| 22+ Years | 7.5M+ SO Reach | Cloud Architecture |
-| AWS Professional Services | 1400+ GitHub Stars | Data Engineering |
-| Global Financial Institutions | 600+ Book Stars | Microservices Design |
+**Features:** Density gate (logic density & entropy), Design gate (YAML rules — forbidden/required patterns), Dependency gate (import validation vs pom.xml/requirements.txt), Invariant gate (property-based tests), `/aiv skip` for urgent merges, refactor exception, trusted authors bypass, assignment gate.
 
-</div>
+[![GitHub](https://img.shields.io/badge/View_on_GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vaquarkhan/aiv-integrity-gate)
+
+#### MCP-Bastion ⭐ Featured
+
+**Problems solved:** Prompt injection & jailbreaks, PII leakage to LLMs, runaway agents burning API budget, unpredictable agentic behavior on MCP.
+
+**Features:** Prompt injection defense (Meta PromptGuard), PII redaction (Microsoft Presidio), rate limiting & token budget, infinite loop protection, audit logging, content filter, circuit breaker, RBAC, schema validation, replay guard, cost tracker, semantic cache. 100% local execution, &lt;5ms overhead.
+
+[![GitHub](https://img.shields.io/badge/View_on_GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vaquarkhan/MCP-Bastion)
 
 ---
 
@@ -119,6 +122,8 @@ graph LR
     style G fill:#a29bfe
 ```
 
+</div>
+
 ## 🏆 International Academic Recognition
 
 My open-source repositories and technical wikis have been cited as **foundational references** in advanced postgraduate research across multiple continents and critical domains:
@@ -127,27 +132,53 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 <div align="center">
 
-| Institution | Country | Research Domain | Citation Impact |
-|-------------|---------|-----------------|-----------------|
-| **University of Southern Denmark** | 🇩🇰 Denmark | Intelligent Transportation Systems (V2X) | Smart City traffic management & GLOSA systems |
-| **University of Toronto** | 🇨🇦 Canada | Healthcare Big Data Analytics | MRI wait-time optimization (600GB dataset) |
-| **National Technical University of Athens** | 🇬🇷 Greece | Cloud Computing & Kubernetes | Novel autoscaling algorithms for local storage |
-| **Multi-National Collaboration** | 🌍 Global | Blockchain Scalability | Published in *Future Generation Computer Systems* (Q1 Journal) |
+| Institution | Country | Research Domain | Citation Impact | Link |
+|-------------|---------|-----------------|-----------------|------|
+| **University of Southern Denmark** | 🇩🇰 Denmark | Intelligent Transportation Systems (V2X) | Smart City traffic management & GLOSA systems | [📄 Thesis](https://simonhl.dk/wp-content/uploads/2019/08/Simon-Hjortsh%C3%B8j-Larsen-Thomas-August-Lemqvist-Master-Thesis.pdf) |
+| **University of Toronto** | 🇨🇦 Canada | Healthcare Big Data Analytics | MRI wait-time optimization (600GB dataset) | [📄 Thesis](https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download) |
+| **National Technical University of Athens** | 🇬🇷 Greece | Cloud Computing & Kubernetes | Novel autoscaling algorithms for local storage | [📄 Thesis](https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1) |
+| **Multi-National Collaboration** | 🌍 Global | Blockchain Scalability | Published in *Future Generation Computer Systems* (Q1 Journal) | [📄 Survey](https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf) · [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0167739X21002971) · [ACM](https://dl.acm.org/doi/abs/10.1016/j.future.2021.07.035) |
 
 </div>
 
-### 🎓 Research Areas Where My Work Has Been Cited
+### 📰 Citations & References (Blogs, Newsletters, Community)
 
-- **Smart City Infrastructure**: V2X communication protocols, traffic optimization, and carbon emission reduction
-- **Healthcare Operations Research**: Big data processing for cancer diagnosis optimization
-- **Cloud Architecture**: Kubernetes internals, distributed systems scaling strategies
-- **Blockchain Technology**: Scalability solutions and systematic reviews in top-tier journals
+My wikis, repos, and contributions are cited across blogs, newsletters, and open-source communities:
 
-### 📚 Key Technical Contributions Referenced
+#### 🎬 YouTube Videos Citing Stack Overflow Answers
 
-- **Scaling Architectures**: Horizontal vs Vertical scaling strategies for distributed systems
-- **Kubernetes Architecture**: Comprehensive overview of control plane and main concepts
-- **Blockchain Guide**: Curated resources serving as meta-index for systematic reviews
+Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/4812170/vaquar-khan) (7.5M+ reach):
+
+| Video | Channel | Link |
+|-------|---------|------|
+| Why is my Spark job getting stuck when collect() is called? | vlogize | [Watch](https://www.youtube.com/watch?v=7pF9njRveCw) |
+| How to associate an existing RDS instance to an Elastic Beanstalk environment? | Roel Van de Paar | [Watch](https://www.youtube.com/watch?v=onw0HbMFj7c) |
+
+**Find more videos:** Many additional videos cite my answers across these channels. Browse or search for topics I frequently answer:
+
+- **[The Debug Zone](https://www.youtube.com/@TheDebugZone/videos)** — Stack Overflow–based debugging tutorials
+- **[Roel Van de Paar](https://www.youtube.com/@RoelVandePaar)** — Technical Q&A from Stack Overflow/ServerFault (2M+ videos)
+- **[Search: vaquarkhan stackoverflow](https://www.youtube.com/results?search_query=vaquarkhan+stackoverflow)**
+
+*Topics I often answer: Apache Spark, Kafka, AWS (Elastic Beanstalk, RDS, API Gateway), Spring Boot, Docker, Maven/Jacoco*
+
+| Source | What's Cited | Link |
+|--------|--------------|------|
+| **Get Kafka-Nated (Substack)** | Kafka mailing list thread on cloud-native KIPs; KIP-1267 (Tiered Storage Cost Attribution) | [Biweekly #276](https://getkafkanated.substack.com/p/get-kafka-nated-espresso-biweekly-276) |
+| **Gradle Discuss** | Microservice example from GitHub (troubleshooting run) | [Thread #43549](https://discuss.gradle.org/t/problems-when-trying-to-run-an-old-microservice-example-from-github/43549) |
+| **Dev.to** | CQRS & Event Sourcing wiki | [Deep Dive into Microservices](https://dev.to/kgoralski/deep-dive-into-microservices-architecture-h54) |
+| **Medium (Jon SY Chan)** | Horizontal vs Vertical scaling wiki | [Scaling up Concepts for Servers](https://medium.com/@jonathansychan/scaling-up-concepts-for-servers-d510d6b3e9ca) |
+| **Medium (Shiksha Engineering)** | awesome-spring-reactive-webflux (Reactor Mono/Flux diagrams) | [Reactive Programming](https://shiksha-com.medium.com/reactive-programming-1b2906bf7c5) |
+| **Apache Spark User List** | Codegen 64KB limit; Kafka vs Spark Streaming (community help) | [msg69132](https://www.mail-archive.com/user@spark.apache.org/msg69132.html) · [msg62385](https://www.mail-archive.com/user@spark.apache.org/msg62385.html) |
+| **Oracle JMS 2.1** | JMS Expert Group participation (meeting minutes) | [Meeting 3](https://download.oracle.com/javaee-archive/jms-spec.java.net/users/2015/11/1108.html) · [Meeting 2](https://download.oracle.com/javaee-archive/jms-spec.java.net/users/2015/10/1080.html) · [Sep](https://download.oracle.com/javaee-archive/jms-spec.java.net/users/2015/09/1035.html) |
+| **DZone** | 3 articles, 118K+ pageviews | [Profile](https://dzone.com/users/1436543/vaquarkhan.html) |
+| **Eclipse Jersey** | Bug report — HashMap JSON serialization | [#3432](https://github.com/eclipse-ee4j/jersey/issues/3432) |
+| **Apache Amoro** | Technical analysis — reachMinorInterval "noisy neighbor" fix | [#4055](https://github.com/apache/amoro/issues/4055) |
+| **Jakarta Messaging** | JMS INDIVIDUAL_ACKNOWLEDGE spec discussion | [#95](https://github.com/jakartaee/messaging/issues/95) |
+| **data-dot-all** | Bug report — Windows CDK deployment (workaround: WSL) | [#340](https://github.com/data-dot-all/dataall/issues/340) |
+| **AWS Athena Query Federation** | Feature request — DynamoDB table filter for Athena (PR #607) | [#606](https://github.com/awslabs/aws-athena-query-federation/issues/606) |
+
+*Academic citations (ScienceDirect, ACM, NTUA thesis) are listed in the Academic Citations table above.*
 
 ## 💻 Tech Stack
 
@@ -197,11 +228,6 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 </div>
 
-## 🌟 Featured Open Source Projects
-
-<div align="center">
-
-
 ## 📚 My Books & Resources
 
 <div align="center">
@@ -235,7 +261,7 @@ Recipe-based guide for AWS data engineering
 A comprehensive free GitBook on microservices patterns
 
 ⭐ **Free & Open Source**
-⭐ **600+ GitHub Stars ,280+ fork**
+⭐ **600+ GitHub Stars · 280+ forks**
 
 
 [![GitBook](https://img.shields.io/badge/Read_on_GitBook-3884FF?style=for-the-badge&logo=gitbook&logoColor=white)](https://vaquarkhan.github.io/microservices-recipes-a-free-gitbook/)
@@ -244,36 +270,6 @@ A comprehensive free GitBook on microservices patterns
 </td>
 </tr>
 </table>
-
-</div>
-
-## 🌟 Expertise Areas
-
-<div align="center">
-
-### 🎯 Core Competencies
-
-</div>
-
-- ☁️ **Cloud Architecture**: AWS, GCP, Azure, PCF - Multi-cloud solutions for enterprise clients
-- 🤖 **AWS AI/ML Expert**: SageMaker, Bedrock, and intelligent data solutions
-- 🏗️ **System Design**: Large-scale distributed systems architecture
-- 📊 **Big Data Engineering**: Apache Spark, Hadoop, Kafka, Airflow - data pipeline optimization
-- 🔧 **Microservices Architecture**: Designing and implementing scalable, resilient distributed systems
-- 🎯 **Cloud-Native Development**: Building applications for modern cloud platforms
-- 🧩 **Domain-Driven Design**: Applying DDD principles to create well-bounded microservices
-- 💡 **Polyglot Development**: Java, Scala, Python, Go - choosing the right tool for the job
-- 👥 **Team Leadership**: Guiding development teams through architectural transformations
-- 🚗 **Intelligent Transportation**: V2X communication systems and smart city infrastructure
-- 🏥 **Healthcare Analytics**: Big data processing for medical research and optimization
-- ⛓️ **Blockchain**: Scalability solutions and distributed ledger technologies
-- 💰 **Financial Services**: Advanced data solutions for global financial institutions
-
-<div align="center">
-
-### 📊 Technology Proficiency
-
-<img src="https://skillicons.dev/icons?i=aws,gcp,azure,java,python,scala,go,kubernetes,docker,terraform,kafka,redis,postgres,mongodb,pytorch,tensorflow,git,github,linux,bash&perline=10" />
 
 </div>
 
@@ -292,34 +288,33 @@ A comprehensive free GitBook on microservices patterns
 
 </div>
 
-### 🌍 Global Reach
-
-<div align="center">
-
-```text
-📊 Stack Overflow Impact:     7.5M+ developers reached
-⭐ GitHub Recognition:         1400+ stars across repositories  
-🎓 Academic Citations:         4+ universities across 3 continents
-📖 Published Books:            600+ stars on AWS Cookbook
-🌐 Open Source Contributions:  Apache Spark, Terraform, and more
-```
-
-</div>
-
-## 🤝 Connect With Me
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan)
-[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](http://stackoverflow.com/users/4812170/vaquar-khan)
-
-</div>
-
 ### 🔗 Additional Links
 
 - 🔥 [Apache Spark Community Contributions](http://apache-spark-developers-list.1001551.n3.nabble.com/template/NamlServlet.jtp?macro=user_nodes&user=619)
 - 📋 [JCP Member - JSR-368](https://www.jcp.org/en/jsr/detail?id=368)
+
+---
+
+## ✍️ Writing & Community
+
+<div align="center">
+
+### 🎯 Writing & Community
+
+[![Medium](https://img.shields.io/badge/Medium-@vaquarkhan-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@vaquarkhan)
+[![DZone](https://img.shields.io/badge/DZone-118K+_Views-0D5C8C?style=for-the-badge&logo=dzone&logoColor=white)](https://dzone.com/users/1436543/vaquarkhan.html)
+
+</div>
+
+### 📰 DZone Articles (118K+ pageviews)
+
+| Article | Views | Topic |
+|---------|-------|-------|
+| [AWS Lambda With MySQL (RDS) and API Gateway](https://dzone.com/articles/aws-lambda-with-mysql-rds-and-api-gateway) | 47K+ | Microservices with AWS API Gateway & RDS |
+| [Run AWS Lambda Functions Locally on Windows](https://dzone.com/articles/run-aws-lambda-functions-locally-on-windows-machin) | 60K+ | SAM Local for Lambda development |
+| [Fast Data Access: GemFire + Apache Spark](https://dzone.com/articles/fast-data-access-using-gemfire-and-apache-spark-pa) | 12K+ | In-memory data grid with Spark |
+
+---
 
 ## 📞 Mentorship & Booking
 
@@ -368,33 +363,6 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 </div>
 
-## 💡 What I'm Working On
-
-- 🔭 Architecting scalable cloud-native applications for global financial institutions
-- 🌱 Advancing data engineering patterns and big data architectures on AWS
-- 👯 Contributing to open-source projects (Apache Spark, Terraform) and technical knowledge bases
-- 💬 Sharing expertise through books, wikis, and community engagement
-- ⚡ Solving complex distributed systems challenges across multiple domains
-- 📖 Maintaining technical resources cited by researchers at top global universities
-- 🎯 Mentoring the next generation of architects and senior engineers
-
-## 🎓 Featured Contributions & Recognition
-
-<div align="center">
-
-### 🏆 Highlights
-
-| Achievement | Details |
-|-------------|---------|
-| 📚 **JSR 368 Expert Group** | Shaped Java™ Message Service 2.1 industry standards |
-| 🌟 **Stack Overflow Top Contributor** | 7.5M+ developers reached with technical insights |
-| 📖 **Published Author** | AWS Cookbook & Microservices Recipes: The Architect's Field Guide  with 600+ GitHub stars |
-| 🎯 **Academic Impact** | Cited by University of Toronto, University of Southern Denmark, NTUA |
-| 💡 **Innovation** | Creator of The Khan Pattern™ and KM3™ frameworks |
-| 🌍 **Open Source** | Active contributor to Apache Spark and Terraform ecosystems |
-
-</div>
-
 ---
 
 <div align="center">
@@ -406,9 +374,8 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 ### 💼 Open to Collaboration | 🎯 Available for Mentorship | 📚 Sharing Knowledge
 
-[![Book Mentorship](https://img.shields.io/badge/📞_Book_a_Session-FF6154?style=for-the-badge&logo=google-meet&logoColor=white)](https://adplist.org/mentors/vaquar-khan)
-[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Stack Overflow](https://img.shields.io/badge/Follow_on_Stack_Overflow-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](http://stackoverflow.com/users/4812170/vaquar-khan)
+[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan)
+[![Stack Overflow](https://img.shields.io/badge/Follow_on_Stack_Overflow-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
 
 **Empowering researchers, engineers, and architects worldwide** 🚀
 
