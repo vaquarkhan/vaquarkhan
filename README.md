@@ -132,14 +132,26 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 <div align="center">
 
-| Institution | Country | Research Domain | Citation Impact | Link |
-|-------------|---------|-----------------|-----------------|------|
-| **University of Southern Denmark** | 🇩🇰 Denmark | Intelligent Transportation Systems (V2X) | Smart City traffic management & GLOSA systems | [📄 Thesis](https://simonhl.dk/wp-content/uploads/2019/08/Simon-Hjortsh%C3%B8j-Larsen-Thomas-August-Lemqvist-Master-Thesis.pdf) |
-| **University of Toronto** | 🇨🇦 Canada | Healthcare Big Data Analytics | MRI wait-time optimization (600GB dataset) | [📄 Thesis](https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download) |
-| **National Technical University of Athens** | 🇬🇷 Greece | Cloud Computing & Kubernetes | Novel autoscaling algorithms for local storage | [📄 Thesis](https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1) |
-| **Multi-National Collaboration** | 🌍 Global | Blockchain Scalability | Published in *Future Generation Computer Systems* (Q1 Journal) | [📄 Survey](https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf) · [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0167739X21002971) · [ACM](https://dl.acm.org/doi/abs/10.1016/j.future.2021.07.035) |
+| Institution | Country | Research Domain | Citation Impact | PDF · Research |
+|-------------|---------|-----------------|-----------------|----------------|
+| **University of Southern Denmark** | 🇩🇰 Denmark | Intelligent Transportation Systems (V2X) | Smart City traffic management & GLOSA systems | [📄 Thesis PDF](https://simonhl.dk/wp-content/uploads/2019/08/Simon-Hjortsh%C3%B8j-Larsen-Thomas-August-Lemqvist-Master-Thesis.pdf) |
+| **University of Toronto** | 🇨🇦 Canada | Healthcare Big Data Analytics | MRI wait-time optimization (600GB dataset) | [📄 Thesis PDF](https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download) |
+| **National Technical University of Athens** | 🇬🇷 Greece | Cloud Computing & Kubernetes | Novel autoscaling algorithms for local storage | [📄 Thesis PDF](https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1) |
+| **Multi-National Collaboration** | 🌍 Global | Blockchain Scalability | Published in *Future Generation Computer Systems* (Q1 Journal) | [📄 Survey PDF](https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf) · [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0167739X21002971) · [ACM](https://dl.acm.org/doi/abs/10.1016/j.future.2021.07.035) |
 
 </div>
+
+<details>
+<summary>📎 PDF & Research URLs (copy links)</summary>
+
+- **University of Southern Denmark (Thesis):** https://simonhl.dk/wp-content/uploads/2019/08/Simon-Hjortsh%C3%B8j-Larsen-Thomas-August-Lemqvist-Master-Thesis.pdf  
+- **University of Toronto (Thesis):** https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download  
+- **National Technical University of Athens (Thesis):** https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1  
+- **Multi-National (Survey PDF):** https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf  
+- **Multi-National (ScienceDirect):** https://www.sciencedirect.com/science/article/abs/pii/S0167739X21002971  
+- **Multi-National (ACM):** https://dl.acm.org/doi/abs/10.1016/j.future.2021.07.035  
+
+</details>
 
 ### 📰 Citations & References (Blogs, Newsletters, Community)
 
@@ -178,7 +190,7 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 | **data-dot-all** | Bug report — Windows CDK deployment (workaround: WSL) | [#340](https://github.com/data-dot-all/dataall/issues/340) |
 | **AWS Athena Query Federation** | Feature request — DynamoDB table filter for Athena (PR #607) | [#606](https://github.com/awslabs/aws-athena-query-federation/issues/606) |
 
-*Academic citations (ScienceDirect, ACM, NTUA thesis) are listed in the Academic Citations table above.*
+*Academic citations (ScienceDirect, ACM, NTUA thesis) are listed in the Academic Citations table above. PDF and research URLs are also listed in the collapsible section below the table.*
 
 ## 💻 Tech Stack
 
