@@ -409,6 +409,8 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 ### 🐍 Contribution Snake
 
+<!-- Snake animation requires running the GitHub Action first:
+     Go to Actions → "Generate Snake Animation" → Run workflow -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vaquarkhan/vaquarkhan/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/vaquarkhan/vaquarkhan/output/github-snake.svg" />
@@ -421,7 +423,14 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 <div align="center">
 
-![Trophies](https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=radical&no-frame=true&no-bg=true&row=1&column=7)
+<!-- Trophy service (github-profile-trophy.vercel.app) is intermittently unavailable.
+     Uncomment the line below when the service is back online:
+     ![Trophies](https://github-profile-trophy.vercel.app/?username=vaquarkhan&theme=radical&no-frame=true&no-bg=true&row=1&column=7)
+-->
+
+![GitHub Stars](https://img.shields.io/github/stars/vaquarkhan?style=for-the-badge&logo=github&label=Total%20Stars&color=f97316)
+![GitHub Followers](https://img.shields.io/github/followers/vaquarkhan?style=for-the-badge&logo=github&label=Followers&color=8b5cf6)
+![GitHub Repos](https://img.shields.io/badge/Public_Repos-100+-181717?style=for-the-badge&logo=github&logoColor=white)
 
 </div>
 
