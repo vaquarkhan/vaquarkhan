@@ -1,6 +1,6 @@
 <div align="center">
-  
-# Hi there 👋 I'm Va<sub><sup>i</sup></sub>quar Khan
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Va%E1%B5%A2quar%20Khan&fontSize=50&fontAlignY=35&desc=Senior%20Data%20Architect%20%7C%20AWS%20%7C%20Open%20Source%20%7C%20Top%202%25%20GitHub&descAlignY=55&descSize=18&animation=twinkling&fontColor=ffffff" width="100%" alt="Header"/>
 
 <img src="https://camo.githubusercontent.com/c4e41a5cdbf52f5544552f883c2de5a9f4ccb6630fac1ead580a9a8d97baeff9/68747470733a2f2f6275696c642d69742d796f757273656c662e636f6d2f732d70726f6772616d732f696d616765732f6765656b2d6769662e676966" width="200" alt="Coding Animation"/>
 
@@ -14,7 +14,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;7.5M%2B+Stack+Overflow+Reach;1400%2B+GitHub+Stars;Cited+by+Top+Universities+Worldwide;Creator+of+The+Khan+Pattern%E2%84%A2&random=false" alt="Typing SVG" />
 </p>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
 [![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-7.5M+_Reach-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
 [![GitHub](https://img.shields.io/badge/GitHub-1400+_Stars-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan)
 [![ADPList](https://img.shields.io/badge/Book_Mentorship-FF6154?style=for-the-badge&logo=google-meet&logoColor=white)](https://adplist.org/mentors/vaquar-khan)
@@ -100,6 +100,8 @@ Creator of groundbreaking frameworks for distributed systems:
 
 ---
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2" width="100%" alt="divider"/>
+
 ## 🎯 Career Highlights & Milestones
 
 <div align="center">
@@ -134,6 +136,7 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 | Institution | Country | Research Domain | Citation Impact | PDF · Research |
 |-------------|---------|-----------------|-----------------|----------------|
+| **IEEE ICCCBDA 2025** | 🌍 International | Supply Chain Data Management | *Data Engineering with AWS Cookbook* cited as reference for AWS-based ETL architecture | [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11030417) |
 | **University of Southern Denmark** | 🇩🇰 Denmark | Intelligent Transportation Systems (V2X) | Smart City traffic management & GLOSA systems | [📄 Thesis PDF](https://simonhl.dk/wp-content/uploads/2019/08/Simon-Hjortsh%C3%B8j-Larsen-Thomas-August-Lemqvist-Master-Thesis.pdf) |
 | **University of Toronto** | 🇨🇦 Canada | Healthcare Big Data Analytics | MRI wait-time optimization (600GB dataset) | [📄 Thesis PDF](https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download) |
 | **National Technical University of Athens** | 🇬🇷 Greece | Cloud Computing & Kubernetes | Novel autoscaling algorithms for local storage | [📄 Thesis PDF](https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1) |
@@ -141,17 +144,21 @@ My open-source repositories and technical wikis have been cited as **foundationa
 
 </div>
 
-<details>
-<summary>📎 PDF & Research URLs (copy links)</summary>
 
-- **University of Southern Denmark (Thesis):** https://simonhl.dk/wp-content/uploads/2019/08/Simon-Hjortsh%C3%B8j-Larsen-Thomas-August-Lemqvist-Master-Thesis.pdf  
-- **University of Toronto (Thesis):** https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download  
-- **National Technical University of Athens (Thesis):** https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1  
-- **Multi-National (Survey PDF):** https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf  
-- **Multi-National (ScienceDirect):** https://www.sciencedirect.com/science/article/abs/pii/S0167739X21002971  
-- **Multi-National (ACM):** https://dl.acm.org/doi/abs/10.1016/j.future.2021.07.035  
 
-</details>
+### 📚 University Library Cataloging
+
+*Data Engineering with AWS Cookbook* (Packt, 2024) is cataloged in the library systems of the following universities, available as a resource for students and faculty in data engineering and cloud computing programs:
+
+<div align="center">
+
+| University | Country | Library System |
+|------------|---------|----------------|
+| **Brandeis University** | 🇺🇸 USA | Brandeis OneSearch — available for M.S. Strategic Analytics & Computer Science programs |
+| **Princeton University** | 🇺🇸 USA | Princeton University Library — science & engineering collections |
+| **Northumbria University** | 🇬🇧 UK | Northumbria University Library Search |
+
+</div>
 
 ### 📰 Citations & References (Blogs, Newsletters, Community)
 
@@ -190,7 +197,7 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 | **data-dot-all** | Bug report — Windows CDK deployment (workaround: WSL) | [#340](https://github.com/data-dot-all/dataall/issues/340) |
 | **AWS Athena Query Federation** | Feature request — DynamoDB table filter for Athena (PR #607) | [#606](https://github.com/awslabs/aws-athena-query-federation/issues/606) |
 
-*Academic citations (ScienceDirect, ACM, NTUA thesis) are listed in the Academic Citations table above. PDF and research URLs are also listed in the collapsible section below the table.*
+
 
 ## 💻 Tech Stack
 
@@ -307,6 +314,8 @@ A comprehensive free GitBook on microservices patterns
 
 ---
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2" width="100%" alt="divider"/>
+
 ## ✍️ Writing & Community
 
 <div align="center">
@@ -356,14 +365,55 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 <div align="center">
 
+### 🏅 GitRanks — Global & USA Rankings
+
+| Metric | Global Rank | USA Rank |
+|--------|-------------|----------|
+| **Overall** | [Elite 5](https://gitranks.com/profile/vaquarkhan/ranks) | [Legend 1](https://gitranks.com/profile/vaquarkhan/ranks/country) |
+| **Stars** (2,593 total) | [Elite 4 — Top 2% (#14,754 of 834K)](https://gitranks.com/profile/vaquarkhan/ranks) | [Elite 4 — Top 2% (#2,279 of 138.6K)](https://gitranks.com/profile/vaquarkhan/ranks/country) |
+| **Followers** (704 total) | [Elite 5 — Top 2% (#12,333 of 1.2M)](https://gitranks.com/profile/vaquarkhan/ranks) | [Legend 1 — Top 1% (#2,228 of 254K)](https://gitranks.com/profile/vaquarkhan/ranks/country) |
+
+[![GitRanks Global](https://img.shields.io/badge/GitRanks_Global-Elite_5-blueviolet?style=flat-square)](https://gitranks.com/profile/vaquarkhan/ranks)
+[![GitRanks USA](https://img.shields.io/badge/GitRanks_USA-Legend_1-gold?style=flat-square)](https://gitranks.com/profile/vaquarkhan/ranks/country)
+[![Verify on X](https://img.shields.io/badge/Verify_on_X-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/GitRanks/status/2023517745283785198)
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1000&color=A855F7&center=true&vCenter=true&width=500&lines=%F0%9F%8F%86+Top+2%25+Globally+%7C+Top+1%25+in+USA;%E2%AD%90+2%2C593+Stars+%7C+704+Followers;%F0%9F%87%BA%F0%9F%87%B8+Legend+1+in+United+States&random=false" alt="GitRanks Typing SVG" />
+
+</div>
+
+<div align="center">
+
 <img width="49%" src="https://github-readme-stats.vercel.app/api?username=vaquarkhan&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" />
 <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=vaquarkhan&theme=radical&hide_border=true" />
 
 <img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vaquarkhan&layout=compact&theme=radical&hide_border=true&langs_count=8" />
 
+### 📊 Profile Summary
+
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=vaquarkhan&theme=radical" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vaquarkhan&theme=radical" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=vaquarkhan&theme=radical" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=vaquarkhan&theme=radical&utcOffset=-6" />
+
+### 🌐 Stack Overflow
+
+[![Stack Overflow Stats](https://github-readme-stackoverflow.vercel.app/?userID=4812170&theme=dark&layout=compact)](https://stackoverflow.com/users/4812170/vaquar-khan)
+
+### 🗓️ Isometric Contribution Calendar
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vaquarkhan&theme=radical" width="95%" />
+
 ### 📈 Contribution Graph
 
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vaquarkhan&theme=react-dark&hide_border=true&area=true)
+
+### 🐍 Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vaquarkhan/vaquarkhan/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/vaquarkhan/vaquarkhan/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/vaquarkhan/vaquarkhan/output/github-snake.svg" />
+</picture>
 
 </div>
 
@@ -386,7 +436,9 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 ### 💼 Open to Collaboration | 🎯 Available for Mentorship | 📚 Sharing Knowledge
 
-[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan)
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" />
+
+[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
 [![Stack Overflow](https://img.shields.io/badge/Follow_on_Stack_Overflow-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
 
 **Empowering researchers, engineers, and architects worldwide** 🚀
