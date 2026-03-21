@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Va%E1%B5%A2quar%20Khan&fontSize=50&fontAlignY=35&desc=Senior%20Data%20Architect%20%7C%20AWS%20%7C%20Open%20Source%20%7C%20Top%202%25%20GitHub&descAlignY=55&descSize=18&animation=twinkling&fontColor=ffffff" width="100%" alt="Header"/>
 
-<img src="https://camo.githubusercontent.com/c4e41a5cdbf52f5544552f883c2de5a9f4ccb6630fac1ead580a9a8d97baeff9/68747470733a2f2f6275696c642d69742d796f757273656c662e636f6d2f732d70726f6772616d732f696d616765732f6765656b2d6769662e676966" width="200" alt="Coding Animation"/>
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="200" alt="Coding Animation"/>
 
 ## **Senior Data Architect @ AWS Professional Services**
 
