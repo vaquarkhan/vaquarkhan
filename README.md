@@ -2,20 +2,20 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Va%E1%B5%A2quar%20Khan&fontSize=50&fontAlignY=35&desc=Senior%20Data%20Architect%20%7C%20AWS%20%7C%20Open%20Source%20%7C%20Top%202%25%20GitHub&descAlignY=55&descSize=18&animation=twinkling&fontColor=ffffff" width="100%" alt="Header"/>
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="200" alt="Coding Animation"/>
+<img src="./images/coding-animation.gif" width="200" alt="Coding Animation"/>
 
 ## **Senior Data Architect @ AWS Professional Services**
 
 <sub>*Also known as: Vaquar Khan | Viquar Khan*</sub>
 
-### AWS | GCP | AZURE | PCF | Microservices | Big Data | Apache Spark | AI/ML | Polyglot Developer | Architect | Technology Evangelist
+### AWS | GCP | AZURE | PCF | Microservices | Big Data | Apache Spark | GenAI & Agentic AI | ML/AI SME | Polyglot Developer | Architect | Technology Evangelist
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;7.5M%2B+Stack+Overflow+Reach;1400%2B+GitHub+Stars;Cited+by+Top+Universities+Worldwide;Creator+of+The+Khan+Pattern%E2%84%A2&random=false" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+SME;7.5M%2B+Stack+Overflow+Reach;Cited+by+Top+Universities+Worldwide;Creator+of+The+Khan+Pattern%E2%84%A2&random=false" alt="Typing SVG" />
 </p>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
-[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-7.5M+_Reach-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
+[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-Top_2%25_·_7.5M+_Reach-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
 [![GitHub](https://img.shields.io/badge/GitHub-1400+_Stars-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan)
 [![ADPList](https://img.shields.io/badge/Book_Mentorship-FF6154?style=for-the-badge&logo=google-meet&logoColor=white)](https://adplist.org/mentors/vaquar-khan)
 
@@ -29,7 +29,7 @@
 
 **Va<sub><sup>i</sup></sub>quar Khan** - Senior Data Architect at **AWS Professional Services** with **22+ years of expertise** in finance and data analytics. I empower global financial institutions to harness the full potential of AWS technologies by designing cutting-edge, customized data solutions tailored to complex industry needs.
 
-As a **polyglot developer** skilled in Java, Scala, Python, and other languages, I have excelled in various technical roles throughout my career. I specialize in large-scale distributed systems, cloud architecture, big data development, and **AWS AI/ML solutions** for highly competitive enterprise clients.
+As a **polyglot developer** skilled in Java, Scala, Python, and other languages, I specialize in large-scale distributed systems, cloud architecture, big data development, **Generative AI & Agentic AI solutions** using Amazon Bedrock, and **AWS AI/ML solutions** for highly competitive enterprise clients. Ranked in the **top 2% on both GitHub and Stack Overflow** worldwide.
 
 <div align="center">
 
@@ -38,7 +38,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 ```ascii
 ╔══════════════════════════════════════════════════════════════════════╗
 ║   🏗️  Cloud Architecture    📊  Big Data Engineering                ║
-║   🤖  AWS AI/ML Solutions    🔧  Microservices Design               ║
+║   🤖  GenAI & Agentic AI    🔧  Microservices Design               ║
 ║   💰  Financial Services     🎯  Domain-Driven Design               ║
 ║   📚  Technical Leadership   🌍  Open Source Contribution           ║
 ╚══════════════════════════════════════════════════════════════════════╝
@@ -50,6 +50,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 - **JSR 368 Expert Group Member**: Shaped industry standards for Java™ Message Service 2.1
 - **AWS AI/ML Expert**: Designing intelligent data solutions with AWS AI services
+- **GenAI & Agentic AI SME**: Architecting solutions with Amazon Bedrock, Bedrock Agents, and AgentCore
 - **Open Source Contributor**: Active contributions to Apache Spark and Terraform ecosystems
 - **Stack Overflow Impact**: Technical insights reaching **7.5+ million users**
 - **GitHub Recognition**: 1400+ stars across repositories and wikis
@@ -258,7 +259,7 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 <td align="center" width="50%">
 
 <a href="https://www.amazon.com/Data-Engineering-AWS-Cookbook-recipe-based/dp/1805127284">
-<img src="https://github.com/vaquarkhan/vaquarkhan/raw/master/mybook.jpg" alt="Data Engineering AWS Cookbook" width="250"/>
+<img src="./images/mybook.jpg" alt="Data Engineering AWS Cookbook" width="250"/>
 </a>
 
 **Data Engineering AWS Cookbook**
@@ -272,7 +273,7 @@ Recipe-based guide for AWS data engineering
 <td align="center" width="50%">
 
 <a href="https://vaquarkhan.github.io/microservices-recipes-a-free-gitbook/">
-<img src="https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook/blob/master/assets/images/cover-image-2.png?raw=true" alt="Microservices Recipes" width="250"/>
+<img src="./images/microservices-recipes-cover.png" alt="Microservices Recipes" width="250"/>
 </a>
 
 **Microservices Recipes**
