@@ -62,7 +62,10 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | Project | Proposal | Description |
 |---------|----------|-------------|
 | **Apache Kafka** | [KIP-1267: Tiered Storage Cost Attribution Metrics](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) | Client-level cost attribution for Kafka Tiered Storage — enables FinOps, chargeback, and rogue consumer detection in multi-tenant clusters |
+| **Apache Kafka** | [KIP-1316: Circuit Breaker for Share Group DLQ Overflow](https://cwiki.apache.org/confluence/x/I5E8G) | Prevents cascading failures when Share Group DLQ fills up — introduces circuit breaker pattern to protect cluster stability at scale |
+| **Apache Kafka** | [KIP-1317: Mandatory DLQ Disposition Header for Share Groups](https://cwiki.apache.org/confluence/x/JZE8G) | Ensures every DLQ-routed record carries authoritative disposition metadata — enables observability, audit, and automated remediation |
 | **Apache Spark** | [SPIP: Asynchronous Metadata Resolution & Lazy Prefetching for Spark Connect](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) | Performance optimization for Spark Connect metadata resolution and prefetching |
+| **Apache Iceberg** | [Real-Time Agentic RAG Architecture with Iceberg v3](https://hackernoon.com/real-time-agentic-rag-eradicating-context-rot-with-spark-and-iceberg) | Published architecture leveraging Iceberg v3 deletion vectors + Spark 4.1 Intent-Driven Design for low-latency CDC in agentic AI systems |
 
 ### 🐛 Terraform AWS Glue Data Quality (Issues & Contributions)
 
@@ -83,21 +86,132 @@ Creator of groundbreaking frameworks for distributed systems:
 
 ### 🔧 Featured Projects
 
-#### aiv-integrity-gate ⭐ Featured
+> See the full **[Open Source Projects & Packages](#-open-source-projects--packages)** section below for detailed descriptions, install commands, and download stats.
 
-**Problems solved:** Reviewer overload, low-quality PRs (boilerplate/scaffolding), design drift, wrong API usage, unknown imports (supply-chain risk), fragile edge-case code, refactors incorrectly flagged.
+[![GitHub](https://img.shields.io/badge/SparkRules-PyPI_Package-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/sparkrules/)
+[![GitHub](https://img.shields.io/badge/aiv--integrity--gate-Maven_Central-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate)
+[![GitHub](https://img.shields.io/badge/MCP--Bastion-Security_Gateway-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vaquarkhan/MCP-Bastion)
 
-**Features:** Density gate (logic density & entropy), Design gate (YAML rules — forbidden/required patterns), Dependency gate (import validation vs pom.xml/requirements.txt), Invariant gate (property-based tests), `/aiv skip` for urgent merges, refactor exception, trusted authors bypass, assignment gate.
+---
 
-[![GitHub](https://img.shields.io/badge/View_on_GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vaquarkhan/aiv-integrity-gate)
+## 🚀 Open Source Projects & Packages
 
-#### MCP-Bastion ⭐ Featured
+<div align="center">
 
-**Problems solved:** Prompt injection & jailbreaks, PII leakage to LLMs, runaway agents burning API budget, unpredictable agentic behavior on MCP.
+### 📦 Published Packages
 
-**Features:** Prompt injection defense (Meta PromptGuard), PII redaction (Microsoft Presidio), rate limiting & token budget, infinite loop protection, audit logging, content filter, circuit breaker, RBAC, schema validation, replay guard, cost tracker, semantic cache. 100% local execution, &lt;5ms overhead.
+| Registry | Package | Description | Install |
+|----------|---------|-------------|---------|
+| [![PyPI](https://img.shields.io/badge/PyPI-sparkrules-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/sparkrules/) | **sparkrules** `v1.2.0` | Drools-equivalent business rule engine for Python — DRL syntax, decision tables, adverse-action notices, Spark integration | `pip install sparkrules` |
+| [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--gate-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) | **aiv-gate** | AI-powered PR integrity gate — density, design, dependency & invariant checks | `io.github.vaquarkhan:aiv-gate` |
+| [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--cli-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-cli) | **aiv-cli** | CLI companion for aiv-integrity-gate | `io.github.vaquarkhan:aiv-cli` |
 
-[![GitHub](https://img.shields.io/badge/View_on_GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vaquarkhan/MCP-Bastion)
+</div>
+
+### 🔥 SparkRules — Business Rule Engine for Python & Spark
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-vaquarkhan/sparkrules-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/sparkrules)
+[![PyPI](https://img.shields.io/pypi/v/sparkrules?style=for-the-badge&logo=pypi&logoColor=white&label=PyPI)](https://pypi.org/project/sparkrules/)
+[![Downloads](https://img.shields.io/pepy/dt/sparkrules?style=for-the-badge&logo=pypi&logoColor=white&label=Downloads)](https://pepy.tech/project/sparkrules)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://github.com/vaquarkhan/sparkrules/blob/main/LICENSE)
+
+</div>
+
+> **The business rule engine that Python was missing.** Drools-style DRL syntax, explainable decisions, regulatory-grade audit trails — from laptop to lakehouse, no JVM required.
+
+**Key Features:**
+- 🎯 **Drools-style DRL** — same syntax, no JVM, Python-native
+- 📊 **Decision Tables** — XLSX-style with hit policies (UNIQUE, FIRST, PRIORITY, COLLECT)
+- ⚖️ **Regulatory Compliance** — ECOA/FCRA/GDPR Art 22 adverse-action notices
+- 🔍 **Data Quality + Profiling** — built-in DQ checks + statistical profiling
+- 🌐 **FastAPI + Rules Workbench** — browser-based Monaco DRL editor with LSP
+- 🧪 **Simulation Modes** — shadow, counterfactual, coverage, chain
+- ⚡ **Performance** — ~199K evals/sec, 840+ tests, 100% line coverage
+- 🚀 **Multi-Platform** — AWS Glue, Databricks, GCP Dataproc, Azure Synapse, Kubernetes
+
+<details>
+<summary>📋 Use Cases</summary>
+
+| Domain | Scenario |
+|--------|----------|
+| 💳 Lending | Loan underwriting + adverse-action notices for declines |
+| 💰 Payments | POS end-of-day batch rule evaluation |
+| 🏥 Healthcare | Clinical trial eligibility screening |
+| 🛡️ Fraud | Real-time transaction authorization with explainable declines |
+| 📜 Compliance | Deterministic settlement replay for audit |
+| 🏦 Insurance | Claims adjudication via decision tables |
+
+</details>
+
+### 🛡️ MCP-Bastion — Security Gateway for AI Agents
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-vaquarkhan/MCP--Bastion-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/MCP-Bastion)
+
+</div>
+
+> Prompt injection defense, PII redaction, rate limiting, and circuit breaker for Model Context Protocol — 100% local, <5ms overhead.
+
+**Problems Solved:** Prompt injection & jailbreaks · PII leakage to LLMs · Runaway agents burning API budget · Unpredictable agentic behavior
+
+**Features:** Meta PromptGuard · Microsoft Presidio PII redaction · Token budget & rate limiting · Infinite loop protection · RBAC · Schema validation · Replay guard · Cost tracker · Semantic cache · Audit logging
+
+### 🔒 aiv-integrity-gate — AI-Powered PR Quality Gate
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-vaquarkhan/aiv--integrity--gate-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/aiv-integrity-gate)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.vaquarkhan/aiv-gate?style=for-the-badge&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate)
+
+</div>
+
+> Eliminates reviewer overload and low-quality PRs with automated density, design, dependency, and invariant gates.
+
+**Gates:** Logic Density & Entropy · YAML Design Rules (forbidden/required patterns) · Import Validation vs pom.xml/requirements.txt · Property-based Invariant Tests · `/aiv skip` for urgent merges · Refactor exception · Trusted authors bypass
+
+### 📚 Other Notable Repositories
+
+<div align="center">
+
+| Repository | Lang | ⭐ | Description |
+|-----------|------|---|-------------|
+| [vaquarkhan/vaquarkhan](https://github.com/vaquarkhan/vaquarkhan) | Wiki | 1.5K+ | Technical wiki — Spark, Kafka, Microservices, DDD, Cloud Architecture |
+| [data-engineering-agent-skills](https://github.com/vaquarkhan/data-engineering-agent-skills) | — | — | Data Engineering Agent Skills — reusable AI agent capabilities for data pipelines |
+| [IceGuard](https://github.com/vaquarkhan/IceGuard) | Python | 1 | Reliability library for Spark-on-AWS-Lambda writes — timeout-aware rollback, resumable checkpointing, orphan cleanup, multi-Lambda coordination, CloudWatch observability |
+| [ai-agent-java-sdk](https://github.com/vaquarkhan/ai-agent-java-sdk) | Java | 2 | Java SDK for building AI agents — lightweight, extensible agent framework |
+| [mcp-test-harness](https://github.com/vaquarkhan/mcp-test-harness) | Python | 2 | Testing framework for MCP servers — validate tool schemas, test prompts, assert responses |
+| [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Java | 1 | Fork of spring-ai-community/spring-ai-agentcore — Spring Boot integrations for Amazon Bedrock AgentCore |
+| [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Java | — | Observability extensions for Spring AI AgentCore — tracing, metrics, and monitoring |
+| [burr](https://github.com/vaquarkhan/burr) | Python | 1 | Fork of apache/burr — Build applications that make decisions (chatbots, agents, simulations). Monitor, trace, persist, and execute on your own infrastructure |
+| [microservices-recipes-a-free-gitbook](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook) | GitBook | 600+ | Free GitBook on microservices patterns (280+ forks) |
+| [Apache-Kafka-poc-and-notes](https://github.com/vaquarkhan/Apache-Kafka-poc-and-notes) | Java | 243+ | Apache Kafka POC with comprehensive notes & patterns |
+| [apache-kafka-spark-streaming-poc](https://github.com/vaquarkhan/apache-kafka-spark-streaming-poc) | Java | 11 | Kafka + Spark Streaming integration POC (15 forks) |
+| [awesome-spring-reactive-webflux](https://github.com/vaquarkhan/awesome-spring-reactive-webflux) | Java | 4 | Spring Reactive WebFlux — Mono/Flux diagrams (13 forks) |
+| [Real-time-Fraud-Analysis-Spark](https://github.com/vaquarkhan/Real-time-Fraud-Analysis-Spark) | Scala | — | Real-time fraud detection with Kafka, Spark & Cassandra |
+
+</div>
+
+---
+
+### 🤖 Spring AI & Amazon Bedrock AgentCore Contributions
+
+Active contributor to the **Spring AI** ecosystem and **Amazon Bedrock AgentCore** — bridging enterprise Java with next-gen agentic AI:
+
+| Project | Contribution | Description |
+|---------|-------------|-------------|
+| **Spring AI Community** | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Spring Boot starter enabling existing apps to conform to AWS Bedrock AgentCore Runtime contract with minimal configuration |
+| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Observability extensions — tracing, metrics, and production monitoring for AgentCore-powered agents |
+| **Amazon Bedrock AgentCore** | [agentcore-samples](https://github.com/awslabs/agentcore-samples) | Contributing production-ready samples for deploying AI agents with enterprise-grade scale, reliability, and security |
+| **Spring AI + Bedrock** | [HackerNoon: Production Observability for Spring AI Agents](https://hackernoon.com/production-observability-for-spring-ai-agents-on-amazon-bedrock-without-writing-tracing-code) | Published architecture for zero-code observability of Spring AI agents on Amazon Bedrock |
+
+### 🔥 Apache Burr Contributions
+
+| Project | Contribution | Description |
+|---------|-------------|-------------|
+| **Apache Burr** | [Fork & Contributions](https://github.com/vaquarkhan/burr) | Contributing to the open-source framework for building stateful AI agent applications — chatbots, agents, simulations with monitoring, tracing, and persistence |
 
 ---
 
@@ -323,10 +437,26 @@ A comprehensive free GitBook on microservices patterns
 
 ### 🎯 Writing & Community
 
+[![HackerNoon](https://img.shields.io/badge/HackerNoon-@vaquarkhan-00FF00?style=for-the-badge&logo=hackernoon&logoColor=white)](https://hackernoon.com/u/vaquarkhan)
 [![Medium](https://img.shields.io/badge/Medium-@vaquarkhan-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@vaquarkhan)
 [![DZone](https://img.shields.io/badge/DZone-118K+_Views-0D5C8C?style=for-the-badge&logo=dzone&logoColor=white)](https://dzone.com/users/1436543/vaquarkhan.html)
+[![InfoQ](https://img.shields.io/badge/InfoQ-Profile-5B2D8E?style=for-the-badge&logo=infoq&logoColor=white)](https://www.infoq.com/profile/Vaquar-Khan.2)
+[![AWS Blog](https://img.shields.io/badge/AWS_Big_Data_Blog-Author-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/blogs/big-data/author/vaquar/)
 
 </div>
+
+### ☁️ AWS Official Blog
+
+| Article | Platform | Topic |
+|---------|----------|-------|
+| [Deploying AWS Glue Data Quality Pipelines Using Terraform](https://aws.amazon.com/blogs/big-data/author/vaquar/) | AWS Big Data Blog | IaC best practices for Glue Data Quality — consistent, version-controlled deployments across environments |
+
+### 🟢 HackerNoon Articles
+
+| Article | Published | Topic |
+|---------|-----------|-------|
+| [Production Observability for Spring AI Agents on Amazon Bedrock Without Writing Tracing Code](https://hackernoon.com/production-observability-for-spring-ai-agents-on-amazon-bedrock-without-writing-tracing-code) | May 2026 | Zero-code observability for Spring AI agents on Bedrock — OpenTelemetry, X-Ray, and CloudWatch integration |
+| [Real-Time Agentic RAG: Eradicating Context Rot With Spark & Iceberg](https://hackernoon.com/real-time-agentic-rag-eradicating-context-rot-with-spark-and-iceberg) | Mar 2026 | Architecture using Spark 4.1 & Apache Iceberg v3 deletion vectors for low-latency CDC to keep embedding stores fresh |
 
 ### 📰 DZone Articles (118K+ pageviews)
 
@@ -335,6 +465,27 @@ A comprehensive free GitBook on microservices patterns
 | [AWS Lambda With MySQL (RDS) and API Gateway](https://dzone.com/articles/aws-lambda-with-mysql-rds-and-api-gateway) | 47K+ | Microservices with AWS API Gateway & RDS |
 | [Run AWS Lambda Functions Locally on Windows](https://dzone.com/articles/run-aws-lambda-functions-locally-on-windows-machin) | 60K+ | SAM Local for Lambda development |
 | [Fast Data Access: GemFire + Apache Spark](https://dzone.com/articles/fast-data-access-using-gemfire-and-apache-spark-pa) | 12K+ | In-memory data grid with Spark |
+
+### ✏️ Medium Articles
+
+| Article | Topic |
+|---------|-------|
+| [Amazon API Gateway with Spring Boot — Tricks and Hacks](https://medium.com/@vaquarkhan/amazon-api-gateway-with-spring-boot-tricks-and-hacks-8315d49827d) | REST, WebSocket, HTTP API patterns with Spring Boot on AWS |
+
+### 🎤 InfoQ
+
+| Profile | Description |
+|---------|-------------|
+| [Vaquar Khan — InfoQ Profile](https://www.infoq.com/profile/Vaquar-Khan.2) | Author of *Data Engineering AWS Cookbook* (2024), active contributor to JCP (JSR 368) and Apache Spark. Recognized as an influential voice in the global technology community. |
+
+### 📣 Featured In & Press Coverage
+
+| Source | Coverage | Link |
+|--------|----------|------|
+| **LetsDataScience** | "Viquar Khan Proposes Real-Time RAG Architecture" — featured news coverage of the Spark + Iceberg agentic RAG approach | [Read](https://letsdatascience.com/news/viquar-khan-proposes-real-time-rag-architecture-b7be72f4) |
+| **Get Kafka-Nated (Substack)** | KIP-1267 featured in Biweekly #276 — cloud-native Kafka KIPs newsletter | [Read](https://getkafkanated.substack.com/p/get-kafka-nated-espresso-biweekly-276) |
+| **HackerNoon TechBeat** | Featured in "The TechBeat" newsletter (Apr 4, 2026) — deep dive into AI Context Rot | [Read](https://hackernoon.com/4-4-2026-techbeat) |
+| **Business Intelligence Group** | Judge / Evaluator | [Profile](https://bintelligence.com/judge/viquar-khan) |
 
 ---
 
