@@ -46,6 +46,27 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 </div>
 
+### 🧠 Skills & Expertise
+
+<div align="center">
+
+| Domain | Skills |
+|--------|--------|
+| **Cloud & Infrastructure** | AWS (Bedrock, Glue, EMR, Lambda, S3, Athena, SageMaker, Lake Formation) · GCP (BigQuery, Dataflow, Dataproc, Pub/Sub) · Azure (Synapse, ADLS, Event Hubs) · Terraform · CloudFormation · CDK |
+| **GenAI & Agentic AI** | Amazon Bedrock Agents · AgentCore · Spring AI · LangChain · RAG Architecture · MCP (Model Context Protocol) · Process Reward Models (GenPRM) · MCTS Inference · RLHF |
+| **Big Data & Streaming** | Apache Spark · Apache Kafka · Apache Flink · Apache Iceberg · Delta Lake · Hudi · Structured Streaming · Kafka Streams · Spark Connect |
+| **Programming** | Java · Python · Scala · Go · Rust · SQL · PySpark |
+| **Data Engineering** | ETL/ELT Pipelines · Data Lakehouse · Medallion Architecture · CDC · Schema Evolution · Data Quality (DQ) · Data Governance · Data Mesh |
+| **AI/ML** | TensorFlow · PyTorch · scikit-learn · SageMaker · Feature Engineering · ML Pipelines · Reinforcement Learning |
+| **Microservices & APIs** | Spring Boot · Spring Cloud · Domain-Driven Design · CQRS · Event Sourcing · gRPC · GraphQL · API Gateway |
+| **DevOps & Orchestration** | Kubernetes · Docker · Istio · Airflow · Step Functions · CI/CD · GitOps · Helm |
+| **Databases** | PostgreSQL · DynamoDB · MongoDB · Redis · Cassandra · Redshift · Snowflake · ElasticSearch |
+| **Messaging & Integration** | Apache Kafka · RabbitMQ · JMS 2.1 (JSR-368 Expert) · SQS/SNS · EventBridge · Kinesis |
+| **Security & Compliance** | IAM · KMS · Lake Formation · RBAC · PII/PCI/HIPAA · GDPR · SOX · Data Lineage |
+| **Tools & Methodologies** | Agile · System Design · Distributed Systems · CAP Theorem · FinOps · Cost Attribution · Observability (OpenTelemetry, X-Ray) |
+
+</div>
+
 ### 🎖️ Industry Contributions & Recognition
 
 - **JSR 368 Expert Group Member**: Shaped industry standards for Java™ Message Service 2.1
@@ -103,6 +124,8 @@ Creator of groundbreaking frameworks for distributed systems:
 | Registry | Package | Description | Install |
 |----------|---------|-------------|---------|
 | [![PyPI](https://img.shields.io/badge/PyPI-sparkrules-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/sparkrules/) | **sparkrules** `v1.2.0` | Drools-equivalent business rule engine for Python — DRL syntax, decision tables, adverse-action notices, Spark integration | `pip install sparkrules` |
+| [![PyPI](https://img.shields.io/badge/PyPI-genprm-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/genprm/) | **genprm** | Autonomous data engineering agent — generative process supervision, MCTS inference, RL fine-tuning for SQL/ETL self-correction | `pip install genprm` |
+| [![PyPI](https://img.shields.io/badge/PyPI-veridata--vrp-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/veridata-vrp/) | **veridata-vrp** | Offline VRP verifier — tamper-evident reconciliation proofs for data pipelines | `pip install veridata-vrp` |
 | [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--gate-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) | **aiv-gate** | AI-powered PR integrity gate — density, design, dependency & invariant checks | `io.github.vaquarkhan:aiv-gate` |
 | [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--cli-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-cli) | **aiv-cli** | CLI companion for aiv-integrity-gate | `io.github.vaquarkhan:aiv-cli` |
 
@@ -179,7 +202,9 @@ Creator of groundbreaking frameworks for distributed systems:
 | Repository | Lang | ⭐ | Description |
 |-----------|------|---|-------------|
 | [vaquarkhan/vaquarkhan](https://github.com/vaquarkhan/vaquarkhan) | Wiki | 1.5K+ | Technical wiki — Spark, Kafka, Microservices, DDD, Cloud Architecture |
-| [data-engineering-agent-skills](https://github.com/vaquarkhan/data-engineering-agent-skills) | — | — | Data Engineering Agent Skills — reusable AI agent capabilities for data pipelines |
+| [autonomous-data-engineering-agent](https://github.com/vaquarkhan/autonomous-data-engineering-agent) | Python | — | Autonomous agent that generates, verifies & self-corrects SQL/ETL using GenPRM, MCTS inference, sandbox execution, and RL fine-tuning with reward-hacking safeguards. Published as `pip install genprm` |
+| [veridata](https://github.com/vaquarkhan/veridata) | Rust/Python | — | Verifiable Reconciliation Proofs (VRPs) — signed, tamper-evident receipts proving data sink faithfully reflects source. Detects drops, duplicates, mutations. Multi-cloud (AWS/GCP/Azure/Databricks) |
+| [data-engineering-agent-skills](https://github.com/vaquarkhan/data-engineering-agent-skills) | Multi | — | Production-grade AI agent skill registry — 73 workflows, 14 platform presets, VS Code & JetBrains plugins, multi-agent packaging (Cursor, Claude, Copilot, Kiro, Codex) |
 | [IceGuard](https://github.com/vaquarkhan/IceGuard) | Python | 1 | Reliability library for Spark-on-AWS-Lambda writes — timeout-aware rollback, resumable checkpointing, orphan cleanup, multi-Lambda coordination, CloudWatch observability |
 | [ai-agent-java-sdk](https://github.com/vaquarkhan/ai-agent-java-sdk) | Java | 2 | Java SDK for building AI agents — lightweight, extensible agent framework |
 | [mcp-test-harness](https://github.com/vaquarkhan/mcp-test-harness) | Python | 2 | Testing framework for MCP servers — validate tool schemas, test prompts, assert responses |
@@ -474,14 +499,17 @@ A comprehensive free GitBook on microservices patterns
 
 ### 🎤 InfoQ
 
-| Profile | Description |
-|---------|-------------|
-| [Vaquar Khan — InfoQ Profile](https://www.infoq.com/profile/Vaquar-Khan.2) | Author of *Data Engineering AWS Cookbook* (2024), active contributor to JCP (JSR 368) and Apache Spark. Recognized as an influential voice in the global technology community. |
+| Article | Published | Topic |
+|---------|-----------|-------|
+| [Architecting Cloud-Native Kafka: From Tiered Storage Towards a Diskless Future](https://www.infoq.com/articles/architecting-cloud-native-kafka/) | 2026 | Deep-dive into Kafka's cloud-native evolution — Tiered Storage economics, KIP-1267 cost attribution, KIP-848 consumer rebalancing, KIP-932 Share Groups, KIP-1134 Virtual Clusters, and the diskless future (KIP-1150/1163). References KIP-1316 & KIP-1317. |
+
+[![InfoQ Profile](https://img.shields.io/badge/InfoQ_Profile-Vaquar_Khan-5B2D8E?style=flat-square&logo=infoq&logoColor=white)](https://www.infoq.com/profile/Vaquar-Khan.2)
 
 ### 📣 Featured In & Press Coverage
 
 | Source | Coverage | Link |
 |--------|----------|------|
+| **InfoQ (Article)** | "Architecting Cloud-Native Kafka" — flagship article covering Tiered Storage, FinOps, Share Groups, Virtual Clusters, and the Diskless future. Directly references KIP-1267, KIP-1316, KIP-1317 | [Read](https://www.infoq.com/articles/architecting-cloud-native-kafka/) |
 | **LetsDataScience** | "Viquar Khan Proposes Real-Time RAG Architecture" — featured news coverage of the Spark + Iceberg agentic RAG approach | [Read](https://letsdatascience.com/news/viquar-khan-proposes-real-time-rag-architecture-b7be72f4) |
 | **Get Kafka-Nated (Substack)** | KIP-1267 featured in Biweekly #276 — cloud-native Kafka KIPs newsletter | [Read](https://getkafkanated.substack.com/p/get-kafka-nated-espresso-biweekly-276) |
 | **HackerNoon TechBeat** | Featured in "The TechBeat" newsletter (Apr 4, 2026) — deep dive into AI Context Rot | [Read](https://hackernoon.com/4-4-2026-techbeat) |
