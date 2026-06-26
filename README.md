@@ -39,14 +39,17 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | | |
 |---|---|
 | 📦 **[10 Published Packages](#-published-packages)** | [PyPI](https://pypi.org/project/sparkrules/) · [Maven Central](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) · [npm](https://www.npmjs.com/package/@mcp-bastion/core) · [Docker GHCR](https://ghcr.io/vaquarkhan/iceguard) |
-| 📝 **[3 Apache Kafka KIPs + 1 Spark SPIP](#authored-proposals)** | Authored & proposed on [dev@kafka](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) · [dev@spark](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) |
+| 📝 **[3 Apache Kafka KIPs + 1 Spark SPIP](#authored-proposals)** | [KIP-1267](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) · [KIP-1316](https://cwiki.apache.org/confluence/x/I5E8G) · [KIP-1317](https://cwiki.apache.org/confluence/x/JZE8G) · [SPIP](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) |
 | 🏗️ **[The Vaquar Pattern (PVDM)](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Original data integrity architecture for serverless data mesh |
 | 🧩 **[The Khan Microservices Pattern](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)** | Adaptive Granularity for distributed systems — 600+ ⭐ GitBook |
+| 🤖 **[Spring AI AgentCore Observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability)** | 80-feature OpenTelemetry module for Spring AI + Bedrock AgentCore |
+| 🐍 **[Apache Burr — S3 Tracking](https://burr.apache.org/docs/concepts/s3-tracking-aws/)** | Contributed AWS-native S3 persistence & tracking for Burr 0.42+ |
+| 📊 **[Apache Kafka Community](https://lists.apache.org/list?dev@kafka.apache.org)** | KIP author, dev@ mailing list contributor, Share Groups DLQ architect |
 | 🧰 **[73 Agent Skills](https://github.com/vaquarkhan/data-engineering-agent-skills)** | Production-grade AI data engineering workflows · [VS Code](https://marketplace.visualstudio.com/) · [JetBrains](https://plugins.jetbrains.com/) |
 | 📰 **[InfoQ](https://www.infoq.com/articles/architecting-cloud-native-kafka/) · [HackerNoon](https://hackernoon.com/u/vaquarkhan) · [DZone](https://dzone.com/users/1436543/vaquarkhan.html) · [AWS Blog](https://aws.amazon.com/blogs/big-data/author/vaquar/)** | Published author across top engineering platforms |
 | 🎓 **[Cited by 5+ institutions](#-academic-citations--impact)** | [Q1 Journal](https://www.sciencedirect.com/science/article/abs/pii/S0167739X21002971) · [IEEE](https://ieeexplore.ieee.org/abstract/document/11030417) · [Princeton](https://catalog.princeton.edu/) · [U of Toronto](https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download) · [NTUA](https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1) |
-| 🔥 **[Apache Spark contributor since 2013](https://lists.apache.org/list?dev@spark.apache.org:2014-11:vaquar%20khan)** | 12+ year commitment to open source |
-| 🏆 **[JSR-368 Expert Group](https://jcp.org/en/jsr/nominations?id=370)** | Shaped Java Messaging standards (JMS 2.1) |
+| 🔥 **[Apache Spark contributor since 2013](https://lists.apache.org/list?dev@spark.apache.org:2014-11:vaquar%20khan)** | 12+ year commitment — voted on Spark 1.1.1 & 1.2.0 release candidates |
+| 🏆 **[JSR-368 Expert Group](https://jcp.org/en/jsr/nominations?id=370)** | Shaped Java Messaging standards ([JMS 2.1](https://jcp.org/ja/jsr/nominations?id=369)) |
 
 </div>
 
