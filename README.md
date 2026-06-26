@@ -35,14 +35,9 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 ### 🎨 What I Do
 
-```ascii
-╔══════════════════════════════════════════════════════════════════════╗
-║   🏗️  Cloud Architecture    📊  Big Data Engineering                ║
-║   🤖  GenAI & Agentic AI    🔧  Microservices Design               ║
-║   💰  Financial Services     🎯  Domain-Driven Design               ║
-║   📚  Technical Leadership   🌍  Open Source Contribution           ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
+<img src="https://img.shields.io/badge/🏗️_Cloud_Architecture-232F3E?style=for-the-badge" /> <img src="https://img.shields.io/badge/📊_Big_Data_Engineering-E25A1C?style=for-the-badge" /> <img src="https://img.shields.io/badge/🤖_GenAI_&_Agentic_AI-7B42BC?style=for-the-badge" /> <img src="https://img.shields.io/badge/🔧_Microservices_Design-4ecdc4?style=for-the-badge" />
+
+<img src="https://img.shields.io/badge/💰_Financial_Services-45b7d1?style=for-the-badge" /> <img src="https://img.shields.io/badge/🎯_Domain--Driven_Design-96ceb4?style=for-the-badge" /> <img src="https://img.shields.io/badge/📚_Technical_Leadership-ffeaa7?style=for-the-badge&logoColor=black" /> <img src="https://img.shields.io/badge/🌍_Open_Source-ff6b6b?style=for-the-badge" />
 
 </div>
 
