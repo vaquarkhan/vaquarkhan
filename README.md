@@ -57,9 +57,9 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 ### 🎨 What I Do
 
-<img src="https://img.shields.io/badge/🏗️_Cloud_Architecture-232F3E?style=for-the-badge" /> <img src="https://img.shields.io/badge/📊_Big_Data_Engineering-E25A1C?style=for-the-badge" /> <img src="https://img.shields.io/badge/🤖_GenAI_&_Agentic_AI-7B42BC?style=for-the-badge" /> <img src="https://img.shields.io/badge/🔧_Microservices_Design-4ecdc4?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Cloud_Architecture-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" /> <img src="https://img.shields.io/badge/Big_Data_Engineering-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" /> <img src="https://img.shields.io/badge/GenAI_&_Agentic_AI-7B42BC?style=for-the-badge&logo=openai&logoColor=white" /> <img src="https://img.shields.io/badge/Microservices_Design-4ecdc4?style=for-the-badge&logo=kubernetes&logoColor=white" />
 
-<img src="https://img.shields.io/badge/💰_Financial_Services-45b7d1?style=for-the-badge" /> <img src="https://img.shields.io/badge/🎯_Domain--Driven_Design-96ceb4?style=for-the-badge" /> <img src="https://img.shields.io/badge/📚_Technical_Leadership-ffeaa7?style=for-the-badge&logoColor=black" /> <img src="https://img.shields.io/badge/🌍_Open_Source-ff6b6b?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Financial_Services-45b7d1?style=for-the-badge&logo=stripe&logoColor=white" /> <img src="https://img.shields.io/badge/Domain--Driven_Design-96ceb4?style=for-the-badge&logo=blueprint&logoColor=white" /> <img src="https://img.shields.io/badge/Technical_Leadership-ffeaa7?style=for-the-badge&logoColor=black" /> <img src="https://img.shields.io/badge/Open_Source-ff6b6b?style=for-the-badge&logo=opensourceinitiative&logoColor=white" />
 
 </div>
 
@@ -171,6 +171,13 @@ commit_metadata ⟹ VRP = PASS
 
 ### 📦 Published Packages
 
+[![SparkRules Downloads](https://static.pepy.tech/badge/sparkrules)](https://pepy.tech/project/sparkrules)
+[![IceGuard Downloads](https://static.pepy.tech/badge/iceguard)](https://pepy.tech/project/iceguard)
+[![GenPRM Downloads](https://static.pepy.tech/badge/genprm)](https://pepy.tech/project/genprm)
+[![MCP-Bastion Downloads](https://static.pepy.tech/badge/mcp-bastion-python)](https://pepy.tech/project/mcp-bastion-python)
+[![MCP Test Harness Downloads](https://static.pepy.tech/badge/mcp-test-harness)](https://pepy.tech/project/mcp-test-harness)
+[![Veridata Downloads](https://static.pepy.tech/badge/veridata-vrp)](https://pepy.tech/project/veridata-vrp)
+
 | Registry | Package | Description | Install |
 |----------|---------|-------------|---------|
 | [![PyPI](https://img.shields.io/badge/PyPI-sparkrules-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/sparkrules/) | **sparkrules** `v1.2.0` | Drools-equivalent business rule engine for Python — DRL syntax, decision tables, adverse-action notices, Spark integration | `pip install sparkrules` |
@@ -192,7 +199,7 @@ commit_metadata ⟹ VRP = PASS
 
 [![GitHub](https://img.shields.io/badge/GitHub-vaquarkhan/sparkrules-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/sparkrules)
 [![PyPI](https://img.shields.io/pypi/v/sparkrules?style=for-the-badge&logo=pypi&logoColor=white&label=PyPI)](https://pypi.org/project/sparkrules/)
-[![Downloads](https://img.shields.io/pepy/dt/sparkrules?style=for-the-badge&logo=pypi&logoColor=white&label=Downloads)](https://pepy.tech/project/sparkrules)
+[![Downloads](https://static.pepy.tech/badge/sparkrules?style=for-the-badge)](https://pepy.tech/project/sparkrules)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://github.com/vaquarkhan/sparkrules/blob/main/LICENSE)
 
 </div>
