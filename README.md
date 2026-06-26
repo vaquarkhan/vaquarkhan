@@ -11,7 +11,7 @@
 ### AWS | GCP | AZURE | PCF | Microservices | Big Data | Apache Spark | GenAI & Agentic AI | ML/AI SME | Polyglot Developer | Architect | Technology Evangelist
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+SME;7.5M%2B+Stack+Overflow+Reach;Cited+by+Top+Universities+Worldwide;Creator+of+The+Khan+Pattern%E2%84%A2&random=false" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+Architect;7+Published+Packages+(PyPI+%2B+Maven+Central);InfoQ+%7C+HackerNoon+%7C+DZone+%7C+AWS+Blog+Author;3+Apache+Kafka+KIPs+%2B+1+Spark+SPIP;Cited+by+Universities+%26+Q1+Journals&random=false" alt="Typing SVG" />
 </p>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
@@ -100,8 +100,8 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 Creator of groundbreaking frameworks for distributed systems:
 
 - **The Khan Pattern** for Adaptive Granularity
-- **The Khan Granularity Protocol™**
-- **The Khan Microservices Maturity Model (KM3™)**
+- **The Khan Granularity Protocol**
+- **The Khan Microservices Maturity Model (KM3)**
 
 *Original syntheses and scoring methodologies designed to operationalize distributed systems theory*
 
@@ -255,7 +255,7 @@ graph LR
     C --> D[Published Author]
     D --> E[7.5M+ SO Impact]
     E --> F[Academic Citations]
-    F --> G[The Khan Pattern™]
+    F --> G[The Khan Pattern]
     
     style A fill:#ff6b6b
     style B fill:#4ecdc4
