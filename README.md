@@ -40,7 +40,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 |---|---|
 | 📦 **[10 Published Packages](#-published-packages)** | [PyPI](https://pypi.org/project/sparkrules/) · [Maven Central](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) · [npm](https://www.npmjs.com/package/@mcp-bastion/core) · [Docker GHCR](https://ghcr.io/vaquarkhan/iceguard) |
 | 📝 **[3 Apache Kafka KIPs + 1 Spark SPIP](#authored-proposals)** | [KIP-1267](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) · [KIP-1316](https://cwiki.apache.org/confluence/x/I5E8G) · [KIP-1317](https://cwiki.apache.org/confluence/x/JZE8G) · [SPIP](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) |
-| �-️ **[The Vaquar Pattern (PVDM)](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Original data integrity architecture for serverless data mesh |
+| �-️ **[The Vaquar Pattern (PVDM)](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Original data integrity architecture for serverless data mesh |
 | 🧩 **[The Khan Microservices Pattern](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)** | Adaptive Granularity for distributed systems — 600+ ⭐ GitBook |
 | 🤖 **[Spring AI AgentCore Observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability)** | 80-feature OpenTelemetry module for Spring AI + Bedrock AgentCore |
 | 🐍 **[Apache Burr — S3 Tracking](https://burr.apache.org/docs/concepts/s3-tracking-aws/)** | Contributed AWS-native S3 persistence & tracking for Burr 0.42+ |
@@ -112,8 +112,9 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 | Project | What I Built / Proposed | Description |
 |---------|------------------------|-------------|
-| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | **Designed & implemented** full OpenTelemetry observability module — 80 features across 12 categories: GenAI semantic spans, token histograms, AgentCore session correlation, reactive Mono/Flux instrumentation, PII-safe export with Luhn-validated masking, 96.5% coverage gate |
-| **Apache Burr** | [S3 Tracking on AWS](https://burr.apache.org/docs/concepts/s3-tracking-aws/) | **Contributed** AWS-native S3 tracking & persistence for Burr 0.42+ — enables production deployment with S3-backed state storage, hybrid local/cloud modes, and cost-efficient agent observability on AWS |
+| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | **Identified critical gaps & built solution** - raised issues on missing OTel observability, PII leakage in spans, reactive instrumentation gaps, session correlation. Designed & implemented 80-feature module: GenAI semantic spans, token histograms, Mono/Flux support, PII-safe export, 96.5% coverage |
+| **Spring AI AgentCore** | [Issues & Fixes on spring-ai-agentcore](https://github.com/spring-ai-community/spring-ai-agentcore/issues) | **Raised & resolved critical issues** - production gaps in observability, content capture, error classification, AWS request ID correlation, and streaming response handling |
+| **Apache Burr** | [S3 Tracking on AWS](https://burr.apache.org/docs/concepts/s3-tracking-aws/) | **Contributed** AWS-native S3 tracking & persistence for Burr 0.42+ - production deployment with S3-backed state storage, hybrid local/cloud modes |
 | **Spring AI Community** | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | **Contributing** Spring Boot integrations for Amazon Bedrock AgentCore Runtime |
 
 ### 🐛 Terraform AWS Glue Data Quality (Issues & Contributions)
@@ -523,7 +524,7 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![Service Mesh](https://img.shields.io/badge/Istio-466BB0?style=flat-square&logo=istio&logoColor=white)
 
-### �-�️ Databases & Storage
+### �-�️ Databases & Storage
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
@@ -586,7 +587,7 @@ A comprehensive free GitBook on microservices patterns
 
 | Domain | Impact | Scale |
 |--------|--------|-------|
-| �- **Smart Cities** | Backend architecture for V2X traffic management | Reducing carbon emissions across European cities |
+| �- **Smart Cities** | Backend architecture for V2X traffic management | Reducing carbon emissions across European cities |
 | 🏥 **Healthcare** | Big data pipelines for medical imaging analytics | Processing 600GB+ datasets for cancer diagnosis optimization |
 | ☁️ **Cloud Infrastructure** | Kubernetes autoscaling innovations | Enabling cost-efficient resource utilization at scale |
 | ⛓️ **Blockchain** | Knowledge curation & scalability research | Supporting systematic reviews in Q1 journals |
@@ -595,7 +596,7 @@ A comprehensive free GitBook on microservices patterns
 
 </div>
 
-### �- Additional Links
+### �- Additional Links
 
 - 🔥 [Apache Spark Community Contributions](http://apache-spark-developers-list.1001551.n3.nabble.com/template/NamlServlet.jtp?macro=user_nodes&user=619)
 - 📋 [JCP Member - JSR-368](https://www.jcp.org/en/jsr/detail?id=368)
@@ -697,7 +698,7 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 **Topics I Can Help With:**
 - ☁️ Cloud Architecture & AWS Solutions
-- �-️ Microservices Design & Implementation
+- �-️ Microservices Design & Implementation
 - 📊 Big Data Engineering & Analytics
 - 🎯 Career Progression to Senior/Principal/Architect Roles
 - 🔧 System Design & Distributed Systems
@@ -745,7 +746,7 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 [![Stack Overflow Stats](https://github-readme-stackoverflow.vercel.app/?userID=4812170&theme=dark&layout=compact)](https://stackoverflow.com/users/4812170/vaquar-khan)
 
-### �-�️ Isometric Contribution Calendar
+### �-�️ Isometric Contribution Calendar
 
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vaquarkhan&theme=radical" width="95%" />
 
