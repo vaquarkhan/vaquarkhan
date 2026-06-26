@@ -75,6 +75,8 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 ### 🔬 Open Source Proposals (KIP / SPIP)
 
+#### Authored Proposals
+
 | Project | Proposal | Description |
 |---------|----------|-------------|
 | **Apache Kafka** | [KIP-1267: Tiered Storage Cost Attribution Metrics](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) | Client-level cost attribution for Kafka Tiered Storage — enables FinOps, chargeback, and rogue consumer detection in multi-tenant clusters |
@@ -82,6 +84,27 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | **Apache Kafka** | [KIP-1317: Mandatory DLQ Disposition Header for Share Groups](https://cwiki.apache.org/confluence/x/JZE8G) | Ensures every DLQ-routed record carries authoritative disposition metadata — enables observability, audit, and automated remediation |
 | **Apache Spark** | [SPIP: Asynchronous Metadata Resolution & Lazy Prefetching for Spark Connect](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) | Performance optimization for Spark Connect metadata resolution and prefetching |
 | **Apache Iceberg** | [Real-Time Agentic RAG Architecture with Iceberg v3](https://hackernoon.com/real-time-agentic-rag-eradicating-context-rot-with-spark-and-iceberg) | Published architecture leveraging Iceberg v3 deletion vectors + Spark 4.1 Intent-Driven Design for low-latency CDC in agentic AI systems |
+
+#### KIPs Reviewed & Referenced (in [InfoQ Article](https://www.infoq.com/articles/architecting-cloud-native-kafka/))
+
+| KIP | Topic | Role |
+|-----|-------|------|
+| [KIP-405](https://cwiki.apache.org/confluence/display/KAFKA/KIP-405) | Kafka Tiered Storage | Deep technical analysis in InfoQ article |
+| [KIP-848](https://cwiki.apache.org/confluence/display/KAFKA/KIP-848) | Next-Gen Consumer Rebalance Protocol | Architecture guidance in InfoQ article |
+| [KIP-932](https://cwiki.apache.org/confluence/display/KAFKA/KIP-932) | Queues for Kafka (Share Groups) | Production adoption guidance in InfoQ article |
+| [KIP-1134](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1134) | Virtual Clusters (Multi-Tenancy) | Architecture analysis in InfoQ article |
+| [KIP-1150](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1150) | Diskless Topics | Migration strategy analysis in InfoQ article |
+| [KIP-1163](https://cwiki.apache.org/confluence/x/IgpWFQ) | Diskless Core | GC risk analysis in InfoQ article |
+| [KIP-1178](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1178) | Remote Fetch Config for Consumer | Request amplification fix — referenced in InfoQ |
+| [KIP-1191](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1191) | Dead-Letter Queues for Share Groups | Foundational KIP for KIP-1316/1317 — discussed in InfoQ |
+
+#### Spring AI & Apache Burr Contributions
+
+| Project | Contribution | Description |
+|---------|-------------|-------------|
+| **Spring AI Community** | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Fork & contributions — Spring Boot starter for AWS Bedrock AgentCore Runtime |
+| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Original project — 80 features across 12 categories (OpenTelemetry, metrics, health, cost tracking) |
+| **Apache Burr** | [Fork & Contributions](https://github.com/vaquarkhan/burr) | Stateful AI agent applications — chatbots, agents, simulations with monitoring, tracing, and persistence |
 
 ### 🐛 Terraform AWS Glue Data Quality (Issues & Contributions)
 
@@ -200,6 +223,26 @@ Creator of groundbreaking frameworks for distributed systems:
 
 **Gates:** Logic Density & Entropy · YAML Design Rules (forbidden/required patterns) · Import Validation vs pom.xml/requirements.txt · Property-based Invariant Tests · `/aiv skip` for urgent merges · Refactor exception · Trusted authors bypass
 
+### 🧰 Data Engineering Agent Skills — AI Agent Skill Registry
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-data--engineering--agent--skills-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/data-engineering-agent-skills)
+[![VS Code](https://img.shields.io/badge/VS_Code-Marketplace-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=vaquarkhan.data-engineering-agent-skills)
+[![JetBrains](https://img.shields.io/badge/JetBrains-Marketplace-000000?style=for-the-badge&logo=jetbrains&logoColor=white)](https://plugins.jetbrains.com/plugin/data-engineering-agent-skills)
+
+</div>
+
+> Production-grade skill registry for AI data engineering agents — **73 workflows, 14 platform presets**, multi-agent packaging.
+
+**Lifecycle:** `/spec` → `/plan` → `/build` → `/validate` → `/review` → `/backfill` → `/ship`
+
+**Platform Presets:** AWS · Azure · GCP · Databricks · Snowflake · Alibaba Cloud · Informatica · Talend · Apache Spark · Flink · Airflow · Kafka · Iceberg
+
+**Agent Integrations:** Cursor · Claude · Copilot · Kiro · Codex · OpenCode · Windsurf · AGENTS.md
+
+**Skill Coverage:** Ingestion · Transformation · Orchestration · Streaming · Lakehouse · Warehousing · Governance · Quality · Modernization · Release · Incident Recovery · Platform Operations
+
 ### 📚 Other Notable Repositories
 
 <div align="center">
@@ -225,23 +268,6 @@ Creator of groundbreaking frameworks for distributed systems:
 </div>
 
 ---
-
-### 🤖 Spring AI & Amazon Bedrock AgentCore Contributions
-
-Active contributor to the **Spring AI** ecosystem and **Amazon Bedrock AgentCore** — bridging enterprise Java with next-gen agentic AI:
-
-| Project | Contribution | Description |
-|---------|-------------|-------------|
-| **Spring AI Community** | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Spring Boot starter enabling existing apps to conform to AWS Bedrock AgentCore Runtime contract with minimal configuration |
-| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Observability extensions — tracing, metrics, and production monitoring for AgentCore-powered agents |
-| **Amazon Bedrock AgentCore** | [agentcore-samples](https://github.com/awslabs/agentcore-samples) | Contributing production-ready samples for deploying AI agents with enterprise-grade scale, reliability, and security |
-| **Spring AI + Bedrock** | [HackerNoon: Production Observability for Spring AI Agents](https://hackernoon.com/production-observability-for-spring-ai-agents-on-amazon-bedrock-without-writing-tracing-code) | Published architecture for zero-code observability of Spring AI agents on Amazon Bedrock |
-
-### 🔥 Apache Burr Contributions
-
-| Project | Contribution | Description |
-|---------|-------------|-------------|
-| **Apache Burr** | [Fork & Contributions](https://github.com/vaquarkhan/burr) | Contributing to the open-source framework for building stateful AI agent applications — chatbots, agents, simulations with monitoring, tracing, and persistence |
 
 ---
 
