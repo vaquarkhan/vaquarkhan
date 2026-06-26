@@ -11,12 +11,13 @@
 ### AWS | GCP | AZURE | PCF | Microservices | Big Data | Apache Spark | GenAI & Agentic AI | ML/AI SME | Polyglot Developer | Architect | Technology Evangelist
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+Architect;7+Published+Packages+(PyPI+%2B+Maven+Central);InfoQ+%7C+HackerNoon+%7C+DZone+%7C+AWS+Blog+Author;3+Apache+Kafka+KIPs+%2B+1+Spark+SPIP;Cited+by+Universities+%26+Q1+Journals&random=false" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+Architect;10+Published+Packages+(PyPI+%2B+Maven+%2B+npm);InfoQ+%7C+HackerNoon+%7C+DZone+%7C+AWS+Blog+Author;3+Apache+Kafka+KIPs+%2B+1+Spark+SPIP;Creator+of+The+Vaquar+Pattern+(PVDM);Apache+Spark+Contributor+Since+2013&random=false" alt="Typing SVG" />
 </p>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
 [![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-Top_2%25_·_7.5M+_Reach-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
 [![GitHub](https://img.shields.io/badge/GitHub-1400+_Stars-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan)
+[![InfoQ](https://img.shields.io/badge/InfoQ-Author-5B2D8E?style=for-the-badge&logo=infoq&logoColor=white)](https://www.infoq.com/articles/architecting-cloud-native-kafka/)
 [![ADPList](https://img.shields.io/badge/Book_Mentorship-FF6154?style=for-the-badge&logo=google-meet&logoColor=white)](https://adplist.org/mentors/vaquar-khan)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=vaquarkhan&color=blueviolet&style=flat-square&label=Profile+Views)
@@ -30,6 +31,23 @@
 **Va<sub><sup>i</sup></sub>quar Khan** - Senior Data Architect at **AWS Professional Services** with **22+ years of expertise** in finance and data analytics. I empower global financial institutions to harness the full potential of AWS technologies by designing cutting-edge, customized data solutions tailored to complex industry needs.
 
 As a **polyglot developer** skilled in Java, Scala, Python, and other languages, I specialize in large-scale distributed systems, cloud architecture, big data development, **Generative AI & Agentic AI solutions** using Amazon Bedrock, and **AWS AI/ML solutions** for highly competitive enterprise clients. Ranked in the **top 2% on both GitHub and Stack Overflow** worldwide.
+
+<div align="center">
+
+### ⚡ At a Glance
+
+| | |
+|---|---|
+| 📦 **10 Published Packages** | PyPI · Maven Central · npm · Docker GHCR |
+| 📝 **3 Apache Kafka KIPs** + **1 Spark SPIP** | Authored & proposed on dev@ mailing list |
+| 🏗️ **The Vaquar Pattern (PVDM)** | Original data integrity architecture for serverless data mesh |
+| 🧰 **73 Agent Skills** | Production-grade AI data engineering workflows |
+| 📰 **InfoQ · HackerNoon · DZone · AWS Blog** | Published author across top engineering platforms |
+| 🎓 **Cited by 5+ institutions** | Q1 journals, IEEE, Princeton, U of Toronto, NTUA |
+| 🔥 **Apache Spark contributor since 2013** | 12+ year commitment to open source |
+| 🏆 **JSR-368 Expert Group** | Shaped Java Messaging standards (JMS 2.1) |
+
+</div>
 
 <div align="center">
 
@@ -64,10 +82,11 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 ### 🎖️ Industry Contributions & Recognition
 
-- **JSR 368 Expert Group Member**: Shaped industry standards for Java™ Message Service 2.1
+- **JSR 368 Expert Group Member**: Shaped industry standards for Java™ Message Service 2.1 — [JCP Nomination](https://jcp.org/en/jsr/nominations?id=370) · [JSR-369](https://jcp.org/ja/jsr/nominations?id=369)
+- **Apache Spark Committer (since 2013)**: 12+ year commitment — voted on release candidates since Spark 1.1.1 (2014) and Spark 1.2.0 ([dev@ mailing list archive](https://lists.apache.org/list?dev@spark.apache.org:2014-11:vaquar%20khan))
 - **AWS AI/ML Expert**: Designing intelligent data solutions with AWS AI services
 - **GenAI & Agentic AI SME**: Architecting solutions with Amazon Bedrock, Bedrock Agents, and AgentCore
-- **Open Source Contributor**: Active contributions to Apache Spark and Terraform ecosystems
+- **Open Source Contributor**: Active contributions to Apache Spark, Apache Kafka, Apache Burr, and Terraform ecosystems
 - **Stack Overflow Impact**: Technical insights reaching **7.5+ million users**
 - **GitHub Recognition**: 1400+ stars across repositories and wikis
 - **AWS Professional Services**: Architecting enterprise-grade solutions for global financial institutions
@@ -85,26 +104,13 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | **Apache Spark** | [SPIP: Asynchronous Metadata Resolution & Lazy Prefetching for Spark Connect](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) | Performance optimization for Spark Connect metadata resolution and prefetching |
 | **Apache Iceberg** | [Real-Time Agentic RAG Architecture with Iceberg v3](https://hackernoon.com/real-time-agentic-rag-eradicating-context-rot-with-spark-and-iceberg) | Published architecture leveraging Iceberg v3 deletion vectors + Spark 4.1 Intent-Driven Design for low-latency CDC in agentic AI systems |
 
-#### KIPs Reviewed & Referenced (in [InfoQ Article](https://www.infoq.com/articles/architecting-cloud-native-kafka/))
-
-| KIP | Topic | Role |
-|-----|-------|------|
-| [KIP-405](https://cwiki.apache.org/confluence/display/KAFKA/KIP-405) | Kafka Tiered Storage | Deep technical analysis in InfoQ article |
-| [KIP-848](https://cwiki.apache.org/confluence/display/KAFKA/KIP-848) | Next-Gen Consumer Rebalance Protocol | Architecture guidance in InfoQ article |
-| [KIP-932](https://cwiki.apache.org/confluence/display/KAFKA/KIP-932) | Queues for Kafka (Share Groups) | Production adoption guidance in InfoQ article |
-| [KIP-1134](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1134) | Virtual Clusters (Multi-Tenancy) | Architecture analysis in InfoQ article |
-| [KIP-1150](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1150) | Diskless Topics | Migration strategy analysis in InfoQ article |
-| [KIP-1163](https://cwiki.apache.org/confluence/x/IgpWFQ) | Diskless Core | GC risk analysis in InfoQ article |
-| [KIP-1178](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1178) | Remote Fetch Config for Consumer | Request amplification fix — referenced in InfoQ |
-| [KIP-1191](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1191) | Dead-Letter Queues for Share Groups | Foundational KIP for KIP-1316/1317 — discussed in InfoQ |
-
 #### Spring AI & Apache Burr Contributions
 
-| Project | Contribution | Description |
-|---------|-------------|-------------|
-| **Spring AI Community** | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Fork & contributions — Spring Boot starter for AWS Bedrock AgentCore Runtime |
-| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Original project — 80 features across 12 categories (OpenTelemetry, metrics, health, cost tracking) |
-| **Apache Burr** | [Fork & Contributions](https://github.com/vaquarkhan/burr) | Stateful AI agent applications — chatbots, agents, simulations with monitoring, tracing, and persistence |
+| Project | What I Built / Proposed | Description |
+|---------|------------------------|-------------|
+| **Spring AI AgentCore** | [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | **Designed & implemented** full OpenTelemetry observability module — 80 features across 12 categories: GenAI semantic spans, token histograms, AgentCore session correlation, reactive Mono/Flux instrumentation, PII-safe export with Luhn-validated masking, 96.5% coverage gate |
+| **Apache Burr** | [S3 Tracking on AWS](https://burr.apache.org/docs/concepts/s3-tracking-aws/) | **Contributed** AWS-native S3 tracking & persistence for Burr 0.42+ — enables production deployment with S3-backed state storage, hybrid local/cloud modes, and cost-efficient agent observability on AWS |
+| **Spring AI Community** | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | **Contributing** Spring Boot integrations for Amazon Bedrock AgentCore Runtime |
 
 ### 🐛 Terraform AWS Glue Data Quality (Issues & Contributions)
 
@@ -113,15 +119,37 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | **Terraform AWS Provider** | [#38744: glue_data_quality_ruleset rules not supporting multi line string](https://github.com/hashicorp/terraform-provider-aws/issues/38744) | Bug report & resolution — AWS Glue Data Quality ruleset failed with heredoc multiline strings; documented workaround using `join()` for readable DQDL rules |
 | **Terraform AWS Provider** | [#39821: aws_glue_security_configuration should support encrypting Glue Data Quality](https://github.com/hashicorp/terraform-provider-aws/issues/39821) | Enhancement request — Add `data_quality_encryption` block to fix security findings when S3/KMS/CloudWatch are encrypted but Glue Data Quality remains unencrypted |
 
-### 🏆 Proprietary Methodologies
+### 🏆 Proprietary Methodologies & Patterns
 
-Creator of groundbreaking frameworks for distributed systems:
+Creator of original frameworks for distributed systems and data engineering:
 
-- **The Khan Pattern** for Adaptive Granularity
-- **The Khan Granularity Protocol**
-- **The Khan Microservices Maturity Model (KM3)**
+| Pattern | Domain | What It Solves |
+|---------|--------|----------------|
+| **[The Vaquar Pattern (PVDM)](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Data Mesh / Serverless | Proof-gated serverless data mesh writes — Physical → Verify → Durable → Metadata. No catalog commit without multiset VRP proof. Prevents silent row loss, partial writes, and catalog drift. Implemented in CogniMesh + veridata. |
+| **The Khan Pattern** | Microservices | Adaptive Granularity — stop splitting, start governing microservice boundary decisions |
+| **The Khan Granularity Protocol** | Distributed Systems | Scoring methodology for distributed systems granularity decisions |
+| **The Khan Microservices Maturity Model (KM3)** | Architecture | Operationalized distributed systems theory — maturity scoring for organizations |
 
-*Original syntheses and scoring methodologies designed to operationalize distributed systems theory*
+**The Vaquar Pattern** core invariant:
+```
+commit_metadata ⟹ VRP = PASS
+```
+> No Iceberg snapshot, Glue catalog update, or marketplace listing may proceed unless multiset verification passes for every committed chunk.
+
+<details>
+<summary><b>PVDM Phases (click to expand)</b></summary>
+
+| Phase | Name | Responsibility | Implementation |
+|-------|------|---------------|----------------|
+| 0 | **Rules** | Schema, security, compliance checks at design time | Integrity Gate + SparkRules DRL |
+| 1 | **Physical** | Chunked Parquet writes with checkpoint & rollback | IceGuard |
+| 2 | **Verify** | Multiset + transform VRP proof (SHA-256, Merkle, KMS-signed) | veridata VRP engine |
+| 3 | **Durable** | 15-min Lambda segments, Step Functions resume loop | SFN durable execution |
+| 4 | **Metadata** | Proof-gated Glue/Iceberg catalog commit | GlueCatalogConnector |
+
+**PVDM-A (Decision Attestation):** Extends proof chain into agentic systems — signed attestations binding agent decisions to verified VRP inputs via gateway tokens. Proves decision provenance without proving semantic correctness.
+
+</details>
 
 ### 🔧 Featured Projects
 
@@ -243,6 +271,84 @@ Creator of groundbreaking frameworks for distributed systems:
 
 **Skill Coverage:** Ingestion · Transformation · Orchestration · Streaming · Lakehouse · Warehousing · Governance · Quality · Modernization · Release · Incident Recovery · Platform Operations
 
+---
+
+## 🧠 Data Engineering Agent Skills — Full Impact
+
+<div align="center">
+
+> *"The goal is not to give agents generic prompts. The goal is to give them operating procedures for defining, planning, implementing, validating, replaying, and shipping reliable data products."*
+
+</div>
+
+### Why This Exists
+
+AI agents often default to the shortest path — which is dangerous in data systems:
+- ❌ Skipping specification and contract definition
+- ❌ Treating a successful run as proof of correctness
+- ❌ Ignoring replay, backfill, and consumer impact
+- ❌ Leaving lineage, access, retention, and ownership implicit
+
+This project enforces **engineering discipline** on AI agents — the same standards used by strong data engineering teams.
+
+### 📊 By the Numbers
+
+| Metric | Count |
+|--------|-------|
+| Workflow Skills | **73** |
+| Platform Presets | **14** (AWS, Azure, GCP, Databricks, Snowflake, Alibaba, Informatica, Talend, Spark, Flink, Airflow, Kafka, Iceberg, Multi-cloud) |
+| Runnable Example Scaffolds | **5** (with Makefile, contract validation, smoke tests) |
+| Architecture Blueprints | **9** (spec/plan/tasks — delivery shape without executable code) |
+| Starter Packs | **13** (opinionated bundles by use case) |
+| Tutorials | **14** (streaming, orchestration, resiliency, governance, modernization) |
+| Case Studies | **3** (incident recovery, replay safety, regulated release) |
+| Agent Personas | **5** (architect, analytics, reliability, infrastructure, compliance) |
+| Reference Guides | **20+** (architecture, testing, compliance, anti-patterns, DR/BCP) |
+| Hooks | **8** (session-start, contract-check, schema-guard, cost-check, release-guard) |
+| Machine-readable Templates | **8** (dataset contracts, compliance controls, backfill plans, release gates) |
+
+### 🎯 Agent Benchmark Results
+
+The included agent benchmark pack measures skill impact quantitatively:
+
+| Metric | Without Skills | With Skills |
+|--------|---------------|-------------|
+| Task Coverage Score | 23 | **67** |
+| Improvement | — | **+191%** |
+
+### 🛠️ Skill Categories
+
+<details>
+<summary><b>Click to expand full skill list (73 workflows)</b></summary>
+
+| Category | Skills |
+|----------|--------|
+| **Core Delivery** | data-specification · pipeline-planning · data-quality-and-contract-testing · orchestration-and-backfills · lineage-pii-and-governance |
+| **Cloud Platforms** | spark-and-distributed-processing · airflow-and-workflow-orchestration · streaming-and-messaging-systems · lakehouse-table-format-engineering |
+| **Data Architecture** | data-lake-and-zone-architecture · warehouse-and-schema-design · delta-lake-and-medallion-architecture · data-mesh-and-domain-oriented-design |
+| **Languages** | python-data-engineering · scala-data-engineering-on-jvm · java-data-engineering-and-integration-services |
+| **Governance** | data-security-compliance-and-regulated-data · regional-data-compliance-and-sovereignty · esg-and-sustainability-regulatory-reporting · privacy-retention-and-right-to-delete |
+| **Platform Governance** | glue-data-catalog-and-lake-formation · unity-catalog-and-lakehouse · microsoft-purview-and-azure-data-governance · dataplex-and-bigquery-governance |
+| **Modernization** | etl-elt-and-modernization-strategy · mainframe-modernization-and-data-offload · enterprise-etl-and-data-integration-modernization |
+| **Operations** | incident-triage-and-pipeline-recovery · data-platform-disaster-recovery · data-platform-operating-model-and-service-ownership · data-observability-and-sla-management |
+| **Testing & Quality** | data-resiliency-testing-and-failure-injection · test-data-preparation-and-synthetic-data · lower-environment-data-masking · data-reconciliation-and-financial-controls |
+| **Integrations** | cdc-and-incremental-loading · schema-evolution-and-contract-migrations · api-and-saas-ingestion-patterns · reverse-etl-and-operational-data-serving |
+| **Reliability** | safe-backfill-and-replay-orchestration · spark-serverless-reliability · kafka-resilience-and-schema-evolution · mcp-data-observability-integration |
+
+</details>
+
+### 🌐 Install Surfaces
+
+| Surface | Method |
+|---------|--------|
+| **VS Code / Cursor / Windsurf / VSCodium** | [Marketplace](https://marketplace.visualstudio.com/) or `.vsix` download |
+| **JetBrains (IntelliJ, PyCharm, DataGrip)** | [Marketplace](https://plugins.jetbrains.com/) or `.zip` download |
+| **Claude** | `.claude/commands/` + `.claude-plugin/` + `CLAUDE.md` |
+| **Copilot** | `.github/copilot-instructions.md` |
+| **Kiro** | `.kiro/steering/` |
+| **Codex / OpenCode** | `AGENTS.md` + `docs/codex-setup.md` |
+| **CLI** | `scripts/install.sh --tool all --target /path` |
+
 ### 📚 Other Notable Repositories
 
 <div align="center">
@@ -279,20 +385,20 @@ Creator of groundbreaking frameworks for distributed systems:
 
 ```mermaid
 graph LR
-    A[22+ Years Experience] --> B[JSR 368 Expert Group]
-    B --> C[AWS Professional Services]
-    C --> D[Published Author]
-    D --> E[7.5M+ SO Impact]
-    E --> F[Academic Citations]
-    F --> G[The Khan Pattern]
+    A[2002: Career Start] --> B[2013: Apache Spark<br/>Contributor]
+    B --> C[2015: JSR 368<br/>Expert Group]
+    C --> D[2024: Published<br/>Author · Packt]
+    D --> E[2025: 3 Kafka KIPs<br/>+ Spark SPIP]
+    E --> F[2026: Vaquar Pattern<br/>+ InfoQ Author]
+    F --> G[2026: 10 Published<br/>Packages]
     
     style A fill:#ff6b6b
     style B fill:#4ecdc4
     style C fill:#45b7d1
     style D fill:#96ceb4
     style E fill:#ffeaa7
-    style F fill:#dfe6e9
-    style G fill:#a29bfe
+    style F fill:#a29bfe
+    style G fill:#fd79a8
 ```
 
 </div>
@@ -683,11 +789,13 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 [![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
 [![Stack Overflow](https://img.shields.io/badge/Follow_on_Stack_Overflow-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/4812170/vaquar-khan)
+[![InfoQ](https://img.shields.io/badge/Read_on_InfoQ-5B2D8E?style=for-the-badge&logo=infoq&logoColor=white)](https://www.infoq.com/articles/architecting-cloud-native-kafka/)
+[![HackerNoon](https://img.shields.io/badge/Read_on_HackerNoon-00FF00?style=for-the-badge&logo=hackernoon&logoColor=white)](https://hackernoon.com/u/vaquarkhan)
 
 **Empowering researchers, engineers, and architects worldwide** 🚀
 
 ---
 
-<sub>⚡ Powered by passion for distributed systems, cloud architecture, and knowledge sharing</sub>
+<sub>⚡ 10 packages published · 3 KIPs authored · 73 agent skills · 12 years in Apache open source · Cited in Q1 journals</sub>
 
 </div>
