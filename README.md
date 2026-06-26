@@ -122,7 +122,10 @@ Creator of groundbreaking frameworks for distributed systems:
 | [![PyPI](https://img.shields.io/badge/PyPI-genprm-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/genprm/) | **genprm** | Autonomous data engineering agent — generative process supervision, MCTS inference, RL fine-tuning for SQL/ETL self-correction | `pip install genprm` |
 | [![PyPI](https://img.shields.io/badge/PyPI-iceguard-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/iceguard/) | **iceguard** `v1.0.0` | Reliability library for Spark-on-AWS-Lambda — timeout rollback, checkpoints, orphan cleanup. Also on [Docker (GHCR)](https://ghcr.io/vaquarkhan/iceguard) | `pip install iceguard` |
 | [![PyPI](https://img.shields.io/badge/PyPI-veridata--vrp-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/veridata-vrp/) | **veridata-vrp** | Offline VRP verifier — tamper-evident reconciliation proofs for data pipelines | `pip install veridata-vrp` |
-| [![Maven Central](https://img.shields.io/badge/Maven_Central-ai--agent--java--sdk-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/ai-agent-java-sdk-core) | **ai-agent-java-sdk** `v0.1.0` | Model-driven autonomous AI agent SDK for Java — zero-trust MCP security, Spring AI AgentCore integration, infinite-loop protection | `io.github.vaquarkhan:ai-agent-java-sdk-core` |
+| [![PyPI](https://img.shields.io/badge/PyPI-mcp--bastion--python-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/mcp-bastion-python/) | **mcp-bastion-python** | Enterprise MCP security middleware + 16 framework integrations (LangChain, OpenAI, Anthropic, Bedrock…) | `pip install mcp-bastion-python` |
+| [![PyPI](https://img.shields.io/badge/PyPI-mcp--test--harness-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/mcp-test-harness/) | **mcp-test-harness** `v1.1.0` | Testing framework for MCP servers — functional, regression, performance. Also on [Docker (GHCR)](https://ghcr.io/vaquarkhan/mcp-test-harness) | `pip install mcp-test-harness` |
+| [![npm](https://img.shields.io/badge/npm-@mcp--bastion/core-CB3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/package/@mcp-bastion/core) | **@mcp-bastion/core** | TypeScript/Node.js MCP security middleware | `npm install @mcp-bastion/core` |
+| [![Maven Central](https://img.shields.io/badge/Maven_Central-ai--agent--java--sdk-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/ai-agent-java-sdk-core) | **ai-agent-java-sdk** `v0.1.0` | Model-driven autonomous AI agent SDK for Java — zero-trust MCP security, Spring AI AgentCore integration | `io.github.vaquarkhan:ai-agent-java-sdk-core` |
 | [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--gate-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) | **aiv-gate** | AI-powered PR integrity gate — density, design, dependency & invariant checks | `io.github.vaquarkhan:aiv-gate` |
 | [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--cli-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-cli) | **aiv-cli** | CLI companion for aiv-integrity-gate | `io.github.vaquarkhan:aiv-cli` |
 
@@ -170,14 +173,19 @@ Creator of groundbreaking frameworks for distributed systems:
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-vaquarkhan/MCP--Bastion-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/MCP-Bastion)
+[![PyPI](https://img.shields.io/pypi/v/mcp-bastion-python?style=for-the-badge&logo=pypi&logoColor=white&label=PyPI)](https://pypi.org/project/mcp-bastion-python/)
+[![npm](https://img.shields.io/npm/v/@mcp-bastion/core?style=for-the-badge&logo=npm&logoColor=white&label=npm)](https://www.npmjs.com/package/@mcp-bastion/core)
+[![Docker](https://img.shields.io/badge/Docker-GHCR-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://ghcr.io/vaquarkhan/mcp-bastion-proxy)
 
 </div>
 
-> Prompt injection defense, PII redaction, rate limiting, and circuit breaker for Model Context Protocol — 100% local, <5ms overhead.
+> Enterprise-grade security middleware for the Model Context Protocol — 100% local, <5ms overhead, **16 framework integrations**.
 
 **Problems Solved:** Prompt injection & jailbreaks · PII leakage to LLMs · Runaway agents burning API budget · Unpredictable agentic behavior
 
 **Features:** Meta PromptGuard · Microsoft Presidio PII redaction · Token budget & rate limiting · Infinite loop protection · RBAC · Schema validation · Replay guard · Cost tracker · Semantic cache · Audit logging
+
+**Framework Integrations:** LangChain · OpenAI · Anthropic · Amazon Bedrock · Google Vertex AI · Cohere · Mistral · Hugging Face · LlamaIndex · CrewAI · AutoGen · Semantic Kernel · Spring AI · FastMCP · and more
 
 ### 🔒 aiv-integrity-gate — AI-Powered PR Quality Gate
 
@@ -206,7 +214,7 @@ Creator of groundbreaking frameworks for distributed systems:
 | [ai-agent-java-sdk](https://github.com/vaquarkhan/ai-agent-java-sdk) | Java | 2 | Model-driven autonomous AI agent SDK — zero-trust MCP security (PromptGuard, Presidio PII, token budgets), Spring AI AgentCore native, infinite-loop protection. Inspired by AWS Strands Agents. Maven Central: `io.github.vaquarkhan` |
 | [mcp-test-harness](https://github.com/vaquarkhan/mcp-test-harness) | Python | 2 | Testing framework for MCP servers — validate tool schemas, test prompts, assert responses |
 | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Java | 1 | Fork of spring-ai-community/spring-ai-agentcore — Spring Boot integrations for Amazon Bedrock AgentCore |
-| [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Java | — | Observability extensions for Spring AI AgentCore — tracing, metrics, and monitoring |
+| [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Java | — | OpenTelemetry observability for Spring AI AgentCore — 80 features across 12 categories (tracing, metrics, health, cost tracking) |
 | [burr](https://github.com/vaquarkhan/burr) | Python | 1 | Fork of apache/burr — Build applications that make decisions (chatbots, agents, simulations). Monitor, trace, persist, and execute on your own infrastructure |
 | [microservices-recipes-a-free-gitbook](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook) | GitBook | 600+ | Free GitBook on microservices patterns (280+ forks) |
 | [Apache-Kafka-poc-and-notes](https://github.com/vaquarkhan/Apache-Kafka-poc-and-notes) | Java | 243+ | Apache Kafka POC with comprehensive notes & patterns |
@@ -511,6 +519,24 @@ A comprehensive free GitBook on microservices patterns
 | **Get Kafka-Nated (Substack)** | KIP-1267 featured in Biweekly #276 — cloud-native Kafka KIPs newsletter | [Read](https://getkafkanated.substack.com/p/get-kafka-nated-espresso-biweekly-276) |
 | **HackerNoon TechBeat** | Featured in "The TechBeat" newsletter (Apr 4, 2026) — deep dive into AI Context Rot | [Read](https://hackernoon.com/4-4-2026-techbeat) |
 | **Business Intelligence Group** | Judge / Evaluator | [Profile](https://bintelligence.com/judge/viquar-khan) |
+
+---
+
+## 🔭 Currently Building
+
+<div align="center">
+
+| Project | Status | What's Next |
+|---------|--------|-------------|
+| 🧬 **GenPRM** — Autonomous Data Engineering Agent | ✅ All 4 modules complete | GPU deployment guide, BIRD/Spider benchmarks |
+| 🛡️ **MCP-Bastion** — MCP Security Middleware | ✅ v1.0.16+ · 16 framework integrations | Additional LLM provider integrations |
+| 📐 **SparkRules** — Business Rule Engine | ✅ v1.2.0 · 840+ tests · Rust native tier | DMN 1.3 full support, OPA Rego export |
+| 🧊 **IceGuard** — Spark-on-Lambda Reliability | ✅ v1.0.0 · Docker + PyPI | Delta Lake & Hudi adapter expansion |
+| 🔍 **veridata** — Verifiable Reconciliation Proofs | ✅ Multi-cloud (AWS/GCP/Azure/Databricks) | Streaming VRP for real-time pipelines |
+| 📊 **data-engineering-agent-skills** | ✅ 73 skills · VS Code + JetBrains plugins | Phase 3: governance overlays, automation hooks |
+| 🔬 **KIP-1316 / KIP-1317** — Kafka Share Group DLQ | 📝 Draft on Apache Kafka cwiki | Community discussion → vote |
+
+</div>
 
 ---
 
