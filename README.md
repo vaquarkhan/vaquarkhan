@@ -11,7 +11,7 @@
 ### AWS | GCP | AZURE | PCF | Microservices | Big Data | Apache Spark | GenAI & Agentic AI | ML/AI SME | Polyglot Developer | Architect | Technology Evangelist
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+Architect;10+Published+Packages+(PyPI+%2B+Maven+%2B+npm);InfoQ+%7C+HackerNoon+%7C+DZone+%7C+AWS+Blog+Author;3+Apache+Kafka+KIPs+%2B+1+Spark+SPIP;Creator+of+The+Vaquar+Pattern+(PVDM);Apache+Spark+Contributor+Since+2013&random=false" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=22%2B+Years+in+Finance+%26+Data+Analytics;Top+2%25+Stack+Overflow+%7C+Top+2%25+GitHub;GenAI+%26+Agentic+AI+Solutions+Architect;10+Published+Packages+(PyPI+%2B+Maven+%2B+npm);InfoQ+%7C+HackerNoon+%7C+DZone+%7C+AWS+Blog+Author;3+Apache+Kafka+KIPs+%2B+1+Spark+SPIP;Creator+of+The+Vaquar+Pattern+(PVDM)%E2%84%A2;Apache+Spark+Contributor+Since+2013&random=false" alt="Typing SVG" />
 </p>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaquar-khan-b695577/)
@@ -40,8 +40,8 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 |---|---|
 | 📦 **[10 Published Packages](#-published-packages)** | [PyPI](https://pypi.org/project/sparkrules/) · [Maven Central](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) · [npm](https://www.npmjs.com/package/@mcp-bastion/core) · [Docker GHCR](https://ghcr.io/vaquarkhan/iceguard) |
 | 📝 **[3 Apache Kafka KIPs + 1 Spark SPIP](#authored-proposals)** | [KIP-1267](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) · [KIP-1316](https://cwiki.apache.org/confluence/x/I5E8G) · [KIP-1317](https://cwiki.apache.org/confluence/x/JZE8G) · [SPIP](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) |
-| �-️ **[The Vaquar Pattern (PVDM)](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Original data integrity architecture for serverless data mesh |
-| 🧩 **[The Khan Microservices Pattern](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)** | Adaptive Granularity for distributed systems — 600+ ⭐ GitBook |
+| 🔐 **[The Vaquar Pattern (PVDM)™](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Original data integrity architecture for serverless data mesh |
+| 🧩 **[The Khan Microservices Pattern™](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)** | Adaptive Granularity for distributed systems — 600+ ⭐ GitBook |
 | 🤖 **[Spring AI AgentCore Observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability)** | 80-feature OpenTelemetry module for Spring AI + Bedrock AgentCore |
 | 🐍 **[Apache Burr — S3 Tracking](https://burr.apache.org/docs/concepts/s3-tracking-aws/)** | Contributed AWS-native S3 persistence & tracking for Burr 0.42+ |
 | 📊 **[Apache Kafka Community](https://lists.apache.org/list?dev@kafka.apache.org)** | KIP author, dev@ mailing list contributor, Share Groups DLQ architect |
@@ -130,19 +130,19 @@ Creator of original frameworks for distributed systems and data engineering:
 
 | Pattern | Domain | What It Solves |
 |---------|--------|----------------|
-| **[The Vaquar Pattern (PVDM)](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Data Mesh / Serverless | Proof-gated serverless data mesh writes — Physical → Verify → Durable → Metadata. No catalog commit without multiset VRP proof. Prevents silent row loss, partial writes, and catalog drift. Implemented in CogniMesh + veridata. |
-| **The Khan Pattern** | Microservices | Adaptive Granularity — stop splitting, start governing microservice boundary decisions |
-| **The Khan Granularity Protocol** | Distributed Systems | Scoring methodology for distributed systems granularity decisions |
-| **The Khan Microservices Maturity Model (KM3)** | Architecture | Operationalized distributed systems theory — maturity scoring for organizations |
+| **[The Vaquar Pattern (PVDM)™](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Data Mesh / Serverless | Proof-gated serverless data mesh writes — Physical → Verify → Durable → Metadata. No catalog commit without multiset VRP proof. Prevents silent row loss, partial writes, and catalog drift. Implemented in CogniMesh + veridata. |
+| **The Khan Pattern™** | Microservices | Adaptive Granularity — stop splitting, start governing microservice boundary decisions |
+| **The Khan Granularity Protocol™** | Distributed Systems | Scoring methodology for distributed systems granularity decisions |
+| **The Khan Microservices Maturity Model (KM3)™** | Architecture | Operationalized distributed systems theory — maturity scoring for organizations |
 
-**The Vaquar Pattern** core invariant:
+**The Vaquar Pattern (PVDM)™** core invariant:
 ```
 commit_metadata ⟹ VRP = PASS
 ```
 > No Iceberg snapshot, Glue catalog update, or marketplace listing may proceed unless multiset verification passes for every committed chunk.
 
 <details>
-<summary><b>PVDM Phases (click to expand)</b></summary>
+<summary><b>PVDM™ Phases (click to expand)</b></summary>
 
 | Phase | Name | Responsibility | Implementation |
 |-------|------|---------------|----------------|
@@ -152,7 +152,7 @@ commit_metadata ⟹ VRP = PASS
 | 3 | **Durable** | 15-min Lambda segments, Step Functions resume loop | SFN durable execution |
 | 4 | **Metadata** | Proof-gated Glue/Iceberg catalog commit | GlueCatalogConnector |
 
-**PVDM-A (Decision Attestation):** Extends proof chain into agentic systems — signed attestations binding agent decisions to verified VRP inputs via gateway tokens. Proves decision provenance without proving semantic correctness.
+**PVDM-A™ (Decision Attestation):** Extends proof chain into agentic systems — signed attestations binding agent decisions to verified VRP inputs via gateway tokens. Proves decision provenance without proving semantic correctness.
 
 </details>
 
@@ -401,7 +401,7 @@ graph LR
     B --> C[2015: JSR 368<br/>Expert Group]
     C --> D[2024: Published<br/>Author · Packt]
     D --> E[2025: 3 Kafka KIPs<br/>+ Spark SPIP]
-    E --> F[2026: Vaquar Pattern<br/>+ InfoQ Author]
+    E --> F[2026: Vaquar Pattern™<br/>+ InfoQ Author]
     F --> G[2026: 10 Published<br/>Packages]
     
     style A fill:#ff6b6b
