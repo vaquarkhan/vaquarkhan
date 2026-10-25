@@ -61,9 +61,9 @@ This is a sum of package downloads. Installing an integration also downloads the
 |--------|------------|------|
 | **ORCID** | Viquar Khan, `0009-0008-3592-4162` | [orcid.org/0009-0008-3592-4162](https://orcid.org/0009-0008-3592-4162) |
 | **arXiv:2608.14643** | *Proof-Gated Publication: Verify-Before-Commit Content Integrity for Serverless Data-Mesh Lakehouses* (11 Aug 2026) | [abs](https://arxiv.org/abs/2608.14643) · [pdf](https://arxiv.org/pdf/2608.14643) · [DOI](https://doi.org/10.48550/arXiv.2608.14643) |
-| **Zenodo — Fulcrum / RVx** | *Fulcrum: Quantitative, Governed Granularity for Microservice Boundaries with the RVx Index* | [10.5281/zenodo.23284522](https://doi.org/10.5281/zenodo.23284522) |
-| **Zenodo — Microservices Recipes** | *Microservices Recipes: The Architect's Field Guide* | [10.5281/zenodo.22654421](https://doi.org/10.5281/zenodo.22654421) |
-| **Zenodo — Mobility** | *Decentralized Mobility-Based Loyalty Systems* | [10.5281/zenodo.22273115](https://doi.org/10.5281/zenodo.22273115) |
+| **Zenodo - Fulcrum / RVx** | *Fulcrum: Quantitative, Governed Granularity for Microservice Boundaries with the RVx Index* | [10.5281/zenodo.23284522](https://doi.org/10.5281/zenodo.23284522) |
+| **Zenodo - Microservices Recipes** | *Microservices Recipes: The Architect's Field Guide* | [10.5281/zenodo.22654421](https://doi.org/10.5281/zenodo.22654421) |
+| **Zenodo - Mobility** | *Decentralized Mobility-Based Loyalty Systems* | [10.5281/zenodo.22273115](https://doi.org/10.5281/zenodo.22273115) |
 | **Fulcrum / RVx** | Research site for the granularity paper | [vaquarkhan.github.io/fulcrum-rxy](https://vaquarkhan.github.io/fulcrum-rxy/) |
 
 </div>
@@ -87,7 +87,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | 📦 **[400,000+ PyPI downloads](#-400000-pypi-downloads)** | **426,709** PePy downloads · MCP-Bastion 216,483 · MCP Test Harness 210,226 · 52 packages |
 | 📦 **[10 Published Packages](#-published-packages)** | [PyPI](https://pypi.org/project/sparkrules/) · [Maven Central](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) · [npm](https://www.npmjs.com/package/@mcp-bastion/core) · [Docker GHCR](https://ghcr.io/vaquarkhan/iceguard) |
 | 🔐 **[The Vaquar Pattern (PVDM)™](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Original data integrity architecture for serverless data mesh |
-| 🧩 **[The Khan Microservices Pattern™](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)** | Adaptive Granularity for distributed systems — 609 ⭐ · 225 forks |
+| 🧩 **[The Khan Microservices Pattern™](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook)** | Adaptive Granularity for distributed systems - 609 ⭐ · 225 forks |
 | 📝 **[Kafka KIPs + Spark proposals](#authored-proposals)** | [KIP-1267](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) · [KIP-1316](https://cwiki.apache.org/confluence/x/I5E8G) · [KIP-1317](https://cwiki.apache.org/confluence/x/JZE8G) · [KIP-1318](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1318%3A+Model+Context+Protocol+%28MCP%29+Server+for+Apache+Kafka) · [KIP-1150 discussion](https://www.mail-archive.com/dev@kafka.apache.org/msg153909.html) · [Spark Connect SPIP](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) |
 | 🤖 **[Spring AI AgentCore](https://github.com/spring-ai-community/spring-ai-agentcore)** | Observability module I maintain, plus open pull request [#142](https://github.com/spring-ai-community/spring-ai-agentcore/pull/142) |
 | 🛡️ **[Aegis MCP Gateway](https://github.com/vaquarkhan/aegis-mcp-gateway)** | One governed MCP endpoint in front of Flink, Kafka, Spark, and Iceberg. 13 ⭐ · 7 forks |
@@ -95,8 +95,8 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | 🏆 **[JSR 368 Expert Group](https://jcp.org/en/jsr/detail?id=368)** | Approved 27 Sep 2014. Reviewed JMS_SPEC-158 close-from-listener, and chose the JMS 2.1 MDB annotation shape |
 | 🎖️ **IEEE Senior Member** | Senior Member. IEEE Access reviewer, September 2026 Senior Member panel, Cluster 2026 poster judge. [LinkedIn](https://www.linkedin.com/in/vaquar-khan-b695577/) |
 | 🏦 **[Career](#-career-highlights--milestones)** | AWS since Aug 2021 · Synchrony · Citi AVP · CNA · JPMorgan · HSBC · Chicago. MCA, RGPV Bhopal |
-| 🧰 **[73 Agent Skills](https://github.com/vaquarkhan/data-engineering-agent-skills)** | [Skill hub](https://vaquarkhan.github.io/agents-skills-hub/) · [Skills site](https://vaquarkhan.github.io/data-engineering-agent-skills/) · [VS Code listing](https://marketplace.visualstudio.com/items?itemName=vaquarkhan.data-engineering-agent-skills) |
-| 📰 **[InfoQ](https://www.infoq.com/articles/architecting-cloud-native-kafka/) · [HackerNoon](https://hackernoon.com/u/vaquarkhan) · [DZone](https://dzone.com/users/1436543/vaquarkhan.html) · [AWS Blog](https://aws.amazon.com/blogs/big-data/author/vaquar/)** | Published author across top engineering platforms |
+| 🧰 **[73 Agent Skills](https://github.com/vaquarkhan/data-engineering-agent-skills)** | [Skill hub](https://vaquarkhan.github.io/agents-skills-hub/) · [Skills site](https://vaquarkhan.github.io/data-engineering-agent-skills/) · [VS Code listing](https://marketplace.visualstudio.com/items?itemName=ViquarKhan.data-engineering-agent-skills) |
+| 📰 **[InfoQ](https://www.infoq.com/articles/architecting-cloud-native-kafka/) · [HackerNoon](https://hackernoon.com/u/vaquarkhan) · [DZone](https://dzone.com/authors/vaquarkhan) · [Medium](https://medium.com/@vaquarkhan) · [AWS Blog](https://aws.amazon.com/blogs/big-data/author/vaquar/)** | 6 DZone articles · 10 Medium stories · InfoQ · HackerNoon · one AWS Big Data Blog post |
 | 🎓 **[ORCID · arXiv · Zenodo](#-orcid-arxiv-and-zenodo)** | [ORCID](https://orcid.org/0009-0008-3592-4162) · [arXiv:2608.14643](https://arxiv.org/abs/2608.14643) · [Zenodo](https://doi.org/10.5281/zenodo.23284522) · [Google Scholar](https://scholar.google.com/citations?user=PfD241cAAAAJ) (1 citation, h-index 1) |
 | 🔥 **Apache Spark, 2013 to now** | Contributing in public since 2013, and still voting on Spark releases. [GitHub, opened 6 Feb 2013](https://github.com/vaquarkhan). [Spark 1.2.0 RC1 +1, 29 Nov 2014](https://lists.apache.org/thread/sgglw9bnltq5xrvnwrzrng9zjwdcoyt5). [Spark 2.4.2 +1, 2019](https://www.mail-archive.com/dev@spark.apache.org/msg23633.html). [Spark 4.2.0-preview1 RC1 +1, 2026](https://www.mail-archive.com/dev@spark.apache.org/msg34824.html) |
 
@@ -106,7 +106,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 
 ### 🎨 What I Do
 
-<img src="https://img.shields.io/badge/Cloud_Architecture-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" /> <img src="https://img.shields.io/badge/Big_Data_Engineering-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" /> <img src="https://img.shields.io/badge/GenAI_&_Agentic_AI-7B42BC?style=for-the-badge&logo=openai&logoColor=white" /> <img src="https://img.shields.io/badge/Microservices_Design-4ecdc4?style=for-the-badge&logo=kubernetes&logoColor=white" />
+<img src="https://img.shields.io/badge/Cloud_Architecture-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" /> <img src="https://img.shields.io/badge/Big_Data_Engineering-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" /> <img src="https://img.shields.io/badge/GenAI_and_Agentic_AI-7B42BC?style=for-the-badge&logo=openai&logoColor=white" /> <img src="https://img.shields.io/badge/Microservices_Design-4ecdc4?style=for-the-badge&logo=kubernetes&logoColor=white" />
 
 <img src="https://img.shields.io/badge/Financial_Services-45b7d1?style=for-the-badge&logo=stripe&logoColor=white" /> <img src="https://img.shields.io/badge/Domain--Driven_Design-96ceb4?style=for-the-badge&logo=blueprint&logoColor=white" /> <img src="https://img.shields.io/badge/Technical_Leadership-ffeaa7?style=for-the-badge&logoColor=black" /> <img src="https://img.shields.io/badge/Open_Source-ff6b6b?style=for-the-badge&logo=opensourceinitiative&logoColor=white" />
 
@@ -158,7 +158,7 @@ As a **polyglot developer** skilled in Java, Scala, Python, and other languages,
 | **Apache Kafka** | [KIP-1316: Circuit Breaker for Share Group DLQ Overflow](https://cwiki.apache.org/confluence/x/I5E8G) | Authored draft. Circuit breaker when a Share Group DLQ fills |
 | **Apache Kafka** | [KIP-1317: Mandatory DLQ Disposition Header for Share Groups](https://cwiki.apache.org/confluence/x/JZE8G) | Authored draft. Disposition metadata on DLQ-routed records |
 | **Apache Kafka** | [KIP-1318: Model Context Protocol (MCP) Server for Apache Kafka](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1318%3A+Model+Context+Protocol+%28MCP%29+Server+for+Apache+Kafka) | Authored discussion, 21 Apr 2026. JIRA [KAFKA-20436](https://issues.apache.org/jira/browse/KAFKA-20436). [Thread](https://www.mail-archive.com/dev@kafka.apache.org/msg155971.html) |
-| **Apache Spark** | [SPIP: Asynchronous Metadata Resolution & Lazy Prefetching for Spark Connect](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) | Authored Google Doc. Not a merged Spark change |
+| **Apache Spark** | [SPIP: Asynchronous Metadata Resolution & Lazy Prefetching for Spark Connect](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) | Authored SPIP, JIRA [SPARK-55163](https://issues.apache.org/jira/browse/SPARK-55163). Benchmark posted 23 Jan 2026. Still waiting on Herman van Hovell |
 | **Apache Spark** | [AIV Gate discussion on dev@](https://www.mail-archive.com/dev@spark.apache.org/msg35273.html) | March 2026 proposal. PMC members replied. Not adopted |
 
 #### Spring AI and Apache Burr
@@ -188,7 +188,7 @@ These are design reviews: a failure mode, why it matters, and the public thread.
 | **Iceberg** | **PR #17331, JMH on JDK 17.** Issue [#17330](https://github.com/apache/iceberg/issues/17330): Spark 4 benchmarks die in warm-up because `sun.util.calendar` is closed, the heap is fixed at 32g, and one failure throws away the suite. The harness now reuses the project's single `extraJvmArgs` list, after a review asked not to keep a second hand-written copy | [Issue #17330](https://github.com/apache/iceberg/issues/17330) · [PR #17331](https://github.com/apache/iceberg/pull/17331) |
 | **Iceberg** | **PR #17671, AI governance.** Issue [#17670](https://github.com/apache/iceberg/issues/17670): AI review comments and `Co-authored-by` bot identities on `main`. The pull request says review comments credit AI with `Generated-by`, and an AI-authored pull request gets the same scrutiny as any other | [Issue #17670](https://github.com/apache/iceberg/issues/17670) · [PR #17671](https://github.com/apache/iceberg/pull/17671) |
 | **Spark** | **Auto CDC SPIP.** Streaming MERGE, tombstone retention, and sequence handling are not specified for open-source Spark. `Dataset.mergeInto()` does not accept a streaming query, so the proposal needs its own execution path | [Thread](https://www.mail-archive.com/dev@spark.apache.org/msg35320.html) |
-| **Spark** | **Spark Connect Plan-ID cache (SPARK-55163).** Herman van Hovell rejected a client cache with no consistency check, an infinite server cache, and "version everything." The revised design keeps the schema on the client, leaves the server cache keyed by the full plan, and re-checks the schema at execution time so a changed table fails instead of returning a stale schema. Holden Karau and Mich Talebzadeh were on the same thread | [SPIP](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) · [JIRA](https://issues.apache.org/jira/browse/SPARK-55163) · [dev@](https://www.mail-archive.com/dev@spark.apache.org/msg34921.html) |
+| **Spark** | **Spark Connect Plan-ID cache (SPARK-55163).** Client-side schema cache so Connect metadata calls stop blocking on a round trip each time. On Spark 4.0.0-preview, 50 metadata checks dropped from 13.2 seconds to 0.25 seconds. Herman van Hovell replied on 7 Jan 2026 that he is not against the improvement and that the detail still matters. On 23 Jan I posted that benchmark and asked to take it to a vote. He has not moved it. The objections are still outstanding | [SPIP](https://docs.google.com/document/d/1xTvL5YWnHu1jfXvjlKk2KeSv8JJC08dsD7mdbjjo9YE/edit) · [JIRA](https://issues.apache.org/jira/browse/SPARK-55163) · [dev@](https://www.mail-archive.com/dev@spark.apache.org/msg34921.html) |
 | **Spark** | **Spark Connect Gateway (SPARK-58455).** Session affinity, authentication, and multi-tenancy for Connect servers | [SPIP](https://docs.google.com/document/d/16RNnRJjSDBSlcgeBjVz_Mv-SkqvH33F9tIsR1Ii_P3c/edit) · [JIRA](https://issues.apache.org/jira/browse/SPARK-58455) |
 | **Spark** | **PR #57016, Connect REST list.** On `apache/spark`, session and operation ids are strings, and `.sorted` orders them as text, so `10` comes before `2`. The test hides it because `0`, `1`, `2`, and `10` happen to sort the same both ways. The list also loads every row, then slices, and the default length is unlimited. Asked for a numeric sort and for the limit to be applied in the store | [PR #57016](https://github.com/apache/spark/pull/57016) |
 | **Spark** | **PR #54899, AGENTS.md.** Asked for a short note that component instructions live in nested `AGENTS.md` files, so the root file can stay on build and test commands | [PR #54899](https://github.com/apache/spark/pull/54899) |
@@ -203,9 +203,9 @@ These are design reviews: a failure mode, why it matters, and the public thread.
 | Venue | What I did |
 |-------|------------|
 | **NeurIPS 2026 Workshop DiffuLM** | Reviewed 4 papers |
-| **SASIGD 2026** | Reviewed 6 papers. IEEE SSIT conference record 68127. [Certificate](https://github.com/vaquarkhan/Opensource-contribution/blob/main/SASIGD2026/Certificate_Dr._Viquar_Khan.jpg) |
+| **SASIGD 2026** | Reviewed 6 papers. IEEE SSIT conference record 68127 |
 | **IEEE Senior Member** | Senior Member of the IEEE. Reviewed manuscript Access-2026-48322 for IEEE Access (*Narrowing the AI Literacy Digital Divide*). Sat on the September 2026 Senior Member application review panel, and was invited to judge the Cluster 2026 poster session |
-| **WildHacks 2026** | In-person judge. [Certificate](https://github.com/vaquarkhan/Opensource-contribution/blob/main/wildhack/Certificate-Viquar-Khan-In-Person-Judge.pdf) |
+| **WildHacks 2026** | In-person judge |
 | **Packt** | Technical reviewer for the Beyond LLM manuscript (B38299), chapters 1–12, and for B37439, with a completed questionnaire on each chapter |
 
 ### 🏆 Proprietary Methodologies & Patterns
@@ -214,10 +214,10 @@ Creator of original frameworks for distributed systems and data engineering:
 
 | Pattern | Domain | What It Solves |
 |---------|--------|----------------|
-| **[The Vaquar Pattern (PVDM)™](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Data Mesh / Serverless | Proof-gated serverless data mesh writes — Physical → Verify → Durable → Metadata. No catalog commit without multiset VRP proof. Prevents silent row loss, partial writes, and catalog drift. Implemented in CogniMesh + veridata. |
-| **The Khan Pattern™** | Microservices | Adaptive Granularity — stop splitting, start governing microservice boundary decisions |
+| **[The Vaquar Pattern (PVDM)™](https://github.com/vaquarkhan/CogniMesh/blob/main/docs/vaquar-pattern.md)** | Data Mesh / Serverless | Proof-gated serverless data mesh writes - Physical → Verify → Durable → Metadata. No catalog commit without multiset VRP proof. Prevents silent row loss, partial writes, and catalog drift. Implemented in CogniMesh + veridata. |
+| **The Khan Pattern™** | Microservices | Adaptive Granularity - stop splitting, start governing microservice boundary decisions |
 | **The Khan Granularity Protocol™** | Distributed Systems | Scoring methodology for distributed systems granularity decisions |
-| **The Khan Microservices Maturity Model (KM3)™** | Architecture | Operationalized distributed systems theory — maturity scoring for organizations |
+| **The Khan Microservices Maturity Model (KM3)™** | Architecture | Operationalized distributed systems theory - maturity scoring for organizations |
 
 **The Vaquar Pattern (PVDM)™** core invariant:
 ```
@@ -236,7 +236,7 @@ commit_metadata ⟹ VRP = PASS
 | 3 | **Durable** | 15-min Lambda segments, Step Functions resume loop | SFN durable execution |
 | 4 | **Metadata** | Proof-gated Glue/Iceberg catalog commit | GlueCatalogConnector |
 
-**PVDM-A™ (Decision Attestation):** Extends proof chain into agentic systems — signed attestations binding agent decisions to verified VRP inputs via gateway tokens. Proves decision provenance without proving semantic correctness.
+**PVDM-A™ (Decision Attestation):** Extends proof chain into agentic systems - signed attestations binding agent decisions to verified VRP inputs via gateway tokens. Proves decision provenance without proving semantic correctness.
 
 </details>
 
@@ -271,7 +271,7 @@ Live sites for the projects. Each line is what the site is for.
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Open%20Source%20Projects%20%26%20Packages&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Open Source Projects & Packages"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Open%20Source&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Open Source"/>
 
 ## 🚀 Open Source Projects & Packages
 
@@ -288,20 +288,20 @@ Live sites for the projects. Each line is what the site is for.
 
 | Registry | Package | Description | Install |
 |----------|---------|-------------|---------|
-| [![PyPI](https://img.shields.io/badge/PyPI-sparkrules-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/sparkrules/) | **sparkrules** `v1.2.0` | Drools-equivalent business rule engine for Python — DRL syntax, decision tables, adverse-action notices, Spark integration | `pip install sparkrules` |
-| [![PyPI](https://img.shields.io/badge/PyPI-genprm-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://github.com/vaquarkhan/autonomous-data-engineering-agent) | **genprm** | Autonomous data engineering agent — generative process supervision, MCTS inference, RL fine-tuning for SQL/ETL self-correction. Source is on GitHub. Not currently listed on PyPI | `genprm` |
-| [![PyPI](https://img.shields.io/badge/PyPI-iceguard-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/iceguard/) | **iceguard** `v1.0.0` | Reliability library for Spark-on-AWS-Lambda — timeout rollback, checkpoints, orphan cleanup. Also on [Docker (GHCR)](https://ghcr.io/vaquarkhan/iceguard) | `pip install iceguard` |
-| [![PyPI](https://img.shields.io/badge/PyPI-veridata-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/veridata/) | **veridata** `v0.1.0` | Offline VRP verifier — tamper-evident reconciliation proofs for data pipelines | `pip install veridata` |
+| [![PyPI](https://img.shields.io/badge/PyPI-sparkrules-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/sparkrules/) | **sparkrules** `v1.2.0` | Drools-equivalent business rule engine for Python - DRL syntax, decision tables, adverse-action notices, Spark integration | `pip install sparkrules` |
+| [![PyPI](https://img.shields.io/badge/PyPI-genprm-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://github.com/vaquarkhan/autonomous-data-engineering-agent) | **genprm** | Autonomous data engineering agent - generative process supervision, MCTS inference, RL fine-tuning for SQL/ETL self-correction. Source is on GitHub. Not currently listed on PyPI | `genprm` |
+| [![PyPI](https://img.shields.io/badge/PyPI-iceguard-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/iceguard/) | **iceguard** `v1.0.0` | Reliability library for Spark-on-AWS-Lambda - timeout rollback, checkpoints, orphan cleanup. Also on [Docker (GHCR)](https://ghcr.io/vaquarkhan/iceguard) | `pip install iceguard` |
+| [![PyPI](https://img.shields.io/badge/PyPI-veridata-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/veridata/) | **veridata** `v0.1.0` | Offline VRP verifier - tamper-evident reconciliation proofs for data pipelines | `pip install veridata` |
 | [![PyPI](https://img.shields.io/badge/PyPI-mcp--bastion--python-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/mcp-bastion-python/) | **mcp-bastion-python** | Core package. Ecosystem total **216,483** PePy downloads across 26 packages (24 Oct 2026). Core alone is about 26k | `pip install mcp-bastion-python` |
 | [![PyPI](https://img.shields.io/badge/PyPI-mcp--test--harness-3775A9?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/mcp-test-harness/) | **mcp-test-harness** | Core package. Ecosystem total **210,226** PePy downloads across 26 packages (12 Aug 2026). Core alone is about 25k. Also on [Docker (GHCR)](https://ghcr.io/vaquarkhan/mcp-test-harness) | `pip install mcp-test-harness` |
 | [![npm](https://img.shields.io/badge/npm-@mcp--bastion/core-CB3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/package/@mcp-bastion/core) | **@mcp-bastion/core** | TypeScript/Node.js MCP security middleware | `npm install @mcp-bastion/core` |
-| [![Maven Central](https://img.shields.io/badge/Maven_Central-ai--agent--java--sdk-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/ai-agent-java-sdk-core) | **ai-agent-java-sdk** `v0.1.0` | Model-driven autonomous AI agent SDK for Java — zero-trust MCP security, Spring AI AgentCore integration | `io.github.vaquarkhan:ai-agent-java-sdk-core` |
-| [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--gate-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) | **aiv-gate** | AI-powered PR integrity gate — density, design, dependency & invariant checks | `io.github.vaquarkhan:aiv-gate` |
+| [![Maven Central](https://img.shields.io/badge/Maven_Central-ai--agent--java--sdk-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/ai-agent-java-sdk-core) | **ai-agent-java-sdk** `v0.1.0` | Model-driven autonomous AI agent SDK for Java - zero-trust MCP security, Spring AI AgentCore integration | `io.github.vaquarkhan:ai-agent-java-sdk-core` |
+| [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--gate-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-gate) | **aiv-gate** | AI-powered PR integrity gate - density, design, dependency & invariant checks | `io.github.vaquarkhan:aiv-gate` |
 | [![Maven Central](https://img.shields.io/badge/Maven_Central-aiv--cli-C71A36?style=flat-square&logo=apache-maven&logoColor=white)](https://central.sonatype.com/artifact/io.github.vaquarkhan/aiv-cli) | **aiv-cli** | CLI companion for aiv-integrity-gate | `io.github.vaquarkhan:aiv-cli` |
 
 </div>
 
-### 🔥 SparkRules — Business Rule Engine for Python & Spark
+### 🔥 SparkRules - Business Rule Engine for Python & Spark
 
 <div align="center">
 
@@ -313,17 +313,17 @@ Live sites for the projects. Each line is what the site is for.
 
 </div>
 
-> **The business rule engine that Python was missing.** Drools-style DRL syntax, explainable decisions, regulatory-grade audit trails — from laptop to lakehouse, no JVM required.
+> **The business rule engine that Python was missing.** Drools-style DRL syntax, explainable decisions, regulatory-grade audit trails - from laptop to lakehouse, no JVM required.
 
 **Key Features:**
-- 🎯 **Drools-style DRL** — same syntax, no JVM, Python-native
-- 📊 **Decision Tables** — XLSX-style with hit policies (UNIQUE, FIRST, PRIORITY, COLLECT)
-- ⚖️ **Regulatory Compliance** — ECOA/FCRA/GDPR Art 22 adverse-action notices
-- 🔍 **Data Quality + Profiling** — built-in DQ checks + statistical profiling
-- 🌐 **FastAPI + Rules Workbench** — browser-based Monaco DRL editor with LSP
-- 🧪 **Simulation Modes** — shadow, counterfactual, coverage, chain
-- ⚡ **Performance** — ~199K evals/sec, 840+ tests, 100% line coverage
-- 🚀 **Multi-Platform** — AWS Glue, Databricks, GCP Dataproc, Azure Synapse, Kubernetes
+- 🎯 **Drools-style DRL** - same syntax, no JVM, Python-native
+- 📊 **Decision Tables** - XLSX-style with hit policies (UNIQUE, FIRST, PRIORITY, COLLECT)
+- ⚖️ **Regulatory Compliance** - ECOA/FCRA/GDPR Art 22 adverse-action notices
+- 🔍 **Data Quality + Profiling** - built-in DQ checks + statistical profiling
+- 🌐 **FastAPI + Rules Workbench** - browser-based Monaco DRL editor with LSP
+- 🧪 **Simulation Modes** - shadow, counterfactual, coverage, chain
+- ⚡ **Performance** - ~199K evals/sec, 840+ tests, 100% line coverage
+- 🚀 **Multi-Platform** - AWS Glue, Databricks, GCP Dataproc, Azure Synapse, Kubernetes
 
 <details>
 <summary>📋 Use Cases</summary>
@@ -339,7 +339,7 @@ Live sites for the projects. Each line is what the site is for.
 
 </details>
 
-### 🛡️ MCP-Bastion — Security Gateway for AI Agents
+### 🛡️ MCP-Bastion - Security Gateway for AI Agents
 
 <div align="center">
 
@@ -351,7 +351,7 @@ Live sites for the projects. Each line is what the site is for.
 
 </div>
 
-> Enterprise-grade security middleware for the Model Context Protocol — 100% local, <5ms overhead, **26 PyPI packages**. Part of the [**426,709** PePy download total](#-400000-pypi-downloads) across 52 MCP packages.
+> Enterprise-grade security middleware for the Model Context Protocol - 100% local, <5ms overhead, **26 PyPI packages**. Part of the [**426,709** PePy download total](#-400000-pypi-downloads) across 52 MCP packages.
 
 **Problems Solved:** Prompt injection & jailbreaks · PII leakage to LLMs · Runaway agents burning API budget · Unpredictable agentic behavior
 
@@ -359,7 +359,7 @@ Live sites for the projects. Each line is what the site is for.
 
 **Framework Integrations:** LangChain · OpenAI · Anthropic · Amazon Bedrock · Google Vertex AI · Cohere · Mistral · Hugging Face · LlamaIndex · CrewAI · AutoGen · Semantic Kernel · Spring AI · FastMCP · and more
 
-### 🛡️ Aegis MCP Gateway — One control plane for Apache data engines
+### 🛡️ Aegis MCP Gateway - One control plane for Apache data engines
 
 <div align="center">
 
@@ -372,7 +372,7 @@ Live sites for the projects. Each line is what the site is for.
 
 The gateway owns identity, authorization, approvals, egress, rate limits, circuit breaking, output redaction, and audit. Engines plug in through a small SPI and only contribute tool definitions plus the backend call. Read-only by default. A mutating tool stays unregistered until writes are unlocked and an approval token is presented. Adapters also cover Pulsar, NiFi, Hive, Hudi, Pinot, Druid, Airflow, Hadoop, HBase, Cassandra, Solr, Ranger, and Atlas.
 
-### 🔒 aiv-integrity-gate — AI-Powered PR Quality Gate
+### 🔒 aiv-integrity-gate - AI-Powered PR Quality Gate
 
 <div align="center">
 
@@ -385,19 +385,19 @@ The gateway owns identity, authorization, approvals, egress, rate limits, circui
 
 **Gates:** Logic Density & Entropy · YAML Design Rules (forbidden/required patterns) · Import Validation vs pom.xml/requirements.txt · Property-based Invariant Tests · `/aiv skip` for urgent merges · Refactor exception · Trusted authors bypass
 
-### 🧰 Data Engineering Agent Skills — AI Agent Skill Registry
+### 🧰 Data Engineering Agent Skills - AI Agent Skill Registry
 
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-data--engineering--agent--skills-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vaquarkhan/data-engineering-agent-skills)
-[![VS Code](https://img.shields.io/badge/VS_Code-Marketplace-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=vaquarkhan.data-engineering-agent-skills)
+[![VS Code](https://img.shields.io/badge/VS_Code-Marketplace-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=ViquarKhan.data-engineering-agent-skills)
 [![Site](https://img.shields.io/badge/Site-GitHub_Pages-2E9EF7?style=for-the-badge&logo=githubpages&logoColor=white)](https://vaquarkhan.github.io/data-engineering-agent-skills/)
 [![Skill Hub](https://img.shields.io/badge/Skill_Hub-Catalog-7B42BC?style=for-the-badge&logo=githubpages&logoColor=white)](https://vaquarkhan.github.io/agents-skills-hub/)
 [![JetBrains](https://img.shields.io/badge/JetBrains-See_repo-000000?style=for-the-badge&logo=jetbrains&logoColor=white)](https://github.com/vaquarkhan/data-engineering-agent-skills)
 
 </div>
 
-> Production-grade skill registry for AI data engineering agents — **73 workflows, 14 platform presets**, multi-agent packaging.
+> Production-grade skill registry for AI data engineering agents - **73 workflows, 14 platform presets**, multi-agent packaging.
 
 **Lifecycle:** `/spec` → `/plan` → `/build` → `/validate` → `/review` → `/backfill` → `/ship`
 
@@ -409,9 +409,9 @@ The gateway owns identity, authorization, approvals, egress, rate limits, circui
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Data%20Engineering%20Agent%20Skills%20%E2%80%94%20Full%20Impact&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Data Engineering Agent Skills — Full Impact"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Data%20Engineering%20Agent%20Skills%20-%20Full%20Impact&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Data Engineering Agent Skills - Full Impact"/>
 
-## 🧠 Data Engineering Agent Skills — Full Impact
+## 🧠 Data Engineering Agent Skills - Full Impact
 
 <div align="center">
 
@@ -421,13 +421,13 @@ The gateway owns identity, authorization, approvals, egress, rate limits, circui
 
 ### Why This Exists
 
-AI agents often default to the shortest path — which is dangerous in data systems:
+AI agents often default to the shortest path - which is dangerous in data systems:
 - ❌ Skipping specification and contract definition
 - ❌ Treating a successful run as proof of correctness
 - ❌ Ignoring replay, backfill, and consumer impact
 - ❌ Leaving lineage, access, retention, and ownership implicit
 
-This project enforces **engineering discipline** on AI agents — the same standards used by strong data engineering teams.
+This project enforces **engineering discipline** on AI agents - the same standards used by strong data engineering teams.
 
 ### 📊 By the Numbers
 
@@ -436,7 +436,7 @@ This project enforces **engineering discipline** on AI agents — the same stand
 | Workflow Skills | **73** |
 | Platform Presets | **14** (AWS, Azure, GCP, Databricks, Snowflake, Alibaba, Informatica, Talend, Spark, Flink, Airflow, Kafka, Iceberg, Multi-cloud) |
 | Runnable Example Scaffolds | **5** (with Makefile, contract validation, smoke tests) |
-| Architecture Blueprints | **9** (spec/plan/tasks — delivery shape without executable code) |
+| Architecture Blueprints | **9** (spec/plan/tasks - delivery shape without executable code) |
 | Starter Packs | **13** (opinionated bundles by use case) |
 | Tutorials | **14** (streaming, orchestration, resiliency, governance, modernization) |
 | Case Studies | **3** (incident recovery, replay safety, regulated release) |
@@ -452,7 +452,7 @@ The included agent benchmark pack measures skill impact quantitatively:
 | Metric | Without Skills | With Skills |
 |--------|---------------|-------------|
 | Task Coverage Score | 23 | **67** |
-| Improvement | — | **+191%** |
+| Improvement | - | **+191%** |
 
 ### 🛠️ Skill Categories
 
@@ -494,21 +494,21 @@ The included agent benchmark pack measures skill impact quantitatively:
 | Repository | Lang | ⭐ | Description |
 |-----------|------|---|-------------|
 | [aegis-mcp-gateway](https://github.com/vaquarkhan/aegis-mcp-gateway) | Java | 13 | MCP governance gateway. One auditable endpoint in front of Flink, Kafka, Spark, and Iceberg. Read-only until an approval token unlocks writes. [Site](https://vaquarkhan.github.io/aegis-mcp-gateway/) |
-| [vaquarkhan/vaquarkhan](https://github.com/vaquarkhan/vaquarkhan) | Wiki | 1,433 | Technical wiki — Spark, Kafka, Microservices, DDD, Cloud Architecture |
-| [autonomous-data-engineering-agent](https://github.com/vaquarkhan/autonomous-data-engineering-agent) | Python | — | Autonomous agent that generates, verifies & self-corrects SQL/ETL using GenPRM, MCTS inference, sandbox execution, and RL fine-tuning with reward-hacking safeguards. Published as `pip install genprm` |
-| [veridata](https://github.com/vaquarkhan/veridata) | Rust/Python | — | Verifiable Reconciliation Proofs (VRPs) — signed, tamper-evident receipts proving data sink faithfully reflects source. Detects drops, duplicates, mutations. Multi-cloud (AWS/GCP/Azure/Databricks) |
-| [data-engineering-agent-skills](https://github.com/vaquarkhan/data-engineering-agent-skills) | Multi | — | Production-grade AI agent skill registry — 73 workflows, 14 platform presets, VS Code & JetBrains plugins, multi-agent packaging (Cursor, Claude, Copilot, Kiro, Codex) |
-| [IceGuard](https://github.com/vaquarkhan/IceGuard) | Python | 1 | Reliability library for Spark-on-AWS-Lambda writes — timeout-aware rollback, resumable checkpointing, orphan cleanup, multi-Lambda coordination, CloudWatch observability |
-| [ai-agent-java-sdk](https://github.com/vaquarkhan/ai-agent-java-sdk) | Java | 2 | Model-driven autonomous AI agent SDK — zero-trust MCP security (PromptGuard, Presidio PII, token budgets), Spring AI AgentCore native, infinite-loop protection. Inspired by AWS Strands Agents. Maven Central: `io.github.vaquarkhan` |
-| [mcp-test-harness](https://github.com/vaquarkhan/mcp-test-harness) | Python | 2 | Testing framework for MCP servers — validate tool schemas, test prompts, assert responses |
-| [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Java | — | OpenTelemetry observability for Spring AI AgentCore |
+| [vaquarkhan/vaquarkhan](https://github.com/vaquarkhan/vaquarkhan) | Wiki | 1,433 | Technical wiki - Spark, Kafka, Microservices, DDD, Cloud Architecture |
+| [autonomous-data-engineering-agent](https://github.com/vaquarkhan/autonomous-data-engineering-agent) | Python | - | Autonomous agent that generates, verifies & self-corrects SQL/ETL using GenPRM, MCTS inference, sandbox execution, and RL fine-tuning with reward-hacking safeguards. Published as `pip install genprm` |
+| [veridata](https://github.com/vaquarkhan/veridata) | Rust/Python | - | Verifiable Reconciliation Proofs (VRPs) - signed, tamper-evident receipts proving data sink faithfully reflects source. Detects drops, duplicates, mutations. Multi-cloud (AWS/GCP/Azure/Databricks) |
+| [data-engineering-agent-skills](https://github.com/vaquarkhan/data-engineering-agent-skills) | Multi | - | Production-grade AI agent skill registry - 73 workflows, 14 platform presets, VS Code & JetBrains plugins, multi-agent packaging (Cursor, Claude, Copilot, Kiro, Codex) |
+| [IceGuard](https://github.com/vaquarkhan/IceGuard) | Python | 1 | Reliability library for Spark-on-AWS-Lambda writes - timeout-aware rollback, resumable checkpointing, orphan cleanup, multi-Lambda coordination, CloudWatch observability |
+| [ai-agent-java-sdk](https://github.com/vaquarkhan/ai-agent-java-sdk) | Java | 2 | Model-driven autonomous AI agent SDK - zero-trust MCP security (PromptGuard, Presidio PII, token budgets), Spring AI AgentCore native, infinite-loop protection. Inspired by AWS Strands Agents. Maven Central: `io.github.vaquarkhan` |
+| [mcp-test-harness](https://github.com/vaquarkhan/mcp-test-harness) | Python | 2 | Testing framework for MCP servers - validate tool schemas, test prompts, assert responses |
+| [spring-ai-agentcore-observability](https://github.com/vaquarkhan/spring-ai-agentcore-observability) | Java | - | OpenTelemetry observability for Spring AI AgentCore |
 | [spring-ai-agentcore](https://github.com/vaquarkhan/spring-ai-agentcore) | Java | 1 | Personal fork of [spring-ai-community/spring-ai-agentcore](https://github.com/spring-ai-community/spring-ai-agentcore). Open PR [#142](https://github.com/spring-ai-community/spring-ai-agentcore/pull/142) |
 | [burr](https://github.com/vaquarkhan/burr) | Python | 1 | Personal fork of apache/burr, with S3 tracking notes |
 | [microservices-recipes-a-free-gitbook](https://github.com/vaquarkhan/microservices-recipes-a-free-gitbook) | GitBook | 609 | Free GitBook on microservices patterns (225 forks) |
 | [Apache-Kafka-poc-and-notes](https://github.com/vaquarkhan/Apache-Kafka-poc-and-notes) | Java | 245 | Apache Kafka POC with notes and patterns (93 forks) |
 | [apache-kafka-spark-streaming-poc](https://github.com/vaquarkhan/apache-kafka-spark-streaming-poc) | Java | 11 | Kafka + Spark Streaming integration POC (15 forks) |
-| [awesome-spring-reactive-webflux](https://github.com/vaquarkhan/awesome-spring-reactive-webflux) | Java | 4 | Spring Reactive WebFlux — Mono/Flux diagrams (13 forks) |
-| [Real-time-Fraud-Analysis-Spark](https://github.com/vaquarkhan/Real-time-Fraud-Analysis-Spark) | Scala | — | Real-time fraud detection with Kafka, Spark & Cassandra |
+| [awesome-spring-reactive-webflux](https://github.com/vaquarkhan/awesome-spring-reactive-webflux) | Java | 4 | Spring Reactive WebFlux - Mono/Flux diagrams (13 forks) |
+| [Real-time-Fraud-Analysis-Spark](https://github.com/vaquarkhan/Real-time-Fraud-Analysis-Spark) | Scala | - | Real-time fraud detection with Kafka, Spark & Cassandra |
 
 </div>
 
@@ -516,7 +516,7 @@ The included agent benchmark pack measures skill impact quantitatively:
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Career%20Highlights%20%26%20Milestones&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Career Highlights and Milestones"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Career%20Highlights&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Career Highlights"/>
 
 ## 🎯 Career Highlights & Milestones
 
@@ -574,9 +574,9 @@ Identity and publications checked against public records:
 | **ORCID** | Viquar Khan, `0009-0008-3592-4162`. Senior Data Architect, Amazon.com, Seattle, from August 2021 | [orcid.org/0009-0008-3592-4162](https://orcid.org/0009-0008-3592-4162) |
 | **arXiv:2608.14643** | *Proof-Gated Publication: Verify-Before-Commit Content Integrity for Serverless Data-Mesh Lakehouses* (11 Aug 2026). Author: Viquar Khan, independent researcher. Preprint, not a ratified standard. Views in the paper are the author's and are not an employer endorsement | [abs](https://arxiv.org/abs/2608.14643) · [pdf](https://arxiv.org/pdf/2608.14643) · [DOI](https://doi.org/10.48550/arXiv.2608.14643) |
 | **Google Scholar** | Profile lists the Packt book (1 citation) and Microservices Recipes. **1 citation, h-index 1, i10-index 0** | [scholar.google.com](https://scholar.google.com/citations?user=PfD241cAAAAJ) |
-| **Zenodo — Fulcrum / RVx** | *Fulcrum: Quantitative, Governed Granularity for Microservice Boundaries with the RVx Index* (preprint, 2026) | [10.5281/zenodo.23284522](https://doi.org/10.5281/zenodo.23284522) |
-| **Zenodo — Microservices Recipes** | *Microservices Recipes: The Architect's Field Guide* (book record, 2026) | [10.5281/zenodo.22654421](https://doi.org/10.5281/zenodo.22654421) |
-| **Zenodo — Mobility** | *Decentralized Mobility-Based Loyalty Systems* (preprint, 2026) | [10.5281/zenodo.22273115](https://doi.org/10.5281/zenodo.22273115) |
+| **Zenodo - Fulcrum / RVx** | *Fulcrum: Quantitative, Governed Granularity for Microservice Boundaries with the RVx Index* (preprint, 2026) | [10.5281/zenodo.23284522](https://doi.org/10.5281/zenodo.23284522) |
+| **Zenodo - Microservices Recipes** | *Microservices Recipes: The Architect's Field Guide* (book record, 2026) | [10.5281/zenodo.22654421](https://doi.org/10.5281/zenodo.22654421) |
+| **Zenodo - Mobility** | *Decentralized Mobility-Based Loyalty Systems* (preprint, 2026) | [10.5281/zenodo.22273115](https://doi.org/10.5281/zenodo.22273115) |
 | **Fulcrum / RVx site** | Public research site for the granularity paper | [vaquarkhan.github.io/fulcrum-rxy](https://vaquarkhan.github.io/fulcrum-rxy/) |
 | **Reference code for the arXiv paper** | PVDM reference gate and validation suite named in the paper | [Proof-gated-publication-PVDM](https://github.com/vaquarkhan/Proof-gated-publication-PVDM) |
 
@@ -597,8 +597,8 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 
 **Find more videos:** Many additional videos cite my answers across these channels. Browse or search for topics I frequently answer:
 
-- **[The Debug Zone](https://www.youtube.com/@TheDebugZone/videos)** — Stack Overflow–based debugging tutorials
-- **[Roel Van de Paar](https://www.youtube.com/@RoelVandePaar)** — Technical Q&A from Stack Overflow/ServerFault (2M+ videos)
+- **[The Debug Zone](https://www.youtube.com/@TheDebugZone/videos)** - Stack Overflow–based debugging tutorials
+- **[Roel Van de Paar](https://www.youtube.com/@RoelVandePaar)** - Technical Q&A from Stack Overflow/ServerFault (2M+ videos)
 - **[Search: vaquarkhan stackoverflow](https://www.youtube.com/results?search_query=vaquarkhan+stackoverflow)**
 
 *Topics I often answer: Apache Spark, Kafka, AWS (Elastic Beanstalk, RDS, API Gateway), Spring Boot, Docker, Maven/Jacoco*
@@ -608,12 +608,12 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 | **University of Toronto, MASc thesis (2020)** | Suting Yang, *Big Data Insights into MRI Demand and Wait Time*. Bibliography item [48] names Vaquar Khan and the horizontal-vs-vertical scaling wiki page | [PDF](https://utoronto.scholaris.ca/bitstreams/75d5cf83-8153-43d5-bf88-858bb297dafd/download) · [wiki page](https://github.com/vaquarkhan/vaquarkhan/wiki/Difference-between-scaling-horizontally-and-vertically) |
 | **Dev.to (Krzysztof Góralski, 17 Aug 2019)** | "So you want to learn Microservices?" links the CQRS and Event Sourcing wiki page three times | [Article](https://dev.to/kgoralski/deep-dive-into-microservices-architecture-h54) · [wiki page](https://github.com/vaquarkhan/vaquarkhan/wiki/CQRS-and-Event-Sourcing-in-Java-with-Spring-Framework) |
 | **wubigo (18 Jul 2020)** | "Lambda Proxy vs Lambda Integration" links the API Gateway wiki page | [Post](https://wubigo.com/post/lambda-proxy-vs-lambda-integration/) · [wiki page](https://github.com/vaquarkhan/vaquarkhan/wiki/Lambda-Proxy-vs-Lambda-Integration-in-AWS-API-Gateway) |
-| **Future Generation Computer Systems survey** | *Scalable Blockchains — A Systematic Review* cites `github.com/vaquarkhan/vaquarkhan` as reference [27]. That is the repository, not a `/wiki` page | [PDF](https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf) |
+| **Future Generation Computer Systems survey** | *Scalable Blockchains - A Systematic Review* cites `github.com/vaquarkhan/vaquarkhan` as reference [27]. That is the repository, not a `/wiki` page | [PDF](https://www.open-access.bcu.ac.uk/12221/1/Scalable_Blockchains_Survey_R1_CLEAN.pdf) |
 | **NTUA diploma thesis** | Grigorios Thanasoulas cites a Kubernetes note in `vaquarkhan/Techies-Notes-wiki`, not this profile wiki | [PDF](https://dspace.lib.ntua.gr/xmlui/bitstream/handle/123456789/55903/thesis.pdf?sequence=1) |
 | **Gradle Discuss** | Microservice example from GitHub (troubleshooting run) | [Thread #43549](https://discuss.gradle.org/t/problems-when-trying-to-run-an-old-microservice-example-from-github/43549) |
 | **Apache Spark User List** | Codegen 64KB limit; Kafka vs Spark Streaming (community help) | [msg69132](https://www.mail-archive.com/user@spark.apache.org/msg69132.html) · [msg62385](https://www.mail-archive.com/user@spark.apache.org/msg62385.html) |
-| **Eclipse Jersey** | Bug report — HashMap JSON serialization | [#3432](https://github.com/eclipse-ee4j/jersey/issues/3432) |
-| **Apache Amoro** | Technical analysis — reachMinorInterval "noisy neighbor" fix | [#4055](https://github.com/apache/amoro/issues/4055) |
+| **Eclipse Jersey** | Bug report - HashMap JSON serialization | [#3432](https://github.com/eclipse-ee4j/jersey/issues/3432) |
+| **Apache Amoro** | Technical analysis - reachMinorInterval "noisy neighbor" fix | [#4055](https://github.com/apache/amoro/issues/4055) |
 
 
 
@@ -667,7 +667,7 @@ Videos that cite my [Stack Overflow answers](https://stackoverflow.com/users/481
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=My%20Books%20%26%20Resources&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="My Books & Resources"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Books%20and%20Resources&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Books and Resources"/>
 
 ## 📚 My Books & Resources
 
@@ -725,7 +725,7 @@ A comprehensive free GitBook on microservices patterns
 | Domain | What is actually claimed | Evidence |
 |--------|--------------------------|----------|
 | 💰 **Financial services** | Senior Data Architect at AWS Professional Services, working with financial-industry customers | [ORCID employment](https://orcid.org/0009-0008-3592-4162) |
-| 📚 **Open writing** | Co-author of a Packt book, author of a free GitBook, InfoQ, HackerNoon, DZone, Medium, and one AWS Big Data Blog post | Links in Writing & Community |
+| 📚 **Open writing** | Packt book, free GitBook, InfoQ, HackerNoon, 6 DZone articles, 10 Medium stories, and one AWS Big Data Blog post | Links in Writing & Community |
 | 🔬 **PVDM** | Preprint plus reference code. Not a standard and not an employer paper | [arXiv:2608.14643](https://arxiv.org/abs/2608.14643) |
 
 </div>
@@ -734,14 +734,14 @@ A comprehensive free GitBook on microservices patterns
 
 - 🔥 [Spark 1.2.0 RC1 +1 (29 Nov 2014)](https://lists.apache.org/thread/sgglw9bnltq5xrvnwrzrng9zjwdcoyt5)
 - 🔥 [Spark 2.4.2 +1 (2019)](https://www.mail-archive.com/dev@spark.apache.org/msg23633.html)
-- 📋 [JCP — JSR 368](https://www.jcp.org/en/jsr/detail?id=368)
+- 📋 [JCP - JSR 368](https://www.jcp.org/en/jsr/detail?id=368)
 - 📝 [KIP-1267](https://cwiki.apache.org/confluence/display/KAFKA/KIP-1267%3A+Tiered+Storage+Cost+Attribution+Metrics) · [KIP-1316](https://cwiki.apache.org/confluence/x/I5E8G) · [KIP-1317](https://cwiki.apache.org/confluence/x/JZE8G)
 - 🪪 [ORCID 0009-0008-3592-4162](https://orcid.org/0009-0008-3592-4162)
-- 💬 [Stack Overflow — vaquar khan](https://stackoverflow.com/users/4812170/vaquar-khan)
+- 💬 [Stack Overflow - vaquar khan](https://stackoverflow.com/users/4812170/vaquar-khan)
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Writing%20%26%20Community&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Writing and Community"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Writing%20and%20Community&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Writing and Community"/>
 
 ## ✍️ Writing & Community
 
@@ -751,7 +751,7 @@ A comprehensive free GitBook on microservices patterns
 
 [![HackerNoon](https://img.shields.io/badge/HackerNoon-@vaquarkhan-00FF00?style=for-the-badge&logo=hackernoon&logoColor=white)](https://hackernoon.com/u/vaquarkhan)
 [![Medium](https://img.shields.io/badge/Medium-@vaquarkhan-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@vaquarkhan)
-[![DZone](https://img.shields.io/badge/DZone-Author-0D5C8C?style=for-the-badge&logo=dzone&logoColor=white)](https://dzone.com/users/1436543/vaquarkhan.html)
+[![DZone](https://img.shields.io/badge/DZone-Author-0D5C8C?style=for-the-badge&logo=dzone&logoColor=white)](https://dzone.com/authors/vaquarkhan)
 [![InfoQ](https://img.shields.io/badge/InfoQ-Profile-5B2D8E?style=for-the-badge&logo=infoq&logoColor=white)](https://www.infoq.com/profile/Vaquar-Khan.2)
 [![AWS Blog](https://img.shields.io/badge/AWS_Big_Data_Blog-Author-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/blogs/big-data/author/vaquar/)
 
@@ -767,22 +767,38 @@ A comprehensive free GitBook on microservices patterns
 
 | Article | Published | Topic |
 |---------|-----------|-------|
-| [Production Observability for Spring AI Agents on Amazon Bedrock Without Writing Tracing Code](https://hackernoon.com/production-observability-for-spring-ai-agents-on-amazon-bedrock-without-writing-tracing-code) | May 2026 | Zero-code observability for Spring AI agents on Bedrock — OpenTelemetry, X-Ray, and CloudWatch integration |
+| [Production Observability for Spring AI Agents on Amazon Bedrock Without Writing Tracing Code](https://hackernoon.com/production-observability-for-spring-ai-agents-on-amazon-bedrock-without-writing-tracing-code) | May 2026 | Zero-code observability for Spring AI agents on Bedrock - OpenTelemetry, X-Ray, and CloudWatch integration |
 | [Real-Time Agentic RAG: Eradicating Context Rot With Spark & Iceberg](https://hackernoon.com/real-time-agentic-rag-eradicating-context-rot-with-spark-and-iceberg) | Mar 2026 | Architecture using Spark 4.1 & Apache Iceberg v3 deletion vectors for low-latency CDC to keep embedding stores fresh |
 
 ### 📰 DZone Articles
 
-| Article | Topic |
-|---------|-------|
-| [AWS Lambda With MySQL (RDS) and API Gateway](https://dzone.com/articles/aws-lambda-with-mysql-rds-and-api-gateway) | Microservices with AWS API Gateway & RDS |
-| [Run AWS Lambda Functions Locally on Windows](https://dzone.com/articles/run-aws-lambda-functions-locally-on-windows-machin) | SAM Local for Lambda development |
-| [Fast Data Access: GemFire + Apache Spark](https://dzone.com/articles/fast-data-access-using-gemfire-and-apache-spark-pa) | In-memory data grid with Spark |
+Six articles on the [DZone profile](https://dzone.com/authors/vaquarkhan). View counts are from that page on 25 Oct 2026.
+
+| Article | Published | Views | Topic |
+|---------|-----------|------:|-------|
+| [Architecting Trust: Agentic Microservice Testing Strategies in the Era of Non-Deterministic AI](https://dzone.com/articles/agentic-microservice-testing) | 8 Sep 2026 | 2,919 | Testing, monitoring, and CI/CD for non-deterministic multi-agent systems |
+| [Securing Model Context Protocol Servers: 4 Gates From Code to Production](https://dzone.com/articles/secure-mcp-servers) | 24 Jul 2026 | 4,271 | Four gates for prompt injection, data leaks, and denial-of-wallet |
+| [Fast Data Access Part 2: From Manual Hacks to Modern Stacks](https://dzone.com/articles/real-time-risk-pipeline-gemfire-spark-springboot) | 18 Mar 2026 | 5,262 | Rebuild of the 2019 risk pipeline on GemFire, Spark, and Spring Boot |
+| [AWS Lambda With MySQL (RDS) and API Gateway](https://dzone.com/articles/aws-lambda-with-mysql-rds-and-api-gateway) | Updated 26 May 2022 | 47,996 | A small microservice on API Gateway, Lambda, and RDS MySQL |
+| [Run AWS Lambda Functions Locally on a Windows Machine](https://dzone.com/articles/run-aws-lambda-functions-locally-on-windows-machin) | 12 Feb 2019 | 60,006 | SAM Local for developing and invoking Lambda on Windows |
+| [Fast Data Access Using GemFire and Apache Spark (Part 1): Introduction](https://dzone.com/articles/fast-data-access-using-gemfire-and-apache-spark-pa) | 28 Jan 2019 | 12,036 | Connect Apache Spark to Pivotal GemFire |
 
 ### ✏️ Medium Articles
 
-| Article | Topic |
-|---------|-------|
-| [Amazon API Gateway with Spring Boot — Tricks and Hacks](https://medium.com/@vaquarkhan/amazon-api-gateway-with-spring-boot-tricks-and-hacks-8315d49827d) | REST, WebSocket, HTTP API patterns with Spring Boot on AWS |
+Ten stories on [medium.com/@vaquarkhan](https://medium.com/@vaquarkhan). Two use the same ESG title.
+
+| Article | Published | Topic |
+|---------|-----------|-------|
+| [I Made "Simulate First" a Type Constraint, and My Agent Stopped Wasting Gas](https://medium.com/@vaquarkhan/i-made-simulate-first-a-type-constraint-and-my-agent-stopped-wasting-gas-ec71045dc61b) | 2 Jul 2026 | A multi-chain broadcast path that can be reached only after a successful simulation |
+| [I Made It Structurally Impossible for My Agent to Use Static Credentials](https://medium.com/@vaquarkhan/i-made-it-structurally-impossible-for-my-agent-to-use-static-credentials-7249ae5d0623) | 21 Jun 2026 | A multi-cloud agent rebuilt so long-lived secrets cannot exist |
+| [The Question That Changed How I Build ESG Agents: "Where Did That Number Come From?"](https://medium.com/@vaquarkhan/the-question-that-changed-how-i-build-esg-agents-where-did-that-number-come-from-5558ccadab88) | 21 Jun 2026 | Provenance as a feature in a sustainability-reporting pipeline |
+| [I Got Tired of "It Makes Your Agent Better." So I Measured It.](https://medium.com/@vaquarkhan/i-got-tired-of-it-makes-your-agent-better-so-i-measured-it-4b916a4d7e4e) | 19 Jun 2026 | A reproducible benchmark for AI tooling |
+| [The Question That Changed How I Build ESG Agents: "Where Did That Number Come From?"](https://medium.com/@vaquarkhan/the-question-that-changed-how-i-build-esg-agents-where-did-that-number-come-from-33fa46247980) | 19 Jun 2026 | Earlier post of the ESG provenance walkthrough |
+| [I Stopped Writing Longer Prompts and Started Writing "Skills."](https://medium.com/@vaquarkhan/i-stopped-writing-longer-prompts-and-started-writing-skills-9dd356fdc9e0) | 14 Jun 2026 | An engineering procedure encoded as a skill, with OAuth2 as the example |
+| [The Day I Realized Our LLM Was Quietly Logging Patient SSNs](https://medium.com/@vaquarkhan/the-day-i-realized-our-llm-was-quietly-logging-patient-ssns-b3ff55a2ffe0) | 13 Jun 2026 | A redaction gate so the model never receives raw patient identifiers |
+| [Break It Before It Breaks You: Chaos Engineering for Resilient Spring Boot Microservices](https://medium.com/@vaquarkhan/break-it-before-it-breaks-you-chaos-engineering-for-resilient-spring-boot-microservices-0bb83e4c7e88) | 18 Feb 2026 | Chaos engineering for Spring Boot microservices |
+| [Microservices Recipes, a free GitBook](https://medium.com/@vaquarkhan/microservices-recipes-a-free-gitbook-6b054d42c935) | 31 Dec 2019 | Announcement of the free Microservices Recipes book |
+| [Amazon API Gateway with Spring Boot, Tricks and Hacks](https://medium.com/@vaquarkhan/amazon-api-gateway-with-spring-boot-tricks-and-hacks-8315d49827d) | 22 Dec 2019 | REST, WebSocket, and HTTP API patterns with Spring Boot on AWS |
 
 ### 🎤 InfoQ
 
@@ -798,7 +814,7 @@ A comprehensive free GitBook on microservices patterns
 |--------|----------|------|
 | **InfoQ (Article)** | "Architecting Cloud-Native Kafka" | [Read](https://www.infoq.com/articles/architecting-cloud-native-kafka/) |
 | **LetsDataScience** | Coverage of the Spark + Iceberg agentic RAG article | [Read](https://letsdatascience.com/news/viquar-khan-proposes-real-time-rag-architecture-b7be72f4) |
-| **HackerNoon TechBeat** | Featured in "The TechBeat" newsletter (Apr 4, 2026) — deep dive into AI Context Rot | [Read](https://hackernoon.com/4-4-2026-techbeat) |
+| **HackerNoon TechBeat** | Featured in "The TechBeat" newsletter (Apr 4, 2026) - deep dive into AI Context Rot | [Read](https://hackernoon.com/4-4-2026-techbeat) |
 | **Business Intelligence Group** | Judge / Evaluator | [Profile](https://bintelligence.com/judge/viquar-khan) |
 
 ---
@@ -811,20 +827,20 @@ A comprehensive free GitBook on microservices patterns
 
 | Project | Status | What's Next |
 |---------|--------|-------------|
-| 🧬 **GenPRM** — Autonomous Data Engineering Agent | ✅ All 4 modules complete | GPU deployment guide, BIRD/Spider benchmarks |
-| 🛡️ **MCP-Bastion** — MCP Security Middleware | ✅ 26 PyPI packages · **216,483** PePy downloads | Additional LLM provider integrations |
+| 🧬 **GenPRM** - Autonomous Data Engineering Agent | ✅ All 4 modules complete | GPU deployment guide, BIRD/Spider benchmarks |
+| 🛡️ **MCP-Bastion** - MCP Security Middleware | ✅ 26 PyPI packages · **216,483** PePy downloads | Additional LLM provider integrations |
 | 🧪 **MCP Test Harness** | ✅ 26 PyPI packages · **210,226** PePy downloads (12 Aug 2026) | Combined with Bastion: **426,709** summed downloads (overlap included) |
-| 📐 **SparkRules** — Business Rule Engine | ✅ v1.2.0 · 840+ tests · Rust native tier | DMN 1.3 full support, OPA Rego export |
-| 🧊 **IceGuard** — Spark-on-Lambda Reliability | ✅ v1.0.0 · Docker + PyPI | Delta Lake & Hudi adapter expansion |
-| 🔍 **veridata** — Verifiable Reconciliation Proofs | ✅ Multi-cloud (AWS/GCP/Azure/Databricks) | Streaming VRP for real-time pipelines |
+| 📐 **SparkRules** - Business Rule Engine | ✅ v1.2.0 · 840+ tests · Rust native tier | DMN 1.3 full support, OPA Rego export |
+| 🧊 **IceGuard** - Spark-on-Lambda Reliability | ✅ v1.0.0 · Docker + PyPI | Delta Lake & Hudi adapter expansion |
+| 🔍 **veridata** - Verifiable Reconciliation Proofs | ✅ Multi-cloud (AWS/GCP/Azure/Databricks) | Streaming VRP for real-time pipelines |
 | 📊 **data-engineering-agent-skills** | ✅ 73 skills · VS Code + JetBrains plugins | Phase 3: governance overlays, automation hooks |
-| 🔬 **KIP-1316 / KIP-1317** — Kafka Share Group DLQ | 📝 Draft on the Apache Kafka wiki | Community discussion |
+| 🔬 **KIP-1316 / KIP-1317** - Kafka Share Group DLQ | 📝 Draft on the Apache Kafka wiki | Community discussion |
 
 </div>
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Mentorship%20%26%20Booking&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Mentorship & Booking"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=Mentorship&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="Mentorship"/>
 
 ## 📞 Mentorship & Booking
 
@@ -850,18 +866,18 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=GitHub%20Stats%20%26%20Activity&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="GitHub Stats & Activity"/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=90&section=header&text=GitHub%20Stats&fontSize=28&fontColor=ffffff&fontAlignY=50" width="100%" alt="GitHub Stats"/>
 
 ## 📊 GitHub Stats & Activity
 
 <div align="center">
 
-### 🏅 GitRanks — Global & USA Rankings
+### 🏅 GitRanks - Global & USA Rankings
 
 | Metric | Global Rank | USA Rank |
 |--------|-------------|----------|
-| **Stars** (2,667) | [Legend 1 — top 1% (#15,694 of 1,669,787)](https://gitranks.com/profile/vaquarkhan/ranks) | [#2,569 of 161,888](https://gitranks.com/profile/vaquarkhan) |
-| **Followers** (719) | [Legend 1 — top 1% (#12,955 of 2,527,903)](https://gitranks.com/profile/vaquarkhan/ranks) | [#2,506 of 293,554](https://gitranks.com/profile/vaquarkhan) |
+| **Stars** (2,667) | [Legend 1 - top 1% (#15,694 of 1,669,787)](https://gitranks.com/profile/vaquarkhan/ranks) | [#2,569 of 161,888](https://gitranks.com/profile/vaquarkhan) |
+| **Followers** (719) | [Legend 1 - top 1% (#12,955 of 2,527,903)](https://gitranks.com/profile/vaquarkhan/ranks) | [#2,506 of 293,554](https://gitranks.com/profile/vaquarkhan) |
 
 [![GitRanks Global](https://img.shields.io/badge/GitRanks-Legend_1_Top_1%25-gold?style=flat-square)](https://gitranks.com/profile/vaquarkhan/ranks)
 [![GitRanks USA](https://img.shields.io/badge/GitRanks_USA-Legend_1-gold?style=flat-square)](https://gitranks.com/profile/vaquarkhan/ranks/country)
@@ -907,10 +923,6 @@ I offer personalized mentorship in cloud architecture, microservices, data engin
 ### 🗓️ Isometric Contribution Calendar
 
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vaquarkhan&theme=radical" width="95%" />
-
-### 📈 Contribution Graph
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vaquarkhan&theme=react-dark&hide_border=true&area=true)
 
 ### 🐍 Contribution Snake
 
