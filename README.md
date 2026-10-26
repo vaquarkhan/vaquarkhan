@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/vaquarkhan-vaquarkhan-badge.png)](https://mseep.ai/app/vaquarkhan-vaquarkhan)
+
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=6,11,20&height=180&section=header&text=Vaquar%20Khan&fontSize=46&fontAlignY=38&desc=Senior%20Data%20Architect%20%7C%20AWS%20%7C%20Open%20Source%20%7C%20GitRanks%20Top%201%25&descAlignY=62&descSize=18&fontColor=ffffff" width="100%" alt="Header"/>
